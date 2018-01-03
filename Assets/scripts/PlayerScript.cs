@@ -36,7 +36,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 		if (controller != null)
 		{
@@ -95,7 +95,7 @@ public class PlayerScript : MonoBehaviour {
 				_spriteRenderer.material.color = Color.black;
 				break;
 			case GameColor.GREY:
-				_spriteRenderer.material.color = Color.gray;
+				_spriteRenderer.material.color = Color.grey;
 				break;
 			case GameColor.WHITE:
 				_spriteRenderer.material.color = Color.white;

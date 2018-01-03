@@ -21,6 +21,7 @@
           <e p="PlatformManager.cs" t="Include" />
           <e p="playerController.cs" t="Include" />
           <e p="PlayerScript.cs" t="Include" />
+          <e p="RisingCamera.cs" t="Include" />
           <e p="ShotFactory.cs" t="Include" />
           <e p="ShotManager.cs" t="Include" />
           <e p="Utils" t="Include">

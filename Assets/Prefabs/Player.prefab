@@ -57,13 +57,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.02
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61026767864914816
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -105,6 +105,7 @@ MonoBehaviour:
   speed: 50
   jumpHeight: 360
   controller: {fileID: 0}
+  lookingDir: {x: 0, y: 0}
 --- !u!114 &114782378812272340
 MonoBehaviour:
   m_ObjectHideFlags: 1

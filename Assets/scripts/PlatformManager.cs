@@ -46,6 +46,7 @@ namespace Game{
 			
 			// added by Gal 3/1/18
 			gameManager = GetComponentInParent<GameManager>();
+			SetColor(gameColor);
 		}
 
 		protected void Awake() {
@@ -83,7 +84,7 @@ namespace Game{
 					this.color = Color.white;
 					break;
 				default :
-					this.color = Color.gray;
+					this.color = Color.grey;
 					break;
 			}
 			spriteRenderer.material.color = this.color;
