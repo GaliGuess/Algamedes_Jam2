@@ -14,7 +14,7 @@ using UnityEngine;
         
         public void updatePlayerAction()
         {
-            if (horizontalDirection != Vector2.zero && verticalDirection == Vector2.zero)
+            if (horizontalDirection != Vector2.zero)
             {
                 lastHorizontalDirection = horizontalDirection;
             }
@@ -24,10 +24,10 @@ using UnityEngine;
         
         public Vector2 getLookingDirection()
         {
-            if (horizontalDirection == Vector2.zero)
+            if (horizontalDirection == Vector2.zero && verticalDirection == Vector2.zero)
             {
-                return lastHorizontalDirection + verticalDirection;
-            }            
+                return lastHorizontalDirection;
+            }
             return horizontalDirection + verticalDirection;
         }
 

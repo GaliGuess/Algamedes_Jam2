@@ -21,6 +21,9 @@ public class PlayerScript : MonoBehaviour {
 	private SpriteRenderer _spriteRenderer;
 	
 	private bool grounded;
+
+
+	public Vector2 lookingDir; ////
 	
 	// Use this for initialization
 	void Start ()
@@ -39,6 +42,7 @@ public class PlayerScript : MonoBehaviour {
 		{
 			controller.updatePlayerAction();
 			Vector2 lookDir = controller.getLookingDirection();
+			lookingDir = lookDir;
 			Vector2 movementDir = controller.getMovementDirection();
 		
 			movePlayer(movementDir, controller.isJumping());
@@ -46,7 +50,7 @@ public class PlayerScript : MonoBehaviour {
 			if (controller.isShooting())
 			{
 				Vector2 pos = transform.position;
-				_gameManager.SpawnShot(pos, lookDir.GetAngle(), gameColor);
+				_gameManager.SpawnShot(pos, _rigidbody2D.velocity, lookDir.GetAngle(), gameColor);
 			}
 		}
 	}

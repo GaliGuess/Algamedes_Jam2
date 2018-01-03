@@ -26,13 +26,16 @@ namespace Game {
 		}
 
 		//TODO: remove. for testing purposes
-		private void SpawnShotWithDefaultParmas() {
-			SpawnShot(new Vector2(0,-5), Random.Range(45f,135f),(GameColor)Random.Range(1, 3));
-		}
+//		private void SpawnShotWithDefaultParmas() {
+//			SpawnShot(new Vector2(0,-5), Random.Range(45f,135f),(GameColor)Random.Range(1, 3));
+//		}
 
 		// was private
-		public void SpawnShot(Vector2 position, float rotation, GameColor gameColor) {
-			GameObject shot = shotFactory.MakeObject(position,rotation,gameColor);
+//		public void SpawnShot(Vector2 position, float rotation, GameColor gameColor) {
+//			GameObject shot = shotFactory.MakeObject(position,rotation,gameColor);
+//		}
+		public void SpawnShot(Vector2 position, Vector2 startVelocity, float rotation, GameColor gameColor) {
+			GameObject shot = shotFactory.MakeObject(position, startVelocity,rotation,gameColor);
 		}
 
 		public void ChangeLayer(GameObject obj, GameColor color)
