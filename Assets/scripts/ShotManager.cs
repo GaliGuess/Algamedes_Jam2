@@ -55,10 +55,20 @@ namespace Game {
 			body.AddForce(Forward.GetWithMagnitude(speed));
 		}
 
-		public void Activate(Vector2 position, float rotation, GameColor gameColor)
+//		public void Activate(Vector2 position, float rotation, GameColor gameColor)
+//		{
+//			this.Position = position;
+//			this.Rotation = rotation;
+//			SetColor(gameColor);
+//		}
+		
+		public void Activate(Vector2 position, Vector2 startVelocity, float rotation, GameColor gameColor)
 		{
 			this.Position = position;
 			this.Rotation = rotation;
+			
+			Vector2 dir = Quaternion.Euler(0,0,rotation) * Vector2.right;
+			body.velocity = startVelocity + dir * speed;
 			SetColor(gameColor);
 		}
 

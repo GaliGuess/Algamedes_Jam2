@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - shot
+  - platform
+  - player
   layers:
   - Default
   - TransparentFX
@@ -16,16 +19,16 @@ TagManager:
   - 
   - 
   - 
+  - shots
   - 
+  - platforms_black
+  - platforms_grey
+  - platforms_white
   - 
+  - players_black
+  - players_white
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - floor
   - 
   - 
   - 

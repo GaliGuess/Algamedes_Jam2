@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Game{
 	public class PlatformManager : MonoBehaviour {
 
-		[SerializeField] private GameColor gameColor = GameColor.GRAY;
+		[SerializeField] private GameColor gameColor = GameColor.GREY;
 
 		[SerializeField] private Vector2[] controlPoints;
 
@@ -26,6 +26,9 @@ namespace Game{
 
 		private SpriteRenderer spriteRenderer;
 
+		// added by Gal 3/1/18
+		private GameManager gameManager;
+		
 		public Vector2 Position {
 			get {
 				return transform.position;
@@ -40,6 +43,10 @@ namespace Game{
 //			Vector3 scale = new Vector3(width, HEIGHT, 1f );
 //			transform.localScale = scale;
 			spriteRenderer.material.color = this.color;
+			
+			// added by Gal 3/1/18
+			gameManager = GetComponentInParent<GameManager>();
+			SetColor(gameColor);
 		}
 
 		protected void Awake() {
@@ -64,6 +71,10 @@ namespace Game{
 		}
 
 		private void SetColor(GameColor gameColor) {
+			
+			// added by Gal 3/1/18
+			gameManager.ChangeLayer(gameObject, gameColor);
+			
 			this.gameColor = gameColor;
 			switch (gameColor) {
 				case GameColor.BLACK :
@@ -73,11 +84,15 @@ namespace Game{
 					this.color = Color.white;
 					break;
 				default :
-					this.color = Color.gray;
+					this.color = Color.grey;
 					break;
 			}
 			spriteRenderer.material.color = this.color;
 		}
+		
+		
+		
+		
 
 		void OnCollisionEnter2D(Collision2D other) {
 			if (other.gameObject.tag == "shot")
