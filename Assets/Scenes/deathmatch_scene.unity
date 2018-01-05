@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -77,17 +77,20 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_ShadowMaskMode: 2
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -107,6 +110,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1001 &91119688
 Prefab:
@@ -1643,18 +1648,11 @@ Prefab:
       propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114314005282992704, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
-      propertyPath: jumpHeight
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 114782378812272340, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: ShootKey
       value: 304
       objectReference: {fileID: 0}
-    - target: {fileID: 114782378812272340, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: JumpKey
       value: 306
       objectReference: {fileID: 0}
@@ -1667,7 +1665,32 @@ Prefab:
       propertyPath: m_AngularDrag
       value: 0.02
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 0}
+      propertyPath: groundChecker
+      value: 
+      objectReference: {fileID: 1893132882}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: HorizontalAxis
+      value: B1_Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: VerticalAxis
+      value: B1_Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: JumpAxis
+      value: B1_Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: ShootAxis
+      value: B1_Fire
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 98dc8f764df55453cb6e8708d848369b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &603293042
@@ -2088,7 +2111,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4482737088911068, guid: 865a4fa49fbdf487f8f76ef63731c498, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.19
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 4482737088911068, guid: 865a4fa49fbdf487f8f76ef63731c498, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3104,11 +3127,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4482737088911068, guid: 865a4fa49fbdf487f8f76ef63731c498, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -24.28
+      value: -23.9
       objectReference: {fileID: 0}
     - target: {fileID: 4482737088911068, guid: 865a4fa49fbdf487f8f76ef63731c498, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.7
+      value: 9.1
       objectReference: {fileID: 0}
     - target: {fileID: 4482737088911068, guid: 865a4fa49fbdf487f8f76ef63731c498, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3268,11 +3291,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!4 &1561140078
 Transform:
   m_ObjectHideFlags: 0
@@ -3962,18 +3985,11 @@ Prefab:
       propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114314005282992704, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
-      propertyPath: jumpHeight
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 114782378812272340, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: ShootKey
       value: 109
       objectReference: {fileID: 0}
-    - target: {fileID: 114782378812272340, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: JumpKey
       value: 110
       objectReference: {fileID: 0}
@@ -3981,30 +3997,21 @@ Prefab:
       propertyPath: m_Name
       value: Player_W1
       objectReference: {fileID: 0}
-    - target: {fileID: 114782378812272340, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: UpKey
       value: 273
       objectReference: {fileID: 0}
-    - target: {fileID: 114782378812272340, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: DownKey
       value: 274
       objectReference: {fileID: 0}
-    - target: {fileID: 114782378812272340, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: LeftKey
       value: 276
       objectReference: {fileID: 0}
-    - target: {fileID: 114782378812272340, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: RightKey
       value: 275
-      objectReference: {fileID: 0}
-    - target: {fileID: 114314005282992704, guid: 98dc8f764df55453cb6e8708d848369b,
-        type: 2}
-      propertyPath: gameColor
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1950426598429196, guid: 98dc8f764df55453cb6e8708d848369b, type: 2}
       propertyPath: m_Layer
@@ -4015,7 +4022,37 @@ Prefab:
       propertyPath: m_AngularDrag
       value: 0.02
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 0}
+      propertyPath: groundChecker
+      value: 
+      objectReference: {fileID: 1893132882}
+    - target: {fileID: 114314005282992704, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: gameColor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: HorizontalAxis
+      value: W1_Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: VerticalAxis
+      value: W1_Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: JumpAxis
+      value: W1_Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: ShootAxis
+      value: W1_Fire
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 98dc8f764df55453cb6e8708d848369b, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &2106194435 stripped

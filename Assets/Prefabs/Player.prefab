@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4092454875296886}
-  - component: {fileID: 114782378812272340}
   - component: {fileID: 114314005282992704}
+  - component: {fileID: 114064387795261390}
   - component: {fileID: 50766291383029882}
   - component: {fileID: 61026767864914816}
   - component: {fileID: 212804434716223350}
@@ -57,10 +57,10 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.02
+  m_AngularDrag: 0.01
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -89,6 +89,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114064387795261390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950426598429196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e20901e33fe41b3a2a70f7d504b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HorizontalAxis: Horizontal
+  VerticalAxis: Vertical
+  JumpAxis: Jump
+  ShootAxis: Fire1
 --- !u!114 &114314005282992704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,28 +116,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameColor: 1
-  maxSpeed: 8
-  speed: 50
-  jumpHeight: 360
-  controller: {fileID: 0}
-  lookingDir: {x: 0, y: 0}
---- !u!114 &114782378812272340
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1950426598429196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e7d2e9a28ad145dca5251c2bbb63922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UpKey: 119
-  DownKey: 115
-  LeftKey: 97
-  RightKey: 100
-  JumpKey: 32
-  ShootKey: 303
+  maxSpeed: 15
+  speed: 30
+  jumpHeight: 8
+  direction: {x: 0, y: 0}
+  lastHorizontalDirection: {x: 0, y: 0}
+  isGrounded: 0
+  currentVelocity: {x: 0, y: 0}
 --- !u!212 &212804434716223350
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -15,17 +15,18 @@
           </e>
         </e>
         <e p="scripts" t="Include">
+          <e p="Controller.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="KeyboardController.cs" t="Include" />
+          <e p="Mario1Controller2DScript.cs" t="Include" />
           <e p="PlatformFactory.cs" t="Include" />
           <e p="PlatformManager.cs" t="Include" />
-          <e p="playerController.cs" t="Include" />
           <e p="PlayerScript.cs" t="Include" />
           <e p="RisingCamera.cs" t="Include" />
           <e p="ShotFactory.cs" t="Include" />
-          <e p="ShotManager.cs" t="Include" />
           <e p="Utils" t="Include">
             <e p="MathsUtils.cs" t="Include" />
+            <e p="ShotManager.cs" t="Include" />
           </e>
         </e>
       </e>

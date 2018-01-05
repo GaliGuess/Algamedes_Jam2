@@ -1,23 +1,55 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
     
-//    [CreateAssetMenu(menuName = "Controller/Keyboard")]
-    public class KeyboardController : PlayerController
-    {
-        public KeyCode UpKey, DownKey, LeftKey, RightKey, JumpKey, ShootKey;
+
+    public class KeyboardController : Controller
+    {   
+        public String HorizontalAxis = "Horizontal",
+                      VerticalAxis = "Vertical", 
+                      JumpAxis = "Jump", 
+                      ShootAxis = "Fire1";
+     
+        private bool isHorizontal, isVertical, isJumping, isShooting;
+
+
+        void FixedUpdate()
+        {
+            isHorizontal = Input.GetButton(HorizontalAxis);
+            isVertical = Input.GetButton(VerticalAxis);
+            isJumping = Input.GetButton(JumpAxis);
+            isShooting = Input.GetButtonDown(ShootAxis);
+        }
         
-        protected override void updateMovementParameters() {
-            
-            verticalDirection = Input.GetKeyDown(UpKey) || Input.GetKey(UpKey) ? Vector2.up :
-                                Input.GetKeyDown(DownKey) || Input.GetKey(DownKey) ? Vector2.down :
-                                Vector2.zero;
-            
-            
-            horizontalDirection = Input.GetKeyDown(LeftKey) || Input.GetKey(LeftKey) ? Vector2.left : 
-                                  Input.GetKeyDown(RightKey) || Input.GetKey(RightKey) ? Vector2.right : 
-                                  Vector2.zero;
-            
-            jumpState = Input.GetKeyDown(JumpKey) ? true : Input.GetKeyUp(JumpKey) ? false : jumpState;
-            
-            shootState = Input.GetKeyDown(ShootKey);
+        
+        public override bool look_up()
+        {
+            return isVertical && Input.GetAxis(VerticalAxis) > 0;
+        }
+
+        public override bool look_down()
+        {
+            return isVertical && Input.GetAxis(VerticalAxis) < 0;
+        }
+
+        public override bool turn_left()
+        {
+            return isHorizontal && Input.GetAxis(HorizontalAxis) < 0;
+        }
+
+        public override bool turn_right()
+        {
+            return isHorizontal && Input.GetAxis(HorizontalAxis) > 0;
+        }
+
+        public override bool jump()
+        {
+            return isJumping;
+        }
+
+        public override bool shoot()
+        {
+            return isShooting;
         }
     }
