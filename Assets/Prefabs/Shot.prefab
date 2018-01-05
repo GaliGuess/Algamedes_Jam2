@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameColor: 0
-  speed: 20
+  speed: 40
 --- !u!212 &212261872230436008
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -11,9 +11,12 @@ public class PlayerScript : MonoBehaviour {
 
 	[SerializeField] GameColor gameColor = GameColor.BLACK;
 
-	[SerializeField] float maxSpeed = 3;
-	[SerializeField] float speed = .5f;
-	[SerializeField] float jumpHeight = 1f;
+	[SerializeField] float maxSpeed = 17;
+	private float speed = 40f;
+	[SerializeField] float jumpHeight = 350f;
+	[SerializeField] float jumpBonusGravity = 15f;
+	[SerializeField] float recoil = 0.15f;
+//	[SerializeField] bool doubleJumpEnabled = true;
 	
 	private Controller _controller;
 	private Rigidbody2D _rigidbody2D;
@@ -21,7 +24,8 @@ public class PlayerScript : MonoBehaviour {
 	private SpriteRenderer _spriteRenderer;
 
 	public Vector2 direction, lastHorizontalDirection;
-	public bool isGrounded;
+	public bool isGrounded, canDoubleJump;
+	private float jumpRatio = 0.2f;
 	
 	// for testing
 	public Vector2 currentVelocity;
@@ -36,9 +40,10 @@ public class PlayerScript : MonoBehaviour {
 		SetSpriteColor(gameColor);
 
 		lastHorizontalDirection = transform.position.x < 0 ? Vector2.right : Vector2.left;
+		canDoubleJump = false;
 	}
 
-
+	
 	void FixedUpdate()
 	{	
 		if (_controller != null)
@@ -47,10 +52,9 @@ public class PlayerScript : MonoBehaviour {
 			{
 				lastHorizontalDirection = new Vector2(direction.x, 0);
 			}
-
 			updateDirection();
 
-			if (_controller.jump() && isGrounded)
+			if (_controller.jump())
 			{
 				jump();
 			}
@@ -65,6 +69,17 @@ public class PlayerScript : MonoBehaviour {
 				}
 			
 				shoot(direction);
+			}
+
+			// fake gravity for when airborne
+			if (!isGrounded)
+			{
+				Vector2 vel = _rigidbody2D.velocity;
+				
+				vel.y -= jumpBonusGravity * Time.deltaTime;
+				_rigidbody2D.velocity = vel;
+				
+				slowHorizontalVelocity(1.01f);
 			}
 			
 			// for testing
@@ -84,29 +99,42 @@ public class PlayerScript : MonoBehaviour {
 	
 	private void move(Vector2 direction)
 	{
-//		_rigidbody2D.velocity += direction * Time.deltaTime * speed;
-		_rigidbody2D.velocity = Vector2.Lerp(_rigidbody2D.velocity, direction * speed, Time.deltaTime); 
-		
-		if (_rigidbody2D.velocity.x > maxSpeed)
-		{
-			_rigidbody2D.velocity = new Vector2(maxSpeed, _rigidbody2D.velocity.y);
-		}
-		
-		if (_rigidbody2D.velocity.x < -maxSpeed)
-		{
-			_rigidbody2D.velocity = new Vector2(-maxSpeed, _rigidbody2D.velocity.y);
-		}
+		Vector2 newVelocity = _rigidbody2D.velocity;
+		newVelocity.x = direction.x * speed;
+		newVelocity.x = Mathf.Lerp(_rigidbody2D.velocity.x, newVelocity.x, Time.deltaTime);
+		newVelocity.x = Mathf.Clamp(newVelocity.x, -maxSpeed, maxSpeed); 
+		_rigidbody2D.velocity = newVelocity;
 	}
 
 	private void jump()
 	{
-		_rigidbody2D.velocity += new Vector2(0, jumpHeight);
+		if (isGrounded && !canDoubleJump)
+		{
+			_rigidbody2D.velocity += new Vector2(direction.x * jumpHeight * jumpRatio * Time.deltaTime, 
+												 jumpHeight * Time.deltaTime);
+//			_rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime);
+//			canDoubleJump = true;
+		}
+//		else if (canDoubleJump)
+//		{
+//			if (doubleJumpEnabled)
+//			{
+//				_rigidbody2D.velocity += new Vector2(direction.x * jumpHeight * jumpRatio * Time.deltaTime, 
+//												  	 jumpHeight * Time.deltaTime);
+//				
+////				Debug.Log("Double Jumped.");
+//			}
+//			canDoubleJump = false;
+//		}
 	}
 	
 	private void shoot(Vector2 direction)
 	{
 		Vector2 pos = transform.position;
 		_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), gameColor);
+		
+		// recoil
+		transform.position = new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z);
 	}
 	
 
@@ -121,6 +149,14 @@ public class PlayerScript : MonoBehaviour {
 	private void OnCollisionExit2D(Collision2D other)
 	{
 		isGrounded = false;
+	}
+
+
+	private void slowHorizontalVelocity(float factor)
+	{
+		Vector2 vel = _rigidbody2D.velocity;
+		vel.x /= factor;
+		_rigidbody2D.velocity = vel;
 	}
 	
 	

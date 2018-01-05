@@ -116,12 +116,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameColor: 1
-  maxSpeed: 15
-  speed: 30
-  jumpHeight: 8
+  maxSpeed: 17
+  speed: 40
+  jumpHeight: 350
+  jumpBonusGravity: 15
+  recoil: 0.15
   direction: {x: 0, y: 0}
   lastHorizontalDirection: {x: 0, y: 0}
   isGrounded: 0
+  canDoubleJump: 0
   currentVelocity: {x: 0, y: 0}
 --- !u!212 &212804434716223350
 SpriteRenderer:

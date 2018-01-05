@@ -148,7 +148,7 @@ namespace Game{
 			}
 			if (other.gameObject.tag == "player")
 			{
-				Debug.Log("PlatformManger: detected player");
+//				Debug.Log("PlatformManger: detected player");
 			}
 		}
 	}

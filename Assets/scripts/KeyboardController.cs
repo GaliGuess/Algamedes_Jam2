@@ -14,14 +14,18 @@ using System.Collections.Generic;
         private bool isHorizontal, isVertical, isJumping, isShooting;
 
 
+        void Update()
+        {
+//            isJumping = Input.GetButtonDown(JumpAxis);
+            isShooting = Input.GetButtonDown(ShootAxis);
+        }
+        
         void FixedUpdate()
         {
             isHorizontal = Input.GetButton(HorizontalAxis);
             isVertical = Input.GetButton(VerticalAxis);
             isJumping = Input.GetButton(JumpAxis);
-            isShooting = Input.GetButtonDown(ShootAxis);
         }
-        
         
         public override bool look_up()
         {
