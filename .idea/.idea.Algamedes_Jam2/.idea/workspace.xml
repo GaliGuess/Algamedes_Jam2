@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93da262b-c29b-4459-8495-dac80ca7fd7e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/scripts/PlayerController.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/scripts/PlayerController.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/scripts/ShotManager.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/scripts/ShotManager.cs.meta" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/contentModel.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Materials/Default Material.physicsMaterial2D" afterPath="$PROJECT_DIR$/Assets/Materials/Default Material.physicsMaterial2D" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/Shot.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/Shot.prefab" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/deathmatch_scene.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/deathmatch_scene.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/KeyboardController.cs" afterPath="$PROJECT_DIR$/Assets/scripts/KeyboardController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/KeyboardController.cs.meta" afterPath="$PROJECT_DIR$/Assets/scripts/KeyboardController.cs.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/PlayerScript.cs" afterPath="$PROJECT_DIR$/Assets/scripts/PlayerScript.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,10 +15,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PlayerScript.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerScript.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/scripts/PlayerScript.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="0">
               <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
               <folding>
                 <marker date="1515122086511" expanded="true" signature="6:154" ph="..." />
@@ -59,21 +46,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KeyboardController.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/scripts/KeyboardController.cs">
+      <file leaf-file-name="TrackingCamera.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/scripts/TrackingCamera.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="29" />
+            <state relative-caret-position="477">
+              <caret line="42" column="15" lean-forward="false" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
               <folding>
-                <marker date="1515117702690" expanded="false" signature="6:92" ph="..." />
-                <marker date="1515117702690" expanded="true" signature="147:1411" ph="{...}" />
-                <marker date="1515117702690" expanded="true" signature="449:693" ph="{...}" />
-                <marker date="1515117702690" expanded="true" signature="750:836" ph="{...}" />
-                <marker date="1515117702690" expanded="true" signature="878:964" ph="{...}" />
-                <marker date="1515117702690" expanded="true" signature="1006:1096" ph="{...}" />
-                <marker date="1515117702690" expanded="true" signature="1139:1229" ph="{...}" />
-                <marker date="1515117702690" expanded="true" signature="1266:1316" ph="{...}" />
-                <marker date="1515117702690" expanded="true" signature="1354:1405" ph="{...}" />
+                <marker date="1515175996946" expanded="false" signature="6:78" ph="..." />
+                <marker date="1515175996946" expanded="true" signature="80:176" ph="/* Found on: ... */" />
+                <marker date="1515175996946" expanded="true" signature="222:5059" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="691:862" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="882:1297" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="997:1053" ph="/* not ... */" />
+                <marker date="1515175996946" expanded="true" signature="1301:1479" ph="/// Shifts a bounding box so it doesn't go outside the maxBoundingBox. ... " />
+                <marker date="1515175996946" expanded="true" signature="1520:1984" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="1563:1648" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="1694:1803" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="1849:1959" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="2033:2270" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="2276:2426" ph="/// Calculates a bounding box that contains all the targets. ... " />
+                <marker date="1515175996946" expanded="true" signature="2462:2987" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="2648:2849" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="2990:3332" ph="/// Given an orthographic size and center position, this returns the resulting bounding box. ... " />
+                <marker date="1515175996946" expanded="true" signature="3411:3692" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="3696:3954" ph="/// Calculates a new orthographic size for the camera based on the target bounding box. ... " />
+                <marker date="1515175996946" expanded="true" signature="4005:4585" ph="{...}" />
+                <marker date="1515175996946" expanded="true" signature="4589:4855" ph="/// Calculates a camera position given the a bounding box containing all the targets. ... " />
+                <marker date="1515175996946" expanded="true" signature="4906:5057" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -105,11 +104,14 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/scripts/PlatformManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E4CA8F4E-90C6-4470-94E9-B3A6D6F56DA5/48/16d1537e/Camera.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/TrackingCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/ShotFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/RisingCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/PlayerScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E4CA8F4E-90C6-4470-94E9-B3A6D6F56DA5/d0/e2695f92/Component.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E4CA8F4E-90C6-4470-94E9-B3A6D6F56DA5/a7/50baa94a/Vector2.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E4CA8F4E-90C6-4470-94E9-B3A6D6F56DA5/77/33f914bc/Rect.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/KeyboardController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/PlatformFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Controller Auditions/Project_2 - Copy/Assets/Mario1Controller2DScript.cs" root0="SKIP_INSPECTION" />
@@ -133,6 +135,8 @@
         <option value="$PROJECT_DIR$/Assets/scripts/KeyboardInput.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/KeyboardController.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/PlayerScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/FollowingCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/TrackingCamera.cs" />
       </list>
     </option>
   </component>
@@ -143,8 +147,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="1503" />
+    <option name="x" value="-1479" />
+    <option name="y" value="66" />
+    <option name="width" value="1440" />
     <option name="height" value="878" />
   </component>
   <component name="ProjectView">
@@ -213,11 +218,12 @@
       <workItem from="1514997588340" duration="1166000" />
       <workItem from="1515102637509" duration="15144000" />
       <workItem from="1515122058544" duration="37000" />
+      <workItem from="1515154987067" duration="19166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39836000" />
+    <option name="totallyTimeSpent" value="59002000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -229,7 +235,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1503" height="878" extended-state="0" />
+    <frame x="-1479" y="66" width="1440" height="878" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -239,7 +246,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21490353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -264,6 +271,63 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/PlayerScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1515122086511" expanded="true" signature="6:154" ph="..." />
+            <marker date="1515122086511" expanded="true" signature="199:3216" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="669:986" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="1008:1569" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="1039:1566" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="1088:1157" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="1222:1244" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="1315:1496" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="1411:1465" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="1602:1870" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="1910:2338" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="2122:2205" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="2251:2335" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="2360:2421" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="2462:2591" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="2646:2739" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="2706:2736" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="2792:2820" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="2927:3214" ph="{...}" />
+            <marker date="1515122086511" expanded="true" signature="2947:3211" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/KeyboardController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <marker date="1515117702690" expanded="false" signature="6:92" ph="..." />
+            <marker date="1515117702690" expanded="true" signature="147:1411" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="449:693" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="750:836" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="878:964" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="1006:1096" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="1139:1229" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="1266:1316" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="1354:1405" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/Controller.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="36" />
+          <folding>
+            <marker date="1515117613524" expanded="true" signature="72:363" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/PlayerScript.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -562,13 +626,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/scripts/Mario1Controller2DScript.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/Mario1Controller2DScript.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/scripts/Controller.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -607,27 +665,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/scripts/KeyboardController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="29" />
-          <folding>
-            <marker date="1515117702690" expanded="false" signature="6:92" ph="..." />
-            <marker date="1515117702690" expanded="true" signature="147:1411" ph="{...}" />
-            <marker date="1515117702690" expanded="true" signature="449:693" ph="{...}" />
-            <marker date="1515117702690" expanded="true" signature="750:836" ph="{...}" />
-            <marker date="1515117702690" expanded="true" signature="878:964" ph="{...}" />
-            <marker date="1515117702690" expanded="true" signature="1006:1096" ph="{...}" />
-            <marker date="1515117702690" expanded="true" signature="1139:1229" ph="{...}" />
-            <marker date="1515117702690" expanded="true" signature="1266:1316" ph="{...}" />
-            <marker date="1515117702690" expanded="true" signature="1354:1405" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/PlayerScript.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="0">
           <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
           <folding>
             <marker date="1515122086511" expanded="true" signature="6:154" ph="..." />
@@ -650,6 +690,262 @@
             <marker date="1515122086511" expanded="true" signature="2792:2820" ph="{...}" />
             <marker date="1515122086511" expanded="true" signature="2927:3214" ph="{...}" />
             <marker date="1515122086511" expanded="true" signature="2947:3211" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/KeyboardController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <marker date="1515117702690" expanded="false" signature="6:92" ph="..." />
+            <marker date="1515117702690" expanded="true" signature="147:1411" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="449:693" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="750:836" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="878:964" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="1006:1096" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="1139:1229" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="1266:1316" ph="{...}" />
+            <marker date="1515117702690" expanded="true" signature="1354:1405" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E4CA8F4E-90C6-4470-94E9-B3A6D6F56DA5/48/16d1537e/Camera.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="183" column="24" lean-forward="false" selection-start-line="183" selection-start-column="24" selection-end-line="183" selection-end-column="24" />
+          <folding>
+            <marker date="1515164726299" expanded="true" signature="0:278" ph="/* Decompiled with JetBrains decompiler ... */" />
+            <marker date="1515164726299" expanded="false" signature="286:482" ph="..." />
+            <marker date="1515164726299" expanded="true" signature="505:49020" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="510:624" ph="///   &lt;para&gt;A Camera is a device through which the player views the world.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="727:49018" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="736:845" ph="///   &lt;para&gt;Event that is fired before any camera starts culling.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="901:1012" ph="///   &lt;para&gt;Event that is fired before any camera starts rendering.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="1070:1182" ph="///   &lt;para&gt;Event that is fired after any camera finishes rendering.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="1308:1439" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="1324:1373" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="1383:1433" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="1514:1649" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="1530:1581" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="1591:1643" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="1722:1855" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="1738:1788" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="1798:1849" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="1861:1960" ph="///   &lt;para&gt;The field of view of the camera in degrees.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="2172:2261" ph="///   &lt;para&gt;The near clipping plane distance.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="2475:2563" ph="///   &lt;para&gt;The far clipping plane distance.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="2776:2884" ph="///   &lt;para&gt;The rendering path that should be used, if possible.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="3106:3222" ph="///   &lt;para&gt;The rendering path that is currently being used (Read Only).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="3367:3452" ph="///   &lt;para&gt;High dynamic range rendering.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="3660:3745" ph="///   &lt;para&gt;High dynamic range rendering.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="3995:4106" ph="///   &lt;para&gt;Should camera rendering be forced into a RenderTexture.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="4328:4399" ph="///   &lt;para&gt;MSAA rendering.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="4608:4691" ph="///   &lt;para&gt;Dynamic Resolution Scaling.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="5057:5158" ph="///   &lt;para&gt;Camera's half-size when in orthographic mode.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="5375:5488" ph="///   &lt;para&gt;Is the camera orthographic (true) or perspective (false)?&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="5700:5783" ph="///   &lt;para&gt;Opaque object sorting mode.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="6007:6095" ph="///   &lt;para&gt;Transparent object sorting mode.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="6331:6501" ph="///   &lt;para&gt;An axis that describes the direction along which the distances of objects are measured for the purpos ... " />
+            <marker date="1515164726299" expanded="true" signature="6541:6774" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="6557:6683" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="6693:6768" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="7112:7213" ph="///   &lt;para&gt;Camera's depth in the camera rendering order.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="7419:7518" ph="///   &lt;para&gt;The aspect ratio (width divided by height).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="7725:7835" ph="///   &lt;para&gt;This is used to render parts of the scene selectively.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="8184:8317" ph="///   &lt;para&gt;If not null, the camera will only render the contents of the specified scene.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="8340:8535" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="8356:8459" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="8469:8529" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="8839:8956" ph="///   &lt;para&gt;Mask to select which layers can trigger events on the camera.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="9164:9268" ph="///   &lt;para&gt;The color with which the screen will be cleared.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="9301:9516" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="9317:9430" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="9440:9510" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="9840:9965" ph="///   &lt;para&gt;Where on the screen is the camera rendered in normalized coordinates.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="9986:10175" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="10002:10100" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="10110:10169" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="10475:10595" ph="///   &lt;para&gt;Where on the screen is the camera rendered in pixel coordinates.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="10621:10820" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="10637:10740" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="10750:10814" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="11130:11213" ph="///   &lt;para&gt;Destination render texture.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="11435:11547" ph="///   &lt;para&gt;Gets the temporary RenderTexture target for this Camera.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="12051:12396" ph="///   &lt;para&gt;Sets the Camera to render to the chosen buffers of one or more RenderTextures.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="12481:12560" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="12566:12911" ph="///   &lt;para&gt;Sets the Camera to render to the chosen buffers of one or more RenderTextures.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="12998:13076" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="13082:13231" ph="///   &lt;para&gt;How wide is the camera in pixels (not accounting for dynamic resolution scaling) (Read Only).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="13357:13506" ph="///   &lt;para&gt;How tall is the camera in pixels (not accounting for dynamic resolution scaling) (Read Only).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="13633:13778" ph="///   &lt;para&gt;How wide is the camera in pixels (accounting for dynamic resolution scaling) (Read Only).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="13910:14055" ph="///   &lt;para&gt;How tall is the camera in pixels (accounting for dynamic resolution scaling) (Read Only).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="14188:14312" ph="///   &lt;para&gt;Matrix that transforms from camera space to world space (Read Only).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="14353:14508" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="14369:14502" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="14681:14787" ph="///   &lt;para&gt;Matrix that transforms from world to camera space.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="14828:15067" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="14844:14977" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="14987:15061" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="15407:15534" ph="///   &lt;para&gt;Make the rendering position reflect the camera's position in the scene.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="15577:15648" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="15826:15913" ph="///   &lt;para&gt;Set a custom projection matrix.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="15951:16184" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="15967:16097" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="16107:16178" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="16518:16648" ph="///   &lt;para&gt;Get or set the raw projection matrix with no camera offset (no jittering).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="16697:16952" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="16713:16854" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="16864:16946" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="17308:17426" ph="///   &lt;para&gt;Should the jittered matrix be used for transparency rendering?&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="17676:17786" ph="///   &lt;para&gt;Get the view projection matrix used on the last frame.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="17836:18000" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="17852:17994" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="18182:18293" ph="///   &lt;para&gt;Make the projection reflect normal camera's parameters.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="18333:18401" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="18576:18685" ph="///   &lt;para&gt;Revert the aspect ratio to the screen's aspect ratio.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="18715:18773" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="18938:19029" ph="///   &lt;para&gt;Reset to the default field of view.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="19246:19309" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="19479:19587" ph="///   &lt;para&gt;Get the world-space speed of the camera (Read Only).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="19615:19751" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="19631:19745" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="19911:20004" ph="///   &lt;para&gt;How the camera clears the background.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="20226:20305" ph="///   &lt;para&gt;Stereoscopic rendering.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="20435:20681" ph="///   &lt;para&gt;The distance between the virtual eyes. Use this to query or set the current eye separation. Note that ... " />
+            <marker date="1515164726299" expanded="true" signature="20898:21002" ph="///   &lt;para&gt;Distance to a point where virtual eyes converge.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="21220:21315" ph="///   &lt;para&gt;Identifies what kind of camera this is.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="21531:21642" ph="///   &lt;para&gt;Render only once and use resulting image for both eyes.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="22285:22422" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="22644:22758" ph="///   &lt;para&gt;Defines which eye of a VR display the Camera renders into.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="22988:23133" ph="///   &lt;para&gt;Determines whether the stereo view matrices are suitable to allow for a single pass cull.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="23298:23551" ph="///   &lt;para&gt;Set custom view matrices for both eyes.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="23743:23844" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="24149:24232" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="24455:24596" ph="///   &lt;para&gt;Reset the camera to using the Unity computed view matrices for all stereoscopic eyes.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="25079:25222" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="25533:25622" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="25851:26167" ph="///   &lt;para&gt;Sets custom projection matrices for both the left and right stereoscopic eyes.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="26377:26484" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="26718:27210" ph="///         &lt;para&gt;Returns the eye that is currently rendering. ... " />
+            <marker date="1515164726299" expanded="true" signature="27481:27782" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="27912:28024" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="28293:28440" ph="///   &lt;para&gt;Reset the camera to using the Unity computed projection matrices for all stereoscopic eyes.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="28589:28808" ph="///   &lt;para&gt;Resets this Camera's transparency sort settings to the default. Default transparency settings are tak ... " />
+            <marker date="1515164726299" expanded="true" signature="28957:29052" ph="///   &lt;para&gt;Set the target display for this Camera.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="29264:29415" ph="///   &lt;para&gt;Transforms position from world space into screen space.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="29471:29608" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="29821:29974" ph="///   &lt;para&gt;Transforms position from world space into viewport space.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="30032:30171" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="30386:30661" ph="///   &lt;para&gt;Transforms position from viewport space into world space.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="30719:30858" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="31073:31224" ph="///   &lt;para&gt;Transforms position from screen space into world space.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="31280:31417" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="31630:31784" ph="///   &lt;para&gt;Transforms position from screen space into viewport space.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="31843:31983" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="32199:32353" ph="///   &lt;para&gt;Transforms position from viewport space into screen space.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="32412:32552" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="32768:32921" ph="///   &lt;para&gt;Returns a ray going from camera through a viewport point.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="32973:33094" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="33303:33454" ph="///   &lt;para&gt;Returns a ray going from camera through a screen point.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="33504:33623" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="33830:33943" ph="///   &lt;para&gt;The first enabled camera tagged &quot;MainCamera&quot; (Read Only).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="34073:34219" ph="///   &lt;para&gt;The camera we are currently rendering with, for low-level render control only (Read Only).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="34352:34449" ph="///   &lt;para&gt;Returns all enabled cameras in the scene.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="34587:34686" ph="///   &lt;para&gt;The number of cameras in the current scene.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="34824:35075" ph="///   &lt;para&gt;Fills an array of Camera with the current cameras in the scene, without allocating a new array.&lt;/para ... " />
+            <marker date="1515164726299" expanded="true" signature="35302:35395" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="35475:35572" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="35653:35752" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="35758:35841" ph="///   &lt;para&gt;Render the camera manually.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="35967:36149" ph="///   &lt;para&gt;Render the camera with shader replacement.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="36321:36508" ph="///   &lt;para&gt;Make the camera render with shader replacement.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="36684:36778" ph="///   &lt;para&gt;Remove shader replacement from camera.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="36819:36888" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="37064:37190" ph="///   &lt;para&gt;Whether or not the Camera will use occlusion culling during rendering.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="37409:37532" ph="///   &lt;para&gt;Sets a custom matrix for the camera to use for all culling queries.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="37567:37794" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="37583:37710" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="37720:37788" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="38122:38240" ph="///   &lt;para&gt;Make culling queries reflect the camera's built in parameters.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="38277:38342" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="38856:38947" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="38953:39323" ph="///   &lt;para&gt;Render into a static cubemap from this camera.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="39407:39489" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="39567:39658" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="39664:40026" ph="///   &lt;para&gt;Render into a cubemap from this camera.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="40116:40193" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="40552:40636" ph="///   &lt;para&gt;Per-layer culling distances.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="40857:40959" ph="///   &lt;para&gt;How to perform per-layer culling for a Camera.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="41177:41318" ph="///   &lt;para&gt;Makes this camera's settings match other camera.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="41458:41558" ph="///   &lt;para&gt;How and if camera generates a depth texture.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="41786:41915" ph="///   &lt;para&gt;Should the camera clear the stencil buffer after the deferred light pass?&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="42284:42544" ph="///   &lt;para&gt;Add a command buffer to be executed at a specified place.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="42717:42978" ph="///   &lt;para&gt;Remove command buffer from execution at a specified place.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="43154:43356" ph="///   &lt;para&gt;Remove command buffers from execution at a specified place.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="43511:43613" ph="///   &lt;para&gt;Remove all command buffers set on this camera.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="43756:44041" ph="///   &lt;para&gt;Get command buffers to be executed at a specified place.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="44204:44320" ph="///   &lt;para&gt;Number of command buffers set up on this camera (Read Only).&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="44524:44618" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="44904:45000" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="45216:45507" ph="///   &lt;para&gt;Calculates and returns oblique near-plane projection matrix.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="45570:45720" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="45975:45987" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="46028:46040" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="46127:46250" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="46600:46686" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="46616:46654" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="46664:46680" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="46901:46932" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="47151:47182" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="47384:47452" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="47400:47446" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="47607:47619" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="47793:47928" ph="///   &lt;para&gt;Enum used to specify either the left or the right eye of a stereoscopic camera.&lt;/para&gt; ... " />
+            <marker date="1515164726299" expanded="true" signature="47960:47997" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="48003:48742" ph="///         &lt;para&gt;A Camera eye corresponding to the left or right human eye for stereoscopic rendering, or neithe ... " />
+            <marker date="1515164726299" expanded="true" signature="48780:48829" ph="{...}" />
+            <marker date="1515164726299" expanded="true" signature="48835:48961" ph="///   &lt;para&gt;Delegate type for camera callbacks.&lt;/para&gt; ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E4CA8F4E-90C6-4470-94E9-B3A6D6F56DA5/77/33f914bc/Rect.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="51" column="23" lean-forward="false" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/TrackingCamera.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="42" column="15" lean-forward="false" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
+          <folding>
+            <marker date="1515175996946" expanded="false" signature="6:78" ph="..." />
+            <marker date="1515175996946" expanded="true" signature="80:176" ph="/* Found on: ... */" />
+            <marker date="1515175996946" expanded="true" signature="222:5059" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="691:862" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="882:1297" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="997:1053" ph="/* not ... */" />
+            <marker date="1515175996946" expanded="true" signature="1301:1479" ph="/// Shifts a bounding box so it doesn't go outside the maxBoundingBox. ... " />
+            <marker date="1515175996946" expanded="true" signature="1520:1984" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="1563:1648" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="1694:1803" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="1849:1959" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="2033:2270" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="2276:2426" ph="/// Calculates a bounding box that contains all the targets. ... " />
+            <marker date="1515175996946" expanded="true" signature="2462:2987" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="2648:2849" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="2990:3332" ph="/// Given an orthographic size and center position, this returns the resulting bounding box. ... " />
+            <marker date="1515175996946" expanded="true" signature="3411:3692" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="3696:3954" ph="/// Calculates a new orthographic size for the camera based on the target bounding box. ... " />
+            <marker date="1515175996946" expanded="true" signature="4005:4585" ph="{...}" />
+            <marker date="1515175996946" expanded="true" signature="4589:4855" ph="/// Calculates a camera position given the a bounding box containing all the targets. ... " />
+            <marker date="1515175996946" expanded="true" signature="4906:5057" ph="{...}" />
           </folding>
         </state>
       </provider>
