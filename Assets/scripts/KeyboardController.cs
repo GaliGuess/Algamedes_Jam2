@@ -18,7 +18,7 @@ using System.Collections.Generic;
             isHorizontal = Input.GetButton(HorizontalAxis);
             isVertical = Input.GetButton(VerticalAxis);
             isJumping = Input.GetButton(JumpAxis);
-            isShooting = Input.GetButton(ShootAxis);
+            isShooting = Input.GetButtonDown(ShootAxis);
         }
         
         public override bool look_up()
