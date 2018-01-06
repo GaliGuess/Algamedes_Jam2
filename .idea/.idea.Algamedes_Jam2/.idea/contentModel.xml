@@ -18,6 +18,9 @@
           <e p="Controller.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="KeyboardController.cs" t="Include" />
+          <e p="Movement" t="Include">
+            <e p="movement_test.cs" t="Include" />
+          </e>
           <e p="PlatformFactory.cs" t="Include" />
           <e p="PlatformManager.cs" t="Include" />
           <e p="PlayerScript.cs" t="Include" />

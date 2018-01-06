@@ -12,19 +12,13 @@ using System.Collections.Generic;
                       ShootAxis = "Fire1";
      
         private bool isHorizontal, isVertical, isJumping, isShooting;
-
-
-        void Update()
-        {
-//            isJumping = Input.GetButtonDown(JumpAxis);
-            isShooting = Input.GetButtonDown(ShootAxis);
-        }
         
-        void FixedUpdate()
+        void Update()
         {
             isHorizontal = Input.GetButton(HorizontalAxis);
             isVertical = Input.GetButton(VerticalAxis);
             isJumping = Input.GetButton(JumpAxis);
+            isShooting = Input.GetButton(ShootAxis);
         }
         
         public override bool look_up()
