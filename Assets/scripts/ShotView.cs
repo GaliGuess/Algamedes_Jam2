@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game{
-	public class PlatformView : MonoBehaviour {
 
-		private PlatformManager platform_manager;
+namespace Game{
+	public class ShotView : MonoBehaviour {
+
+		private Color color = Color.gray;
 
 		private Rigidbody2D body;
 
 		private SpriteRenderer sprite_renderer;
 
-		[SerializeField] private Color color = Color.gray;
-
-		public Color PlatformColor{
+		public Color ShotColor{
 			get {
 				return this.color;
 			}
@@ -25,8 +24,7 @@ namespace Game{
 
 		// Use this for initialization
 		void Start () {
-			platform_manager = GetComponent<PlatformManager>();
-			sprite_renderer.material.color = this.color;
+
 		}
 
 		// Update is called once per frame
@@ -39,19 +37,18 @@ namespace Game{
 			sprite_renderer = GetComponent<SpriteRenderer>();
 		}
 
+		public void SetVelocity(Vector2 velocity) {
+			body.velocity = velocity;
+		}
 
 		void OnCollisionEnter2D(Collision2D other) {
-			if (other.gameObject.tag == "shot")
+			if (other.gameObject.tag == "platform")
 			{
-//				Debug.Log("PlatformManager: detected shot");
-				GameColor shotColor = other.gameObject.GetComponent<ShotState>().shot_color;
-				platform_manager.SetColor(shotColor);
-			}
-			if (other.gameObject.tag == "player")
-			{
-				//				Debug.Log("PlatformManger: detected player");
+				//				Debug.Log("ShotManager: detected platform");
+				Destroy(gameObject);
 			}
 		}
+
 	}
 }
 

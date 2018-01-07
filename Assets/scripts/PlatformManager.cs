@@ -28,15 +28,18 @@ namespace Game{
 		
 		private PlatformView platform_view;
 
-		// Use this for initialization
-		void Start () {
-			
+
+		void Awake() {
 			game_manager = GetComponentInParent<GameManager>();
 			platform_state = GetComponent<PlatformState>();
 			platform_view = GetComponent<PlatformView>();
+		}
 
+		// Use this for initialization
+		void Start () {
 			InitPath();
 		}
+
 
 		private void InitPath() {
 			initial_lerp_time = Time.time;
@@ -55,15 +58,17 @@ namespace Game{
 		void Update () {
 
 		}
-
+			
 
 		public bool V3Equal(Vector3 a, Vector3 b){
 			return Vector3.SqrMagnitude(a - b) < 0.001;
 		}
 
+
 		private float GetPathPercentage() {
 			return (Time.time - initial_lerp_time)/path_time;
 		}
+
 
 		protected void FixedUpdate() {
 			if (points.Length != 0) {
@@ -82,6 +87,7 @@ namespace Game{
 				}
 			}
 		}
+
 
 		public void SetColor(GameColor platform_color) {
 			game_manager.ChangeLayer(gameObject, platform_color);
