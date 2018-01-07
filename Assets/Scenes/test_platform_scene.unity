@@ -308,6 +308,26 @@ Prefab:
       propertyPath: ShootKey
       value: 309
       objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: HorizontalAxis
+      value: W1_Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: VerticalAxis
+      value: W1_Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: JumpAxis
+      value: W1_Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064387795261390, guid: 98dc8f764df55453cb6e8708d848369b,
+        type: 2}
+      propertyPath: ShootAxis
+      value: W1_Fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98dc8f764df55453cb6e8708d848369b, type: 2}
   m_IsPrefabParent: 0
