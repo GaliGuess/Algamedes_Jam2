@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour {
 	[SerializeField] GameColor gameColor = GameColor.BLACK;
 
 	[SerializeField] float maxSpeed = 17;
+	[Range(1f, 10f)] public float turnRate = 1.5f;
 	private float speed = 40f;
 	[SerializeField] float jumpHeight = 350f;
 	[SerializeField] float jumpBonusGravity = 15f;
@@ -117,7 +118,7 @@ public class PlayerScript : MonoBehaviour {
 	{
 		Vector2 newVelocity = _rigidbody2D.velocity;
 		newVelocity.x = direction.x * speed;
-		newVelocity.x = Mathf.Lerp(_rigidbody2D.velocity.x, newVelocity.x, Time.deltaTime);
+		newVelocity.x = Mathf.Lerp(_rigidbody2D.velocity.x, newVelocity.x, Time.deltaTime * turnRate);
 		newVelocity.x = Mathf.Clamp(newVelocity.x, -maxSpeed, maxSpeed); 
 		_rigidbody2D.velocity = newVelocity;
 	}

@@ -117,6 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameColor: 1
   maxSpeed: 17
+  turnRate: 1.5
+  speed: 40
   jumpHeight: 700
   jumpBonusGravity: 15
   turnsBetweenShots: 13

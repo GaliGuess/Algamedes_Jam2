@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/deathmatch_scene.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/deathmatch_scene.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/KeyboardController.cs" afterPath="$PROJECT_DIR$/Assets/scripts/KeyboardController.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/PlayerScript.cs" afterPath="$PROJECT_DIR$/Assets/scripts/PlayerScript.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,32 +39,32 @@
       <file leaf-file-name="PlayerScript.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/scripts/PlayerScript.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+            <state relative-caret-position="118">
+              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
               <folding>
-                <marker date="1515288289921" expanded="false" signature="6:154" ph="..." />
-                <marker date="1515288289921" expanded="true" signature="199:5175" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="1148:1754" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="1777:2784" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="1808:2781" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="1857:1926" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="1976:2175" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="2295:2476" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="2391:2445" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="2534:2711" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="2817:3085" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="3125:3410" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="3432:4024" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="3471:3720" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="3615:3716" ph="/* _rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime); ... */" />
-                <marker date="1515288289921" expanded="true" signature="3721:4021" ph="/* else if (canDoubleJump) ... */" />
-                <marker date="1515288289921" expanded="true" signature="4065:4406" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="4459:4554" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="4607:4700" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="4667:4697" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="4753:4781" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="4886:5173" ph="{...}" />
-                <marker date="1515288289921" expanded="true" signature="4906:5170" ph="{...}" />
+                <marker date="1515290085705" expanded="false" signature="6:154" ph="..." />
+                <marker date="1515290085705" expanded="true" signature="199:5234" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="1196:1802" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="1825:2832" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="1856:2829" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="1905:1974" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="2024:2223" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="2343:2524" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="2439:2493" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="2582:2759" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="2865:3133" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="3173:3469" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="3491:4083" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="3530:3779" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="3674:3775" ph="/* _rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime); ... */" />
+                <marker date="1515290085705" expanded="true" signature="3780:4080" ph="/* else if (canDoubleJump) ... */" />
+                <marker date="1515290085705" expanded="true" signature="4124:4465" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="4518:4613" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="4666:4759" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="4726:4756" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="4812:4840" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="4945:5232" ph="{...}" />
+                <marker date="1515290085705" expanded="true" signature="4965:5229" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -183,8 +182,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1457" />
-    <option name="y" value="48" />
+    <option name="x" value="-1647" />
+    <option name="y" value="112" />
     <option name="width" value="1440" />
     <option name="height" value="878" />
   </component>
@@ -203,6 +202,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -216,7 +216,6 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,11 +260,12 @@
       <workItem from="1515238918129" duration="166000" />
       <workItem from="1515282140721" duration="3430000" />
       <workItem from="1515287907063" duration="548000" />
+      <workItem from="1515288861206" duration="1260000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79057000" />
+    <option name="totallyTimeSpent" value="80317000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -277,21 +277,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1457" y="48" width="1440" height="878" extended-state="0" />
+    <frame x="-1647" y="112" width="1440" height="878" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -759,32 +759,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/PlayerScript.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+        <state relative-caret-position="118">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding>
-            <marker date="1515288289921" expanded="false" signature="6:154" ph="..." />
-            <marker date="1515288289921" expanded="true" signature="199:5175" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="1148:1754" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="1777:2784" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="1808:2781" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="1857:1926" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="1976:2175" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="2295:2476" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="2391:2445" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="2534:2711" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="2817:3085" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="3125:3410" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="3432:4024" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="3471:3720" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="3615:3716" ph="/* _rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime); ... */" />
-            <marker date="1515288289921" expanded="true" signature="3721:4021" ph="/* else if (canDoubleJump) ... */" />
-            <marker date="1515288289921" expanded="true" signature="4065:4406" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="4459:4554" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="4607:4700" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="4667:4697" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="4753:4781" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="4886:5173" ph="{...}" />
-            <marker date="1515288289921" expanded="true" signature="4906:5170" ph="{...}" />
+            <marker date="1515290085705" expanded="false" signature="6:154" ph="..." />
+            <marker date="1515290085705" expanded="true" signature="199:5234" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="1196:1802" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="1825:2832" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="1856:2829" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="1905:1974" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="2024:2223" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="2343:2524" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="2439:2493" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="2582:2759" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="2865:3133" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="3173:3469" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="3491:4083" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="3530:3779" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="3674:3775" ph="/* _rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime); ... */" />
+            <marker date="1515290085705" expanded="true" signature="3780:4080" ph="/* else if (canDoubleJump) ... */" />
+            <marker date="1515290085705" expanded="true" signature="4124:4465" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="4518:4613" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="4666:4759" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="4726:4756" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="4812:4840" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="4945:5232" ph="{...}" />
+            <marker date="1515290085705" expanded="true" signature="4965:5229" ph="{...}" />
           </folding>
         </state>
       </provider>
