@@ -117,14 +117,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameColor: 1
   maxSpeed: 17
-  jumpHeight: 350
+  jumpHeight: 700
   jumpBonusGravity: 15
+  turnsBetweenShots: 13
   recoil: 0.1
   direction: {x: 0, y: 0}
   lastHorizontalDirection: {x: 0, y: 0}
   isGrounded: 0
   canDoubleJump: 0
   currentVelocity: {x: 0, y: 0}
+  overlap_topLeft: {fileID: 0}
+  overlap_bottomRight: {fileID: 0}
 --- !u!212 &212804434716223350
 SpriteRenderer:
   m_ObjectHideFlags: 1

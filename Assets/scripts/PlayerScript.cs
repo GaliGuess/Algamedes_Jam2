@@ -15,6 +15,7 @@ public class PlayerScript : MonoBehaviour {
 	private float speed = 40f;
 	[SerializeField] float jumpHeight = 350f;
 	[SerializeField] float jumpBonusGravity = 15f;
+	[SerializeField] int turnsBetweenShots = 200;
 	[SerializeField] float recoil = 0.15f;
 //	[SerializeField] bool doubleJumpEnabled = true;
 	
@@ -26,9 +27,16 @@ public class PlayerScript : MonoBehaviour {
 	public Vector2 direction, lastHorizontalDirection;
 	public bool isGrounded, canDoubleJump;
 	private float jumpRatio = 0.2f;
+	private int _timesSinceFired = 0;
 	
 	// for testing
 	public Vector2 currentVelocity;
+	
+	// Used for checking if player is grounded
+	public Transform overlap_topLeft;
+	public Transform overlap_bottomRight;
+	private int overlap_layersMask;
+	private Collider2D[] _overlap_colliders = new Collider2D[10];
 	
 	
 	void Start ()
@@ -41,6 +49,10 @@ public class PlayerScript : MonoBehaviour {
 
 		lastHorizontalDirection = transform.position.x < 0 ? Vector2.right : Vector2.left;
 		canDoubleJump = false;
+
+		// layer of platforms for checking if grounded
+		if (gameColor == GameColor.BLACK) overlap_layersMask = LayerMask.GetMask("platforms_black", "floor");
+		else if (gameColor == GameColor.WHITE) overlap_layersMask = LayerMask.GetMask("platforms_white", "floor"); 
 	}
 
 	
@@ -56,11 +68,15 @@ public class PlayerScript : MonoBehaviour {
 
 			if (_controller.jump())
 			{
+ 
+				isGrounded = Physics2D.OverlapAreaNonAlloc(overlap_topLeft.position, overlap_bottomRight.position,
+					             						   _overlap_colliders, overlap_layersMask) > 0;
 				jump();
 			}
 			
 			move(new Vector2(direction.x, 0));
 
+			if (_timesSinceFired > 0) _timesSinceFired--;
 			if (_controller.shoot())
 			{
 				if (direction == Vector2.zero)  // Making sure player doesn't shoot at direction (0,0)
@@ -130,6 +146,9 @@ public class PlayerScript : MonoBehaviour {
 	
 	private void shoot(Vector2 direction)
 	{
+		if (_timesSinceFired > 0) return;
+		_timesSinceFired = turnsBetweenShots;
+		
 		Vector2 pos = transform.position;
 		_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), gameColor);
 		
@@ -137,6 +156,12 @@ public class PlayerScript : MonoBehaviour {
 		transform.position = new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z);
 	}
 	
+	private void slowHorizontalVelocity(float factor)
+	{
+		Vector2 vel = _rigidbody2D.velocity;
+		vel.x /= factor;
+		_rigidbody2D.velocity = vel;
+	}
 
 	private void OnCollisionEnter2D(Collision2D other)
 	{
@@ -150,15 +175,6 @@ public class PlayerScript : MonoBehaviour {
 	{
 		isGrounded = false;
 	}
-
-
-	private void slowHorizontalVelocity(float factor)
-	{
-		Vector2 vel = _rigidbody2D.velocity;
-		vel.x /= factor;
-		_rigidbody2D.velocity = vel;
-	}
-	
 	
 	// currently compied for the demo from PlatformMangager
 	private void SetSpriteColor(GameColor color)
