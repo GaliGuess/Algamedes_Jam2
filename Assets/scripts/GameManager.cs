@@ -14,9 +14,7 @@ namespace Game {
 
 		// Use this for initialization
 		void Start () {
-
 			shotFactory = GetComponentInParent<ShotFactory>();
-
 		}
 
 		// Update is called once per frame
