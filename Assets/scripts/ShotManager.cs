@@ -32,11 +32,13 @@ namespace Game {
 			shot_state.Velocity = velocity;
 			shot_view.SetVelocity(velocity);
 			SetFramework(shot_framework);
+			gameObject.layer = shot_framework == Framework.BLACK ? 9 : 10; // set layer accordingly, this allows for shots to ignore platforms of same framework
 		}
 
 		private void SetFramework(Framework shot_framework) {
 			shot_state.shot_framework = shot_framework;
 			shot_view.SetColor(shot_framework);
+
 		}
 
 		// Update is called once per frame
