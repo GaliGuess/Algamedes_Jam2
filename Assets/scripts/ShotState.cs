@@ -7,7 +7,7 @@ namespace Game{
 	public class ShotState : MonoBehaviour {
 
 
-		[SerializeField] public GameColor shot_color;
+		[SerializeField] public Framework shot_framework;
 
 		[SerializeField] public float Rotation {
 			get {

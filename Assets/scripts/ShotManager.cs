@@ -22,7 +22,7 @@ namespace Game {
 			
 		}
 		
-		public void Activate(Vector2 position, Vector2 startVelocity, float rotation, GameColor gameColor)
+		public void Activate(Vector2 position, Vector2 startVelocity, float rotation, Framework shot_framework)
 		{
 			shot_state.Position = position;
 			shot_state.Rotation = rotation;
@@ -31,22 +31,12 @@ namespace Game {
 			Vector2 velocity = startVelocity + dir * speed;
 			shot_state.Velocity = velocity;
 			shot_view.SetVelocity(velocity);
-			SetColor(gameColor);
+			SetFramework(shot_framework);
 		}
 
-		private void SetColor(GameColor shot_color) {
-			shot_state.shot_color = shot_color;
-			switch (shot_color) {
-			case GameColor.BLACK :
-				shot_view.ShotColor = Color.black;
-				break;
-			case GameColor.WHITE :
-				shot_view.ShotColor = Color.white;
-				break;
-			default :
-				shot_view.ShotColor = Color.gray;
-				break;
-			}
+		private void SetFramework(Framework shot_framework) {
+			shot_state.shot_framework = shot_framework;
+			shot_view.SetColor(shot_framework);
 		}
 
 		// Update is called once per frame

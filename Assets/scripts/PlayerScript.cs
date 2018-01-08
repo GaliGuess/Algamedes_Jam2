@@ -9,7 +9,7 @@ using Utils.Utils;
 
 public class PlayerScript : MonoBehaviour {
 
-	[SerializeField] GameColor gameColor = GameColor.BLACK;
+	[SerializeField] Framework player_framework = Framework.BLACK;
 
 	[SerializeField] float maxSpeed = 17;
 	[Range(1f, 10f)] public float turnRate = 1.5f;
@@ -46,14 +46,14 @@ public class PlayerScript : MonoBehaviour {
 		_controller = GetComponent<Controller>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 		_spriteRenderer = GetComponent<SpriteRenderer>();
-		SetSpriteColor(gameColor);
+		SetSpriteColor(player_framework);
 
 		lastHorizontalDirection = transform.position.x < 0 ? Vector2.right : Vector2.left;
 		canDoubleJump = false;
 
 		// layer of platforms for checking if grounded
-		if (gameColor == GameColor.BLACK) overlap_layersMask = LayerMask.GetMask("platforms_black", "floor");
-		else if (gameColor == GameColor.WHITE) overlap_layersMask = LayerMask.GetMask("platforms_white", "floor"); 
+		if (player_framework == Framework.BLACK) overlap_layersMask = LayerMask.GetMask("platforms_black", "floor");
+		else if (player_framework == Framework.WHITE) overlap_layersMask = LayerMask.GetMask("platforms_white", "floor"); 
 	}
 
 	
@@ -151,7 +151,7 @@ public class PlayerScript : MonoBehaviour {
 		_timesSinceFired = turnsBetweenShots;
 		
 		Vector2 pos = transform.position;
-		_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), gameColor);
+		_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), player_framework);
 		
 		// recoil
 		transform.position = new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z);
@@ -178,17 +178,17 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	// currently compied for the demo from PlatformMangager
-	private void SetSpriteColor(GameColor color)
+	private void SetSpriteColor(Framework framework)
 	{
-		switch (color)
+		switch (framework)
 		{
-			case GameColor.BLACK:
+			case Framework.BLACK:
 				_spriteRenderer.material.color = Color.black;
 				break;
-			case GameColor.GREY:
+			case Framework.GREY:
 				_spriteRenderer.material.color = Color.grey;
 				break;
-			case GameColor.WHITE:
+			case Framework.WHITE:
 				_spriteRenderer.material.color = Color.white;
 				break;
 		}

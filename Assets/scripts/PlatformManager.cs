@@ -93,21 +93,11 @@ namespace Game{
 		}
 
 
-		public void SetColor(GameColor platform_color) {
-			game_manager.ChangeLayer(gameObject, platform_color);
+		public void SetFramework(Framework platform_framework) {
+			game_manager.ChangeLayer(gameObject, platform_framework);
 			
-			platform_state.PlatformColor = platform_color;
-			switch (platform_color) {
-				case GameColor.BLACK :
-					platform_view.PlatformColor = Color.black;
-					break;
-				case GameColor.WHITE :
-					platform_view.PlatformColor = Color.white;
-					break;
-				default :
-					platform_view.PlatformColor = Color.grey;
-					break;
-			}
+			platform_state.PlatformFramework = platform_framework;
+			platform_view.SetColor(platform_framework);
 		}
 
 

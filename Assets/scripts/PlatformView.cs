@@ -44,12 +44,26 @@ namespace Game{
 			if (other.gameObject.tag == "shot")
 			{
 //				Debug.Log("PlatformManager: detected shot");
-				GameColor shotColor = other.gameObject.GetComponent<ShotState>().shot_color;
-				platform_manager.SetColor(shotColor);
+				Framework framework = other.gameObject.GetComponent<ShotState>().shot_framework;
+				platform_manager.SetFramework(framework);
 			}
 			if (other.gameObject.tag == "player")
 			{
 				//				Debug.Log("PlatformManger: detected player");
+			}
+		}
+
+		public void SetColor(Framework platform_framework) {
+			switch (platform_framework) {
+			case Framework.BLACK :
+				this.PlatformColor = Color.black;
+				break;
+			case Framework.WHITE :
+				this.PlatformColor = Color.white;
+				break;
+			default :
+				this.PlatformColor = Color.grey;
+				break;
 			}
 		}
 	}

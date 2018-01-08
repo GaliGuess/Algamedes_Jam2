@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4604653884596798}
   m_Layer: 0
-  m_Name: PlatformAndPath (1)
+  m_Name: PlatformAndPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73596e97dfce4c76aff8bd6292ba489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  game_color: 0
+  framework: 0
   width: 5
 --- !u!114 &114960436649041780
 MonoBehaviour:

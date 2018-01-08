@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game {
 
-	public enum GameColor {GREY, BLACK, WHITE}
+	public enum Framework {GREY, BLACK, WHITE}
 
 
 	public class GameManager : MonoBehaviour {
@@ -24,14 +24,14 @@ namespace Game {
 
 		}
 			
-		public void SpawnShot(Vector2 position, Vector2 startVelocity, float rotation, GameColor gameColor) {
-			GameObject shot = shotFactory.MakeObject(position, startVelocity,rotation,gameColor);
+		public void SpawnShot(Vector2 position, Vector2 startVelocity, float rotation, Framework framework) {
+			GameObject shot = shotFactory.MakeObject(position, startVelocity,rotation,framework);
 		}
 
-		public void ChangeLayer(GameObject obj, GameColor color)
+		public void ChangeLayer(GameObject obj, Framework framework)
 		{
-			if (obj.CompareTag("platform")) obj.layer = color == GameColor.BLACK ? 13 : color == GameColor.GREY ? 14 : 15;
-			else if (obj.CompareTag("player")) obj.layer = color == GameColor.BLACK ? 17 : 18;
+			if (obj.CompareTag("platform")) obj.layer = framework == Framework.BLACK ? 13 : framework == Framework.GREY ? 14 : 15;
+			else if (obj.CompareTag("player")) obj.layer = framework == Framework.BLACK ? 17 : 18;
 		}
 		
 	}

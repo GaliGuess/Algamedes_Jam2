@@ -49,6 +49,20 @@ namespace Game{
 			}
 		}
 
+		public void SetColor(Framework shot_framework) {
+			switch (shot_framework) {
+			case Framework.BLACK :
+				this.ShotColor = Color.black;
+				break;
+			case Framework.WHITE :
+				this.ShotColor = Color.white;
+				break;
+			default :
+				this.ShotColor = Color.gray;
+				break;
+			}
+		}
+
 	}
 }
 

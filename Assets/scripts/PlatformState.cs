@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game{
 	public class PlatformState : MonoBehaviour {
 
-		[SerializeField] private GameColor game_color = GameColor.GREY;
+		[SerializeField] private Framework framework = Framework.GREY;
 
 		[SerializeField] private static float HEIGHT = 1.0f;
 
@@ -22,12 +22,12 @@ namespace Game{
 			}
 		}
 
-		public GameColor PlatformColor {
+		public Framework PlatformFramework {
 			get {
-				return this.game_color;
+				return this.framework;
 			}
 			set {
-				this.game_color = value;
+				this.framework = value;
 			}
 		} 
 
