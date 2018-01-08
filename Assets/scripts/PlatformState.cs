@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game{
 	public class PlatformState : MonoBehaviour {
 
-		[SerializeField] private Framework framework = Framework.GREY;
+		[SerializeField] public Framework platform_framework = Framework.GREY;
 
 		[SerializeField] private static float HEIGHT = 1.0f;
 
@@ -21,15 +21,6 @@ namespace Game{
 				transform.position = value;
 			}
 		}
-
-		public Framework PlatformFramework {
-			get {
-				return this.framework;
-			}
-			set {
-				this.framework = value;
-			}
-		} 
 
 		// Use this for initialization
 		void Start () {

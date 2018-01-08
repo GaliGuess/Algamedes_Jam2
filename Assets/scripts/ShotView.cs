@@ -12,6 +12,8 @@ namespace Game{
 
 		private SpriteRenderer sprite_renderer;
 
+		private ShotState shot_state;
+
 		public Color ShotColor{
 			get {
 				return this.color;
@@ -35,6 +37,7 @@ namespace Game{
 		protected void Awake() {
 			body = GetComponent<Rigidbody2D>();
 			sprite_renderer = GetComponent<SpriteRenderer>();
+			shot_state = GetComponent<ShotState>();
 		}
 
 		public void SetVelocity(Vector2 velocity) {
@@ -45,7 +48,11 @@ namespace Game{
 			if (other.gameObject.tag == "platform")
 			{
 				//				Debug.Log("ShotManager: detected platform");
-				Destroy(gameObject);
+				Framework framework = other.gameObject.GetComponent<PlatformState>().platform_framework;
+				if (framework != shot_state.shot_framework) {
+					Destroy(gameObject);
+				}
+
 			}
 		}
 

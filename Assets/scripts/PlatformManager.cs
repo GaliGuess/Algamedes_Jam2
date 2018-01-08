@@ -96,7 +96,7 @@ namespace Game{
 		public void SetFramework(Framework platform_framework) {
 			game_manager.ChangeLayer(gameObject, platform_framework);
 			
-			platform_state.PlatformFramework = platform_framework;
+			platform_state.platform_framework = platform_framework;
 			platform_view.SetColor(platform_framework);
 		}
 
