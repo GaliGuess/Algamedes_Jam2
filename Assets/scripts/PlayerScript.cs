@@ -13,7 +13,6 @@ public class PlayerScript : MonoBehaviour {
 
 	[SerializeField] float maxSpeed = 17;
 	[Range(1f, 10f)] public float turnRate = 1.5f;
-	[Range(1f, 2f)] public float bonusFriction = 1.05f;
 	private float speed = 40f;
 	[SerializeField] float jumpHeight = 350f;
 	[SerializeField] float jumpBonusGravity = 15f;
@@ -81,10 +80,6 @@ public class PlayerScript : MonoBehaviour {
 			}
 			
 			move(new Vector2(direction.x, 0));
-			if (Mathf.Approximately(direction.x, 0) && isGrounded)
-			{
-				slowHorizontalVelocity(bonusFriction);
-			}
 
 			if (_timesSinceFired > 0) _timesSinceFired--;
 			if (_controller.shoot())
