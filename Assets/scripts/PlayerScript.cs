@@ -42,10 +42,7 @@ public class PlayerScript : MonoBehaviour {
 	
 	void Start ()
 	{
-		_gameManager = GetComponentInParent<GameManager>();
-		_controller = GetComponent<Controller>();
-		_rigidbody2D = GetComponent<Rigidbody2D>();
-		_spriteRenderer = GetComponent<SpriteRenderer>();
+		
 		SetSpriteColor(player_framework);
 
 		lastHorizontalDirection = transform.position.x < 0 ? Vector2.right : Vector2.left;
@@ -56,6 +53,13 @@ public class PlayerScript : MonoBehaviour {
 		else if (player_framework == Framework.WHITE) overlap_layersMask = LayerMask.GetMask("platforms_white", "floor"); 
 	}
 
+	void Awake()
+	{
+		_gameManager = GetComponentInParent<GameManager>();
+		_controller = GetComponent<Controller>();
+		_rigidbody2D = GetComponent<Rigidbody2D>();
+		_spriteRenderer = GetComponent<SpriteRenderer>();
+	}
 	
 	void FixedUpdate()
 	{	
