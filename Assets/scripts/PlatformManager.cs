@@ -6,13 +6,9 @@ using UnityEngine;
 namespace Game{
 	public class PlatformManager : MonoBehaviour {
 
-		[SerializeField] private float cycle_period;
+		[SerializeField] private List<Transform> points;
 
-		[SerializeField] private float speed;
-
-		[SerializeField] private Transform[] points;
-
-		[SerializeField] private float path_time = 2.0f;
+		[SerializeField] private float cycle_period = 2.0f;
 
 		private int target_point_idx = 0;
 
@@ -40,23 +36,31 @@ namespace Game{
 			InitPath();
 		}
 
+		public void AddPoint() {
+			GameObject point = new GameObject();
+			point.transform.position = transform.position;
+			point.transform.parent = transform.parent.Find("PlatformPath");
+			point.name = "point" + (points.Count+1).ToString();
+			points.Add(point.transform);
+		}
+
 
 		private void InitPath() {
 			initial_lerp_time = Time.time;
-			if (points.Length > 0) {
+			if (points.Count > 0) {
 				transform.position = points[0].position;
 				current_point_idx = 0;
 			}
-			if (points.Length > 1) {
+			if (points.Count > 1) {
 				target_point_idx = 1;
 			}
-			reverse_dir = (points.Length<=2);
+			reverse_dir = (points.Count<=2);
 		}
 
 
 		// Update is called once per frame
 		void Update () {
-
+			
 		}
 			
 
@@ -66,12 +70,12 @@ namespace Game{
 
 
 		private float GetPathPercentage() {
-			return (Time.time - initial_lerp_time)/path_time;
+			return (Time.time - initial_lerp_time)/cycle_period;
 		}
 
 
 		protected void FixedUpdate() {
-			if (points.Length != 0) {
+			if (points.Count != 0) {
 				float path_percentage = GetPathPercentage();
 				if (path_percentage <= 1.0f) {
 					Vector2 pos = Vector2.Lerp(points[current_point_idx].position, points[target_point_idx].position, path_percentage);
@@ -80,7 +84,7 @@ namespace Game{
 				else {
 					current_point_idx = target_point_idx;
 					target_point_idx = reverse_dir ? target_point_idx - 1 : target_point_idx + 1;
-					if (target_point_idx == 0 || target_point_idx == points.Length-1) {
+					if (target_point_idx == 0 || target_point_idx == points.Count-1) {
 						reverse_dir = !reverse_dir;
 					}
 					initial_lerp_time = Time.time;
