@@ -10,6 +10,8 @@ namespace Game{
 
 		[SerializeField] private float cycle_period = 2.0f;
 
+		[SerializeField] static public int init_num_lives = 3;
+
 		private int target_point_idx = 0;
 
 		private int current_point_idx = 0;
@@ -34,6 +36,7 @@ namespace Game{
 		// Use this for initialization
 		void Start () {
 			InitPath();
+			InitState();
 		}
 
 		public void AddPoint() {
@@ -55,6 +58,10 @@ namespace Game{
 				target_point_idx = 1;
 			}
 			reverse_dir = (points.Count<=2);
+		}
+
+		private void InitState() {
+			platform_state.num_lives = init_num_lives;
 		}
 
 
@@ -89,6 +96,14 @@ namespace Game{
 					}
 					initial_lerp_time = Time.time;
 				}
+			}
+		}
+
+		public void UpdateHit(Framework platform_framework) {
+			platform_state.num_lives--;
+			if(platform_state.num_lives <= 0) {
+				platform_state.num_lives = init_num_lives;
+				SetFramework(platform_framework);
 			}
 		}
 

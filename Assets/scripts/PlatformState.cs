@@ -11,6 +11,8 @@ namespace Game{
 
 		private static float DEFAULT_WIDTH = 5.0f;
 
+		public int num_lives;
+
 		[SerializeField] private float width = DEFAULT_WIDTH;
 
 		public Vector2 Position {

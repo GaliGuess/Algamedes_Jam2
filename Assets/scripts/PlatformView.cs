@@ -49,7 +49,7 @@ namespace Game{
 //				Debug.Log("PlatformManager: detected shot");
 				Framework framework = other.gameObject.GetComponent<ShotState>().shot_framework;
 				if (framework != platform_state.platform_framework) {
-					platform_manager.SetFramework(framework);
+					platform_manager.UpdateHit(framework);
 				}
 			}
 			if (other.gameObject.tag == "player")
