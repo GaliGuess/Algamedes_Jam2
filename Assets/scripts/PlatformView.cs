@@ -7,6 +7,8 @@ namespace Game{
 
 		private PlatformManager platform_manager;
 
+		private PlatformState platform_state;
+
 		private Rigidbody2D body;
 
 		private SpriteRenderer sprite_renderer;
@@ -25,7 +27,6 @@ namespace Game{
 
 		// Use this for initialization
 		void Start () {
-			platform_manager = GetComponent<PlatformManager>();
 			sprite_renderer.material.color = this.color;
 		}
 
@@ -37,6 +38,8 @@ namespace Game{
 		protected void Awake() {
 			body = GetComponent<Rigidbody2D>();
 			sprite_renderer = GetComponent<SpriteRenderer>();
+			platform_manager = GetComponent<PlatformManager>();
+			platform_state = GetComponent<PlatformState>();
 		}
 
 
@@ -44,12 +47,28 @@ namespace Game{
 			if (other.gameObject.tag == "shot")
 			{
 //				Debug.Log("PlatformManager: detected shot");
-				GameColor shotColor = other.gameObject.GetComponent<ShotManager>().gameColor;
-				platform_manager.SetColor(shotColor);
+				Framework framework = other.gameObject.GetComponent<ShotState>().shot_framework;
+				if (framework != platform_state.platform_framework) {
+					platform_manager.UpdateHit(framework);
+				}
 			}
 			if (other.gameObject.tag == "player")
 			{
 				//				Debug.Log("PlatformManger: detected player");
+			}
+		}
+
+		public void SetColor(Framework platform_framework) {
+			switch (platform_framework) {
+			case Framework.BLACK :
+				this.PlatformColor = Color.black;
+				break;
+			case Framework.WHITE :
+				this.PlatformColor = Color.white;
+				break;
+			default :
+				this.PlatformColor = Color.grey;
+				break;
 			}
 		}
 	}

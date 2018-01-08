@@ -5,11 +5,13 @@ using UnityEngine;
 namespace Game{
 	public class PlatformState : MonoBehaviour {
 
-		[SerializeField] private GameColor game_color = GameColor.GREY;
+		[SerializeField] public Framework platform_framework = Framework.GREY;
 
 		[SerializeField] private static float HEIGHT = 1.0f;
 
 		private static float DEFAULT_WIDTH = 5.0f;
+
+		public int num_lives;
 
 		[SerializeField] private float width = DEFAULT_WIDTH;
 
@@ -21,15 +23,6 @@ namespace Game{
 				transform.position = value;
 			}
 		}
-
-		public GameColor PlatformColor {
-			get {
-				return this.game_color;
-			}
-			set {
-				this.game_color = value;
-			}
-		} 
 
 		// Use this for initialization
 		void Start () {

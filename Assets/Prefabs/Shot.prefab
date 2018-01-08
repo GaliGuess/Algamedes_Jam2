@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 212261872230436008}
   - component: {fileID: 50017872234946730}
   - component: {fileID: 60578145792377990}
+  - component: {fileID: 114624725662145474}
+  - component: {fileID: 114148569211225698}
   m_Layer: 11
   m_Name: Shot
   m_TagString: shot
@@ -90,6 +92,30 @@ PolygonCollider2D:
     - - {x: -0.25856823, y: -0.07555556}
       - {x: -0.25888887, y: 0.09111112}
       - {x: 0.60745716, y: -0.0033332705}
+--- !u!114 &114148569211225698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931151960154564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9770c7ec624b34f539d0e366713df4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114624725662145474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931151960154564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1004f7ee267140b1a819dffaaa7b3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shot_color: 0
+  Velocity: {x: 0, y: 0}
 --- !u!114 &114667768703030756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,7 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45505a56ded32483caf537ffd966a424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameColor: 0
   speed: 60
 --- !u!212 &212261872230436008
 SpriteRenderer:
@@ -112,7 +137,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -128,7 +152,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -146,4 +169,3 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
