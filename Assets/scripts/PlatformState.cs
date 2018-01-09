@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game{
 	public class PlatformState : MonoBehaviour {
 
-		[SerializeField] public Framework platform_framework = Framework.GREY;
+		public Framework platform_framework = Framework.GREY;
 
 		[SerializeField] private static float HEIGHT = 1.0f;
 

@@ -1645,6 +1645,11 @@ Prefab:
       propertyPath: m_ColliderMask.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114034310064941362, guid: 865a4fa49fbdf487f8f76ef63731c498,
+        type: 2}
+      propertyPath: platform_framework
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 865a4fa49fbdf487f8f76ef63731c498, type: 2}
   m_IsPrefabParent: 0
@@ -3664,7 +3669,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4475441237292758, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.89
+      value: 17.3
       objectReference: {fileID: 0}
     - target: {fileID: 4475441237292758, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5433,6 +5438,11 @@ Prefab:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 114034310064941362, guid: 865a4fa49fbdf487f8f76ef63731c498,
+        type: 2}
+      propertyPath: platform_framework
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 865a4fa49fbdf487f8f76ef63731c498, type: 2}
   m_IsPrefabParent: 0
@@ -5741,7 +5751,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561140073}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10d3092608bd448b0857708177162b76, type: 3}
   m_Name: 
@@ -6669,7 +6679,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4475441237292758, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.74
+      value: 16.8
       objectReference: {fileID: 0}
     - target: {fileID: 4475441237292758, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7084,6 +7094,11 @@ Prefab:
     - target: {fileID: 1301173661106488, guid: 865a4fa49fbdf487f8f76ef63731c498, type: 2}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034310064941362, guid: 865a4fa49fbdf487f8f76ef63731c498,
+        type: 2}
+      propertyPath: platform_framework
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 865a4fa49fbdf487f8f76ef63731c498, type: 2}

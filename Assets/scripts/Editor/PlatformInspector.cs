@@ -7,22 +7,28 @@ public class PlatformInspector : Editor {
 
 	SerializedProperty cycle_period;
 	SerializedProperty points;
+	SerializedProperty platform_framework;
 
 	void OnEnable()
 	{
 		cycle_period = serializedObject.FindProperty("cycle_period");
 		points = serializedObject.FindProperty("points");
+		platform_framework = serializedObject.FindProperty("platform_framework");
 	}
 
 
 	public override void OnInspectorGUI()
 	{
 		PlatformManager myTarget = (PlatformManager)target;
+		
+		EditorGUILayout.PropertyField(platform_framework);
 
 		EditorGUILayout.PropertyField(cycle_period);
 
 
 		EditorGUILayout.PropertyField(points, true);
+		
+		
 
 
 //		ArrayGUI(points);

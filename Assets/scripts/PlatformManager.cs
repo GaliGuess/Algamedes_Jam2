@@ -11,6 +11,8 @@ namespace Game{
 		[SerializeField] private float cycle_period = 2.0f;
 
 		[SerializeField] static public int init_num_lives = 3;
+		
+		[SerializeField] public Framework platform_framework = Framework.GREY;
 
 		private int target_point_idx = 0;
 
@@ -37,6 +39,7 @@ namespace Game{
 		void Start () {
 			InitPath();
 			InitState();
+			SetFramework(platform_framework);
 		}
 
 		public void AddPoint() {
