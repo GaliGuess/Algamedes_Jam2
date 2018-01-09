@@ -13,7 +13,7 @@ public class ScoreKeeper : MonoBehaviour
 	private Dictionary<string, int> _scores;
 	[HideInInspector] public int DOESNT_EXIST = -1;
 	
-	public static ScoreKeeper Instance { get { return _instance; } }
+	public static ScoreKeeper getInstance { get { return _instance; } }
 	
 	private void Awake()
 	{
@@ -24,6 +24,7 @@ public class ScoreKeeper : MonoBehaviour
 		else
 		{
 			Destroy(this.gameObject);
+			return;
 		}
 		
 		DontDestroyOnLoad(gameObject);

@@ -7,20 +7,27 @@ public class GameState : MonoBehaviour
 	[HideInInspector] public List<GameObject> shots;
 	[HideInInspector] public GameObject[] platforms;
 	[HideInInspector] public GameObject[] players;
-	[HideInInspector] public ScoreKeeper scoreKeeper;
-
+	public ScoreKeeper scoreKeeper;
+	
+	private GameView _gameView;
 	
 	private void Awake()
 	{
 		platforms = GameObject.FindGameObjectsWithTag("platform");
 		shots = new List<GameObject>();
 		players = GameObject.FindGameObjectsWithTag("player");
-		scoreKeeper = GameObject.Find("scores").GetComponent<ScoreKeeper>();
 		
-		if (!scoreKeeper.scoresExist()) initializeScores();
+		_gameView = GetComponent<GameView>();
 	}
 
-	private void initializeScores()
+	private void Start()
+	{
+		scoreKeeper = GameObject.Find("scores").GetComponent<ScoreKeeper>();
+		if (!scoreKeeper.scoresExist()) initializeScores();
+		_gameView.updateScore();
+	}
+
+	public void initializeScores()
 	{
 		foreach (var player in players)
 		{	

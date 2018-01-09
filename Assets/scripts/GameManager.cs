@@ -33,8 +33,7 @@ namespace Game {
 
 		private void Start()
 		{
-			UpdateLayerNames();
-			_gameView.updateScore();			
+			UpdateLayerNames();		
 		}
 
 		public void SpawnShot(Vector2 position, Vector2 startVelocity, float rotation, Framework framework) {

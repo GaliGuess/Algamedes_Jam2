@@ -2783,7 +2783,7 @@ MonoBehaviour:
   shots: []
   platforms: []
   players: []
-  scoreKeeper: {fileID: 0}
+  scoreKeeper: {fileID: 1486090612}
 --- !u!1001 &603769562
 Prefab:
   m_ObjectHideFlags: 0
