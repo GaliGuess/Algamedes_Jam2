@@ -118,14 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b9be4024db145f4a2a54452986f949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameColor: 0
-  controlPoints: []
-  cycle_period: 0
-  speed: 0
   points: []
-  path_time: 2
-  width: 5
-  color: {r: 0.8101752, g: 0.81221336, b: 0.8161765, a: 1}
+  cycle_period: 0
 --- !u!212 &212753757917142780
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -135,7 +129,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -151,7 +144,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -169,7 +161,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
 --- !u!251 &251984983609700516
 PlatformEffector2D:
   m_ObjectHideFlags: 1
@@ -184,7 +175,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 135
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
