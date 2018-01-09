@@ -63,13 +63,22 @@ public class PlayerScript : MonoBehaviour {
 	[Range(1f, 5f), Tooltip("The distance of the crosshair from the player")]
 	public float crosshairDistance = 2.5f;
 	
-	
-	void Start ()
+
+	void Awake()
 	{
+		_gameManager = GetComponentInParent<GameManager>();
+		_controller = GetComponent<Controller>();
+		_rigidbody2D = GetComponent<Rigidbody2D>();
+		_spriteRenderer = GetComponent<SpriteRenderer>();
+		
 		overlap_topLeft = transform.Find("overlap_topLeft");
 		overlap_bottomRight = transform.Find("overlap_bottomRight");
 		crosshair = transform.Find("crosshair");
-		
+	}
+	
+	
+	void Start ()
+	{	
 		SetSpriteColor(player_framework);
 
 		lastHorizontalDirection = transform.position.x < 0 ? Vector2.right : Vector2.left;
@@ -79,14 +88,7 @@ public class PlayerScript : MonoBehaviour {
 		if (player_framework == Framework.BLACK) overlap_layersMask = LayerMask.GetMask("platforms_black", "floor");
 		else if (player_framework == Framework.WHITE) overlap_layersMask = LayerMask.GetMask("platforms_white", "floor"); 
 	}
-
-	void Awake()
-	{
-		_gameManager = GetComponentInParent<GameManager>();
-		_controller = GetComponent<Controller>();
-		_rigidbody2D = GetComponent<Rigidbody2D>();
-		_spriteRenderer = GetComponent<SpriteRenderer>();
-	}
+	
 	
 	void FixedUpdate()
 	{	
