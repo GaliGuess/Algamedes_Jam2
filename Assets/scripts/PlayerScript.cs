@@ -18,20 +18,23 @@ public class PlayerScript : MonoBehaviour {
 	[Range(1f, 10f), Tooltip("Lower value makes the player switch direction slower")] 
 	public float turnRate = 1.5f;
 	
-	[Range(0.5f, 2f), Tooltip("Lower value makes the player slide more on floors.\n Value of 1 adds nothing.")] 
+	[Range(0.5f, 2f), Tooltip("Lower value makes the player slide more on floors\n Value of 1 adds nothing")] 
 	public float bonusFriction = 1.05f;
 	
 	[Range(350, 1000)] 
 	public int jumpHeight = 700;
 	
-	[Range(0f, 30f), Tooltip("Additional gravity is added when the player is in the air.")] 
+	[Range(0f, 30f), Tooltip("Additional gravity is added when the player is in the air")] 
 	public float jumpBonusGravity = 15f;
 	
-	[Range(0, 300), Tooltip("Lower value makes shooting faster!")]
+	[Range(0, 300), Tooltip("Lower value makes shooting faster")]
 	public int turnsBetweenShots = 200;
 	
 	[Range(0f, 2f), Tooltip("How far the player is pushed back when shooting")]
 	public float recoil = 0.15f;
+
+	[SerializeField, Tooltip("Player can't die\n(but can fall to infinity)")] 
+	public bool invincible = false;
 
 //	[SerializeField] bool doubleJumpEnabled = true;
 	
@@ -127,7 +130,7 @@ public class PlayerScript : MonoBehaviour {
 			
 			if (_controller.shoot())
 			{
-				shoot(direction);
+				shoot(shootingDirection);
 			}
 
 			// fake gravity for when airborne
@@ -214,7 +217,16 @@ public class PlayerScript : MonoBehaviour {
 			releaseJump = true;
 		}
 	}
-	
+
+	private void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.CompareTag("gameBoundry"))
+		{
+			if (invincible) return;
+			_gameManager.PlayerKilled(gameObject);
+		}
+	}
+
 	private void OnCollisionExit2D(Collision2D other)
 	{
 //		isGrounded = false;

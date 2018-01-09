@@ -7,6 +7,8 @@ TagManager:
   - shot
   - platform
   - player
+  - gameBoundry
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -43,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2720446027
     locked: 0
