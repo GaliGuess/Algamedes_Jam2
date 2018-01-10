@@ -92,6 +92,18 @@ namespace Game{
 			return (Time.time - initial_lerp_time)/segment_period;
 		}
 
+		public void SetPosition(float cycle_percentage) {
+			int source_point_idx, target_point_idx;
+			source_point_idx = Mathf.FloorToInt(cycle_percentage*(points.Count-1)*2);
+			source_point_idx = source_point_idx < points.Count ? source_point_idx : 2*(points.Count-1) - source_point_idx; 
+			target_point_idx = Mathf.CeilToInt(cycle_percentage*(points.Count-1)*2);
+			target_point_idx = target_point_idx < points.Count ? target_point_idx : 2*(points.Count-1) - target_point_idx;
+//			Debug.Log("PlatformManager idx: " + source_point_idx.ToString() + ", " + target_point_idx.ToString() );
+			int num_of_paths = (points.Count-1)*2;
+			float path_percentage = cycle_percentage*num_of_paths % 1;
+			Vector2 pos = Vector2.Lerp(points[source_point_idx].position, points[target_point_idx].position, path_percentage);
+			transform.position = pos;
+		}
 
 		protected void FixedUpdate() {
 			if (points.Count != 0) {

@@ -11,6 +11,8 @@ public class PlatformInspector : Editor {
 	SerializedProperty points;
 	SerializedProperty platform_framework;
 
+	static float cycle_percentage = 0.0f;
+
 	void OnEnable()
 	{
 		beats_per_cycle = serializedObject.FindProperty("beats_per_cycle");
@@ -23,6 +25,7 @@ public class PlatformInspector : Editor {
 
 	public override void OnInspectorGUI()
 	{
+		serializedObject.Update();
 		PlatformManager myTarget = (PlatformManager)target;
 
 		EditorGUI.BeginChangeCheck();
@@ -55,10 +58,16 @@ public class PlatformInspector : Editor {
 			myTarget.AddPoint(point);
 		}
 
-		serializedObject.ApplyModifiedProperties();
-		serializedObject.Update();
+		EditorGUI.BeginChangeCheck();
+		cycle_percentage = EditorGUILayout.Slider(cycle_percentage, 0, 1);
+		if (EditorGUI.EndChangeCheck () ) {
+			myTarget.SetPosition(cycle_percentage);
+		}
 
-		if (GUI.changed) {
+		serializedObject.ApplyModifiedProperties();
+
+
+		if (GUI.changed) { //TODO: remove this and allow to update list of points from editor + support undo 
 			EditorUtility.SetDirty(myTarget);
 		}
 			
