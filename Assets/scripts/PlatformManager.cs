@@ -14,7 +14,7 @@ namespace Game{
 
 		[SerializeField] private float segment_period;
 
-		[SerializeField] static public int init_num_lives = 3;
+		[SerializeField] static public int init_num_lives = 1;
 		
 		[SerializeField] public Framework init_platform_framework = Framework.GREY;
 
@@ -42,6 +42,12 @@ namespace Game{
 		// Use this for initialization
 		void Start () {
 			InitPath();
+
+			if (init_platform_framework == Framework.GREY)
+			{
+				init_platform_framework = (Framework) Random.Range(1, 3);
+			}
+			
 			InitState();
 			UpdateFramework(init_platform_framework);
 			UpdateSegmentPeriod();
