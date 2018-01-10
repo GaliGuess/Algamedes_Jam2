@@ -15,26 +15,39 @@ public class PlayerScript : MonoBehaviour {
 	float maxSpeed = 17;
 	private float speed = 40f; // need to get rid of this but maybe some other time :)
 	
-	[Range(1f, 10f), Tooltip("Lower value makes the player switch direction slower")] 
+//	Range(1f, 10f)
+	[SerializeField, Tooltip("Lower value makes the player switch direction slower")] 
 	public float turnRate = 1.5f;
 	
-	[Range(0.5f, 2f), Tooltip("Lower value makes the player slide more on floors\n Value of 1 adds nothing")] 
+//	Range(0.5f, 2f)
+	[SerializeField, Tooltip("Lower value makes the player slide more on floors\n Value of 1 adds nothing")] 
 	public float bonusFriction = 1.05f;
 	
-	[Range(350, 1000)] 
+//	[Range(350, 1000)]
+	[SerializeField]
 	public int jumpHeight = 700;
 	
-	[Range(0f, 30f), Tooltip("Additional gravity is added when the player is in the air")] 
-	public float jumpBonusGravity = 15f;
 	
-	[Range(0, 300), Tooltip("Lower value makes shooting faster")]
-	public int turnsBetweenShots = 200;
+	[SerializeField, Tooltip("Player friction with air\nnormal value is 0")]
+	public float normalDrag = 0f;
 	
-	[Range(0f, 2f), Tooltip("How far the player is pushed back when shooting")]
-	public float recoil = 0.15f;
-
-	[SerializeField, Tooltip("Player can't die\n(but can fall to infinity)")] 
-	public bool invincible = false;
+	[SerializeField, Tooltip("Player friction with air just during falls after jumping\nThe higher the value the slower the fall")]
+	public float fallingDrag = 20f;
+	
+	// used to change drag during fall
+	private bool isJumping = false;
+	
+//	Range(0f, 30f)
+//	[SerializeField, Tooltip("Additional gravity is added when the player is in the air")] 
+//	public float jumpBonusGravity = 15f;
+	
+//	Range(0, 300)
+	[SerializeField, Tooltip("Lower value makes shooting faster")]
+	public int turnsBetweenShots = 5;
+	
+//	Range(0f, 2f)
+	[SerializeField, Tooltip("How far the player is pushed back when shooting")]
+	public float recoil = 0.12f;
 
 //	[SerializeField] bool doubleJumpEnabled = true;
 	
@@ -43,15 +56,14 @@ public class PlayerScript : MonoBehaviour {
 	private GameManager _gameManager;
 	private SpriteRenderer _spriteRenderer;
 
-	private Vector2 direction;
+	public Vector2 direction;
+	public Vector2 shootingDirection; // for testing
+	
 	private Vector2 lastHorizontalDirection;
 	private bool isGrounded, releaseJump = false;
 	private bool canDoubleJump; // double jump is currently disabled but this is still used!
 	private float jumpRatio = 0.2f;
 	private int _timesSinceFired = 0;
-	
-	// for testing
-	private Vector2 currentVelocity;
 	
 	// Used for checking if player is grounded
 	private Transform overlap_topLeft, overlap_bottomRight;
@@ -63,8 +75,15 @@ public class PlayerScript : MonoBehaviour {
 	[SerializeField]
 	public bool showCrosshair = true;
 	
-	[Range(1f, 5f), Tooltip("The distance of the crosshair from the player")]
+//	Range(1f, 5f)
+	[SerializeField, Tooltip("The distance of the crosshair from the player")]
 	public float crosshairDistance = 2.5f;
+	
+	[SerializeField, Tooltip("Player can't die\n(but can fall to infinity)")] 
+	public bool invincible = false;
+	
+	// for testing
+	private Vector2 currentVelocity;
 	
 
 	void Awake()
@@ -105,10 +124,12 @@ public class PlayerScript : MonoBehaviour {
 			
 			updateDirection();
 
+			isGrounded = Physics2D.OverlapAreaNonAlloc(overlap_topLeft.position, overlap_bottomRight.position,
+				             _overlap_colliders, overlap_layersMask) > 0;
+			if (isGrounded) isJumping = false;
+			
 			if (_controller.jump())
 			{ 
-				isGrounded = Physics2D.OverlapAreaNonAlloc(overlap_topLeft.position, overlap_bottomRight.position,
-					             						   _overlap_colliders, overlap_layersMask) > 0;
 				jump();
 			}
 			
@@ -123,26 +144,20 @@ public class PlayerScript : MonoBehaviour {
 			if (_timesSinceFired > 0) _timesSinceFired--;
 			
 			// Making sure player doesn't shoot at direction (0,0)
-			Vector2 shootingDirection = direction;
+			shootingDirection = direction;
 			if (direction == Vector2.zero) shootingDirection = lastHorizontalDirection;
 			crosshair.localPosition = new Vector2(shootingDirection.x / transform.localScale[0], 
-												  shootingDirection.y / transform.localScale[1]) * crosshairDistance;
-			
+												  shootingDirection.y / transform.localScale[1]) * crosshairDistance;			
 			if (_controller.shoot())
 			{
 				shoot(shootingDirection);
 			}
 
-			// fake gravity for when airborne
-			if (!isGrounded)
+			if (isJumping && _rigidbody2D.velocity.y < 0)
 			{
-				Vector2 vel = _rigidbody2D.velocity;
-				
-				vel.y -= jumpBonusGravity * Time.deltaTime;
-				_rigidbody2D.velocity = vel;
-				
-//				slowHorizontalVelocity(1.01f);
+				_rigidbody2D.drag = fallingDrag;
 			}
+			else _rigidbody2D.drag = normalDrag;
 			
 			// for testing
 			currentVelocity = _rigidbody2D.velocity;
@@ -176,6 +191,7 @@ public class PlayerScript : MonoBehaviour {
 												 jumpHeight * Time.deltaTime);
 //			_rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime);
 //			canDoubleJump = true;
+			isJumping = true;
 		}
 //		else if (canDoubleJump)
 //		{
@@ -201,6 +217,13 @@ public class PlayerScript : MonoBehaviour {
 		// recoil
 		transform.position = new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z);
 	}
+
+//	private void fallSlower()
+//	{
+//		Vector2 vel = _rigidbody2D.velocity;
+//		vel.y -= fallSlowingFactor * Time.deltaTime;
+//		_rigidbody2D.velocity = vel;
+//	}
 	
 	private void slowHorizontalVelocity(float factor)
 	{

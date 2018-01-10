@@ -53,6 +53,14 @@ namespace Game{
 
 			}
 		}
+		
+		private void OnTriggerExit2D(Collider2D other)
+		{
+			if (other.CompareTag("gameBoundry"))
+			{
+				Destroy(gameObject);
+			}
+		}
 
 		public void SetColor(Framework shot_framework) {
 			switch (shot_framework) {

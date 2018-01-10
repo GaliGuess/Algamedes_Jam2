@@ -29,11 +29,13 @@ namespace Game {
 			_gameState = GetComponent<GameState>();
 			_gameView = GetComponent<GameView>();
 			_shotFactory = GetComponent<ShotFactory>();
+			
+			UpdateLayerNames();	// must happen in Awake otherwise platforms are set to Default layer
 		}
 
 		private void Start()
 		{
-			UpdateLayerNames();		
+				
 		}
 
 		public void SpawnShot(Vector2 position, Vector2 startVelocity, float rotation, Framework framework) {
