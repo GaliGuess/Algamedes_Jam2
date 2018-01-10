@@ -9,9 +9,10 @@ public class PlatformInspector : Editor {
 	SerializedProperty cycle_period;
 	SerializedProperty segment_period;
 	SerializedProperty points;
-	SerializedProperty platform_framework;
+	SerializedProperty init_platform_framework;
 
 	static float cycle_percentage = 0.0f;
+
 
 	void OnEnable()
 	{
@@ -19,7 +20,7 @@ public class PlatformInspector : Editor {
 		cycle_period = serializedObject.FindProperty("cycle_period");
 		segment_period = serializedObject.FindProperty("segment_period");
 		points = serializedObject.FindProperty("points");
-		platform_framework = serializedObject.FindProperty("platform_framework");
+		init_platform_framework = serializedObject.FindProperty("init_platform_framework");
 	}
 
 
@@ -29,11 +30,10 @@ public class PlatformInspector : Editor {
 		PlatformManager myTarget = (PlatformManager)target;
 
 		EditorGUI.BeginChangeCheck();
-		EditorGUILayout.PropertyField(platform_framework);
+		EditorGUILayout.PropertyField(init_platform_framework);
 		if (EditorGUI.EndChangeCheck () ) {
 			Undo.RecordObject(target, "Changed platform framework");
-			serializedObject.ApplyModifiedProperties();
-			myTarget.SetFramework(myTarget.platform_framework);
+			myTarget.SetFramework((Game.Framework)init_platform_framework.enumValueIndex);
 		}
 
 		EditorGUI.BeginChangeCheck();
@@ -42,7 +42,6 @@ public class PlatformInspector : Editor {
 			Undo.RecordObject(target, "Changed beats per cycle");
 			serializedObject.ApplyModifiedProperties();
 			myTarget.UpdateSegmentPeriod();
-			serializedObject.Update();
 		}
 
 		EditorGUILayout.LabelField("cycle period:", cycle_period.floatValue.ToString());

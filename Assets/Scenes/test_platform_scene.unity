@@ -713,7 +713,7 @@ Prefab:
     - target: {fileID: 114960436649041780, guid: 4a626a45219a54cc385392b374db3e47,
         type: 2}
       propertyPath: platform_framework
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4938453795391770, guid: 4a626a45219a54cc385392b374db3e47, type: 2}
       propertyPath: m_LocalPosition.y
@@ -737,6 +737,21 @@ Prefab:
         type: 2}
       propertyPath: points.Array.data[2]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114960436649041780, guid: 4a626a45219a54cc385392b374db3e47,
+        type: 2}
+      propertyPath: beats_per_cycle
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114960436649041780, guid: 4a626a45219a54cc385392b374db3e47,
+        type: 2}
+      propertyPath: cycle_period
+      value: 17.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114960436649041780, guid: 4a626a45219a54cc385392b374db3e47,
+        type: 2}
+      propertyPath: segment_period
+      value: 8.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a626a45219a54cc385392b374db3e47, type: 2}

@@ -16,7 +16,7 @@ namespace Game{
 
 		[SerializeField] static public int init_num_lives = 3;
 		
-		[SerializeField] public Framework platform_framework = Framework.GREY;
+		[SerializeField] public Framework init_platform_framework = Framework.GREY;
 
 		private int target_point_idx = 0;
 
@@ -43,7 +43,7 @@ namespace Game{
 		void Start () {
 			InitPath();
 			InitState();
-			SetFramework(platform_framework);
+			UpdateFramework(init_platform_framework);
 			UpdateSegmentPeriod();
 		}
 
@@ -72,7 +72,7 @@ namespace Game{
 		}
 
 		public void UpdateSegmentPeriod() {
-			cycle_period = beats_per_cycle*60.0f/game_manager.BPM; // seconds per cycle
+			cycle_period = beats_per_cycle*60.0f/GetComponentInParent<GameManager>().BPM; // seconds per cycle
 			int num_of_segments = (points.Count -1)*2; //for the whole cycle
 			segment_period = cycle_period/num_of_segments; //each segment will have the same period, regardless of distance of segment
 		}
@@ -127,16 +127,20 @@ namespace Game{
 			platform_state.num_lives--;
 			if(platform_state.num_lives <= 0) {
 				platform_state.num_lives = init_num_lives;
-				SetFramework(platform_framework);
+				UpdateFramework(platform_framework);
 			}
 		}
 
-
+		// Updates platform state/view
 		public void SetFramework(Framework platform_framework) {
+			GetComponent<PlatformState>().platform_framework = platform_framework;
+			GetComponent<PlatformView>().SetColor(platform_framework);
+		}
+
+		// This updates the new framework within game_manager as well as updating platform state/view
+		private void UpdateFramework(Framework platform_framework) {
+			SetFramework(platform_framework);
 			game_manager.ChangeLayer(gameObject, platform_framework);
-			
-			platform_state.platform_framework = platform_framework;
-			platform_view.SetColor(platform_framework);
 		}
 
 
