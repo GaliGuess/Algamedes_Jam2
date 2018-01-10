@@ -195,8 +195,10 @@ MonoBehaviour:
   jumpHeight: 950
   normalDrag: 0
   fallingDrag: 1.5
-  turnsBetweenShots: 5
+  turnsBetweenShots: 4
   recoil: 0.12
+  direction: {x: 0, y: 0}
+  shootingDirection: {x: 0, y: 0}
   showCrosshair: 1
   crosshairDistance: 4.5
   invincible: 0

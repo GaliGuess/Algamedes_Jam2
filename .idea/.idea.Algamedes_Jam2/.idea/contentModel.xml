@@ -20,7 +20,9 @@
             <e p="Controller.cs" t="Include" />
             <e p="KeyboardController.cs" t="Include" />
           </e>
+          <e p="DontDestroyOnReload.cs" t="Include" />
           <e p="Editor" t="Include">
+            <e p="GameManagerInspector.cs" t="Include" />
             <e p="PlatformInspector.cs" t="Include" />
           </e>
           <e p="GameManager.cs" t="Include" />
