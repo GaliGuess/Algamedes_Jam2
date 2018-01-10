@@ -8,7 +8,7 @@ namespace Game{
 
 		[SerializeField] private List<Transform> points;
 
-		[SerializeField] private int beats_per_cycle = 4;
+		[SerializeField] public int beats_per_cycle = 4;
 
 		[SerializeField] private float cycle_period;
 
@@ -92,6 +92,7 @@ namespace Game{
 			return (Time.time - initial_lerp_time)/segment_period;
 		}
 
+		// This is used only from editor to mock movement of platform
 		public void SetPosition(float cycle_percentage) {
 			int source_point_idx, target_point_idx;
 			source_point_idx = Mathf.FloorToInt(cycle_percentage*(points.Count-1)*2);

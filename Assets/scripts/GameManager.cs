@@ -41,6 +41,14 @@ namespace Game {
 				
 		}
 
+		public void MockPlatformsAtBeat(int beat_num) {
+			GameObject[] platforms = GameObject.FindGameObjectsWithTag("platform");
+			foreach (GameObject platform in platforms) {
+				PlatformManager platform_manager = platform.GetComponent<PlatformManager>();
+				platform_manager.SetPosition(((float)beat_num/(float)platform_manager.beats_per_cycle)%1);
+			}
+		}
+
 		public void SpawnShot(Vector2 position, Vector2 startVelocity, float rotation, Framework framework) {
 			GameObject shot = _shotFactory.MakeObject(position, startVelocity,rotation,framework);
 		}
@@ -77,6 +85,8 @@ namespace Game {
 			_gameView.updateScore();
 			reloadGame();
 		}
+
+
 
 		private void reloadGame()
 		{
