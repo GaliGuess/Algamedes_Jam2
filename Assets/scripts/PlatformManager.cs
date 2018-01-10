@@ -8,7 +8,11 @@ namespace Game{
 
 		[SerializeField] private List<Transform> points;
 
-		[SerializeField] private float cycle_period = 2.0f;
+		[SerializeField] private int beats_per_cycle = 4;
+
+		[SerializeField] private float cycle_period;
+
+		[SerializeField] private float segment_period;
 
 		[SerializeField] static public int init_num_lives = 3;
 		
@@ -40,10 +44,10 @@ namespace Game{
 			InitPath();
 			InitState();
 			SetFramework(platform_framework);
+			UpdateSegmentPeriod();
 		}
 
-		public void AddPoint() {
-			GameObject point = new GameObject();
+		public void AddPoint(GameObject point) {
 			point.transform.position = transform.position;
 			point.transform.parent = transform.parent.Find("PlatformPath");
 			point.name = "point" + (points.Count+1).ToString();
@@ -67,6 +71,11 @@ namespace Game{
 			platform_state.num_lives = init_num_lives;
 		}
 
+		public void UpdateSegmentPeriod() {
+			cycle_period = beats_per_cycle*60.0f/game_manager.BPM; // seconds per cycle
+			int num_of_segments = (points.Count -1)*2; //for the whole cycle
+			segment_period = cycle_period/num_of_segments; //each segment will have the same period, regardless of distance of segment
+		}
 
 		// Update is called once per frame
 		void Update () {
@@ -80,7 +89,7 @@ namespace Game{
 
 
 		private float GetPathPercentage() {
-			return (Time.time - initial_lerp_time)/cycle_period;
+			return (Time.time - initial_lerp_time)/segment_period;
 		}
 
 

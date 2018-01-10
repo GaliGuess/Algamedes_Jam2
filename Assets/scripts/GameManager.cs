@@ -23,6 +23,9 @@ namespace Game {
 		
 		[SerializeField]
 		public float secondsToNewRound = 3f;
+
+		[SerializeField]
+		public int BPM = 140;
 		
 		void Awake ()
 		{
