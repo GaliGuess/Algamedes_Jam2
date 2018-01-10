@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &9109366
 Prefab:
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &91119688
 Prefab:
@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &145990911
 Prefab:
@@ -847,7 +847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &165289316
 Prefab:
@@ -1188,7 +1188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &231813813 stripped
 GameObject:
@@ -1219,7 +1219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &238905928 stripped
 GameObject:
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &256109674
 GameObject:
@@ -1687,7 +1687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &319773460 stripped
 GameObject:
@@ -1718,7 +1718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &340986467 stripped
 GameObject:
@@ -1749,7 +1749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &341053923
 Prefab:
@@ -2086,7 +2086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &461653855 stripped
 GameObject:
@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &464059395 stripped
 GameObject:
@@ -2148,7 +2148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &477370153 stripped
 GameObject:
@@ -2179,7 +2179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &480902665
 Prefab:
@@ -2312,7 +2312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &505528377
 Prefab:
@@ -2921,7 +2921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &631092136
 GameObject:
@@ -3072,7 +3072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &718147863
 Prefab:
@@ -3659,7 +3659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &869853238
 Prefab:
@@ -3884,7 +3884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1031121026 stripped
 GameObject:
@@ -3915,7 +3915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1039614391 stripped
 GameObject:
@@ -3946,7 +3946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1051760499 stripped
 GameObject:
@@ -3977,7 +3977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1072875011 stripped
 GameObject:
@@ -4008,7 +4008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &1109605643
 Prefab:
@@ -4419,7 +4419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &1251362475
 Prefab:
@@ -4654,7 +4654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &1361576041
 Prefab:
@@ -4884,7 +4884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1394786756
 GameObject:
@@ -4969,7 +4969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1455517727 stripped
 GameObject:
@@ -5000,7 +5000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1486090610
 GameObject:
@@ -5072,7 +5072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &1515256209
 Prefab:
@@ -5205,7 +5205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1529623867 stripped
 GameObject:
@@ -5236,7 +5236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &1533281623
 Prefab:
@@ -5872,7 +5872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1615406814 stripped
 GameObject:
@@ -5903,7 +5903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1629306212 stripped
 GameObject:
@@ -5934,7 +5934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1641816985 stripped
 GameObject:
@@ -5965,7 +5965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &1647446141
 Prefab:
@@ -6098,7 +6098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &1677979297
 Prefab:
@@ -6235,7 +6235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1694901831 stripped
 GameObject:
@@ -6266,7 +6266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &1738041994
 Prefab:
@@ -6408,7 +6408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1781590193 stripped
 GameObject:
@@ -6439,7 +6439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &1787132635
 Prefab:
@@ -6572,7 +6572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &1812154110
 Prefab:
@@ -6756,7 +6756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!4 &1893132882 stripped
 Transform:
@@ -6898,7 +6898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1914500961
 GameObject:
@@ -7273,7 +7273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1 &1960273120
 GameObject:
@@ -7366,7 +7366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!1001 &2007209663
 Prefab:
@@ -7499,7 +7499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
 --- !u!4 &2114937649 stripped
 Transform:
@@ -7637,5 +7637,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform_framework: 0
-  num_lives: 5
+  num_lives: 4
   width: 5
