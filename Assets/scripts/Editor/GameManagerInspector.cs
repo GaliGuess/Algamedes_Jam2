@@ -30,9 +30,10 @@ public class GameManagerInspector : Editor {
 		EditorGUILayout.PropertyField(BPM);
 
 		EditorGUI.BeginChangeCheck();
-		beat_num = Mathf.Max(EditorGUILayout.IntField("beat number:",beat_num),0);
+		beat_num = EditorGUILayout.IntSlider("beat number", beat_num, 1,16);
+//		beat_num = Mathf.Max(EditorGUILayout.IntField("beat number:",beat_num),0);
 		if (EditorGUI.EndChangeCheck () ) {
-			myTarget.MockPlatformsAtBeat(beat_num);
+			myTarget.MockPlatformsAtBeat(beat_num-1);
 		}
 		serializedObject.ApplyModifiedProperties();
 	}
