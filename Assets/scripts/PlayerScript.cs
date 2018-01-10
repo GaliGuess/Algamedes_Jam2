@@ -111,8 +111,8 @@ public class PlayerScript : MonoBehaviour {
 		else if (player_framework == Framework.WHITE) overlap_layersMask = LayerMask.GetMask("platforms_white", "floor"); 
 	}
 	
-	
-	void FixedUpdate()
+//	void FixedUpdate()
+	void Update()
 	{	
 		if (_controller != null)
 		{

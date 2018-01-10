@@ -60,6 +60,10 @@ namespace Game{
 			{
 				Destroy(gameObject);
 			}
+			if (other.CompareTag("player"))
+			{
+				Destroy(gameObject);
+			}
 		}
 
 		public void SetColor(Framework shot_framework) {

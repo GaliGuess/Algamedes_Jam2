@@ -192,9 +192,9 @@ MonoBehaviour:
   maxSpeed: 17
   turnRate: 1.5
   bonusFriction: 1.05
-  jumpHeight: 950
+  jumpHeight: 1050
   normalDrag: 0
-  fallingDrag: 1.5
+  fallingDrag: 0.1
   turnsBetweenShots: 4
   recoil: 0.12
   direction: {x: 0, y: 0}
