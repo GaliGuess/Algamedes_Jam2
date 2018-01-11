@@ -2,7 +2,7 @@
 using UnityEngine;
 using Game;
 
-[CustomEditor(typeof(PlatformManager))]
+[CustomEditor(typeof(PlatformManager), true)]
 public class PlatformInspector : Editor {
 
 	SerializedProperty beats_per_cycle;
@@ -10,6 +10,7 @@ public class PlatformInspector : Editor {
 	SerializedProperty segment_period;
 	SerializedProperty points;
 	SerializedProperty init_platform_framework;
+	SerializedProperty visible_period;
 
 	static float cycle_percentage = 0.0f;
 
@@ -19,6 +20,9 @@ public class PlatformInspector : Editor {
 		beats_per_cycle = serializedObject.FindProperty("beats_per_cycle");
 		cycle_period = serializedObject.FindProperty("cycle_period");
 		segment_period = serializedObject.FindProperty("segment_period");
+		if (target.GetType() == typeof(BlinkingPlatformManager)) {
+			visible_period = serializedObject.FindProperty("visible_period");
+		}
 		points = serializedObject.FindProperty("points");
 		init_platform_framework = serializedObject.FindProperty("init_platform_framework");
 	}
@@ -48,6 +52,10 @@ public class PlatformInspector : Editor {
 
 		EditorGUILayout.LabelField("segment period:", segment_period.floatValue.ToString());
 
+		if (visible_period != null) {
+			EditorGUILayout.PropertyField(visible_period);
+		}
+
 		EditorGUILayout.PropertyField(points, true);
 
 		if(GUILayout.Button("Add point"))
@@ -69,7 +77,8 @@ public class PlatformInspector : Editor {
 		if (GUI.changed) { //TODO: remove this and allow to update list of points from editor + support undo 
 			EditorUtility.SetDirty(myTarget);
 		}
-			
+
 	}
-		
+
 }
+

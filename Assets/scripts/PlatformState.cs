@@ -15,14 +15,7 @@ namespace Game{
 
 		[SerializeField] private float width = DEFAULT_WIDTH;
 
-		public Vector2 Position {
-			get {
-				return transform.position;
-			}
-			set {
-				transform.position = value;
-			}
-		}
+		public Vector2 Position;
 
 		// Use this for initialization
 		void Start () {

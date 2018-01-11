@@ -13,6 +13,17 @@ namespace Game{
 
 		private SpriteRenderer sprite_renderer;
 
+
+
+		public Vector2 Position{
+			get {
+				return body.position;
+			}
+			set {
+				body.position = value;
+			}
+		}
+
 		[SerializeField] private Color color = Color.gray;
 
 		public Color PlatformColor{
@@ -73,6 +84,15 @@ namespace Game{
 				this.PlatformColor = Color.grey;
 				break;
 			}
+		}
+
+		public void Show() {
+			sprite_renderer.enabled = true;
+		}
+
+		public void Hide() {
+			sprite_renderer.enabled = false;
+
 		}
 	}
 }

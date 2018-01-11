@@ -6,31 +6,31 @@ using UnityEngine;
 namespace Game{
 	public class PlatformManager : MonoBehaviour {
 
-		[SerializeField] private List<Transform> points;
+		[SerializeField] protected List<Transform> points;
 
 		[SerializeField] public int beats_per_cycle = 4;
 
-		[SerializeField] private float cycle_period;
+		[SerializeField] protected float cycle_period;
 
-		[SerializeField] private float segment_period;
+		[SerializeField] protected float segment_period;
 
 		[SerializeField] static public int init_num_lives = 1;
 		
 		[SerializeField] public Framework init_platform_framework = Framework.GREY;
 
-		private int target_point_idx = 0;
+		protected int target_point_idx = 0;
 
-		private int current_point_idx = 0;
+		protected int current_point_idx = 0;
 
-		private bool reverse_dir = false;
+		protected bool reverse_dir = false;
 
-		private float initial_lerp_time;
+		protected float initial_lerp_time;
 
-		private GameManager game_manager;
+		protected GameManager game_manager;
 
-		private PlatformState platform_state;
+		protected PlatformState platform_state;
 		
-		private PlatformView platform_view;
+		protected PlatformView platform_view;
 
 
 		void Awake() {
@@ -94,7 +94,7 @@ namespace Game{
 		}
 
 
-		private float GetPathPercentage() {
+		protected float GetPathPercentage() {
 			return (Time.time - initial_lerp_time)/segment_period;
 		}
 
@@ -118,16 +118,21 @@ namespace Game{
 				if (path_percentage <= 1.0f) {
 					Vector2 pos = Vector2.Lerp(points[current_point_idx].position, points[target_point_idx].position, path_percentage);
 					platform_state.Position = pos;
+					platform_view.Position = platform_state.Position;
 				} 
 				else {
-					current_point_idx = target_point_idx;
-					target_point_idx = reverse_dir ? target_point_idx - 1 : target_point_idx + 1;
-					if (target_point_idx == 0 || target_point_idx == points.Count-1) {
-						reverse_dir = !reverse_dir;
-					}
-					initial_lerp_time = Time.time;
+					UpdateSourceTargetPoints();
 				}
 			}
+		}
+
+		protected void UpdateSourceTargetPoints() {
+			current_point_idx = target_point_idx;
+			target_point_idx = reverse_dir ? target_point_idx - 1 : target_point_idx + 1;
+			if (target_point_idx == 0 || target_point_idx == points.Count-1) {
+				reverse_dir = !reverse_dir;
+			}
+			initial_lerp_time = Time.time;
 		}
 
 		public void UpdateHit(Framework platform_framework) {
