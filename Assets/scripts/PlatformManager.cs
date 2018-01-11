@@ -140,8 +140,14 @@ namespace Game{
 
 		// Updates platform state/view
 		public void SetFramework(Framework platform_framework) {
-			GetComponent<PlatformState>().platform_framework = platform_framework;
-			GetComponent<PlatformView>().SetColor(platform_framework);
+			if (platform_state == null) {
+				platform_state = GetComponent<PlatformState>();
+			}
+			platform_state.platform_framework = platform_framework;
+			if (platform_view == null) {
+				platform_view = GetComponent<PlatformView>();
+			}
+			platform_view.SetColor(platform_framework);
 		}
 
 		// This updates the new framework within game_manager as well as updating platform state/view

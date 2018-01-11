@@ -21,6 +21,9 @@ namespace Game{
 			}
 			set {
 				this.color = value;
+				if (sprite_renderer == null) {
+					sprite_renderer = GetComponent<SpriteRenderer>();
+				}
 				sprite_renderer.material.color = this.color;
 			}
 		}

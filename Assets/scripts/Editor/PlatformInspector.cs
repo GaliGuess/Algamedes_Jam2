@@ -33,7 +33,7 @@ public class PlatformInspector : Editor {
 		EditorGUILayout.PropertyField(init_platform_framework);
 		if (EditorGUI.EndChangeCheck () ) {
 			Undo.RecordObject(target, "Changed platform framework");
-//			myTarget.SetFramework((Game.Framework)init_platform_framework.enumValueIndex);
+			myTarget.SetFramework((Game.Framework)init_platform_framework.enumValueIndex);
 		}
 
 		EditorGUI.BeginChangeCheck();
