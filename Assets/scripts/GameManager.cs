@@ -65,6 +65,7 @@ namespace Game {
 
 		public void ChangeLayer(GameObject obj, Framework framework)
 		{
+			Debug.Log("ChangeLayer: " + obj.tag);
 			if (obj.CompareTag("platform")) obj.layer = framework == Framework.BLACK ? black_platforms_layer : 
 														framework == Framework.GREY ? grey_platforms_layer : 
 														white_platforms_layer;

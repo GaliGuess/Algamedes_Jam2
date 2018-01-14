@@ -13,6 +13,7 @@ namespace Game{
 		void Start () {
 //			platform_view.Hide();
 //			StartCoroutine(Reposition());
+			Init();
 		}
 
 		// Update is called once per frame
@@ -23,9 +24,10 @@ namespace Game{
 		protected void FixedUpdate() {
 			if ((Time.time - initial_lerp_time) >= segment_period) {
 				UpdateSourceTargetPoints(); // updates initial_lerp_time to current time
+//				Debug.Log("Blinking FixedUpdate: " + points[current_point_idx].position);
 				platform_state.Position = points[current_point_idx].position;
+				Show(); // importatnt to do this before setting view's position
 				platform_view.Position = platform_state.Position;
-				Show();
 				Invoke("Hide", Mathf.Min(segment_period, visible_period));
 			}
 		}
@@ -47,11 +49,13 @@ namespace Game{
 
 		private void Show() {
 			platform_view.Show();
+			platform_view.gameObject.SetActive(true);
 //			Debug.Log("Showing object at time: " + Time.time);
 		}
 
 		private void Hide() {
 			platform_view.Hide();
+			platform_view.gameObject.SetActive(false);
 //			Debug.Log("Hiding object at time: " + Time.time);
 		}
 	}

@@ -50,10 +50,14 @@ namespace Game{
 		}
 
 		protected void Awake() {
+			Init();
+		}
+
+		public void Init() {
 			body = GetComponent<Rigidbody2D>();
 			sprite_renderer = GetComponent<SpriteRenderer>();
-			platform_manager = GetComponent<PlatformManager>();
-			platform_state = GetComponent<PlatformState>();
+			platform_manager = GetComponentInParent<PlatformManager>();
+			platform_state = GetComponentInParent<PlatformState>();
 		}
 
 
@@ -68,7 +72,7 @@ namespace Game{
 			}
 			if (other.gameObject.tag == "player")
 			{
-				//				Debug.Log("PlatformManger: detected player");
+//				Debug.Log("PlatformManger: detected player");
 			}
 		}
 

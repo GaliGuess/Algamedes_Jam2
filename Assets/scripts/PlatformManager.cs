@@ -35,27 +35,44 @@ namespace Game{
 
 		void Awake() {
 			game_manager = GetComponentInParent<GameManager>();
+			AssignState();
+			AssignView();
+		}
+
+		private void AssignState() {
 			platform_state = GetComponent<PlatformState>();
-			platform_view = GetComponent<PlatformView>();
+		}
+
+		private void AssignView() {
+			platform_view = transform.Find("PlatformBody").GetComponent<PlatformView>();
+			platform_view.Init();
 		}
 
 		// Use this for initialization
 		void Start () {
+			Init();
+		}
+
+		protected void Init() {
 			InitPath();
 
 			if (init_platform_framework == Framework.GREY)
 			{
 				init_platform_framework = (Framework) Random.Range(1, 3);
 			}
-			
+
 			InitState();
 			UpdateFramework(init_platform_framework);
 			UpdateSegmentPeriod();
 		}
 
 		public void AddPoint(GameObject point) {
-			point.transform.position = transform.position;
+			if (platform_view == null) {
+				AssignView();
+			}
+
 			point.transform.parent = transform.parent.Find("PlatformPath");
+			point.transform.position = transform.position; // set according to global transform, so assign according to this object's position
 			point.name = "point" + (points.Count+1).ToString();
 			points.Add(point.transform);
 		}
@@ -64,7 +81,7 @@ namespace Game{
 		private void InitPath() {
 			initial_lerp_time = Time.time;
 			if (points.Count > 0) {
-				transform.position = points[0].position;
+				platform_view.Position = points[0].position;
 				current_point_idx = 0;
 			}
 			if (points.Count > 1) {
@@ -109,13 +126,14 @@ namespace Game{
 			int num_of_paths = (points.Count-1)*2;
 			float path_percentage = cycle_percentage*num_of_paths % 1;
 			Vector2 pos = Vector2.Lerp(points[source_point_idx].position, points[target_point_idx].position, path_percentage);
-			transform.position = pos;
+			platform_view.Position = pos;
 		}
 
 		protected void FixedUpdate() {
 			if (points.Count != 0) {
 				float path_percentage = GetPathPercentage();
 				if (path_percentage <= 1.0f) {
+//					Debug.Log(current_point_idx + ") " + points[current_point_idx].position + " , " + target_point_idx + ") " + points[target_point_idx].position);
 					Vector2 pos = Vector2.Lerp(points[current_point_idx].position, points[target_point_idx].position, path_percentage);
 					platform_state.Position = pos;
 					platform_view.Position = platform_state.Position;
@@ -145,12 +163,13 @@ namespace Game{
 
 		// Updates platform state/view
 		public void SetFramework(Framework platform_framework) {
+//			Debug.Log(gameObject.name + ": SetFramework");
 			if (platform_state == null) {
-				platform_state = GetComponent<PlatformState>();
+				AssignState();
 			}
 			platform_state.platform_framework = platform_framework;
 			if (platform_view == null) {
-				platform_view = GetComponent<PlatformView>();
+				AssignView();
 			}
 			platform_view.SetColor(platform_framework);
 		}
@@ -158,7 +177,7 @@ namespace Game{
 		// This updates the new framework within game_manager as well as updating platform state/view
 		private void UpdateFramework(Framework platform_framework) {
 			SetFramework(platform_framework);
-			game_manager.ChangeLayer(gameObject, platform_framework);
+			game_manager.ChangeLayer(platform_view.gameObject, platform_framework);
 		}
 
 
