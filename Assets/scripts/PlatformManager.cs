@@ -117,6 +117,9 @@ namespace Game{
 
 		// This is used only from editor to mock movement of platform
 		public void SetPosition(float cycle_percentage) {
+			if (points.Count < 2) {
+				return;
+			}
 			int source_point_idx, target_point_idx;
 			source_point_idx = Mathf.FloorToInt(cycle_percentage*(points.Count-1)*2);
 			source_point_idx = source_point_idx < points.Count ? source_point_idx : 2*(points.Count-1) - source_point_idx; 
@@ -126,7 +129,13 @@ namespace Game{
 			int num_of_paths = (points.Count-1)*2;
 			float path_percentage = cycle_percentage*num_of_paths % 1;
 			Vector2 pos = Vector2.Lerp(points[source_point_idx].position, points[target_point_idx].position, path_percentage);
-			platform_view.Position = pos;
+
+//			if (platform_view == null) {
+//				AssignView();
+//			}
+//			platform_view.Position =pos;
+			transform.position = pos;
+
 		}
 
 		protected void FixedUpdate() {

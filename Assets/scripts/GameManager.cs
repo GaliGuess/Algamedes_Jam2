@@ -44,7 +44,7 @@ namespace Game {
 		public void MockPlatformsAtBeat(int beat_num) {
 			GameObject[] platforms = GameObject.FindGameObjectsWithTag("platform");
 			foreach (GameObject platform in platforms) {
-				PlatformManager platform_manager = platform.GetComponent<PlatformManager>();
+				PlatformManager platform_manager = platform.GetComponentInParent<PlatformManager>();
 				platform_manager.SetPosition(((float)beat_num/(float)platform_manager.beats_per_cycle)%1);
 			}
 		}
