@@ -16,6 +16,7 @@
           </e>
         </e>
         <e p="scripts" t="Include">
+          <e p="BlinkingPlatformManager.cs" t="Include" />
           <e p="Controllers" t="Include">
             <e p="Controller.cs" t="Include" />
             <e p="KeyboardController.cs" t="Include" />
@@ -42,6 +43,7 @@
           <e p="ShotManager.cs" t="Include" />
           <e p="ShotState.cs" t="Include" />
           <e p="ShotView.cs" t="Include" />
+          <e p="TestPlayerScript.cs" t="Include" />
           <e p="TrackingCamera.cs" t="Include" />
           <e p="Utils" t="Include">
             <e p="MathsUtils.cs" t="Include" />
