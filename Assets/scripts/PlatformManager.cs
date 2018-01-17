@@ -18,6 +18,8 @@ namespace Game{
 		
 		[SerializeField] public Framework init_platform_framework = Framework.GREY;
 
+		[SerializeField] public bool isMovingPlatform;
+
 		protected int target_point_idx = 0;
 
 		protected int current_point_idx = 0;
