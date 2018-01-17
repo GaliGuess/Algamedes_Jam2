@@ -5,15 +5,17 @@ using UnityEngine;
 namespace Game{
 	public class PlatformView : MonoBehaviour {
 
+		public bool useSensorAsTrigger;
+
 		private PlatformManager platform_manager;
 
 		private PlatformState platform_state;
 
-		private Rigidbody2D body;
+		public Rigidbody2D body;
 
 		private SpriteRenderer sprite_renderer;
 
-
+		private List<Rigidbody2D> carried_bodies = new List<Rigidbody2D>();
 
 		public Vector2 Position{
 			get {
@@ -23,6 +25,17 @@ namespace Game{
 				body.position = value;
 			}
 		}
+
+		public Vector2 Velocity{
+			get {
+				return body.velocity;
+			}
+			set {
+				body.velocity = value;
+			}
+		}
+
+		private Vector2 last_position;
 
 		[SerializeField] private Color color = Color.gray;
 
@@ -42,11 +55,29 @@ namespace Game{
 		// Use this for initialization
 		void Start () {
 			sprite_renderer.material.color = this.color;
+			last_position = Position;
+			body.isKinematic = true;
+			if (useSensorAsTrigger) {
+				foreach(PlatformSensor sensor in GetComponentsInChildren<PlatformSensor>() ) {
+					
+					sensor.carrier = this;
+				}
+			}
+
 		}
 
 		// Update is called once per frame
 		void Update () {
 
+		}
+
+		void LateUpdate() {
+			Velocity = Position - last_position;
+			foreach(Rigidbody2D body in carried_bodies) {
+//				Debug.Log("PlatformView: moving carried body " + body.transform + ", " + Velocity);
+				body.transform.Translate(Velocity);
+			}
+			last_position = Position;
 		}
 
 		protected void Awake() {
@@ -61,6 +92,7 @@ namespace Game{
 		}
 
 
+
 		void OnCollisionEnter2D(Collision2D other) {
 			if (other.gameObject.tag == "shot")
 			{
@@ -72,7 +104,40 @@ namespace Game{
 			}
 			if (other.gameObject.tag == "player")
 			{
+				if (!useSensorAsTrigger) {
+					Rigidbody2D rb = other.collider.GetComponent<Rigidbody2D>();
+
+					if (rb != null) {
+						Add(rb);
+					}
+				}
+
 //				Debug.Log("PlatformManger: detected player");
+			}
+		}
+
+		void OnCollisionExit2D(Collision2D other) {
+			if (other.gameObject.tag == "player")
+			{
+				if (!useSensorAsTrigger) {
+					Rigidbody2D rb = other.collider.GetComponent<Rigidbody2D>();
+					if (rb != null) {
+						Remove(rb);
+					}
+				}
+				//				Debug.Log("PlatformManger: detected player");
+			}
+		}
+
+		public void Add(Rigidbody2D rb) {
+			if (!carried_bodies.Contains(rb)) {
+				carried_bodies.Add(rb);
+			}
+		}
+
+		public void Remove(Rigidbody2D rb) {
+			if (carried_bodies.Contains(rb)) {
+				carried_bodies.Remove(rb);
 			}
 		}
 
