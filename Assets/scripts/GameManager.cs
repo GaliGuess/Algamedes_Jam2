@@ -42,7 +42,7 @@ namespace Game {
 		}
 
 		public void MockPlatformsAtBeat(int beat_num) {
-			GameObject[] platforms = GameObject.FindGameObjectsWithTag("platform"); //TODO: change tags of platformBody from "platform" to "platformBody" and add tag "platform" to platform
+			GameObject[] platforms = GameObject.FindGameObjectsWithTag("platform");
 			foreach (GameObject platform in platforms) {
 				PlatformManager platform_manager = platform.GetComponentInParent<PlatformManager>();
 				platform_manager.SetPosition(((float)beat_num/(float)platform_manager.beats_per_cycle)%1);
@@ -65,25 +65,13 @@ namespace Game {
 
 		public void ChangeLayer(GameObject obj, Framework framework)
 		{
-//			Debug.Log("ChangeLayer: " + obj.tag);
-			if (obj.CompareTag("platform")) {
-				SetLayerRecursively(obj, framework);
-			}
+			Debug.Log("ChangeLayer: " + obj.tag);
+			if (obj.CompareTag("platform")) obj.layer = framework == Framework.BLACK ? black_platforms_layer : 
+														framework == Framework.GREY ? grey_platforms_layer : 
+														white_platforms_layer;
 			
 			else if (obj.CompareTag("player")) obj.layer = framework == Framework.BLACK ? black_player_layer : 
 														   white_player_layer;
-		}
-
-		// Recursion is probably not a good idea
-		public void SetLayerRecursively(GameObject obj, Framework framework )
-		{
-			obj.layer = framework == Framework.BLACK ? black_platforms_layer : 
-				framework == Framework.GREY ? grey_platforms_layer : 
-				white_platforms_layer;
-			foreach ( Transform child in obj.transform )
-			{
-				SetLayerRecursively( child.gameObject, framework );
-			}
 		}
 
 		public void PlayerKilled(GameObject killedPlayer)
