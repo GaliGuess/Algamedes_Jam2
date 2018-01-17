@@ -44,13 +44,20 @@ namespace Game{
 			body.velocity = velocity;
 		}
 
+		
 		void OnCollisionEnter2D(Collision2D other) {
-			if (other.gameObject.tag == "platform")
+			
+			if (other.gameObject.CompareTag("platform"))
 			{
-				//				Debug.Log("ShotManager: detected platform");
+				//Debug.Log("ShotManager: detected platform");
 				Framework framework = other.gameObject.GetComponentInParent<PlatformState>().platform_framework;
 				Destroy(gameObject);
 
+			}
+			
+			if (other.gameObject.CompareTag("player"))
+			{
+				Destroy(gameObject);
 			}
 		}
 		
@@ -58,10 +65,7 @@ namespace Game{
 		{
 			if (other.CompareTag("gameBoundry"))
 			{
-				Destroy(gameObject);
-			}
-			if (other.CompareTag("player"))
-			{
+//				Debug.Log("out of boundry");
 				Destroy(gameObject);
 			}
 		}
