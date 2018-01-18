@@ -3394,6 +3394,10 @@ Prefab:
       propertyPath: fallingDrag
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4669906225348876, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.499
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
   m_IsPrefabParent: 0
