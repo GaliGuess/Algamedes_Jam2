@@ -34,6 +34,7 @@
           </e>
           <e p="PlatformFactory.cs" t="Include" />
           <e p="PlatformManager.cs" t="Include" />
+          <e p="PlatformSensor.cs" t="Include" />
           <e p="PlatformState.cs" t="Include" />
           <e p="PlatformView.cs" t="Include" />
           <e p="PlayerScript.cs" t="Include" />

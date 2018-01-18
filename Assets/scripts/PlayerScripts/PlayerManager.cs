@@ -53,7 +53,8 @@ public class PlayerManager : MonoBehaviour
 	private Vector2 shootingDirection; // for testing
 	
 	private Vector2 lastNonZeroDirection;
-	private bool isGrounded, releaseJump = false;
+	public bool isGrounded;
+	private bool releaseJump = false;
 	private bool canDoubleJump; // double jump is currently disabled but this is still used!
 	private float jumpRatio = 0.2f;
 	private int _timesSinceFired = 0;
