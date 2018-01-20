@@ -47,7 +47,7 @@ namespace Game{
 		
 		void OnCollisionEnter2D(Collision2D other) {
 			
-			if (other.gameObject.CompareTag("platform"))
+			if (other.gameObject.CompareTag(Values.PLATFORM_TAG))
 			{
 				//Debug.Log("ShotManager: detected platform");
 				Framework framework = other.gameObject.GetComponentInParent<PlatformState>().platform_framework;
@@ -55,7 +55,7 @@ namespace Game{
 
 			}
 			
-			if (other.gameObject.CompareTag("player"))
+			if (other.gameObject.CompareTag(Values.PLAYER_TAG))
 			{
 				Destroy(gameObject);
 			}
@@ -63,7 +63,7 @@ namespace Game{
 		
 		private void OnTriggerExit2D(Collider2D other)
 		{
-			if (other.CompareTag("gameBoundry"))
+			if (other.CompareTag(Values.BOUNDRIES_TAG))
 			{
 //				Debug.Log("out of boundry");
 				Destroy(gameObject);

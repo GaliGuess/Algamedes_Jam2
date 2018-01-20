@@ -20,7 +20,7 @@ public class PlayerView : MonoBehaviour {
 	void Awake () {
 		_spriteRenderer = GetComponent<SpriteRenderer>();
 		
-		crosshair = transform.Find("crosshair");
+		crosshair = transform.Find(Values.PLAYER_CROSSHAIR_GAMEOBJ_NAME);
 		_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();
 	}
 

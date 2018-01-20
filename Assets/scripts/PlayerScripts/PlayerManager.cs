@@ -80,8 +80,8 @@ public class PlayerManager : MonoBehaviour
 		_controller = GetComponent<Controller>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 		
-		overlap_topLeft = transform.Find("overlap_topLeft");
-		overlap_bottomRight = transform.Find("overlap_bottomRight");
+		overlap_topLeft = transform.Find(Values.PLAYER_TOP_LEFT_GAMEOBJ_NAME);
+		overlap_bottomRight = transform.Find(Values.PLAYER_BOT_RIGHT_GAMEOBJ_NAME);
 	}
 	
 	
@@ -224,7 +224,7 @@ public class PlayerManager : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.CompareTag("gameBoundry"))
+		if (other.CompareTag(Values.BOUNDRIES_TAG))
 		{
 			if (invincible) return;
 			_gameManager.PlayerKilled(gameObject);

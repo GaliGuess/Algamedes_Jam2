@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameView : MonoBehaviour
-{
-	private GameState _gameState;
-	public string[] playerNames;
-	public Text[] scoreTextObjects;
-
-	private void Awake()
+namespace Game{
+	public class GameView : MonoBehaviour
 	{
-		_gameState = GetComponent<GameState>();
-	}
+		
+		private GameState _gameState;
+		public string[] playerNames;
+		public Text[] scoreTextObjects;
 
-	public void updateScore()
-	{
-		for (int i = 0; i < playerNames.Length; i++)
+		private void Awake()
 		{
-			scoreTextObjects[i].text = _gameState.getScore(playerNames[i]).ToString();
+			_gameState = GetComponent<GameState>();
+		}
+
+		public void updateScore()
+		{
+			for (int i = 0; i < playerNames.Length; i++)
+			{
+				scoreTextObjects[i].text = _gameState.getScore(playerNames[i]).ToString();
+			}
 		}
 	}
 }
+

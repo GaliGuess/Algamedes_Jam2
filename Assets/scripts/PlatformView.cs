@@ -94,7 +94,7 @@ namespace Game{
 
 
 		void OnCollisionEnter2D(Collision2D other) {
-			if (other.gameObject.tag == "shot")
+			if (other.gameObject.tag == Values.SHOT_TAG)
 			{
 //				Debug.Log("PlatformManager: detected shot");
 				Framework framework = other.gameObject.GetComponent<ShotState>().shot_framework;
@@ -102,7 +102,7 @@ namespace Game{
 					platform_manager.UpdateHit(framework);
 				}
 			}
-			if (other.gameObject.tag == "player")
+			if (other.gameObject.tag == Values.PLAYER_TAG)
 			{
 				if (!useSensorAsTrigger) {
 					Rigidbody2D rb = other.collider.GetComponent<Rigidbody2D>();
@@ -117,7 +117,7 @@ namespace Game{
 		}
 
 		void OnCollisionExit2D(Collision2D other) {
-			if (other.gameObject.tag == "player")
+			if (other.gameObject.tag == Values.PLAYER_TAG)
 			{
 				if (!useSensorAsTrigger) {
 					Rigidbody2D rb = other.collider.GetComponent<Rigidbody2D>();

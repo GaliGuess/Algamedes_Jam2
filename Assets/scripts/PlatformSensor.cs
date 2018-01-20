@@ -15,7 +15,7 @@ namespace Game{
 		}
 
 		void OnTriggerEnter2D(Collider2D ob) {
-			if (ob.CompareTag("player")){
+			if (ob.CompareTag(Values.PLAYER_TAG)){
 //				Debug.Log("PlatformSensor: OnTriggerEnter");
 				Ray ray = new Ray(ob.transform.position, (transform.position - ob.transform.position));
 				bool isSide = CheckNormalIsSide(ray.direction);
@@ -28,7 +28,7 @@ namespace Game{
 		}
 
 		void OnTriggerExit2D(Collider2D ob) {
-			if (ob.CompareTag("player")) {
+			if (ob.CompareTag(Values.PLAYER_TAG)) {
 //				Debug.Log("PlatformSensor: OnTriggerExit");
 				Rigidbody2D rb = ob.GetComponent<Rigidbody2D>();
 				if (ob != null && rb != carrier.body) {
