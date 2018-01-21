@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803233576476396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.427, y: -0.508, z: 0}
+  m_LocalPosition: {x: -0.427, y: -0.475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4475441237292758}
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1237063999096216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.369, y: -0.52, z: 0}
+  m_LocalPosition: {x: 0.369, y: -0.532, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4475441237292758}
@@ -194,10 +194,10 @@ MonoBehaviour:
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   lastNonZeroDirection: {x: 0, y: 0}
-  HorizontalAxis: Horizontal
-  VerticalAxis: Vertical
-  JumpAxis: Jump
-  ShootAxis: Fire
+  HorizontalAxis: B1_Horizontal
+  VerticalAxis: B1_Vertical
+  JumpAxis: B1_Jump
+  ShootAxis: B1_Fire
   direction: {x: 0, y: 0}
 --- !u!114 &114140931292144550
 MonoBehaviour:
@@ -222,16 +222,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5a9aeb4570e4f00b936efcf722abd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usingKeyboard: 0
+  usingKeyboard: 1
   usingPS4Controller: 0
   maxXVelocity: 17
   VelocityFactor: 40
   MaxFallingVelocity: 15
   turnRate: 1.5
   bonusFriction: 1.05
-  jumpHeight: 1700
-  RegularGravityScale: 2
-  FallingGravityScale: 1
+  jumpHeight: 2500
+  RegularGravityScale: 4
+  FallingGravityScale: 2
   turnsBetweenShots: 4
   recoil: 0.12
   movingDirection: {x: 0, y: 0}
@@ -266,9 +266,9 @@ MonoBehaviour:
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   lastNonZeroDirection: {x: 0, y: 0}
-  JumpUsingVerticalMovement: 1
-  AutoFire: 0
-  AutoJumping: 0
+  JumpUsingVerticalMovement: 0
+  AutoFire: 1
+  AutoJumping: 1
   HorizontalMovementControls:
   - J1_PS4_LeftStick_Horizontal
   - J1_PS4_DPad_Horizontal
@@ -281,10 +281,14 @@ MonoBehaviour:
   - J1_PS4_RightStick_Vertical
   JumpControls:
   - J1_PS4_X
+  - J1_PS4_L1
+  - J1_PS4_L2
+  - J1_PS4_L3
   ShootControls:
   - J1_PS4_R1
   - J1_PS4_R2
   - J1_PS4_Square
+  - J1_PS4_R3
 --- !u!212 &212472621495823110
 SpriteRenderer:
   m_ObjectHideFlags: 1

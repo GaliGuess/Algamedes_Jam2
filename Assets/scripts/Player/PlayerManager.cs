@@ -195,15 +195,15 @@ public class PlayerManager : MonoBehaviour
 	private void move(Vector2 direction)
 	{
 		Vector2 newVelocity = _rigidbody2D.velocity;
-		newVelocity.x = direction.x * VelocityFactor;
-		newVelocity.x = Mathf.Lerp(_rigidbody2D.velocity.x, newVelocity.x, Time.deltaTime * turnRate);
+//		newVelocity.x = direction.x * VelocityFactor;
+		newVelocity.x = Mathf.Lerp(_rigidbody2D.velocity.x, direction.x * VelocityFactor, -Mathf.Pow(Time.deltaTime, 2) + 1);
 		newVelocity.x = Mathf.Clamp(newVelocity.x, -maxXVelocity, maxXVelocity);
 		_rigidbody2D.velocity = newVelocity;
 	}
 
 	private void jump()
 	{
-		if (isGrounded && !canDoubleJump && releaseJump)
+		if (isGrounded && !canDoubleJump && releaseJump && _rigidbody2D.velocity.y <= 0)
 		{
 			_rigidbody2D.velocity += new Vector2(movingDirection.x * jumpHeight * jumpRatio * Time.deltaTime,
 												 jumpHeight * Time.deltaTime);

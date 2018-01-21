@@ -850,16 +850,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 603293045}
     m_Modifications:
-    - target: {fileID: 114878598070120772, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: JumpControls.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: ShootControls.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4475441237292758, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -25.6
@@ -896,86 +886,15 @@ Prefab:
       propertyPath: m_Name
       value: Player_B1
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: HorizontalAxis
-      value: B1_Horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: VerticalAxis
-      value: B1_Vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: JumpAxis
-      value: B1_Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: ShootAxis
-      value: B1_Fire
+    - target: {fileID: 114474660210966542, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: usingPS4Controller
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114474660210966542, guid: c808ace7f6b614c8786586552c06dd7b,
         type: 2}
       propertyPath: usingKeyboard
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114474660210966542, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: usingPS4Controller
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: HorizontalAxis
-      value: B1_Horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: VerticalAxis
-      value: B1_Vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: JumpAxis
-      value: B1_Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: ShootAxis
-      value: B1_Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: JumpUsingVerticalMovement
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: JumpControls.Array.data[1]
-      value: J1_PS4_L1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: JumpControls.Array.data[2]
-      value: J1_PS4_L2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: JumpControls.Array.data[3]
-      value: J1_PS4_L3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: ShootControls.Array.data[3]
-      value: J1_PS4_R3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
@@ -2502,7 +2421,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 264
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2530,7 +2449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 9.5, y: -10.700001}
+  m_AnchoredPosition: {x: -96, y: -10.700001}
   m_SizeDelta: {x: 150, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!4 &1177544679 stripped
@@ -3627,7 +3546,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

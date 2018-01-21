@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93da262b-c29b-4459-8495-dac80ca7fd7e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/contentModel.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/deathmatch_scene 1.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/deathmatch_scene 1.unity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs" afterPath="$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -101,41 +102,41 @@
       <file leaf-file-name="PlayerManager.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1693">
-              <caret line="109" column="83" lean-forward="false" selection-start-line="109" selection-start-column="83" selection-end-line="109" selection-end-column="83" />
+            <state relative-caret-position="242">
+              <caret line="191" column="9" lean-forward="false" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
               <folding>
-                <marker date="1516503939545" expanded="false" signature="6:128" ph="..." />
-                <marker date="1516503939545" expanded="true" signature="172:7342" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="1016:1293" ph="/* [SerializeField, Tooltip(&quot;Player friction with air\nnormal value is 0&quot;)] ... */" />
-                <marker date="1516503939545" expanded="true" signature="1444:1573" ph="/* [SerializeField, Tooltip(&quot;Additional gravity is added when the player is in the air&quot;)] ... */" />
-                <marker date="1516503939545" expanded="true" signature="2618:3388" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="2999:3103" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="3124:3233" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="3405:3888" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="3912:3939" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="3960:5187" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="4005:5184" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="4036:5180" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="4275:4300" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="4442:4498" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="4639:4682" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="4720:4786" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="4795:4861" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="4863:5130" ph="/* if (_rigidbody2D.velocity.y &lt; -MaxFallingVelocity) ... */" />
-                <marker date="1516503939545" expanded="true" signature="5221:5380" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="5266:5377" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="5419:5731" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="5753:6381" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="5807:6082" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="5956:6057" ph="/* _rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime); ... */" />
-                <marker date="1516503939545" expanded="true" signature="6083:6378" ph="/* else if (canDoubleJump) ... */" />
-                <marker date="1516503939545" expanded="true" signature="6421:6784" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="6836:6931" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="6984:7081" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="7047:7078" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="7130:7259" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="7179:7256" ph="{...}" />
-                <marker date="1516503939545" expanded="true" signature="7311:7340" ph="{...}" />
+                <marker date="1516568835667" expanded="false" signature="6:128" ph="..." />
+                <marker date="1516568835667" expanded="true" signature="172:7399" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="1016:1293" ph="/* [SerializeField, Tooltip(&quot;Player friction with air\nnormal value is 0&quot;)] ... */" />
+                <marker date="1516568835667" expanded="true" signature="1444:1573" ph="/* [SerializeField, Tooltip(&quot;Additional gravity is added when the player is in the air&quot;)] ... */" />
+                <marker date="1516568835667" expanded="true" signature="2618:3388" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="2999:3103" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="3124:3233" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="3405:3888" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="3912:3939" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="3960:5187" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="4005:5184" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="4036:5180" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="4275:4300" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="4442:4498" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="4639:4682" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="4720:4786" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="4795:4861" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="4863:5130" ph="/* if (_rigidbody2D.velocity.y &lt; -MaxFallingVelocity) ... */" />
+                <marker date="1516568835667" expanded="true" signature="5221:5380" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="5266:5377" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="5419:5756" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="5778:6438" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="5864:6139" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="6013:6114" ph="/* _rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime); ... */" />
+                <marker date="1516568835667" expanded="true" signature="6140:6435" ph="/* else if (canDoubleJump) ... */" />
+                <marker date="1516568835667" expanded="true" signature="6478:6841" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="6893:6988" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="7041:7138" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="7104:7135" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="7187:7316" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="7236:7313" ph="{...}" />
+                <marker date="1516568835667" expanded="true" signature="7368:7397" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -262,6 +263,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -275,7 +277,6 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -335,11 +336,12 @@
       <workItem from="1516269947532" duration="67000" />
       <workItem from="1516470207926" duration="24396000" />
       <workItem from="1516503903373" duration="118000" />
+      <workItem from="1516564428651" duration="2515000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146092000" />
+    <option name="totallyTimeSpent" value="148607000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -352,6 +354,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="498" y="22" width="942" height="878" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -361,7 +364,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20063694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20063694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -671,41 +674,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1693">
-          <caret line="109" column="83" lean-forward="false" selection-start-line="109" selection-start-column="83" selection-end-line="109" selection-end-column="83" />
+        <state relative-caret-position="242">
+          <caret line="191" column="9" lean-forward="false" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
           <folding>
-            <marker date="1516503939545" expanded="false" signature="6:128" ph="..." />
-            <marker date="1516503939545" expanded="true" signature="172:7342" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="1016:1293" ph="/* [SerializeField, Tooltip(&quot;Player friction with air\nnormal value is 0&quot;)] ... */" />
-            <marker date="1516503939545" expanded="true" signature="1444:1573" ph="/* [SerializeField, Tooltip(&quot;Additional gravity is added when the player is in the air&quot;)] ... */" />
-            <marker date="1516503939545" expanded="true" signature="2618:3388" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="2999:3103" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="3124:3233" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="3405:3888" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="3912:3939" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="3960:5187" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="4005:5184" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="4036:5180" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="4275:4300" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="4442:4498" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="4639:4682" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="4720:4786" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="4795:4861" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="4863:5130" ph="/* if (_rigidbody2D.velocity.y &lt; -MaxFallingVelocity) ... */" />
-            <marker date="1516503939545" expanded="true" signature="5221:5380" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="5266:5377" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="5419:5731" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="5753:6381" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="5807:6082" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="5956:6057" ph="/* _rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime); ... */" />
-            <marker date="1516503939545" expanded="true" signature="6083:6378" ph="/* else if (canDoubleJump) ... */" />
-            <marker date="1516503939545" expanded="true" signature="6421:6784" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="6836:6931" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="6984:7081" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="7047:7078" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="7130:7259" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="7179:7256" ph="{...}" />
-            <marker date="1516503939545" expanded="true" signature="7311:7340" ph="{...}" />
+            <marker date="1516568835667" expanded="false" signature="6:128" ph="..." />
+            <marker date="1516568835667" expanded="true" signature="172:7399" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="1016:1293" ph="/* [SerializeField, Tooltip(&quot;Player friction with air\nnormal value is 0&quot;)] ... */" />
+            <marker date="1516568835667" expanded="true" signature="1444:1573" ph="/* [SerializeField, Tooltip(&quot;Additional gravity is added when the player is in the air&quot;)] ... */" />
+            <marker date="1516568835667" expanded="true" signature="2618:3388" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="2999:3103" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="3124:3233" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="3405:3888" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="3912:3939" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="3960:5187" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="4005:5184" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="4036:5180" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="4275:4300" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="4442:4498" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="4639:4682" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="4720:4786" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="4795:4861" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="4863:5130" ph="/* if (_rigidbody2D.velocity.y &lt; -MaxFallingVelocity) ... */" />
+            <marker date="1516568835667" expanded="true" signature="5221:5380" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="5266:5377" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="5419:5756" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="5778:6438" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="5864:6139" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="6013:6114" ph="/* _rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime); ... */" />
+            <marker date="1516568835667" expanded="true" signature="6140:6435" ph="/* else if (canDoubleJump) ... */" />
+            <marker date="1516568835667" expanded="true" signature="6478:6841" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="6893:6988" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="7041:7138" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="7104:7135" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="7187:7316" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="7236:7313" ph="{...}" />
+            <marker date="1516568835667" expanded="true" signature="7368:7397" ph="{...}" />
           </folding>
         </state>
       </provider>
