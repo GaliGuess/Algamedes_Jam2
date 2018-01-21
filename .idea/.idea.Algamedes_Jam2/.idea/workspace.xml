@@ -6,6 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/deathmatch_scene 1.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/deathmatch_scene 1.unity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs" afterPath="$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/Player/PlayerState.cs" afterPath="$PROJECT_DIR$/Assets/scripts/Player/PlayerState.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,7 +31,7 @@
       <file leaf-file-name="Controller.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/scripts/Controllers/Controller.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="0">
               <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
               <folding>
                 <marker date="1516495906508" expanded="true" signature="48:313" ph="/* IMPORTANT: notice this class has Start &amp; Update functions. ... */" />
@@ -102,41 +103,56 @@
       <file leaf-file-name="PlayerManager.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="191" column="9" lean-forward="false" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
+            <state relative-caret-position="276">
+              <caret line="159" column="16" lean-forward="true" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
               <folding>
-                <marker date="1516568835667" expanded="false" signature="6:128" ph="..." />
-                <marker date="1516568835667" expanded="true" signature="172:7399" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="1016:1293" ph="/* [SerializeField, Tooltip(&quot;Player friction with air\nnormal value is 0&quot;)] ... */" />
-                <marker date="1516568835667" expanded="true" signature="1444:1573" ph="/* [SerializeField, Tooltip(&quot;Additional gravity is added when the player is in the air&quot;)] ... */" />
-                <marker date="1516568835667" expanded="true" signature="2618:3388" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="2999:3103" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="3124:3233" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="3405:3888" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="3912:3939" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="3960:5187" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="4005:5184" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="4036:5180" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="4275:4300" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="4442:4498" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="4639:4682" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="4720:4786" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="4795:4861" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="4863:5130" ph="/* if (_rigidbody2D.velocity.y &lt; -MaxFallingVelocity) ... */" />
-                <marker date="1516568835667" expanded="true" signature="5221:5380" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="5266:5377" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="5419:5756" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="5778:6438" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="5864:6139" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="6013:6114" ph="/* _rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime); ... */" />
-                <marker date="1516568835667" expanded="true" signature="6140:6435" ph="/* else if (canDoubleJump) ... */" />
-                <marker date="1516568835667" expanded="true" signature="6478:6841" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="6893:6988" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="7041:7138" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="7104:7135" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="7187:7316" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="7236:7313" ph="{...}" />
-                <marker date="1516568835667" expanded="true" signature="7368:7397" ph="{...}" />
+                <marker date="1516572785785" expanded="false" signature="6:128" ph="..." />
+                <marker date="1516572785785" expanded="true" signature="172:7688" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="1019:1296" ph="/* [SerializeField, Tooltip(&quot;Player friction with air\nnormal value is 0&quot;)] ... */" />
+                <marker date="1516572785785" expanded="true" signature="1447:1576" ph="/* [SerializeField, Tooltip(&quot;Additional gravity is added when the player is in the air&quot;)] ... */" />
+                <marker date="1516572785785" expanded="true" signature="2656:3426" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="3037:3141" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="3162:3271" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="3443:3813" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="3837:3864" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="3885:5054" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="3930:5051" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="3961:5047" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="4200:4225" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="4367:4423" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="4564:4607" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="4897:4997" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="5088:5247" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="5133:5244" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="5286:5623" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="5645:6351" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="5779:6081" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="6130:6348" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="6160:6318" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="6391:6757" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="6809:6904" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="6957:7153" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="7020:7150" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="7095:7146" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="7206:7319" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="7279:7316" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="7368:7497" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="7417:7494" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="7551:7600" ph="{...}" />
+                <marker date="1516572785785" expanded="true" signature="7641:7686" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerState.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/scripts/Player/PlayerState.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <folding>
+                <marker date="1516572766086" expanded="false" signature="6:90" ph="..." />
+                <marker date="1516572766086" expanded="true" signature="133:266" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -156,6 +172,10 @@
       <find>transla</find>
       <find>body</find>
       <find>carried</find>
+      <find>MaxFallingVelocity</find>
+      <find>canDoubleJump</find>
+      <find>current</find>
+      <find>currentPl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,6 +196,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E4CA8F4E-90C6-4470-94E9-B3A6D6F56DA5/8f/a4b24587/Mathf.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Controllers/KeyboardController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Controller Auditions/Project_2 - Copy/Assets/Mario1Controller2DScript.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Player/PlayerState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Movement/movement_test.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/GameView.cs" root0="FORCE_HIGHLIGHTING" />
@@ -232,6 +253,7 @@
         <option value="$PROJECT_DIR$/Assets/scripts/Controllers/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Controllers/KeyboardController.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Controllers/PS4Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Player/PlayerState.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs" />
       </list>
     </option>
@@ -270,6 +292,32 @@
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="Algamedes_Jam2 (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Algamedes_Jam2 (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Algamedes_Jam2 (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Algamedes_Jam2 (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="scripts" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Algamedes_Jam2 (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="scripts" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Player" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -336,12 +384,12 @@
       <workItem from="1516269947532" duration="67000" />
       <workItem from="1516470207926" duration="24396000" />
       <workItem from="1516503903373" duration="118000" />
-      <workItem from="1516564428651" duration="2515000" />
+      <workItem from="1516564428651" duration="5864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148607000" />
+    <option name="totallyTimeSpent" value="151956000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -391,7 +439,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/scripts/KeyboardController.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/scripts/PlayerScript.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/scripts/HumanController.cs" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E4CA8F4E-90C6-4470-94E9-B3A6D6F56DA5/d0/e2695f92/Component.cs">
@@ -625,7 +672,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/Controllers/Controller.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="0">
           <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
           <folding>
             <marker date="1516495906508" expanded="true" signature="48:313" ph="/* IMPORTANT: notice this class has Start &amp; Update functions. ... */" />
@@ -672,43 +719,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/Player/PlayerState.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <marker date="1516572766086" expanded="false" signature="6:90" ph="..." />
+            <marker date="1516572766086" expanded="true" signature="133:266" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="191" column="9" lean-forward="false" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
+        <state relative-caret-position="276">
+          <caret line="159" column="16" lean-forward="true" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
           <folding>
-            <marker date="1516568835667" expanded="false" signature="6:128" ph="..." />
-            <marker date="1516568835667" expanded="true" signature="172:7399" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="1016:1293" ph="/* [SerializeField, Tooltip(&quot;Player friction with air\nnormal value is 0&quot;)] ... */" />
-            <marker date="1516568835667" expanded="true" signature="1444:1573" ph="/* [SerializeField, Tooltip(&quot;Additional gravity is added when the player is in the air&quot;)] ... */" />
-            <marker date="1516568835667" expanded="true" signature="2618:3388" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="2999:3103" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="3124:3233" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="3405:3888" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="3912:3939" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="3960:5187" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="4005:5184" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="4036:5180" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="4275:4300" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="4442:4498" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="4639:4682" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="4720:4786" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="4795:4861" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="4863:5130" ph="/* if (_rigidbody2D.velocity.y &lt; -MaxFallingVelocity) ... */" />
-            <marker date="1516568835667" expanded="true" signature="5221:5380" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="5266:5377" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="5419:5756" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="5778:6438" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="5864:6139" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="6013:6114" ph="/* _rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime); ... */" />
-            <marker date="1516568835667" expanded="true" signature="6140:6435" ph="/* else if (canDoubleJump) ... */" />
-            <marker date="1516568835667" expanded="true" signature="6478:6841" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="6893:6988" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="7041:7138" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="7104:7135" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="7187:7316" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="7236:7313" ph="{...}" />
-            <marker date="1516568835667" expanded="true" signature="7368:7397" ph="{...}" />
+            <marker date="1516572785785" expanded="false" signature="6:128" ph="..." />
+            <marker date="1516572785785" expanded="true" signature="172:7688" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="1019:1296" ph="/* [SerializeField, Tooltip(&quot;Player friction with air\nnormal value is 0&quot;)] ... */" />
+            <marker date="1516572785785" expanded="true" signature="1447:1576" ph="/* [SerializeField, Tooltip(&quot;Additional gravity is added when the player is in the air&quot;)] ... */" />
+            <marker date="1516572785785" expanded="true" signature="2656:3426" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="3037:3141" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="3162:3271" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="3443:3813" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="3837:3864" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="3885:5054" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="3930:5051" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="3961:5047" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="4200:4225" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="4367:4423" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="4564:4607" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="4897:4997" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="5088:5247" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="5133:5244" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="5286:5623" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="5645:6351" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="5779:6081" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="6130:6348" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="6160:6318" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="6391:6757" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="6809:6904" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="6957:7153" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="7020:7150" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="7095:7146" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="7206:7319" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="7279:7316" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="7368:7497" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="7417:7494" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="7551:7600" ph="{...}" />
+            <marker date="1516572785785" expanded="true" signature="7641:7686" ph="{...}" />
           </folding>
         </state>
       </provider>

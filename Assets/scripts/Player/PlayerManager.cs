@@ -22,8 +22,8 @@ public class PlayerManager : MonoBehaviour
 	float maxXVelocity = 17;
 	public float VelocityFactor = 40f; // need to get rid of this but maybe some other time :)
 
-	[SerializeField, Tooltip("The maximum speed in y axis during falling")]
-	public float MaxFallingVelocity = 10;
+//	[SerializeField, Tooltip("The maximum speed in y axis during falling")]
+	private float MaxFallingVelocity = 40;
 
 	[SerializeField, Tooltip("Lower value makes the player switch direction slower")]
 	public float turnRate = 1.5f;
@@ -55,7 +55,7 @@ public class PlayerManager : MonoBehaviour
 	[SerializeField, Tooltip("How far the player is pushed back when shooting")]
 	public float recoil = 0.12f;
 
-//	[SerializeField] bool doubleJumpEnabled = true;
+	[SerializeField] bool doubleJumpEnabled = true;
 
 	private Rigidbody2D _rigidbody2D;
 	private GameManager _gameManager;
@@ -66,9 +66,10 @@ public class PlayerManager : MonoBehaviour
 
 	public bool isGrounded;
 	private bool releaseJump = false;
-	private bool canDoubleJump; // double jump is currently disabled but this is still used!
+	public bool canDoubleJump; // double jump is currently disabled but this is still used!
 	private float jumpRatio = 0.2f;
 	private int _timesSinceFired = 0;
+	private float Jump_Y_Threshold = 5f;
 
 	// Used for checking if player is grounded
 	private Transform overlap_topLeft, overlap_bottomRight;
@@ -115,9 +116,6 @@ public class PlayerManager : MonoBehaviour
 	{
 		_playerView.SetSpriteColor(_playerState.player_framework);
 
-//		lastNonZeroDirection = _rigidbody2D.position.x < 0 ? Vector2.right : Vector2.left;
-		canDoubleJump = false;
-
 		// layer of platforms for checking if grounded
 		if (_playerState.player_framework == Framework.BLACK) overlap_layersMask = LayerMask.GetMask("platforms_black", "floor");
 		else if (_playerState.player_framework == Framework.WHITE) overlap_layersMask = LayerMask.GetMask("platforms_white", "floor");
@@ -159,24 +157,16 @@ public class PlayerManager : MonoBehaviour
 				{
 					shoot(shootingDirection);
 				}
-
-				if (_rigidbody2D.velocity.y < 0)
+				
+				// Different gravity scale during fall
+				if (_rigidbody2D.velocity.y < 0) _rigidbody2D.gravityScale = FallingGravityScale;
+				else _rigidbody2D.gravityScale = RegularGravityScale;
+				
+				// limiting y speed while falling
+				if (_rigidbody2D.velocity.y < -MaxFallingVelocity)
 				{
-					_rigidbody2D.gravityScale = FallingGravityScale;
+					_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, -MaxFallingVelocity);
 				}
-				else
-				{
-					_rigidbody2D.gravityScale = RegularGravityScale;
-				}
-
-//				if (_rigidbody2D.velocity.y < -MaxFallingVelocity)
-//				{
-//					_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, -MaxFallingVelocity);
-////					_rigidbody2D.drag = fallingDrag;
-//				}
-//				else _rigidbody2D.drag = normalDrag;
-
-				// for testing
 				currentVelocity = _rigidbody2D.velocity;
 			}
 		}
@@ -203,25 +193,29 @@ public class PlayerManager : MonoBehaviour
 
 	private void jump()
 	{
-		if (isGrounded && !canDoubleJump && releaseJump && _rigidbody2D.velocity.y <= 0)
+		// This is to avoid chain jumping
+		if (_rigidbody2D.velocity.y > Jump_Y_Threshold) return;
+			
+		if (isGrounded && releaseJump)
 		{
+			DisconnectFromPlatfrom();
 			_rigidbody2D.velocity += new Vector2(movingDirection.x * jumpHeight * jumpRatio * Time.deltaTime,
 												 jumpHeight * Time.deltaTime);
 //			_rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime);
-//			canDoubleJump = true;
+			canDoubleJump = true;
 			isJumping = true;
 		}
-//		else if (canDoubleJump)
-//		{
-//			if (doubleJumpEnabled)
-//			{
-//				_rigidbody2D.velocity += new Vector2(direction.x * jumpHeight * jumpRatio * Time.deltaTime,
-//												  	 jumpHeight * Time.deltaTime);
-//
-////				Debug.Log("Double Jumped.");
-//			}
-//			canDoubleJump = false;
-//		}
+		
+		// Double jumping
+		else if (canDoubleJump)
+		{
+			if (doubleJumpEnabled)
+			{
+				_rigidbody2D.velocity += new Vector2(movingDirection.x * jumpHeight * jumpRatio * Time.deltaTime,
+												  	 jumpHeight * Time.deltaTime);
+			}
+			canDoubleJump = false;
+		}
 	}
 
 	private void shoot(Vector2 direction)
@@ -233,7 +227,7 @@ public class PlayerManager : MonoBehaviour
 		_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), _playerState.player_framework);
 
 		// recoil
-		_rigidbody2D.position = new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z);
+		_rigidbody2D.MovePosition(new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z));
 	}
 
 	private void slowHorizontalVelocity(float factor)
@@ -248,6 +242,19 @@ public class PlayerManager : MonoBehaviour
 		if (other.transform.position.y < _rigidbody2D.position.y)
 		{
 			releaseJump = true;
+			if (other.gameObject.CompareTag("platform"))
+			{
+				ConnectToPlatform(other.gameObject);
+			}
+		}
+	}
+	
+	private void OnCollisionExit2D(Collision2D other)
+	{
+		releaseJump = false;
+		if (other.gameObject.CompareTag("platform"))
+		{
+			DisconnectFromPlatfrom();
 		}
 	}
 
@@ -260,8 +267,13 @@ public class PlayerManager : MonoBehaviour
 		}
 	}
 
-	private void OnCollisionExit2D(Collision2D other)
+	private void ConnectToPlatform(GameObject platform)
 	{
-		releaseJump = false;
+		_playerState.currentPlatform = platform;
+	}
+	
+	private void DisconnectFromPlatfrom()
+	{
+		_playerState.currentPlatform = null;
 	}
 }

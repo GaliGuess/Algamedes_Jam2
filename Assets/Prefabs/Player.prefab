@@ -226,17 +226,18 @@ MonoBehaviour:
   usingPS4Controller: 0
   maxXVelocity: 17
   VelocityFactor: 40
-  MaxFallingVelocity: 15
   turnRate: 1.5
   bonusFriction: 1.05
   jumpHeight: 2500
   RegularGravityScale: 4
   FallingGravityScale: 2
   turnsBetweenShots: 4
-  recoil: 0.12
+  recoil: 0.1
+  doubleJumpEnabled: 1
   movingDirection: {x: 0, y: 0}
   shootingDirection: {x: 0, y: 0}
   isGrounded: 0
+  canDoubleJump: 0
   invincible: 0
   currentVelocity: {x: 0, y: 0}
 --- !u!114 &114859318904109926
