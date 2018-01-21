@@ -889,12 +889,12 @@ Prefab:
     - target: {fileID: 114474660210966542, guid: c808ace7f6b614c8786586552c06dd7b,
         type: 2}
       propertyPath: usingPS4Controller
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114474660210966542, guid: c808ace7f6b614c8786586552c06dd7b,
         type: 2}
       propertyPath: usingKeyboard
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114878598070120772, guid: c808ace7f6b614c8786586552c06dd7b,
         type: 2}

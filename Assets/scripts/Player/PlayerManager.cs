@@ -34,20 +34,8 @@ public class PlayerManager : MonoBehaviour
 	[SerializeField]
 	public int jumpHeight = 700;
 
-//	[SerializeField, Tooltip("Player friction with air\nnormal value is 0")]
-//	public float normalDrag = 0f;
-//
-//	[SerializeField, Tooltip("Player friction with air just during falls after jumping\nThe higher the value the slower the fall")]
-//	public float fallingDrag = 20f;
-
 	public float RegularGravityScale = 1;
 	public float FallingGravityScale = 1;
-
-	// used to change drag during fall
-	private bool isJumping = false;
-
-//	[SerializeField, Tooltip("Additional gravity is added when the player is in the air")]
-//	public float jumpBonusGravity = 15f;
 
 	[SerializeField, Tooltip("Lower value makes shooting faster")]
 	public int turnsBetweenShots = 5;
@@ -135,7 +123,6 @@ public class PlayerManager : MonoBehaviour
 
 				isGrounded = Physics2D.OverlapAreaNonAlloc(overlap_topLeft.position, overlap_bottomRight.position,
 					             _overlap_colliders, overlap_layersMask) > 0;
-				if (isGrounded) isJumping = false;
 
 				if (controller.jump())
 				{
@@ -163,7 +150,7 @@ public class PlayerManager : MonoBehaviour
 				else _rigidbody2D.gravityScale = RegularGravityScale;
 				
 				// limiting y speed while falling
-				if (_rigidbody2D.velocity.y < -MaxFallingVelocity)
+				if (!isGrounded && _rigidbody2D.velocity.y < -MaxFallingVelocity)
 				{
 					_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, -MaxFallingVelocity);
 				}
@@ -203,7 +190,6 @@ public class PlayerManager : MonoBehaviour
 												 jumpHeight * Time.deltaTime);
 //			_rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime);
 			canDoubleJump = true;
-			isJumping = true;
 		}
 		
 		// Double jumping
