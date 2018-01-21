@@ -90,7 +90,6 @@ public class PlayerManager : MonoBehaviour
 		_gameManager = GetComponentInParent<GameManager>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 
-<<<<<<< HEAD:Assets/scripts/Player/PlayerManager.cs
 		overlap_topLeft = transform.Find("overlap_topLeft");
 		overlap_bottomRight = transform.Find("overlap_bottomRight");
 
@@ -106,10 +105,9 @@ public class PlayerManager : MonoBehaviour
 			Controller cont = GetComponent<KeyboardController>();
 			if (cont != null) controllers.Add(cont);
 		}
-=======
+
 		overlap_topLeft = transform.Find(Values.PLAYER_TOP_LEFT_GAMEOBJ_NAME);
 		overlap_bottomRight = transform.Find(Values.PLAYER_BOT_RIGHT_GAMEOBJ_NAME);
->>>>>>> 0acd6db903dd586543b6ac95dc89600b7f8661b0:Assets/scripts/PlayerScripts/PlayerManager.cs
 	}
 
 
