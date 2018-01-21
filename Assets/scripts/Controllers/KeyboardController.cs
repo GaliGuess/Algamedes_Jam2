@@ -2,43 +2,38 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-    
+using Controllers;
 
+namespace Controllers
+{
     public class KeyboardController : Controller
-    {   
+    {
         public String HorizontalAxis = "Horizontal",
-                      VerticalAxis = "Vertical", 
-                      JumpAxis = "Jump", 
-                      ShootAxis = "Fire1";
-     
-        private bool isHorizontal, isVertical, isJumping, isShooting;
-        
-        void Update()
+            VerticalAxis = "Vertical",
+            JumpAxis = "Jump",
+            ShootAxis = "Fire1";
+
+        public Vector2 direction;
+        private bool isJumping, isShooting;
+
+        protected override void Update()
         {
-            isHorizontal = Input.GetButton(HorizontalAxis);
-            isVertical = Input.GetButton(VerticalAxis);
+            direction.x = Input.GetAxis(HorizontalAxis);
+            direction.y = Input.GetAxis(VerticalAxis);
             isJumping = Input.GetButtonDown(JumpAxis);
             isShooting = Input.GetButtonDown(ShootAxis);
-        }
-        
-        public override bool look_up()
-        {
-            return isVertical && Input.GetAxis(VerticalAxis) > 0;
+
+            base.Update();
         }
 
-        public override bool look_down()
+        protected override float update_moving_direction()
         {
-            return isVertical && Input.GetAxis(VerticalAxis) < 0;
+            return direction.x;
         }
 
-        public override bool turn_left()
+        protected override Vector2 update_aim_direction()
         {
-            return isHorizontal && Input.GetAxis(HorizontalAxis) < 0;
-        }
-
-        public override bool turn_right()
-        {
-            return isHorizontal && Input.GetAxis(HorizontalAxis) > 0;
+            return direction;
         }
 
         public override bool jump()
@@ -51,3 +46,4 @@ using System.Collections.Generic;
             return isShooting;
         }
     }
+}

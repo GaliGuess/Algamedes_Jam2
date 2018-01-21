@@ -912,16 +912,6 @@ Prefab:
       propertyPath: ShootAxis
       value: B1_Fire
       objectReference: {fileID: 0}
-    - target: {fileID: 114474660210966542, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: usingKeyboard
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114474660210966542, guid: c808ace7f6b614c8786586552c06dd7b,
-        type: 2}
-      propertyPath: usingPS4Controller
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
         type: 2}
       propertyPath: HorizontalAxis
@@ -976,6 +966,26 @@ Prefab:
         type: 2}
       propertyPath: ShootControls.Array.data[3]
       value: J1_PS4_R3
+      objectReference: {fileID: 0}
+    - target: {fileID: 50574653275153924, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50574653275153924, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 50574653275153924, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474660210966542, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: usingPS4Controller
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
@@ -1208,7 +1218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f56441ee1abf45b2bf2c55309a23218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: deathmatch_scene 1
+  gameSceneName: test_movement_scene
   secondsToNewRound: 1.5
   BPM: 250
 --- !u!4 &603293045
@@ -1457,7 +1467,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1311199491220044, guid: f1a3dd3278a8848a0a2f99f71f2e0329, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786033809725070, guid: f1a3dd3278a8848a0a2f99f71f2e0329, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1a3dd3278a8848a0a2f99f71f2e0329, type: 2}
@@ -1975,7 +1989,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1270938468579276, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
         type: 2}
@@ -1996,6 +2010,16 @@ Prefab:
         type: 2}
       propertyPath: ShootAxis
       value: W1_Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 50574653275153924, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 50574653275153924, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
@@ -2173,7 +2197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &922861795
 Transform:
   m_ObjectHideFlags: 0
@@ -2763,7 +2787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1394786757
 Transform:
   m_ObjectHideFlags: 0
@@ -3154,8 +3178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targets:
   - {fileID: 1829487237}
-  - {fileID: 869853239}
-  minimumOrthographicSize: 8
+  minimumOrthographicSize: 22
   maximumOrthographicSize: 22
   zoomSpeed: 5
   viewPercentage: 1.5
@@ -3463,7 +3486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1802226223
 Transform:
   m_ObjectHideFlags: 0

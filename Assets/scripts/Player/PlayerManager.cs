@@ -2,19 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Game;
+using Controllers;
 using Utils.Utils;
 
 public class PlayerManager : MonoBehaviour
 {
 	private PlayerView _playerView;
 
-	private PlayerState _playerState;	
+	private PlayerState _playerState;
 
-	// physics related constants
+	[Header("Controllers")]
+	[SerializeField] public bool usingKeyboard;
+	[SerializeField] public bool usingPS4Controller;
+	private List<Controller> controllers;
+
 	
+	[Header("Physics")]
 	[SerializeField, Tooltip("The player's speed")] 
-	float maxSpeed = 17;
-	private float speed = 40f; // need to get rid of this but maybe some other time :)
+	float maxXVelocity = 17;
+	public float VelocityFactor = 40f; // need to get rid of this but maybe some other time :)
+	
+	[SerializeField, Tooltip("The maximum speed in y axis during falling")]
+	public float MaxFallingVelocity = 10;
 	
 	[SerializeField, Tooltip("Lower value makes the player switch direction slower")] 
 	public float turnRate = 1.5f;
@@ -25,11 +34,14 @@ public class PlayerManager : MonoBehaviour
 	[SerializeField]
 	public int jumpHeight = 700;
 	
-	[SerializeField, Tooltip("Player friction with air\nnormal value is 0")]
-	public float normalDrag = 0f;
-	
-	[SerializeField, Tooltip("Player friction with air just during falls after jumping\nThe higher the value the slower the fall")]
-	public float fallingDrag = 20f;
+//	[SerializeField, Tooltip("Player friction with air\nnormal value is 0")]
+//	public float normalDrag = 0f;
+//	
+//	[SerializeField, Tooltip("Player friction with air just during falls after jumping\nThe higher the value the slower the fall")]
+//	public float fallingDrag = 20f;
+
+	public float RegularGravityScale = 1;
+	public float FallingGravityScale = 1;
 	
 	// used to change drag during fall
 	private bool isJumping = false;
@@ -45,14 +57,13 @@ public class PlayerManager : MonoBehaviour
 
 //	[SerializeField] bool doubleJumpEnabled = true;
 	
-	private Controller _controller;
 	private Rigidbody2D _rigidbody2D;
 	private GameManager _gameManager;
 
-	public Vector2 direction; // public only for testing
-	private Vector2 shootingDirection; // for testing
+	[Header("for Testing")]
+	public Vector2 movingDirection; // public only for testing
+	public Vector2 shootingDirection;
 	
-	private Vector2 lastNonZeroDirection;
 	public bool isGrounded;
 	private bool releaseJump = false;
 	private bool canDoubleJump; // double jump is currently disabled but this is still used!
@@ -68,7 +79,7 @@ public class PlayerManager : MonoBehaviour
 	public bool invincible = false;
 	
 	// for testing
-	private Vector2 currentVelocity;
+	public Vector2 currentVelocity;
 	
 
 	void Awake()
@@ -77,11 +88,23 @@ public class PlayerManager : MonoBehaviour
 		_playerView = GetComponent<PlayerView>();
 		
 		_gameManager = GetComponentInParent<GameManager>();
-		_controller = GetComponent<Controller>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 		
 		overlap_topLeft = transform.Find("overlap_topLeft");
 		overlap_bottomRight = transform.Find("overlap_bottomRight");
+
+		
+		controllers = new List<Controller>();
+		if (usingPS4Controller)
+		{
+			Controller cont = GetComponent<PS4Controller>();
+			if (cont != null) controllers.Add(cont);
+		}
+		if (usingKeyboard)
+		{
+			Controller cont = GetComponent<KeyboardController>();
+			if (cont != null) controllers.Add(cont);
+		}
 	}
 	
 	
@@ -89,7 +112,7 @@ public class PlayerManager : MonoBehaviour
 	{	
 		_playerView.SetSpriteColor(_playerState.player_framework);
 
-		lastNonZeroDirection = _rigidbody2D.position.x < 0 ? Vector2.right : Vector2.left;
+//		lastNonZeroDirection = _rigidbody2D.position.x < 0 ? Vector2.right : Vector2.left;
 		canDoubleJump = false;
 
 		// layer of platforms for checking if grounded
@@ -99,76 +122,79 @@ public class PlayerManager : MonoBehaviour
 
 	private void Update()
 	{
-		// saving last x direction that is not zero. used for shooting.
-		if (direction != Vector2.zero)
-		{
-			lastNonZeroDirection = direction;
-		}
-		
 		updateDirection();
 	}
 
 	void FixedUpdate()
-	{	
-		if (_controller != null)
+	{
+		foreach (var controller in controllers)
 		{
+			if (controller != null)
+			{
 
-			isGrounded = Physics2D.OverlapAreaNonAlloc(overlap_topLeft.position, overlap_bottomRight.position,
-				             _overlap_colliders, overlap_layersMask) > 0;
-			if (isGrounded) isJumping = false;
+				isGrounded = Physics2D.OverlapAreaNonAlloc(overlap_topLeft.position, overlap_bottomRight.position,
+					             _overlap_colliders, overlap_layersMask) > 0;
+				if (isGrounded) isJumping = false;
 			
-			if (_controller.jump())
-			{ 
-				jump();
-			}
+				if (controller.jump())
+				{ 
+					jump();
+				}
 			
-			move(new Vector2(direction.x, 0));
+				move(movingDirection);
 			
-			// used so the player doesn't slide as much
-			if (Mathf.Approximately(direction.x, 0) && isGrounded)
-			{
-				slowHorizontalVelocity(bonusFriction);
-			}
+				// used so the player doesn't slide as much
+				if (Mathf.Approximately(movingDirection.x, 0) && isGrounded)
+				{
+					slowHorizontalVelocity(bonusFriction);
+				}
 			
-			if (_timesSinceFired > 0) _timesSinceFired--;
+				if (_timesSinceFired > 0) _timesSinceFired--;
 			
-			// Making sure player doesn't shoot at direction (0,0)
-			shootingDirection = direction;
-			if (direction == Vector2.zero) shootingDirection = lastNonZeroDirection;
-			_playerView.changeCrosshairDirection(shootingDirection);
-			
-			if (_controller.shoot())
-			{
-				shoot(shootingDirection);
-			}
+				_playerView.changeCrosshairDirection(shootingDirection);
+				if (controller.shoot())
+				{
+					shoot(shootingDirection);
+				}
 
-			if (isJumping && _rigidbody2D.velocity.y < 0)
-			{
-				_rigidbody2D.drag = fallingDrag;
-			}
-			else _rigidbody2D.drag = normalDrag;
+				if (_rigidbody2D.velocity.y < 0)
+				{
+					_rigidbody2D.gravityScale = FallingGravityScale;
+				}
+				else
+				{
+					_rigidbody2D.gravityScale = RegularGravityScale;
+				}
+				
+//				if (_rigidbody2D.velocity.y < -MaxFallingVelocity)
+//				{
+//					_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, -MaxFallingVelocity);
+////					_rigidbody2D.drag = fallingDrag;
+//				}
+//				else _rigidbody2D.drag = normalDrag;
 			
-			// for testing
-			currentVelocity = _rigidbody2D.velocity;
+				// for testing
+				currentVelocity = _rigidbody2D.velocity;
+			}
 		}
 	}
+		
 
 	private void updateDirection()
 	{
-		direction = Vector2.zero;
-			
-		if (_controller.look_up()) direction += Vector2.up;
-		if (_controller.look_down()) direction += Vector2.down;
-		if (_controller.turn_left()) direction += Vector2.left;
-		if (_controller.turn_right()) direction += Vector2.right;
+		foreach (var controller in controllers)
+		{
+			movingDirection = controller.moving_direction();
+			shootingDirection = controller.aim_direction();
+		}
 	}
 	
 	private void move(Vector2 direction)
 	{
 		Vector2 newVelocity = _rigidbody2D.velocity;
-		newVelocity.x = direction.x * speed;
+		newVelocity.x = direction.x * VelocityFactor;
 		newVelocity.x = Mathf.Lerp(_rigidbody2D.velocity.x, newVelocity.x, Time.deltaTime * turnRate);
-		newVelocity.x = Mathf.Clamp(newVelocity.x, -maxSpeed, maxSpeed); 
+		newVelocity.x = Mathf.Clamp(newVelocity.x, -maxXVelocity, maxXVelocity); 
 		_rigidbody2D.velocity = newVelocity;
 	}
 
@@ -176,7 +202,7 @@ public class PlayerManager : MonoBehaviour
 	{
 		if (isGrounded && !canDoubleJump && releaseJump)
 		{
-			_rigidbody2D.velocity += new Vector2(direction.x * jumpHeight * jumpRatio * Time.deltaTime, 
+			_rigidbody2D.velocity += new Vector2(movingDirection.x * jumpHeight * jumpRatio * Time.deltaTime, 
 												 jumpHeight * Time.deltaTime);
 //			_rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime);
 //			canDoubleJump = true;

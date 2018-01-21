@@ -36,8 +36,9 @@ GameObject:
   - component: {fileID: 4475441237292758}
   - component: {fileID: 114140931292144550}
   - component: {fileID: 114474660210966542}
-  - component: {fileID: 114438586317514912}
-  - component: {fileID: 114433375027678206}
+  - component: {fileID: 114859318904109926}
+  - component: {fileID: 114878598070120772}
+  - component: {fileID: 114117146519706200}
   - component: {fileID: 50574653275153924}
   - component: {fileID: 61125705487665224}
   - component: {fileID: 212526472470557464}
@@ -147,7 +148,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.02
+  m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -179,6 +180,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114117146519706200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270938468579276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e20901e33fe41b3a2a70f7d504b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingDirection: {x: 0, y: 0}
+  aimDirection: {x: 0, y: 0}
+  lastNonZeroDirection: {x: 0, y: 0}
+  HorizontalAxis: Horizontal
+  VerticalAxis: Vertical
+  JumpAxis: Jump
+  ShootAxis: Fire
+  direction: {x: 0, y: 0}
 --- !u!114 &114140931292144550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_framework: 1
---- !u!114 &114433375027678206
+--- !u!114 &114474660210966542
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -199,14 +219,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1270938468579276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6e20901e33fe41b3a2a70f7d504b0f6, type: 3}
+  m_Script: {fileID: 11500000, guid: aa5a9aeb4570e4f00b936efcf722abd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalAxis: B1_Horizontal
-  VerticalAxis: B1_Vertical
-  JumpAxis: B1_Jump
-  ShootAxis: B1_Fire
---- !u!114 &114438586317514912
+  usingKeyboard: 0
+  usingPS4Controller: 0
+  maxXVelocity: 17
+  VelocityFactor: 40
+  MaxFallingVelocity: 15
+  turnRate: 1.5
+  bonusFriction: 1.05
+  jumpHeight: 1700
+  RegularGravityScale: 2
+  FallingGravityScale: 1
+  turnsBetweenShots: 4
+  recoil: 0.12
+  movingDirection: {x: 0, y: 0}
+  shootingDirection: {x: 0, y: 0}
+  isGrounded: 0
+  invincible: 0
+  currentVelocity: {x: 0, y: 0}
+--- !u!114 &114859318904109926
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -219,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showCrosshair: 1
   crosshairDistance: 2.5
---- !u!114 &114474660210966542
+--- !u!114 &114878598070120772
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -227,19 +260,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1270938468579276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa5a9aeb4570e4f00b936efcf722abd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aa9487429f9d45afbff198e71d4e0ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 17
-  turnRate: 1.5
-  bonusFriction: 1.05
-  jumpHeight: 1000
-  normalDrag: 0
-  fallingDrag: 0.1
-  turnsBetweenShots: 4
-  recoil: 0.12
-  direction: {x: 0, y: 0}
-  invincible: 0
+  movingDirection: {x: 0, y: 0}
+  aimDirection: {x: 0, y: 0}
+  lastNonZeroDirection: {x: 0, y: 0}
+  JumpUsingVerticalMovement: 1
+  AutoFire: 0
+  AutoJumping: 0
+  HorizontalMovementControls:
+  - J1_PS4_LeftStick_Horizontal
+  - J1_PS4_DPad_Horizontal
+  VerticalMovementControls:
+  - J1_PS4_LeftStick_Vertical
+  - J1_PS4_DPad_Vertical
+  HorizontalAimControls:
+  - J1_PS4_RightStick_Horizontal
+  VerticalAimControls:
+  - J1_PS4_RightStick_Vertical
+  JumpControls:
+  - J1_PS4_X
+  ShootControls:
+  - J1_PS4_R1
+  - J1_PS4_R2
+  - J1_PS4_Square
 --- !u!212 &212472621495823110
 SpriteRenderer:
   m_ObjectHideFlags: 1

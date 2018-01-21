@@ -20,6 +20,7 @@
           <e p="Controllers" t="Include">
             <e p="Controller.cs" t="Include" />
             <e p="KeyboardController.cs" t="Include" />
+            <e p="PS4Controller.cs" t="Include" />
           </e>
           <e p="DontDestroyOnReload.cs" t="Include" />
           <e p="Editor" t="Include">
@@ -37,8 +38,7 @@
           <e p="PlatformSensor.cs" t="Include" />
           <e p="PlatformState.cs" t="Include" />
           <e p="PlatformView.cs" t="Include" />
-          <e p="PlayerScript.cs" t="Include" />
-          <e p="PlayerScripts" t="Include">
+          <e p="Player" t="Include">
             <e p="PlayerManager.cs" t="Include" />
             <e p="PlayerState.cs" t="Include" />
             <e p="PlayerView.cs" t="Include" />

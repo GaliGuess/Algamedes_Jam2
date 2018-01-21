@@ -24,6 +24,7 @@ public class PlayerView : MonoBehaviour {
 		_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();
 	}
 
+	
 	public void changeCrosshairDirection(Vector2 direction)
 	{
 		crosshair.localPosition = new Vector2(direction.x / transform.localScale[0], 
