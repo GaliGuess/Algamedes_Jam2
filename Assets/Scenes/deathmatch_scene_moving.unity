@@ -1821,6 +1821,11 @@ Prefab:
       propertyPath: ShootAxis
       value: W1_Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 114140931292144550, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: player_framework
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
   m_IsPrefabParent: 0
