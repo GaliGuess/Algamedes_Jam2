@@ -8,20 +8,21 @@ namespace Controllers
 {
     public class KeyboardController : Controller
     {
-        public String HorizontalAxis = "Horizontal",
-            VerticalAxis = "Vertical",
-            JumpAxis = "Jump",
-            ShootAxis = "Fire1";
+        public String HorizontalAxis = "B1_Horizontal",
+            VerticalAxis = "B1_Vertical",
+            JumpAxis = "B1_Jump",
+            ShootAxis = "B1_Fire";
 
         public Vector2 direction;
         private bool isJumping, isShooting;
+        public bool autoFire, autoJump;
 
         protected override void Update()
         {
             direction.x = Input.GetAxis(HorizontalAxis);
             direction.y = Input.GetAxis(VerticalAxis);
-            isJumping = Input.GetButtonDown(JumpAxis);
-            isShooting = Input.GetButtonDown(ShootAxis);
+            isJumping = autoJump ? Input.GetButton(JumpAxis) : Input.GetButtonDown(JumpAxis);
+            isShooting = autoFire ? Input.GetButton(ShootAxis) : Input.GetButtonDown(ShootAxis);
 
             base.Update();
         }

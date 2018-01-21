@@ -13,6 +13,8 @@ namespace Controllers
 		[SerializeField, Tooltip("Allows for jumping with up DPad + Left Analog Stick\nin Addition to other jump controls.")] 
 		public bool JumpUsingVerticalMovement = false;
 
+		public bool AimWithMovement;
+		
 		public bool AutoFire = false;
 		public bool AutoJumping = false;
 		
@@ -41,6 +43,21 @@ namespace Controllers
 
 		protected override void Update()
 		{	
+			// Updating Aiming direction
+			Vector2 tempAimDirection = _aim_direction;
+			foreach (var key in HorizontalAimControls)
+			{
+				tempAimDirection.x = Input.GetAxis(key);
+			}
+			foreach (var key in VerticalAimControls)
+			{
+				tempAimDirection.y = Input.GetAxis(key);
+			}
+			if (tempAimDirection.magnitude > ANALOG_AIM_THRESHOLD)
+			{
+				_aim_direction = tempAimDirection.normalized;
+			}
+			
 			// Updating moving direction
 			bool moveDirectionChanged = false;
 			foreach (var key in HorizontalMovementControls)
@@ -54,19 +71,23 @@ namespace Controllers
 			}
 			if (!moveDirectionChanged) _moving_direction = 0f;
 			
-			// Updating Aiming direction
-			Vector2 tempAimDirection = _aim_direction;
-			foreach (var key in HorizontalAimControls)
+			// updating aim with movement input if needed
+			if (AimWithMovement && tempAimDirection == Vector2.zero)
 			{
-				tempAimDirection.x = Input.GetAxis(key);
-			}
-			foreach (var key in VerticalAimControls)
-			{
-				tempAimDirection.y = Input.GetAxis(key);
-			}
-			if (tempAimDirection.magnitude > ANALOG_AIM_THRESHOLD)
-			{
-				aimDirection = tempAimDirection.normalized;
+				foreach (var key in VerticalMovementControls)
+				{
+					float tempYDirection = -Input.GetAxis(key);
+					if (Mathf.Abs(tempYDirection) > ANALOG_MOVE_THRESHOLD)
+					{
+						tempAimDirection.y = Mathf.Sign(tempYDirection);
+					}
+				}
+				tempAimDirection.x = _moving_direction;
+				
+				if (tempAimDirection.magnitude > ANALOG_AIM_THRESHOLD)
+				{
+					_aim_direction = tempAimDirection.normalized;
+				}
 			}
 
 			// Updating jumping

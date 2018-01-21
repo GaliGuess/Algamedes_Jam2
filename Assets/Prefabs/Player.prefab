@@ -199,6 +199,8 @@ MonoBehaviour:
   JumpAxis: B1_Jump
   ShootAxis: B1_Fire
   direction: {x: 0, y: 0}
+  autoFire: 0
+  autoJump: 0
 --- !u!114 &114140931292144550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,7 +234,7 @@ MonoBehaviour:
   jumpHeight: 2500
   RegularGravityScale: 4
   FallingGravityScale: 2
-  turnsBetweenShots: 4
+  turnsBetweenShots: 8
   recoil: 0.1
   doubleJumpEnabled: 1
   movingDirection: {x: 0, y: 0}
@@ -269,6 +271,7 @@ MonoBehaviour:
   aimDirection: {x: 0, y: 0}
   lastNonZeroDirection: {x: 0, y: 0}
   JumpUsingVerticalMovement: 0
+  AimWithMovement: 0
   AutoFire: 1
   AutoJumping: 1
   HorizontalMovementControls:
