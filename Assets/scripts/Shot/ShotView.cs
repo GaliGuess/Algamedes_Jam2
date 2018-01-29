@@ -44,18 +44,24 @@ namespace Game{
 			body.velocity = velocity;
 		}
 
+		void OnTriggerEnter2D(Collider2D ob) {
+			if (ob.CompareTag(Values.PLATFORM_TAG)) {
+				Debug.Log("ShotManager: detected platform");
+				PlatformShotSensor shot_sensor = ob.gameObject.GetComponent<PlatformShotSensor>();
+				if (shot_sensor) {
+					Framework framework = shot_sensor.platform_framework;
+				} else {
+//					Debug.Log("ShotManager: shot sensor is null!!! :(");
+				}
+
+				Destroy(gameObject);
+			}
+		}
+
 		
 		void OnCollisionEnter2D(Collision2D other) {
 			
-			if (other.gameObject.CompareTag("platform"))
-			{
-				//Debug.Log("ShotManager: detected platform");
-				Framework framework = other.gameObject.GetComponentInParent<PlatformState>().platform_framework;
-				Destroy(gameObject);
-
-			}
-			
-			if (other.gameObject.CompareTag("player"))
+			if (other.gameObject.CompareTag(Values.PLAYER_TAG))
 			{
 				Destroy(gameObject);
 			}
@@ -63,7 +69,7 @@ namespace Game{
 		
 		private void OnTriggerExit2D(Collider2D other)
 		{
-			if (other.CompareTag("gameBoundry"))
+			if (other.CompareTag(Values.BOUNDRIES_TAG))
 			{
 //				Debug.Log("out of boundry");
 				Destroy(gameObject);

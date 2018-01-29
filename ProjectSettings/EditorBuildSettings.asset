@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/deathmatch_scene.unity
+  - enabled: 0
+    path: 
     guid: 6bc409175ff224c36a49e63b3c409ea2
+  - enabled: 1
+    path: Assets/Scenes/main_menu.unity
+    guid: 77773de00956c43aeb6c2183bca23d88
+  - enabled: 1
+    path: Assets/Scenes/deathmatch_scene_moving.unity
+    guid: 00000000000000000000000000000000

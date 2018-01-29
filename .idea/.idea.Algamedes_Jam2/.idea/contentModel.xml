@@ -20,39 +20,49 @@
           <e p="Controllers" t="Include">
             <e p="Controller.cs" t="Include" />
             <e p="KeyboardController.cs" t="Include" />
+            <e p="PS4Controller.cs" t="Include" />
           </e>
           <e p="DontDestroyOnReload.cs" t="Include" />
           <e p="Editor" t="Include">
             <e p="GameManagerInspector.cs" t="Include" />
             <e p="PlatformInspector.cs" t="Include" />
           </e>
-          <e p="GameManager.cs" t="Include" />
-          <e p="GameState.cs" t="Include" />
-          <e p="GameView.cs" t="Include" />
+          <e p="Game" t="Include">
+            <e p="GameManager.cs" t="Include" />
+            <e p="GameState.cs" t="Include" />
+            <e p="GameView.cs" t="Include" />
+          </e>
           <e p="Movement" t="Include">
             <e p="movement_test.cs" t="Include" />
           </e>
-          <e p="PlatformFactory.cs" t="Include" />
-          <e p="PlatformManager.cs" t="Include" />
-          <e p="PlatformSensor.cs" t="Include" />
-          <e p="PlatformState.cs" t="Include" />
-          <e p="PlatformView.cs" t="Include" />
-          <e p="PlayerScript.cs" t="Include" />
-          <e p="PlayerScripts" t="Include">
+          <e p="Platform" t="Include">
+            <e p="PlatformFactory.cs" t="Include" />
+            <e p="PlatformManager.cs" t="Include" />
+            <e p="PlatformSensor.cs" t="Include" />
+            <e p="PlatformShotSensor.cs" t="Include" />
+            <e p="PlatformState.cs" t="Include" />
+            <e p="PlatformView.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
             <e p="PlayerManager.cs" t="Include" />
             <e p="PlayerState.cs" t="Include" />
             <e p="PlayerView.cs" t="Include" />
           </e>
           <e p="RisingCamera.cs" t="Include" />
+          <e p="SceneLoader.cs" t="Include" />
           <e p="ScoreKeeper.cs" t="Include" />
-          <e p="ShotFactory.cs" t="Include" />
-          <e p="ShotManager.cs" t="Include" />
-          <e p="ShotState.cs" t="Include" />
-          <e p="ShotView.cs" t="Include" />
+          <e p="SelectOnInput.cs" t="Include" />
+          <e p="Shot" t="Include">
+            <e p="ShotFactory.cs" t="Include" />
+            <e p="ShotManager.cs" t="Include" />
+            <e p="ShotState.cs" t="Include" />
+            <e p="ShotView.cs" t="Include" />
+          </e>
           <e p="TrackingCamera.cs" t="Include" />
           <e p="Utils" t="Include">
             <e p="MathsUtils.cs" t="Include" />
           </e>
+          <e p="Values.cs" t="Include" />
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />

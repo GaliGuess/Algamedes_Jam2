@@ -6,6 +6,7 @@ using Game;
 public class PlayerState : MonoBehaviour {
 
 	[SerializeField] public Framework player_framework = Framework.BLACK;
-	
-	
+
+//	[HideInInspector]
+	public GameObject currentPlatform;
 }

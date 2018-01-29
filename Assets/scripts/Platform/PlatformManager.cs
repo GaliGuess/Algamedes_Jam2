@@ -46,7 +46,7 @@ namespace Game{
 		}
 
 		private void AssignView() {
-			platform_view = transform.Find("PlatformBody").GetComponent<PlatformView>();
+			platform_view = transform.Find(Values.PLATFORM_BODY_GAMEOBJ_NAME).GetComponent<PlatformView>();
 			platform_view.Init();
 		}
 
@@ -73,9 +73,9 @@ namespace Game{
 				AssignView();
 			}
 
-			point.transform.parent = transform.parent.Find("PlatformPath");
+			point.transform.parent = transform.parent.Find(Values.PLATFORM_PATH_GAMEOBJ_NAME);
 			point.transform.position = transform.position; // set according to global transform, so assign according to this object's position
-			point.name = "point" + (points.Count+1).ToString();
+			point.name = Values.PLATFORM_PATH_POINT_PREFIX + (points.Count+1).ToString();
 			points.Add(point.transform);
 		}
 

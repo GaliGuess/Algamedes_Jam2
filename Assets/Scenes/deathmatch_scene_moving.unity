@@ -1821,6 +1821,11 @@ Prefab:
       propertyPath: ShootAxis
       value: W1_Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 114140931292144550, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: player_framework
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
   m_IsPrefabParent: 0
@@ -3050,7 +3055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 730, y: 8.899902}
+  m_AnchoredPosition: {x: 730.00006, y: 8.899902}
   m_SizeDelta: {x: 140, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!4 &1605232714 stripped
@@ -3368,6 +3373,41 @@ Prefab:
     - target: {fileID: 1270938468579276, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
       propertyPath: m_Name
       value: Player_B1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474660210966542, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: usingKeyboard
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114878598070120772, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: HorizontalAxis
+      value: B1_Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: VerticalAxis
+      value: B1_Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: JumpAxis
+      value: B1_Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 114117146519706200, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: ShootAxis
+      value: B1_Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474660210966542, guid: c808ace7f6b614c8786586552c06dd7b,
+        type: 2}
+      propertyPath: usingPS4Controller
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c808ace7f6b614c8786586552c06dd7b, type: 2}
