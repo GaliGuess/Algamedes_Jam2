@@ -44,16 +44,16 @@ namespace Game{
 			body.velocity = velocity;
 		}
 
+		void OnTriggerEnter2D(Collider2D ob) {
+			if (ob.CompareTag(Values.PLATFORM_TAG)) {
+//				Debug.Log("ShotManager: detected platform");
+				Framework framework = ob.gameObject.GetComponent<PlatformShotSensor>().platform_framework;
+				Destroy(gameObject);
+			}
+		}
+
 		
 		void OnCollisionEnter2D(Collision2D other) {
-			
-			if (other.gameObject.CompareTag(Values.PLATFORM_TAG))
-			{
-				//Debug.Log("ShotManager: detected platform");
-				Framework framework = other.gameObject.GetComponentInParent<PlatformState>().platform_framework;
-				Destroy(gameObject);
-
-			}
 			
 			if (other.gameObject.CompareTag(Values.PLAYER_TAG))
 			{
