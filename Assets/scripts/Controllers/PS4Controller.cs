@@ -8,7 +8,8 @@ namespace Controllers
 {
 	public class PS4Controller : Controller
 	{
-		private int JoystickNumber = 1;  // for 2 joystick support
+		[SerializeField]
+		public int JoystickNumber = 1;  // for 2 joystick support
 
 		[SerializeField, Tooltip("Allows for jumping with up DPad + Left Analog Stick\nin Addition to other jump controls.")] 
 		public bool JumpUsingVerticalMovement = false;
@@ -38,7 +39,13 @@ namespace Controllers
 		// Will be used when implementing 2nd controller
 		private void Awake()
 		{
-//		addJoystickNumber();
+			addJoystickNumber();
+
+//			var names = Input.GetJoystickNames();
+//			for (int i = 0; i < names.Length; i++)
+//			{
+//				Debug.Log(names[i]);
+//			}
 		}
 
 		protected override void Update()
