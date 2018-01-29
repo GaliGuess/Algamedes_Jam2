@@ -57,12 +57,12 @@ namespace Game{
 			sprite_renderer.material.color = this.color;
 			last_position = Position;
 			body.isKinematic = true;
-			if (useSensorAsTrigger) {
-				foreach(PlatformSensor sensor in GetComponentsInChildren<PlatformSensor>() ) {
-					
-					sensor.carrier = this;
-				}
-			}
+//			if (useSensorAsTrigger) {
+//				foreach(PlatformSensor sensor in GetComponentsInChildren<PlatformSensor>() ) {
+//					
+//					sensor.platform_view = this;
+//				}
+//			}
 
 		}
 
@@ -90,9 +90,19 @@ namespace Game{
 			sprite_renderer = GetComponent<SpriteRenderer>();
 			platform_manager = GetComponentInParent<PlatformManager>();
 			platform_state = GetComponentInParent<PlatformState>();
+
+			if (transform.Find("PlatformSensor") == null) {
+				AddCarrierSensor();
+			}
+
 			if (transform.Find("PlatformShotSensor") == null) {
 				AddShotSensor();
 			}
+
+			PlatformSensor carrier_sensor = GetComponentInChildren<PlatformSensor>();
+			carrier_sensor.Init();
+			PlatformShotSensor shot_sensor = GetComponentInChildren<PlatformShotSensor>();
+			shot_sensor.Init();
 		}
 
 		private void AddShotSensor() {
@@ -103,6 +113,15 @@ namespace Game{
 			shot_sensor_instance.GetComponent<PlatformShotSensor>().Init();
 			BoxCollider2D box = shot_sensor_instance.GetComponent<BoxCollider2D>();
 			box.size = transform.localScale;
+		}
+
+		private void AddCarrierSensor() {
+			Debug.Log("platform body: create carrier sensor");
+			GameObject carrier_sensor_instance = Instantiate(Resources.Load("PlatformSensor"), transform.position, transform.rotation) as GameObject;
+			carrier_sensor_instance.transform.parent = transform;
+			carrier_sensor_instance.name = "PlatformSensor";
+			carrier_sensor_instance.GetComponent<PlatformSensor>().Init();
+			EdgeCollider2D collider = carrier_sensor_instance.GetComponent<EdgeCollider2D>();
 		}
 			
 		public void UpdateHit(Framework framework) {
