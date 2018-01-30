@@ -19,6 +19,8 @@ namespace Controllers
         public abstract bool jump();
 
         public abstract bool shoot();
+
+        public abstract bool getDown();
         
         
         protected virtual void Start()

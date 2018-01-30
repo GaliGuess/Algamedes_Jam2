@@ -14,16 +14,24 @@ namespace Controllers
             ShootAxis = "B1_Fire";
 
         public Vector2 direction;
-        private bool isJumping, isShooting;
+        private bool isJumping, isShooting, isGettingDown;
         public bool autoFire, autoJump;
 
         protected override void Update()
         {
             direction.x = Input.GetAxis(HorizontalAxis);
             direction.y = Input.GetAxis(VerticalAxis);
-            isJumping = autoJump ? Input.GetButton(JumpAxis) : Input.GetButtonDown(JumpAxis);
             isShooting = autoFire ? Input.GetButton(ShootAxis) : Input.GetButtonDown(ShootAxis);
 
+            if (direction.y < 0)
+            {
+                isGettingDown = autoJump ? Input.GetButton(JumpAxis) : Input.GetButtonDown(JumpAxis);
+            }
+            else
+            {
+                isJumping = autoJump ? Input.GetButton(JumpAxis) : Input.GetButtonDown(JumpAxis);
+            }
+            
             base.Update();
         }
 
@@ -45,6 +53,11 @@ namespace Controllers
         public override bool shoot()
         {
             return isShooting;
+        }
+
+        public override bool getDown()
+        {
+            return isGettingDown;
         }
     }
 }
