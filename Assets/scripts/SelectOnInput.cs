@@ -18,7 +18,9 @@ namespace Game {
 
 		// Update is called once per frame
 		void Update () {
-			if (Input.GetAxisRaw("Vertical") != 0 && buttonSelected == false) {
+			Debug.Log("SelectOnInput: Horizontal: " + Input.GetAxisRaw("Horizontal"));
+			Debug.Log("SelectOnInput: Vertical: " + Input.GetAxisRaw("Vertical"));
+			if ((Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal")) != 0 && buttonSelected == false) {
 				Debug.Log("select button!");
 				eventSystem.SetSelectedGameObject(selectedObject);
 				buttonSelected = true;
