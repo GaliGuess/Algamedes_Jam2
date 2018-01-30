@@ -106,7 +106,7 @@ namespace Game{
 		}
 
 		private void AddShotSensor() {
-			Debug.Log("platform body: create shot sensor");
+//			Debug.Log("platform body: create shot sensor");
 			GameObject shot_sensor_instance = Instantiate(Resources.Load("PlatformShotSensor"), transform.position, transform.rotation) as GameObject;
 			shot_sensor_instance.transform.parent = transform;
 			shot_sensor_instance.name = "PlatformShotSensor";
@@ -116,7 +116,7 @@ namespace Game{
 		}
 
 		private void AddCarrierSensor() {
-			Debug.Log("platform body: create carrier sensor");
+//			Debug.Log("platform body: create carrier sensor");
 			GameObject carrier_sensor_instance = Instantiate(Resources.Load("PlatformSensor"), transform.position, transform.rotation) as GameObject;
 			carrier_sensor_instance.transform.parent = transform;
 			carrier_sensor_instance.name = "PlatformSensor";
@@ -134,8 +134,8 @@ namespace Game{
 			if (other.gameObject.tag == Values.SHOT_TAG)
 			{
 //				Debug.Log("PlatformManager: detected shot");
-//				Framework framework = other.gameObject.GetComponent<ShotState>().shot_framework;
-//				UpdateHit(framework);
+				Framework framework = other.gameObject.GetComponent<ShotState>().shot_framework;
+				UpdateHit(framework);
 			}
 			if (other.gameObject.tag == Values.PLAYER_TAG)
 			{
