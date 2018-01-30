@@ -6,6 +6,7 @@ using Game;
 public class PlayerView : MonoBehaviour {
 
 	private SpriteRenderer _spriteRenderer;
+	private Animator _animator;
 	
 	private Transform crosshair;
 	private SpriteRenderer _crosshair_spriteRenderer;
@@ -15,13 +16,35 @@ public class PlayerView : MonoBehaviour {
 	
 	[SerializeField, Tooltip("The distance of the crosshair from the player")]
 	public float crosshairDistance = 2.5f;
+
+	public bool isJumping;
+	public bool isShooting;
+	public int horizontal_dir;
 	
 	
 	void Awake () {
-		_spriteRenderer = GetComponent<SpriteRenderer>();
+		Init();
 		
+
+	}
+
+	public void Init() {
+		_spriteRenderer = GetComponent<SpriteRenderer>();
+		_animator = GetComponent<Animator>();
+
 		crosshair = transform.Find(Values.PLAYER_CROSSHAIR_GAMEOBJ_NAME);
 		_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();
+	}
+
+	void FixedUpdate() {
+		_animator.SetBool("isJumping", isJumping);
+		_animator.SetBool("isShooting", isShooting);
+		_animator.SetInteger("movingDir", horizontal_dir);
+		if (horizontal_dir < 0 ) {
+			_spriteRenderer.flipX = true;
+		} else {
+			_spriteRenderer.flipX = false;
+		}
 	}
 
 	
@@ -39,17 +62,17 @@ public class PlayerView : MonoBehaviour {
 		switch (framework)
 		{
 			case Framework.BLACK:
-				_spriteRenderer.material.color = Color.black;
+//				_spriteRenderer.material.color = Color.black;
 				_crosshair_spriteRenderer.material.color = Color.black;
 				break;
 			
 			case Framework.GREY:
-				_spriteRenderer.material.color = Color.grey;
+//				_spriteRenderer.material.color = Color.grey;
 				_crosshair_spriteRenderer.material.color = Color.grey;
 				break;
 			
 			case Framework.WHITE:
-				_spriteRenderer.material.color = Color.white;
+//				_spriteRenderer.material.color = Color.white;
 				_crosshair_spriteRenderer.material.color = Color.white;
 				break;
 		}

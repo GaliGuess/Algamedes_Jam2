@@ -8,6 +8,7 @@ namespace Utils.Utils {
 			Transform t = parent.transform;
 			foreach(Transform tr in t)
 			{
+				
 				if(tr.tag == tag)
 				{
 					return tr.GetComponent<T>();
