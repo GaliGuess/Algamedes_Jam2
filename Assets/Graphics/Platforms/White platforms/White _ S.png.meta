@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 72e593f8a01d44d3dbb50d3ce09d1113
 timeCreated: 1517336583
 licenseType: Free
@@ -7,11 +8,16 @@ TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
 =======
+=======
+>>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
 guid: 9bee51f19a54340fb89004101ac39a77
 timeCreated: 1517302995
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
+<<<<<<< HEAD
+>>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
+=======
 >>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
   serializedVersion: 4
   mipmaps:
@@ -22,8 +28,11 @@ TextureImporter:
     fadeOut: 0
     borderMipMap: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     mipMapsPreserveCoverage: 0
     alphaTestReferenceValue: 0.5
+=======
+>>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
 =======
 >>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
     mipMapFadeDistanceStart: 1
@@ -42,6 +51,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
 <<<<<<< HEAD
+<<<<<<< HEAD
     serializedVersion: 2
     filterMode: -1
     aniso: -1
@@ -50,15 +60,21 @@ TextureImporter:
     wrapV: 1
     wrapW: 1
 =======
+=======
+>>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
     filterMode: 0
     aniso: -1
     mipBias: -1
     wrapMode: 1
+<<<<<<< HEAD
+>>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
+=======
 >>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   spriteExtrude: 1
   spriteMeshType: 1
@@ -67,12 +83,17 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
 =======
+=======
+>>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
   spriteExtrude: 0
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 25
+<<<<<<< HEAD
+>>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
+=======
 >>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -86,8 +107,11 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
 <<<<<<< HEAD
+<<<<<<< HEAD
     resizeAlgorithm: 0
 =======
+=======
+>>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -120,6 +144,9 @@ TextureImporter:
     overridden: 0
   - buildTarget: WebGL
     maxTextureSize: 2048
+<<<<<<< HEAD
+>>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
+=======
 >>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
     textureFormat: -1
     textureCompression: 1
@@ -132,7 +159,10 @@ TextureImporter:
     sprites: []
     outline: []
 <<<<<<< HEAD
+<<<<<<< HEAD
     physicsShape: []
+=======
+>>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
 =======
 >>>>>>> 77daed1cfb5e0b4b209b166852687d0c5eaf557d
   spritePackingTag: 
