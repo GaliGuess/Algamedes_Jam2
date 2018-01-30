@@ -20,6 +20,7 @@ public class PlayerView : MonoBehaviour {
 	public bool isJumping;
 	public bool isShooting;
 	public int horizontal_dir;
+	public bool facingLeft;
 	
 	
 	void Awake () {
@@ -40,11 +41,14 @@ public class PlayerView : MonoBehaviour {
 		_animator.SetBool("isJumping", isJumping);
 		_animator.SetBool("isShooting", isShooting);
 		_animator.SetInteger("movingDir", horizontal_dir);
-		if (horizontal_dir < 0 ) {
-			_spriteRenderer.flipX = true;
-		} else {
-			_spriteRenderer.flipX = false;
+		if (facingLeft && horizontal_dir > 0) { //it was facing left and now moving right
+			facingLeft = false; // it should face right
 		}
+		else if (!facingLeft && horizontal_dir < 0) { //it was facing right and now moving left
+			facingLeft = true; // it should face left
+		}
+
+		_spriteRenderer.flipX = facingLeft;
 	}
 
 	

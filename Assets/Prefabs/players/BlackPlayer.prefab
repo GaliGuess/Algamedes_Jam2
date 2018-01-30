@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1646181762229240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.6666667, z: 0}
   m_LocalScale: {x: 0.3, y: 0.19999994, z: 1}
   m_Children: []
   m_Father: {fileID: 4475441237292758}
@@ -100,8 +100,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1270938468579276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.100170776, y: 22.0797, z: 0}
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4669906225348876}
@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803233576476396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.67, y: -1.095, z: 0}
+  m_LocalPosition: {x: -0.67, y: -1.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4475441237292758}
@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1237063999096216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.237, y: -1.094, z: 0}
+  m_LocalPosition: {x: 0.237, y: -1.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4475441237292758}
@@ -150,7 +150,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
-  lastNonZeroDirection: {x: 0, y: 0}
+  lastNonZeroDirection: {x: 0, y: -1}
   HorizontalAxis: B1_Horizontal
   VerticalAxis: B1_Vertical
   JumpAxis: B1_Jump
@@ -256,8 +256,8 @@ MonoBehaviour:
   recoil: 0.1
   doubleJumpEnabled: 1
   movingDirection: {x: 0, y: 0}
-  shootingDirection: {x: 0, y: 0}
-  isGrounded: 0
+  shootingDirection: {x: 0, y: -1}
+  isGrounded: 1
   canDoubleJump: 0
   invincible: 0
   currentVelocity: {x: 0, y: 0}
@@ -277,6 +277,7 @@ MonoBehaviour:
   isJumping: 0
   isShooting: 0
   horizontal_dir: 0
+  facingLeft: 1
 --- !u!114 &114878598070120772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,32 +291,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
-  lastNonZeroDirection: {x: 0, y: 0}
+  lastNonZeroDirection: {x: -1, y: 0}
   JoystickNumber: 1
   JumpUsingVerticalMovement: 0
   AimWithMovement: 1
   AutoFire: 1
   AutoJumping: 1
   HorizontalMovementControls:
-  - PS4_LeftStick_Horizontal
-  - PS4_DPad_Horizontal
+  - J1_PS4_LeftStick_Horizontal
+  - J1_PS4_DPad_Horizontal
   VerticalMovementControls:
-  - PS4_LeftStick_Vertical
-  - PS4_DPad_Vertical
+  - J1_PS4_LeftStick_Vertical
+  - J1_PS4_DPad_Vertical
   HorizontalAimControls:
-  - PS4_RightStick_Horizontal
+  - J1_PS4_RightStick_Horizontal
   VerticalAimControls:
-  - PS4_RightStick_Vertical
+  - J1_PS4_RightStick_Vertical
   JumpControls:
-  - PS4_X
-  - PS4_L1
-  - PS4_L2
-  - PS4_L3
+  - J1_PS4_X
+  - J1_PS4_L1
+  - J1_PS4_L2
+  - J1_PS4_L3
   ShootControls:
-  - PS4_R1
-  - PS4_R2
-  - PS4_Square
-  - PS4_R3
+  - J1_PS4_R1
+  - J1_PS4_R2
+  - J1_PS4_Square
+  - J1_PS4_R3
   isGettingDown: 0
 --- !u!212 &212472621495823110
 SpriteRenderer:
@@ -330,7 +331,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -390,9 +391,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a24c99a1582b4cf1979954cec53edb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abc9288827a34440ab1fa77d93811efe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
