@@ -250,7 +250,7 @@ public class PlayerManager : MonoBehaviour
 		if (other.transform.position.y < _rigidbody2D.position.y)
 		{
 			releaseJump = true;
-			if (other.gameObject.CompareTag("platform"))
+			if (other.gameObject.CompareTag(Values.PLATFORM_BODY_TAG))
 			{
 				ConnectToPlatform(other.gameObject);
 			}
@@ -260,7 +260,7 @@ public class PlayerManager : MonoBehaviour
 	private void OnCollisionExit2D(Collision2D other)
 	{
 		releaseJump = false;
-		if (other.gameObject.CompareTag("platform"))
+		if (other.gameObject.CompareTag(Values.PLATFORM_BODY_TAG))
 		{
 			DisconnectFromPlatfrom();
 		}
