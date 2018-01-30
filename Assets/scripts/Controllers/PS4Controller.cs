@@ -77,6 +77,7 @@ namespace Controllers
 			foreach (var key in VerticalMovementControls)
 			{
 				float tempYDirection = -Input.GetAxis(key);
+
 				if (Mathf.Abs(tempYDirection) > ANALOG_MOVE_THRESHOLD)
 				{
 					tempMoveDir.y = Mathf.Sign(tempYDirection);
