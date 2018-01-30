@@ -175,6 +175,7 @@ public class PlayerManager : MonoBehaviour
 	{
 		foreach (var controller in controllers)
 		{
+			
 			movingDirection = controller.moving_direction();
 			shootingDirection = controller.aim_direction();
 		}
@@ -195,6 +196,7 @@ public class PlayerManager : MonoBehaviour
 		} else {
 			_playerView.horizontal_dir = 0;
 		}
+
 
 	}
 
