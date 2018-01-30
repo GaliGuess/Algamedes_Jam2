@@ -16,6 +16,7 @@
           </e>
         </e>
         <e p="scripts" t="Include">
+          <e p="anim_test_script.cs" t="Include" />
           <e p="BlinkingPlatformManager.cs" t="Include" />
           <e p="Controllers" t="Include">
             <e p="Controller.cs" t="Include" />
@@ -60,6 +61,7 @@
           </e>
           <e p="TrackingCamera.cs" t="Include" />
           <e p="Utils" t="Include">
+            <e p="GameUtils.cs" t="Include" />
             <e p="MathsUtils.cs" t="Include" />
           </e>
           <e p="Values.cs" t="Include" />
