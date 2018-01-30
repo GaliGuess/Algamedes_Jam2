@@ -31,8 +31,9 @@ namespace Controllers
 		private float ANALOG_MOVE_THRESHOLD = 0.3f;
 		private float ANALOG_AIM_THRESHOLD = 0.3f;
 		private float ANALOG_JUMP_THRESHOLD = 0.6f;
-		
+
 		private bool isJumping, isShooting;
+		public bool isGettingDown;
 		private float _moving_direction;
 		private Vector2 _aim_direction;
 
@@ -40,12 +41,6 @@ namespace Controllers
 		private void Awake()
 		{
 			addJoystickNumber();
-
-//			var names = Input.GetJoystickNames();
-//			for (int i = 0; i < names.Length; i++)
-//			{
-//				Debug.Log(names[i]);
-//			}
 		}
 
 		protected override void Update()
@@ -77,38 +72,58 @@ namespace Controllers
 				}
 			}
 			if (!moveDirectionChanged) _moving_direction = 0f;
-			
+
+			Vector2 tempMoveDir = Vector2.zero;
+			foreach (var key in VerticalMovementControls)
+			{
+				float tempYDirection = -Input.GetAxis(key);
+				if (Mathf.Abs(tempYDirection) > ANALOG_MOVE_THRESHOLD)
+				{
+					tempMoveDir.y = Mathf.Sign(tempYDirection);
+				}
+			}
+			tempMoveDir.x = _moving_direction;
+		
 			// updating aim with movement input if needed
 			if (AimWithMovement && tempAimDirection == Vector2.zero)
 			{
-				foreach (var key in VerticalMovementControls)
-				{
-					float tempYDirection = -Input.GetAxis(key);
-					if (Mathf.Abs(tempYDirection) > ANALOG_MOVE_THRESHOLD)
-					{
-						tempAimDirection.y = Mathf.Sign(tempYDirection);
-					}
-				}
-				tempAimDirection.x = _moving_direction;
 				
-				if (tempAimDirection.magnitude > ANALOG_AIM_THRESHOLD)
+				if (tempMoveDir.magnitude > ANALOG_AIM_THRESHOLD)
 				{
-					_aim_direction = tempAimDirection.normalized;
+					_aim_direction = tempMoveDir.normalized;
 				}
 			}
+			
+			// updated only with input from move direction
+			bool downPressed = tempMoveDir.magnitude > ANALOG_AIM_THRESHOLD && tempMoveDir.y < 0;
 
 			// Updating jumping
 			isJumping = false;
+			isGettingDown = false;
 			foreach (var key in JumpControls)
 			{
 				var keyPress = AutoJumping ? Input.GetButton(key) : Input.GetButtonDown(key);
-				isJumping = isJumping || keyPress;
+				if (downPressed)
+				{
+					isGettingDown = isGettingDown || keyPress;
+				}
+				else
+				{
+					isJumping = isJumping || keyPress;
+				}
 			}
 			if (JumpUsingVerticalMovement)
 			{
 				foreach (var key in VerticalMovementControls)
 				{
-					isJumping = isJumping || Input.GetAxis(key) < -ANALOG_JUMP_THRESHOLD;
+					if (downPressed)
+					{
+						isGettingDown = isGettingDown || Input.GetAxis(key) < -ANALOG_JUMP_THRESHOLD;
+					}
+					else
+					{
+						isJumping = isJumping || Input.GetAxis(key) < -ANALOG_JUMP_THRESHOLD;
+					}
 				}
 			}
 			
@@ -141,6 +156,11 @@ namespace Controllers
 		public override bool shoot()
 		{
 			return isShooting;
+		}
+		
+		public override bool getDown()
+		{
+			return isGettingDown;
 		}
 
 

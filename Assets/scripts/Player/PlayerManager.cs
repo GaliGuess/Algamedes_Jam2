@@ -124,6 +124,11 @@ public class PlayerManager : MonoBehaviour
 				isGrounded = Physics2D.OverlapAreaNonAlloc(overlap_topLeft.position, overlap_bottomRight.position,
 					             _overlap_colliders, overlap_layersMask) > 0;
 
+				if (controller.getDown())
+				{
+					getOffPlatform();
+				}
+				
 				if (controller.jump())
 				{
 					jump();
@@ -246,6 +251,11 @@ public class PlayerManager : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
+		if (other.CompareTag(Values.PLATFORM_TAG))
+		{
+			var edgeCollider = other.gameObject.GetComponent<EdgeCollider2D>();
+			if (edgeCollider != null) edgeCollider.enabled = true;
+		}
 		if (other.CompareTag(Values.BOUNDRIES_TAG))
 		{
 			if (invincible) return;
@@ -261,5 +271,14 @@ public class PlayerManager : MonoBehaviour
 	private void DisconnectFromPlatfrom()
 	{
 		_playerState.currentPlatform = null;
+	}
+
+	private void getOffPlatform()
+	{
+		if (_playerState.currentPlatform != null)
+		{
+			var edgeCollider = _playerState.currentPlatform.gameObject.GetComponent<EdgeCollider2D>();
+			if (edgeCollider != null) edgeCollider.enabled = false;			
+		}
 	}
 }
