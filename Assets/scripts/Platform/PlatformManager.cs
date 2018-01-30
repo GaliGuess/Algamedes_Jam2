@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils.Utils;
 
 
 namespace Game{
@@ -46,7 +47,8 @@ namespace Game{
 		}
 
 		private void AssignView() {
-			platform_view = transform.Find(Values.PLATFORM_BODY_GAMEOBJ_NAME).GetComponent<PlatformView>();
+//			platform_view = transform.Find(Values.PLATFORM_BODY_GAMEOBJ_NAME).GetComponent<PlatformView>();
+			platform_view = gameObject.FindComponentInChildWithTag<PlatformView>(Values.PLATFORM_BODY_TAG);
 			platform_view.Init();
 		}
 

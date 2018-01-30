@@ -1036,6 +1036,7 @@ GameObject:
   - component: {fileID: 603293047}
   - component: {fileID: 603293046}
   - component: {fileID: 603293043}
+  - component: {fileID: 603293048}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1066,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f56441ee1abf45b2bf2c55309a23218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: deathmatch_scene 1
+  gameSceneName: deathmatch_scene_moving
   secondsToNewRound: 1.5
   BPM: 250
 --- !u!4 &603293045
@@ -1121,6 +1122,17 @@ MonoBehaviour:
   platforms: []
   players: []
   scoreKeeper: {fileID: 1486090612}
+--- !u!114 &603293048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 603293042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4446ef84374447e79a91e4b3817516d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &616600520
 GameObject:
   m_ObjectHideFlags: 0

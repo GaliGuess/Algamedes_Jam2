@@ -15,6 +15,8 @@ namespace Game{
 
 		private SpriteRenderer sprite_renderer;
 
+		private Animator animator;
+
 		private List<Rigidbody2D> carried_bodies = new List<Rigidbody2D>();
 
 		public Vector2 Position{
@@ -45,16 +47,16 @@ namespace Game{
 			}
 			set {
 				this.color = value;
-				if (sprite_renderer == null) {
-					sprite_renderer = GetComponent<SpriteRenderer>();
-				}
-				sprite_renderer.material.color = this.color;
+//				if (sprite_renderer == null) {
+//					sprite_renderer = GetComponent<SpriteRenderer>();
+//				}
+//				sprite_renderer.material.color = this.color;
 			}
 		}
 
 		// Use this for initialization
 		void Start () {
-			sprite_renderer.material.color = this.color;
+//			sprite_renderer.material.color = this.color;
 			last_position = Position;
 			body.isKinematic = true;
 //			if (useSensorAsTrigger) {
@@ -88,6 +90,7 @@ namespace Game{
 		public void Init() {
 			body = GetComponent<Rigidbody2D>();
 			sprite_renderer = GetComponent<SpriteRenderer>();
+			animator = GetComponent<Animator>();
 			platform_manager = GetComponentInParent<PlatformManager>();
 			platform_state = GetComponentInParent<PlatformState>();
 
@@ -188,6 +191,7 @@ namespace Game{
 				this.PlatformColor = Color.grey;
 				break;
 			}
+			animator.SetInteger("color", (int)platform_framework);
 		}
 
 		public void Show() {
