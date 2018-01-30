@@ -15,6 +15,8 @@ namespace Game{
 
 		private SpriteRenderer sprite_renderer;
 
+		private Animator animator;
+
 		private List<Rigidbody2D> carried_bodies = new List<Rigidbody2D>();
 
 		public Vector2 Position{
@@ -45,16 +47,17 @@ namespace Game{
 			}
 			set {
 				this.color = value;
-				if (sprite_renderer == null) {
-					sprite_renderer = GetComponent<SpriteRenderer>();
-				}
-				sprite_renderer.material.color = this.color;
+//				if (sprite_renderer == null) {
+//					sprite_renderer = GetComponent<SpriteRenderer>();
+//				}
+//				sprite_renderer.material.color = this.color;
 			}
 		}
 
 		// Use this for initialization
 		void Start () {
-			sprite_renderer.material.color = this.color;
+			
+//			sprite_renderer.material.color = this.color;
 			last_position = Position;
 			body.isKinematic = true;
 //			if (useSensorAsTrigger) {
@@ -68,7 +71,7 @@ namespace Game{
 
 		// Update is called once per frame
 		void Update () {
-
+			animator.SetInteger("color", (int)platform_state.platform_framework);
 		}
 
 		void LateUpdate() {
@@ -82,12 +85,22 @@ namespace Game{
 		}
 
 		protected void Awake() {
+			
 			Init();
+		}
+
+		void OnEnable() {
+			if (platform_state.platform_framework == Framework.BLACK) {
+				animator.Play("black");
+			} else if (platform_state.platform_framework == Framework.WHITE) {
+				animator.Play("white");
+			}
 		}
 
 		public void Init() {
 			body = GetComponent<Rigidbody2D>();
 			sprite_renderer = GetComponent<SpriteRenderer>();
+			animator = GetComponent<Animator>();
 			platform_manager = GetComponentInParent<PlatformManager>();
 			platform_state = GetComponentInParent<PlatformState>();
 
@@ -99,10 +112,13 @@ namespace Game{
 				AddShotSensor();
 			}
 
+
 			PlatformSensor carrier_sensor = GetComponentInChildren<PlatformSensor>();
 			carrier_sensor.Init();
 			PlatformShotSensor shot_sensor = GetComponentInChildren<PlatformShotSensor>();
 			shot_sensor.Init();
+
+			animator.SetInteger("color", (int)platform_state.platform_framework);
 		}
 
 		private void AddShotSensor() {
@@ -112,7 +128,7 @@ namespace Game{
 			shot_sensor_instance.name = "PlatformShotSensor";
 			shot_sensor_instance.GetComponent<PlatformShotSensor>().Init();
 			BoxCollider2D box = shot_sensor_instance.GetComponent<BoxCollider2D>();
-			box.size = transform.localScale;
+			box.size = transform.localScale; // TODO: fix this according to sprite image to support different sized images
 		}
 
 		private void AddCarrierSensor() {
@@ -122,6 +138,7 @@ namespace Game{
 			carrier_sensor_instance.name = "PlatformSensor";
 			carrier_sensor_instance.GetComponent<PlatformSensor>().Init();
 			EdgeCollider2D collider = carrier_sensor_instance.GetComponent<EdgeCollider2D>();
+			// TODO: fix size according to sprite image to support different sized images
 		}
 			
 		public void UpdateHit(Framework framework) {
@@ -188,6 +205,7 @@ namespace Game{
 				this.PlatformColor = Color.grey;
 				break;
 			}
+			animator.SetInteger("color", (int)platform_framework);
 		}
 
 		public void Show() {

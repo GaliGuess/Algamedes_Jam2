@@ -9,6 +9,7 @@ TagManager:
   - player
   - gameBoundry
   - UI
+  - platform_body
   layers:
   - Default
   - TransparentFX
