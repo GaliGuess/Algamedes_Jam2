@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803233576476396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.141, y: -2.168, z: 0}
+  m_LocalPosition: {x: -0.67, y: -1.095, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4475441237292758}
@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1237063999096216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.369, y: -2.275, z: 0}
+  m_LocalPosition: {x: 0.237, y: -1.094, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4475441237292758}
@@ -168,18 +168,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.25648642, y: -0.3633889}
+  m_Offset: {x: 0.018940091, y: -0.11889887}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.7, y: 4.4}
+    oldSize: {x: 1.35, y: 2.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2457848, y: 3.6809475}
+  m_Size: {x: 1.4008393, y: 1.9665825}
   m_EdgeRadius: 0
 --- !u!95 &95140726701501812
 Animator:
@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5a9aeb4570e4f00b936efcf722abd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usingKeyboard: 1
-  usingPS4Controller: 0
+  usingKeyboard: 0
+  usingPS4Controller: 1
   maxXVelocity: 17
   VelocityFactor: 40
   turnRate: 1.5
@@ -293,7 +293,7 @@ MonoBehaviour:
   lastNonZeroDirection: {x: 0, y: 0}
   JoystickNumber: 1
   JumpUsingVerticalMovement: 0
-  AimWithMovement: 0
+  AimWithMovement: 1
   AutoFire: 1
   AutoJumping: 1
   HorizontalMovementControls:
