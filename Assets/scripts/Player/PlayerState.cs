@@ -9,4 +9,6 @@ public class PlayerState : MonoBehaviour {
 
 //	[HideInInspector]
 	public GameObject currentPlatform;
+
+	// TODO: add all the relative information!
 }

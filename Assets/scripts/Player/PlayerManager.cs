@@ -132,6 +132,9 @@ public class PlayerManager : MonoBehaviour
 				if (controller.jump())
 				{
 					jump();
+					_playerView.isJumping = true;
+				} else {
+					_playerView.isJumping = false;
 				}
 
 				move(movingDirection);
@@ -148,6 +151,9 @@ public class PlayerManager : MonoBehaviour
 				if (controller.shoot())
 				{
 					shoot(shootingDirection);
+					_playerView.isShooting = true;
+				} else {
+					_playerView.isShooting = false;
 				}
 				
 				// Different gravity scale during fall
@@ -169,6 +175,7 @@ public class PlayerManager : MonoBehaviour
 	{
 		foreach (var controller in controllers)
 		{
+			
 			movingDirection = controller.moving_direction();
 			shootingDirection = controller.aim_direction();
 		}
@@ -181,6 +188,16 @@ public class PlayerManager : MonoBehaviour
 		newVelocity.x = Mathf.Lerp(_rigidbody2D.velocity.x, direction.x * VelocityFactor, -Mathf.Pow(Time.deltaTime, 2) + 1);
 		newVelocity.x = Mathf.Clamp(newVelocity.x, -maxXVelocity, maxXVelocity);
 		_rigidbody2D.velocity = newVelocity;
+		if (direction.x > 0) {
+			_playerView.horizontal_dir = 1;
+		} 
+		else if (direction.x < 0 ) {
+			_playerView.horizontal_dir = -1;
+		} else {
+			_playerView.horizontal_dir = 0;
+		}
+
+
 	}
 
 	private void jump()
@@ -195,6 +212,7 @@ public class PlayerManager : MonoBehaviour
 												 jumpHeight * Time.deltaTime);
 //			_rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime);
 			canDoubleJump = true;
+
 		}
 		
 		// Double jumping
@@ -219,6 +237,7 @@ public class PlayerManager : MonoBehaviour
 
 		// recoil
 		_rigidbody2D.MovePosition(new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z));
+
 	}
 
 	private void slowHorizontalVelocity(float factor)
@@ -233,7 +252,7 @@ public class PlayerManager : MonoBehaviour
 		if (other.transform.position.y < _rigidbody2D.position.y)
 		{
 			releaseJump = true;
-			if (other.gameObject.CompareTag("platform"))
+			if (other.gameObject.CompareTag(Values.PLATFORM_BODY_TAG))
 			{
 				ConnectToPlatform(other.gameObject);
 			}
@@ -243,7 +262,7 @@ public class PlayerManager : MonoBehaviour
 	private void OnCollisionExit2D(Collision2D other)
 	{
 		releaseJump = false;
-		if (other.gameObject.CompareTag("platform"))
+		if (other.gameObject.CompareTag(Values.PLATFORM_BODY_TAG))
 		{
 			DisconnectFromPlatfrom();
 		}

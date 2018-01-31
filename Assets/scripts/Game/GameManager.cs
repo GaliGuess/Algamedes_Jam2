@@ -66,7 +66,7 @@ namespace Game {
 		public void ChangeLayer(GameObject obj, Framework framework)
 		{
 //			Debug.Log("ChangeLayer: " + obj.tag);
-			if (obj.CompareTag(Values.PLATFORM_TAG)) {
+			if (obj.CompareTag(Values.PLATFORM_BODY_TAG)) {
 				SetLayerRecursively(obj, framework);
 			}
 			

@@ -19,14 +19,14 @@ namespace Controllers
 		public bool AutoFire = false;
 		public bool AutoJumping = false;
 		
-		public String[] HorizontalMovementControls = {"J1_PS4_LeftStick_Horizontal", "J1_PS4_DPad_Horizontal"},
-						VerticalMovementControls = {"J1_PS4_LeftStick_Vertical", "J1_PS4_DPad_Vertical"};
+		public String[] HorizontalMovementControls = {"PS4_LeftStick_Horizontal", "PS4_DPad_Horizontal"},
+						VerticalMovementControls = {"PS4_LeftStick_Vertical", "PS4_DPad_Vertical"};
 
-		public String[] HorizontalAimControls = {"J1_PS4_RightStick_Horizontal"},
-						VerticalAimControls = {"J1_PS4_RightStick_Vertical"};
+		public String[] HorizontalAimControls = {"PS4_RightStick_Horizontal"},
+						VerticalAimControls = {"PS4_RightStick_Vertical"};
 
-		public String[] JumpControls = {"J1_PS4_X", "J1_PS4_L1", "J1_PS4_L2", "J1_PS4_L3"},
-						ShootControls = {"J1_PS4_Square", "J1_PS4_R1", "J1_PS4_R2", "J1_PS4_R3"};
+		public String[] JumpControls = {"PS4_X", "PS4_L1", "PS4_L2", "PS4_L3"},
+						ShootControls = {"PS4_Square", "PS4_R1", "PS4_R2", "PS4_R3"};
 
 		private float ANALOG_MOVE_THRESHOLD = 0.3f;
 		private float ANALOG_AIM_THRESHOLD = 0.3f;
@@ -77,6 +77,7 @@ namespace Controllers
 			foreach (var key in VerticalMovementControls)
 			{
 				float tempYDirection = -Input.GetAxis(key);
+
 				if (Mathf.Abs(tempYDirection) > ANALOG_MOVE_THRESHOLD)
 				{
 					tempMoveDir.y = Mathf.Sign(tempYDirection);
