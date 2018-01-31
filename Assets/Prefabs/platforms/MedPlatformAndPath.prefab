@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4960403100550560}
   m_Layer: 0
   m_Name: MedPlatformAndPath
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useSensorAsTrigger: 1
+  isLetter: 0
   platform_state: {fileID: 0}
   body: {fileID: 0}
   color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
