@@ -89,7 +89,7 @@ Transform:
   m_GameObject: {fileID: 1646181762229240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.19999994, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4475441237292758}
   m_RootOrder: 2
@@ -101,8 +101,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1270938468579276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0334673, y: 12.068901, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_LocalPosition: {x: 12, y: 25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4669906225348876}
   - {fileID: 4762434293587704}
@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5a9aeb4570e4f00b936efcf722abd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usingKeyboard: 1
-  usingPS4Controller: 0
+  usingKeyboard: 0
+  usingPS4Controller: 1
   maxXVelocity: 17
   VelocityFactor: 40
   turnRate: 1.5
@@ -291,32 +291,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
-  lastNonZeroDirection: {x: -1, y: 0}
-  JoystickNumber: 1
+  lastNonZeroDirection: {x: 0, y: 0}
+  JoystickNumber: 2
   JumpUsingVerticalMovement: 0
   AimWithMovement: 1
   AutoFire: 1
   AutoJumping: 1
   HorizontalMovementControls:
-  - J1_PS4_LeftStick_Horizontal
-  - J1_PS4_DPad_Horizontal
+  - PS4_LeftStick_Horizontal
+  - PS4_DPad_Horizontal
   VerticalMovementControls:
-  - J1_PS4_LeftStick_Vertical
-  - J1_PS4_DPad_Vertical
+  - PS4_LeftStick_Vertical
+  - PS4_DPad_Vertical
   HorizontalAimControls:
-  - J1_PS4_RightStick_Horizontal
+  - PS4_RightStick_Horizontal
   VerticalAimControls:
-  - J1_PS4_RightStick_Vertical
+  - PS4_RightStick_Vertical
   JumpControls:
-  - J1_PS4_X
-  - J1_PS4_L1
-  - J1_PS4_L2
-  - J1_PS4_L3
+  - PS4_X
+  - PS4_L1
+  - PS4_L2
+  - PS4_L3
   ShootControls:
-  - J1_PS4_R1
-  - J1_PS4_R2
-  - J1_PS4_Square
-  - J1_PS4_R3
+  - PS4_Square
+  - PS4_R1
+  - PS4_R2
+  - PS4_R3
   isGettingDown: 0
 --- !u!212 &212472621495823110
 SpriteRenderer:
@@ -331,7 +331,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

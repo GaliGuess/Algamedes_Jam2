@@ -20,7 +20,10 @@ namespace Game{
 		{
 			for (int i = 0; i < playerNames.Length; i++)
 			{
-				scoreTextObjects[i].text = _gameState.getScore(playerNames[i]).ToString();
+				if (scoreTextObjects[i] != null) {
+					scoreTextObjects[i].text = _gameState.getScore(playerNames[i]).ToString();
+				}
+
 			}
 		}
 	}
