@@ -10,6 +10,7 @@ TagManager:
   - gameBoundry
   - UI
   - platform_body
+  - wall
   layers:
   - Default
   - TransparentFX

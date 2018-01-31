@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game{
-	public class PlatformView : MonoBehaviour {
+	public class PlatformLetterView : MonoBehaviour {
 
 		public bool useSensorAsTrigger;
-
-		public bool isLetter;
 
 		private PlatformManager platform_manager;
 
@@ -49,22 +47,17 @@ namespace Game{
 			}
 			set {
 				this.color = value;
-				if (isLetter) {
-					if (sprite_renderer == null) {
-						sprite_renderer = GetComponent<SpriteRenderer>();
-					}
-					sprite_renderer.material.color = this.color;
-				}
-
+//				if (sprite_renderer == null) {
+//					sprite_renderer = GetComponent<SpriteRenderer>();
+//				}
+//				sprite_renderer.material.color = this.color;
 			}
 		}
 
 		// Use this for initialization
 		void Start () {
-			if (isLetter) {
-				sprite_renderer.material.color = this.color;
-			}
-
+			
+//			sprite_renderer.material.color = this.color;
 			last_position = Position;
 			body.isKinematic = true;
 //			if (useSensorAsTrigger) {
@@ -97,14 +90,11 @@ namespace Game{
 		}
 
 		void OnEnable() {
-			if (!isLetter) {
-				if (platform_state.platform_framework == Framework.BLACK) {
-					animator.Play("black");
-				} else if (platform_state.platform_framework == Framework.WHITE) {
-					animator.Play("white");
-				}
+			if (platform_state.platform_framework == Framework.BLACK) {
+				animator.Play("black");
+			} else if (platform_state.platform_framework == Framework.WHITE) {
+				animator.Play("white");
 			}
-
 		}
 
 		public void Init() {
@@ -127,10 +117,8 @@ namespace Game{
 			carrier_sensor.Init();
 			PlatformShotSensor shot_sensor = GetComponentInChildren<PlatformShotSensor>();
 			shot_sensor.Init();
-			if (!isLetter) {
-				animator.SetInteger("color", (int)platform_state.platform_framework);
-			}
-				
+
+			animator.SetInteger("color", (int)platform_state.platform_framework);
 		}
 
 		private void AddShotSensor() {
@@ -217,10 +205,7 @@ namespace Game{
 				this.PlatformColor = Color.grey;
 				break;
 			}
-			if (!isLetter) {
-				animator.SetInteger("color", (int)platform_framework);
-			}
-
+			animator.SetInteger("color", (int)platform_framework);
 		}
 
 		public void Show() {

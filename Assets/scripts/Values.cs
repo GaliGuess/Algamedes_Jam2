@@ -16,6 +16,7 @@ namespace Game{
 		public static string PLAYER_TAG = "player";
 		public static string SHOT_TAG = "shot";
 		public static string BOUNDRIES_TAG = "gameBoundry";
+		public static string WALL_TAG = "wall";
 
 		public static string SCORES_GAMEOBJ_NAME = "scores";
 		public static string PLATFORM_BODY_GAMEOBJ_NAME = "PlatformBody";

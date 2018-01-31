@@ -61,7 +61,7 @@ namespace Game{
 		
 		void OnCollisionEnter2D(Collision2D other) {
 			
-			if (other.gameObject.CompareTag(Values.PLAYER_TAG))
+			if (other.gameObject.CompareTag(Values.PLAYER_TAG) || other.gameObject.CompareTag(Values.WALL_TAG))
 			{
 				Destroy(gameObject);
 			}
