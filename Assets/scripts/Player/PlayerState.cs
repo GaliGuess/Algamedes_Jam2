@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Game;
 
-public class PlayerState : MonoBehaviour {
+namespace Game {
+	public class PlayerState : MonoBehaviour {
 
-	[SerializeField] public Framework player_framework = Framework.BLACK;
+		[SerializeField] public Framework player_framework = Framework.BLACK;
 
-//	[HideInInspector]
-	public GameObject currentPlatform;
+		//	[HideInInspector]
+		public GameObject currentPlatform;
 
-	// TODO: add all the relative information!
+		// TODO: add all the relative information!
+	}
+
 }
