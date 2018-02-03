@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 4651278390746120}
   - component: {fileID: 61298070284049944}
   - component: {fileID: 114048019681368986}
-  m_Layer: 17
+  m_Layer: 18
   m_Name: LandingSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
