@@ -264,6 +264,7 @@ namespace Game{
 			{
 				if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't jump. isGrounded=" + isGrounded + ", canDoubleJump=" + canDoubleJump);
 				_playerView.isJumping = false;
+				_playerView.isDoubleJumping = false;
 
 			}
 		}
