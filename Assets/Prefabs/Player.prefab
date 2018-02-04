@@ -212,7 +212,6 @@ MonoBehaviour:
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   lastNonZeroDirection: {x: 0, y: 0}
-  debugMode: 0
   HorizontalAxis: B1_Horizontal
   VerticalAxis: B1_Vertical
   JumpAxis: B1_Jump
@@ -251,15 +250,14 @@ MonoBehaviour:
   turnRate: 1.5
   bonusFriction: 1.05
   jumpHeight: 55
+  minimalDoubleJumpVelocity: 17
   RegularGravityScale: 4
   FallingGravityScale: 2
   turnsBetweenShots: 8
   recoil: 0.1
-  doubleJumpEnabled: 1
   movingDirection: {x: 0, y: 0}
   shootingDirection: {x: 0, y: 0}
   isGrounded: 0
-  canDoubleJump: 0
   invincible: 0
   currentVelocity: {x: 0, y: 0}
   debugMode: 0
@@ -275,8 +273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showCrosshair: 1
-  crosshairDistance: 2.5
+  crosshairDistance: 6
   isJumping: 0
+  isDoubleJumping: 0
   isShooting: 0
   horizontal_dir: 0
   facingLeft: 0
@@ -295,7 +294,6 @@ MonoBehaviour:
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   lastNonZeroDirection: {x: 0, y: 0}
-  debugMode: 0
   JoystickNumber: 1
   JumpUsingVerticalMovement: 0
   AimWithMovement: 1
