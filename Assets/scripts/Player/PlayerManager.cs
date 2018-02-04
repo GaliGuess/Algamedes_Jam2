@@ -35,6 +35,10 @@ namespace Game{
 		[SerializeField]
 		public int jumpHeight = 700;
 
+		[HideInInspector] bool doubleJumpEnabled = true; // used to be relevant in inspector
+		[SerializeField, Tooltip("The higher the value, the sooner the player can doubleJump")]
+		public float minimalDoubleJumpVelocity = 17f;
+		
 		public float RegularGravityScale = 1;
 		public float FallingGravityScale = 1;
 
@@ -44,8 +48,6 @@ namespace Game{
 		[SerializeField, Tooltip("How far the player is pushed back when shooting")]
 		public float recoil = 0.12f;
 
-		[SerializeField] bool doubleJumpEnabled = true;
-
 		private Rigidbody2D _rigidbody2D;
 		private GameManager _gameManager;
 
@@ -54,8 +56,7 @@ namespace Game{
 		public Vector2 shootingDirection;
 
 		public bool isGrounded;
-		private bool releaseJump = false;
-		public bool canDoubleJump; // double jump is currently disabled but this is still used!
+		private bool canDoubleJump;
 		private float jumpRatio = 0.2f;
 		private int _timesSinceFired = 0;
 		private float Jump_Y_Threshold = 5f;
@@ -70,7 +71,9 @@ namespace Game{
 
 		// for testing
 		public Vector2 currentVelocity;
-
+		
+		public bool debugMode;
+		private PlayerLog eventLog;
 
 		void Awake()
 		{
@@ -108,11 +111,27 @@ namespace Game{
 			// layer of platforms for checking if grounded
 			if (_playerState.player_framework == Framework.BLACK) overlap_layersMask = LayerMask.GetMask("platforms_black", "floor");
 			else if (_playerState.player_framework == Framework.WHITE) overlap_layersMask = LayerMask.GetMask("platforms_white", "floor");
+
+			if (debugMode)
+			{
+				eventLog = GetComponent<PlayerLog>();
+				foreach (var controller in controllers)
+				{
+					controller.debugModeStatus(true);
+				}
+			}
 		}
 
 		private void Update()
 		{
 			updateDirection();
+			
+			// jumping moved here because it was not responsive enough in FixedUpdate (missed controller updates)
+			foreach (var controller in controllers)
+			{
+				if (controller.jump()) tryToJump();
+				else _playerView.isJumping = false;		
+			}
 		}
 
 		void FixedUpdate()
@@ -121,22 +140,11 @@ namespace Game{
 			{
 				if (controller != null)
 				{
-
-					isGrounded = Physics2D.OverlapAreaNonAlloc(overlap_topLeft.position, overlap_bottomRight.position,
-						_overlap_colliders, overlap_layersMask) > 0;	
-					
+					updateGrounded();
 
 					if (controller.getDown())
 					{
 						getOffPlatform();
-					}
-
-					if (controller.jump())
-					{
-						jump();
-						_playerView.isJumping = true;
-					} else {
-						_playerView.isJumping = false;
 					}
 
 					move(movingDirection);
@@ -198,34 +206,58 @@ namespace Game{
 			} else {
 				_playerView.horizontal_dir = 0;
 			}
-
-
 		}
 
-		private void jump()
+		private void updateGrounded()
 		{
-			// This is to avoid chain jumping
-			if (_rigidbody2D.velocity.y > Jump_Y_Threshold) return;
-
-			if (isGrounded && releaseJump)
+			isGrounded = Physics2D.OverlapAreaNonAlloc(overlap_topLeft.position, overlap_bottomRight.position,
+				             _overlap_colliders, overlap_layersMask) > 0;
+		}
+		
+		private void tryToJump()
+		{
+			updateGrounded();
+			
+			if (isGrounded)
 			{
+				// This is to avoid chain jumping
+				if (_rigidbody2D.velocity.y > Jump_Y_Threshold)
+				{
+					if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't jump. y speed: " + _rigidbody2D.velocity.y);
+					return;
+				}
+				
 				DisconnectFromPlatfrom();
-				_rigidbody2D.velocity += new Vector2(movingDirection.x * jumpHeight * jumpRatio * Time.deltaTime,
-					jumpHeight * Time.deltaTime);
-				//			_rigidbody2D.velocity += new Vector2(0, jumpHeight * Time.deltaTime);
+				
+				_rigidbody2D.velocity += new Vector2(0, jumpHeight);
+				if (debugModeOn()) eventLog.AddEvent("PlayerManager: Jumped.");
+				_playerView.isJumping = true;
 				canDoubleJump = true;
-
 			}
 
 			// Double jumping
 			else if (canDoubleJump)
 			{
-				if (doubleJumpEnabled)
+				// This is to avoid chain jumping
+				if (_rigidbody2D.velocity.y > minimalDoubleJumpVelocity)
 				{
-					_rigidbody2D.velocity += new Vector2(movingDirection.x * jumpHeight * jumpRatio * Time.deltaTime,
-						jumpHeight * Time.deltaTime);
+					if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't doubleJump. y speed: " + _rigidbody2D.velocity.y);
+					return;
+				}
+				
+				if (doubleJumpEnabled)
+				{					
+					_rigidbody2D.velocity += new Vector2(0, jumpHeight);
+					if (debugModeOn()) eventLog.AddEvent("PlayerManager: DoubleJumped");
+					_playerView.isJumping = true;
 				}
 				canDoubleJump = false;
+			}
+
+			else
+			{
+				if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't jump. isGrounded=" + isGrounded + ", canDoubleJump=" + canDoubleJump);
+				_playerView.isJumping = false;
 			}
 		}
 
@@ -253,7 +285,6 @@ namespace Game{
 		{
 			if (other.transform.position.y < _rigidbody2D.position.y)
 			{
-				releaseJump = true;
 				if (other.gameObject.CompareTag(Values.PLATFORM_BODY_TAG))
 				{
 					ConnectToPlatform(other.gameObject);
@@ -263,7 +294,6 @@ namespace Game{
 
 		private void OnCollisionExit2D(Collision2D other)
 		{
-			releaseJump = false;
 			if (other.gameObject.CompareTag(Values.PLATFORM_BODY_TAG))
 			{
 				DisconnectFromPlatfrom();
@@ -301,6 +331,11 @@ namespace Game{
 				var edgeCollider = _playerState.currentPlatform.gameObject.GetComponent<EdgeCollider2D>();
 				if (edgeCollider != null) edgeCollider.enabled = false;			
 			}
+		}
+
+		private bool debugModeOn()
+		{
+			return debugMode && eventLog != null;
 		}
 	}
 }
