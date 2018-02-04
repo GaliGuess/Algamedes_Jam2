@@ -39,12 +39,6 @@ namespace Game {
 			_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();
 		}
 
-		private void Start()
-		{
-			facingLeft = GetComponent<Rigidbody2D>().position.x > 0;
-			_spriteRenderer.flipX = facingLeft;
-		}
-
 		void Update() {
 			_animator.SetBool("isJumping", isJumping);
 			_animator.SetBool("isDoubleJumping", isDoubleJumping);
