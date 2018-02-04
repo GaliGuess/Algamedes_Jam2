@@ -880,7 +880,7 @@ Prefab:
     - target: {fileID: 114474660210966542, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
         type: 2}
       propertyPath: usingKeyboard
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114117146519706200, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
         type: 2}
