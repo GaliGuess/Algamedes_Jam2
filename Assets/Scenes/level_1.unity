@@ -374,23 +374,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &115388296 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1270938468579276, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-    type: 2}
-  m_PrefabInternal: {fileID: 227946641}
---- !u!114 &115388306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 115388296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8dcb84744484bd393a137026fd1f67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLines: 10
 --- !u!1001 &128479169
 Prefab:
   m_ObjectHideFlags: 0
@@ -885,7 +868,7 @@ Prefab:
     - target: {fileID: 114474660210966542, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
         type: 2}
       propertyPath: usingKeyboard
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114117146519706200, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
         type: 2}
@@ -900,7 +883,7 @@ Prefab:
     - target: {fileID: 114474660210966542, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
         type: 2}
       propertyPath: debugMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
