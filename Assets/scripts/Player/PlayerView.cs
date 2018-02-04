@@ -10,7 +10,6 @@ namespace Game {
 
 		private Transform crosshair;
 		private SpriteRenderer _crosshair_spriteRenderer;
-		private Rigidbody2D _rigidbody2D;
 
 		[SerializeField]
 		public bool showCrosshair = true;
@@ -28,18 +27,16 @@ namespace Game {
 
 		void Awake () {
 			Init();
+
+
 		}
 
 		public void Init() {
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_animator = GetComponent<Animator>();
-			_rigidbody2D = GetComponent<Rigidbody2D>();
 
 			crosshair = transform.Find(Values.PLAYER_CROSSHAIR_GAMEOBJ_NAME);
 			_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();
-			
-			facingLeft = _rigidbody2D.position.x > 0;
-			_spriteRenderer.flipX = facingLeft;
 		}
 
 		void Update() {

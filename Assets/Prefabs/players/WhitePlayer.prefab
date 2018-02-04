@@ -265,7 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fe1dbb9b5e24a20a8714d575348f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliding: 0
 --- !u!114 &114117146519706200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,6 +279,7 @@ MonoBehaviour:
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   lastNonZeroDirection: {x: -1, y: 0}
+  debugMode: 0
   HorizontalAxis: W1_Horizontal
   VerticalAxis: W1_Vertical
   JumpAxis: W1_Jump
@@ -318,14 +318,15 @@ MonoBehaviour:
   turnRate: 1.5
   bonusFriction: 1.05
   jumpHeight: 55
-  minimalDoubleJumpVelocity: 17
   RegularGravityScale: 4
   FallingGravityScale: 2
   turnsBetweenShots: 8
   recoil: 0.1
+  doubleJumpEnabled: 1
   movingDirection: {x: 0, y: 0}
   shootingDirection: {x: -1, y: 0}
   isGrounded: 1
+  canDoubleJump: 1
   invincible: 0
   currentVelocity: {x: 0, y: 0}
   debugMode: 0
@@ -341,9 +342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showCrosshair: 1
-  crosshairDistance: 6
+  crosshairDistance: 2.5
   isJumping: 0
-  isDoubleJumping: 0
   isShooting: 0
   horizontal_dir: 0
   facingLeft: 0
@@ -362,6 +362,7 @@ MonoBehaviour:
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   lastNonZeroDirection: {x: 0, y: 0}
+  debugMode: 0
   JoystickNumber: 2
   JumpUsingVerticalMovement: 0
   AimWithMovement: 1
