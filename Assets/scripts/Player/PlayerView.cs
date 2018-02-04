@@ -18,6 +18,7 @@ namespace Game {
 		public float crosshairDistance = 2.5f;
 
 		public bool isJumping;
+		public bool isDoubleJumping;
 		public bool isShooting;
 		public int horizontal_dir;
 		public bool facingLeft;
@@ -38,11 +39,15 @@ namespace Game {
 			_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();
 		}
 
-		void FixedUpdate() {
+		void Update() {
 			_animator.SetBool("isJumping", isJumping);
+			_animator.SetBool("isDoubleJumping", isDoubleJumping);
 			_animator.SetBool("isShooting", isShooting);
 			_animator.SetBool("isLanding", isLanding);
 			_animator.SetInteger("movingDir", horizontal_dir);
+		}
+
+		void FixedUpdate() {
 			if (facingLeft && horizontal_dir > 0) { //it was facing left and now moving right
 				facingLeft = false; // it should face right
 			}
