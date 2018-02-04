@@ -129,8 +129,13 @@ namespace Game{
 			// jumping moved here because it was not responsive enough in FixedUpdate (missed controller updates)
 			foreach (var controller in controllers)
 			{
-				if (controller.jump()) tryToJump();
-				else _playerView.isJumping = false;		
+				if (controller.jump()){
+					tryToJump();
+				} 
+				else  {
+					_playerView.isJumping = false;
+					_playerView.isDoubleJumping = false;
+				}	
 			}
 		}
 
@@ -249,8 +254,9 @@ namespace Game{
 				{					
 					_rigidbody2D.velocity += new Vector2(0, jumpHeight);
 					if (debugModeOn()) eventLog.AddEvent("PlayerManager: DoubleJumped");
-					_playerView.isJumping = true;
+					_playerView.isDoubleJumping = true;
 				}
+
 				canDoubleJump = false;
 			}
 
@@ -258,6 +264,7 @@ namespace Game{
 			{
 				if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't jump. isGrounded=" + isGrounded + ", canDoubleJump=" + canDoubleJump);
 				_playerView.isJumping = false;
+
 			}
 		}
 
