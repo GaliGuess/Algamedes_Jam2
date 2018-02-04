@@ -9,17 +9,12 @@ public class anim_test_script : MonoBehaviour
 	private float frame;
 	private string curr_name;
 
-	private int runningLayer, shootingLayer;
-
 	private Animator _animator; 
 	
 	// Use this for initialization
 	void Start ()
 	{
 		_animator = GetComponent<Animator>();
-
-		runningLayer = _animator.GetLayerIndex("Base Layer");
-		shootingLayer = _animator.GetLayerIndex("shooting");
 	}
 	
 	// Update is called once per frame
@@ -27,20 +22,23 @@ public class anim_test_script : MonoBehaviour
 	{
 		if (Input.GetKey(KeyCode.Space))
 		{
-//			_animator.SetLayerWeight(runningLayer, 0);
-			_animator.SetLayerWeight(shootingLayer, 1);
-//				updateAnimState();
-//				pressed = true;
-//				_animator.SetBool("pressed_on", pressed);
+			if (!pressed)
+			{
+				updateAnimState();
+				pressed = true;
+				_animator.SetBool("pressed_on", pressed);
+				_animator.Play(curr_name, -1, frame);
+			}
 		}
 		else
 		{
-//			_animator.SetLayerWeight(runningLayer, 1);
-			_animator.SetLayerWeight(shootingLayer, 0);
-//				updateAnimState();
-//				pressed = false;
-//				_animator.SetBool("pressed_on", pressed);
-//				_animator.Play(curr_name, -1, frame);
+			if (pressed)
+			{
+				updateAnimState();
+				pressed = false;
+				_animator.SetBool("pressed_on", pressed);
+				_animator.Play(curr_name, -1, frame);
+			}
 		}
 	}
 
