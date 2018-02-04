@@ -10,6 +10,8 @@ namespace Controllers
     public abstract class Controller : MonoBehaviour
     {
         public Vector2 movingDirection, aimDirection, lastNonZeroDirection;
+        [HideInInspector] private bool debugMode;
+        private PlayerLog eventLog;
 
         // abstract methods
         protected abstract float update_moving_direction();
@@ -26,6 +28,7 @@ namespace Controllers
         protected virtual void Start()
         {
             lastNonZeroDirection = GetComponent<Rigidbody2D>().position.x < 0 ? Vector2.right : Vector2.left;
+            debugMode = false;
         }
 
         protected virtual void Update()
@@ -38,6 +41,8 @@ namespace Controllers
             aimDirection = update_aim_direction();
             movingDirection.x = update_moving_direction();
             movingDirection = moving_direction().normalized;
+
+            if (debugMode && eventLog != null) debug_events();
         }
 
         public Vector2 moving_direction()
@@ -48,6 +53,22 @@ namespace Controllers
         public Vector2 aim_direction()
         {
             return aimDirection == Vector2.zero ? lastNonZeroDirection : aimDirection;
+        }
+
+        public void debugModeStatus(bool newStatus)
+        {
+            debugMode = newStatus;
+            if (debugMode)
+            {
+                eventLog = GetComponent<PlayerLog>();
+            }
+        }
+        
+        private void debug_events()
+        {
+            if (jump()) eventLog.AddEvent("Controller: Jump");
+            if (shoot()) eventLog.AddEvent("Controller: Fire");
+            if (getDown()) eventLog.AddEvent("Controller: Get Down");
         }
     }
 }
