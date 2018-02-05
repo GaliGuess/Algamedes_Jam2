@@ -75,6 +75,8 @@ namespace Game{
 		public bool debugMode;
 		private PlayerLog eventLog;
 
+		private bool controlsDisabled = false;
+		
 		void Awake()
 		{
 			_playerState = GetComponent<PlayerState>();
@@ -126,6 +128,7 @@ namespace Game{
 		{
 			updateDirection();
 			
+			if (controlsDisabled) return;
 			// jumping moved here because it was not responsive enough in FixedUpdate (missed controller updates)
 			foreach (var controller in controllers)
 			{
@@ -141,6 +144,8 @@ namespace Game{
 
 		void FixedUpdate()
 		{
+			if (controlsDisabled) return;
+			
 			foreach (var controller in controllers)
 			{
 				if (controller != null)
@@ -185,6 +190,11 @@ namespace Game{
 			}
 		}
 
+
+		public void DisableControls(bool status)
+		{
+			controlsDisabled = status;
+		}
 
 		private void updateDirection()
 		{
