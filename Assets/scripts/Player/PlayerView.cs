@@ -40,6 +40,7 @@ namespace Game {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		private void Start()
 		{
 			facingLeft = GetComponent<Rigidbody2D>().position.x > 0;
@@ -47,6 +48,9 @@ namespace Game {
 		}
 
 		void Update() {
+=======
+		void FixedUpdate() {
+>>>>>>> parent of eb819fd... Merge branch 'master' of https://github.com/GaliGuess/Algamedes_Jam2
 =======
 		void FixedUpdate() {
 >>>>>>> parent of eb819fd... Merge branch 'master' of https://github.com/GaliGuess/Algamedes_Jam2
