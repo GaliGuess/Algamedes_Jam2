@@ -15,7 +15,7 @@ namespace Controllers
 		public bool JumpUsingVerticalMovement = false;
 
 		public bool AimWithMovement;
-		public bool GettingDownEnabled = true;
+		
 		public bool AutoFire = false;
 		public bool AutoJumping = false;
 		
@@ -104,7 +104,7 @@ namespace Controllers
 			foreach (var key in JumpControls)
 			{
 				var keyPress = AutoJumping ? Input.GetButton(key) : Input.GetButtonDown(key);
-				if (GettingDownEnabled && downPressed)
+				if (downPressed)
 				{
 					isGettingDown = isGettingDown || keyPress;
 				}
@@ -117,7 +117,7 @@ namespace Controllers
 			{
 				foreach (var key in VerticalMovementControls)
 				{
-					if (GettingDownEnabled && downPressed)
+					if (downPressed)
 					{
 						isGettingDown = isGettingDown || Input.GetAxis(key) < -ANALOG_JUMP_THRESHOLD;
 					}

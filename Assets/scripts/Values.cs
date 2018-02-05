@@ -32,7 +32,6 @@ namespace Game{
 
 		public static string PLAYER_CROSSHAIR_GAMEOBJ_NAME = "crosshair";
 
-		public static string PLAYER_ANIMATION_SUFFIX = "Animation";
 	}
 
 }

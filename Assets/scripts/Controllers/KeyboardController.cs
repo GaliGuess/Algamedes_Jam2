@@ -15,7 +15,7 @@ namespace Controllers
 
         public Vector2 direction;
         private bool isJumping, isShooting, isGettingDown;
-        public bool autoFire, autoJump, GettingDownEnabled = true;
+        public bool autoFire, autoJump;
 
         protected override void Update()
         {
@@ -23,7 +23,7 @@ namespace Controllers
             direction.y = Input.GetAxis(VerticalAxis);
             isShooting = autoFire ? Input.GetButton(ShootAxis) : Input.GetButtonDown(ShootAxis);
 
-            if (GettingDownEnabled && direction.y < 0)
+            if (direction.y < 0)
             {
                 isGettingDown = autoJump ? Input.GetButton(JumpAxis) : Input.GetButtonDown(JumpAxis);
             }
