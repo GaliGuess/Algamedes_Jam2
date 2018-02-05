@@ -64,7 +64,7 @@ namespace Game {
 		{
 			if (CountDown && _countDownAnimation != null)
 			{
-				if (!CountDownEveryRound && _gameState.isGameStart())
+				if (CountDownEveryRound || _gameState.isGameStart())
 				{
 					StartCoroutine(startCountDown());					
 				}
@@ -165,13 +165,15 @@ namespace Game {
 			
 			yield return new WaitForSeconds(1f);
 			_countDownAnimation.SetActive(true);
-			yield return new WaitForSeconds(2.5f);
 			
+			yield return new WaitForSeconds(2.5f);
 			audioSource.Play();
 			
 			yield return new WaitForSeconds(0.5f);
-			Debug.Log("here");
+			Debug.Log("GameManager: Player controls enabled");
 			disablePlayerControls(false);
+			
+			yield return new WaitForSeconds(0.2f);
 			_countDownAnimation.SetActive(false);
 		}
 
