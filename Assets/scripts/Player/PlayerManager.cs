@@ -155,6 +155,7 @@ namespace Game{
 					if (controller.getDown())
 					{
 						getOffPlatform();
+						Debug.Log(gameObject.name + ": Getting off platform");
 					}
 
 					move(movingDirection);
@@ -350,7 +351,10 @@ namespace Game{
 			if (_playerState.currentPlatform != null)
 			{
 				var edgeCollider = _playerState.currentPlatform.gameObject.GetComponent<EdgeCollider2D>();
-				if (edgeCollider != null) edgeCollider.enabled = false;			
+				if (edgeCollider != null)
+				{
+					edgeCollider.enabled = false;
+				}			
 			}
 		}
 
