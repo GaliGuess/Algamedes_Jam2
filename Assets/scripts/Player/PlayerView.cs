@@ -5,9 +5,6 @@ using UnityEngine;
 namespace Game {
 	public class PlayerView : MonoBehaviour {
 
-		[SerializeField]
-		public GameObject AnimationGameObject;
-		
 		private SpriteRenderer _spriteRenderer;
 		private Animator _animator;
 
@@ -30,12 +27,13 @@ namespace Game {
 
 		void Awake () {
 			Init();
+
+
 		}
 
-		public void Init()
-		{
-			_spriteRenderer = AnimationGameObject.GetComponent<SpriteRenderer>();
-			_animator = AnimationGameObject.GetComponent<Animator>();
+		public void Init() {
+			_spriteRenderer = GetComponent<SpriteRenderer>();
+			_animator = GetComponent<Animator>();
 
 			crosshair = transform.Find(Values.PLAYER_CROSSHAIR_GAMEOBJ_NAME);
 			_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();

@@ -76,6 +76,9 @@ namespace Game{
 		private PlayerLog eventLog;
 
 		private bool controlsDisabled = false;
+
+		public bool SFXEnabled = false;
+		private PlayerSFX _sfx;
 		
 		void Awake()
 		{
@@ -88,6 +91,7 @@ namespace Game{
 			overlap_topLeft = transform.Find("overlap_topLeft");
 			overlap_bottomRight = transform.Find("overlap_bottomRight");
 
+			_sfx = GetComponent<PlayerSFX>();
 
 			controllers = new List<Controller>();
 			if (usingPS4Controller)
@@ -155,17 +159,18 @@ namespace Game{
 					if (controller.getDown())
 					{
 						getOffPlatform();
-						Debug.Log(gameObject.name + ": Getting off platform");
+//						Debug.Log(gameObject.name + ": Getting off platform");
 					}
 
 					move(movingDirection);
 
-					// used so the player doesn't slide as much
+					// solws the player when he touches the floor, so he doesn't slide as much
 					if (Mathf.Approximately(movingDirection.x, 0) && isGrounded)
 					{
 						slowHorizontalVelocity(bonusFriction);
 					}
 
+					// updating shots cooldown
 					if (_timesSinceFired > 0) _timesSinceFired--;
 
 					_playerView.changeCrosshairDirection(shootingDirection);
@@ -177,15 +182,17 @@ namespace Game{
 						_playerView.isShooting = false;
 					}
 
-					// Different gravity scale during fall
+					// Setting different gravity scale during fall
 					if (_rigidbody2D.velocity.y < 0) _rigidbody2D.gravityScale = FallingGravityScale;
 					else _rigidbody2D.gravityScale = RegularGravityScale;
 
-					// limiting y speed while falling
+					// limiting player's y speed while falling
 					if (!isGrounded && _rigidbody2D.velocity.y < -MaxFallingVelocity)
 					{
 						_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, -MaxFallingVelocity);
 					}
+					
+					// this variable is just for testing purposes
 					currentVelocity = _rigidbody2D.velocity;
 				}
 			}
@@ -248,6 +255,7 @@ namespace Game{
 				DisconnectFromPlatfrom();
 				
 				_rigidbody2D.velocity += new Vector2(0, jumpHeight);
+				if (SFXEnabled) _sfx.PlayJump();
 				if (debugModeOn()) eventLog.AddEvent("PlayerManager: Jumped.");
 				_playerView.isJumping = true;
 				canDoubleJump = true;
@@ -266,6 +274,7 @@ namespace Game{
 				}
 									
 				_rigidbody2D.velocity += new Vector2(0, jumpHeight);
+				if (SFXEnabled) _sfx.PlayDoubleJump();
 				if (debugModeOn()) eventLog.AddEvent("PlayerManager: DoubleJumped");
 				Debug.Log("PlayerManger: Double jumped");
 				_playerView.isDoubleJumping = true;
@@ -289,6 +298,7 @@ namespace Game{
 
 			Vector2 pos = _rigidbody2D.position;
 			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), _playerState.player_framework);
+			if (SFXEnabled) _sfx.PlayShoot();
 
 			// recoil
 			_rigidbody2D.MovePosition(new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z));
@@ -331,6 +341,7 @@ namespace Game{
 			if (other.CompareTag(Values.BOUNDRIES_TAG))
 			{
 				if (invincible) return;
+				if (SFXEnabled) _sfx.PlayDeath();
 				_gameManager.PlayerKilled(gameObject);
 				Debug.Log(gameObject.name + ": Killed");
 			}
