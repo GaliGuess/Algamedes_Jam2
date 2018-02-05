@@ -30,10 +30,8 @@ namespace Game {
 		
 //		[SerializeField]
 		private bool CountDown = true;
+		private bool CountDownEveryRound = false;
 
-//		[SerializeField]
-		private float SecondsToCountDown = 3f;
-	
 		
 		private bool roundEnded;
 		private GameObject _endGameMenu;
@@ -66,7 +64,10 @@ namespace Game {
 		{
 			if (CountDown && _countDownAnimation != null)
 			{
-				StartCoroutine(startCountDown());
+				if (CountDownEveryRound || _gameState.isGameStart())
+				{
+					StartCoroutine(startCountDown());					
+				}
 			}
 		}
 
@@ -162,11 +163,17 @@ namespace Game {
 			AudioSource audioSource = _audioSource.GetComponent<AudioSource>();
 			audioSource.Stop();
 			
+			yield return new WaitForSeconds(1f);
 			_countDownAnimation.SetActive(true);
-			yield return new WaitForSeconds(SecondsToCountDown);
 			
+			yield return new WaitForSeconds(2.5f);
 			audioSource.Play();
+			
+			yield return new WaitForSeconds(0.5f);
+			Debug.Log("GameManager: Player controls enabled");
 			disablePlayerControls(false);
+			
+			yield return new WaitForSeconds(0.2f);
 			_countDownAnimation.SetActive(false);
 		}
 
