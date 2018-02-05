@@ -18,7 +18,6 @@ namespace Game {
 		public float crosshairDistance = 2.5f;
 
 		public bool isJumping;
-		public bool isDoubleJumping;
 		public bool isShooting;
 		public int horizontal_dir;
 		public bool facingLeft;
@@ -39,6 +38,7 @@ namespace Game {
 			_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();
 		}
 
+<<<<<<< HEAD
 		private void Start()
 		{
 			facingLeft = GetComponent<Rigidbody2D>().position.x > 0;
@@ -46,14 +46,13 @@ namespace Game {
 		}
 
 		void Update() {
+=======
+		void FixedUpdate() {
+>>>>>>> parent of eb819fd... Merge branch 'master' of https://github.com/GaliGuess/Algamedes_Jam2
 			_animator.SetBool("isJumping", isJumping);
-			_animator.SetBool("isDoubleJumping", isDoubleJumping);
 			_animator.SetBool("isShooting", isShooting);
 			_animator.SetBool("isLanding", isLanding);
 			_animator.SetInteger("movingDir", horizontal_dir);
-		}
-
-		void FixedUpdate() {
 			if (facingLeft && horizontal_dir > 0) { //it was facing left and now moving right
 				facingLeft = false; // it should face right
 			}

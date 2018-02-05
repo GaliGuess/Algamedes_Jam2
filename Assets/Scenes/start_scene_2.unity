@@ -1248,16 +1248,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 61121769569174106, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.005707115
-      objectReference: {fileID: 0}
-    - target: {fileID: 61121769569174106, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 1.830317
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
   m_IsPrefabParent: 0
