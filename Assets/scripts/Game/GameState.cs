@@ -55,7 +55,15 @@ namespace Game{
 		{
 			return scoreKeeper.getScore(playerName);
 		}
-		
+
+		public bool isGameStart()
+		{
+			foreach (var player in players)
+			{	
+				if (scoreKeeper.getScore(player.name) != 0) return false;
+			}
+			return true;
+		}
 	}
 
 }

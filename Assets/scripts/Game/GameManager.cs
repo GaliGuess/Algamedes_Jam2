@@ -22,14 +22,22 @@ namespace Game {
 		public string gameSceneName;
 		
 		[SerializeField]
-		public float secondsToNewRound = 3f;
-
+		public float secondsToNewRound = 3f;	
+		
 		[SerializeField]
 		public int BPM = 140;
+	
+		
+//		[SerializeField]
+		private bool CountDown = true;
+		private bool CountDownEveryRound = false;
 
+		
 		private bool roundEnded;
 		private GameObject _endGameMenu;
 		private GameObject _audioSource;
+		private GameObject _countDownAnimation;
+		
 		
 		void Awake ()
 		{
@@ -44,11 +52,23 @@ namespace Game {
 			if (_endGameMenu != null) _endGameMenu.SetActive(false);
 			
 			_audioSource = GameObject.Find(Values.AUDIO_SOURCE_GAMEOBJ_NAME);
+			
+			_countDownAnimation = GameObject.Find(Values.COUNTDOWN_ANIM_GAMEOBJ_NAME);
+			if (_countDownAnimation != null)
+			{
+				_countDownAnimation.SetActive(false);
+			}
 		}
 
 		private void Start()
 		{
-				
+			if (CountDown && _countDownAnimation != null)
+			{
+				if (CountDownEveryRound || _gameState.isGameStart())
+				{
+					StartCoroutine(startCountDown());					
+				}
+			}
 		}
 
 		public void MockPlatformsAtBeat(int beat_num) {
@@ -135,6 +155,34 @@ namespace Game {
 			yield return new WaitForSeconds(secondsToNewRound);
 			_endGameMenu.SetActive(true);
 			Destroy(_audioSource); // This is here so the audio will stop only after the menu appeared (because the menu has its own audio)
+		}
+		
+		IEnumerator startCountDown()
+		{
+			disablePlayerControls(true);
+			AudioSource audioSource = _audioSource.GetComponent<AudioSource>();
+			audioSource.Stop();
+			
+			yield return new WaitForSeconds(1f);
+			_countDownAnimation.SetActive(true);
+			
+			yield return new WaitForSeconds(2.5f);
+			audioSource.Play();
+			
+			yield return new WaitForSeconds(0.5f);
+			Debug.Log("GameManager: Player controls enabled");
+			disablePlayerControls(false);
+			
+			yield return new WaitForSeconds(0.2f);
+			_countDownAnimation.SetActive(false);
+		}
+
+		private void disablePlayerControls(bool status)
+		{
+			foreach (var player in _gameState.players)
+			{
+				player.GetComponent<PlayerManager>().DisableControls(status);
+			}
 		}
 	}
 }

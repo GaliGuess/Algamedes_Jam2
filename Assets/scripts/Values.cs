@@ -21,6 +21,8 @@ namespace Game{
 		public static string END_GAME_MENU_GAMEOBJ_NAME = "EndGameMenu";
 		public static string SCORES_GAMEOBJ_NAME = "scores";
 		public static string AUDIO_SOURCE_GAMEOBJ_NAME = "Audio Source";
+		public static string COUNTDOWN_ANIM_GAMEOBJ_NAME = "CountDownAnimation";
+		
 		public static string PLATFORM_BODY_GAMEOBJ_NAME = "PlatformBody";
 		public static string PLATFORM_PATH_GAMEOBJ_NAME = "PlatformPath";
 		public static string PLATFORM_PATH_POINT_PREFIX = "point";
