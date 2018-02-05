@@ -29,7 +29,7 @@ namespace Game {
 	
 		
 //		[SerializeField]
-		private bool CountDown = true;
+		private bool CountDown = false;
 		private bool CountDownEveryRound = false;
 
 		

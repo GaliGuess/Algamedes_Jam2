@@ -21,7 +21,6 @@ namespace Game{
 		public static string END_GAME_MENU_GAMEOBJ_NAME = "EndGameMenu";
 		public static string SCORES_GAMEOBJ_NAME = "scores";
 		public static string AUDIO_SOURCE_GAMEOBJ_NAME = "Audio Source";
-		public static string SFX_GAMEOBJ_NAME = "SFX";
 		public static string COUNTDOWN_ANIM_GAMEOBJ_NAME = "CountDownAnimation";
 		
 		public static string PLATFORM_BODY_GAMEOBJ_NAME = "PlatformBody";
@@ -33,6 +32,7 @@ namespace Game{
 
 		public static string PLAYER_CROSSHAIR_GAMEOBJ_NAME = "crosshair";
 
+		public static string PLAYER_ANIMATION_SUFFIX = "Animation";
 	}
 
 }
