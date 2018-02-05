@@ -239,6 +239,8 @@ namespace Game{
 				if (_rigidbody2D.velocity.y > Jump_Y_Threshold)
 				{
 					if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't jump. y speed: " + _rigidbody2D.velocity.y);
+					_playerView.isJumping = false;
+					_playerView.isDoubleJumping = false;
 					return;
 				}
 				
@@ -257,15 +259,15 @@ namespace Game{
 				if (_rigidbody2D.velocity.y > minimalDoubleJumpVelocity)
 				{
 					if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't doubleJump. y speed: " + _rigidbody2D.velocity.y);
+					_playerView.isJumping = false;
+					_playerView.isDoubleJumping = false;
 					return;
 				}
-				
-				if (doubleJumpEnabled)
-				{					
-					_rigidbody2D.velocity += new Vector2(0, jumpHeight);
-					if (debugModeOn()) eventLog.AddEvent("PlayerManager: DoubleJumped");
-					_playerView.isDoubleJumping = true;
-				}
+									
+				_rigidbody2D.velocity += new Vector2(0, jumpHeight);
+				if (debugModeOn()) eventLog.AddEvent("PlayerManager: DoubleJumped");
+				Debug.Log("PlayerManger: Double jumped");
+				_playerView.isDoubleJumping = true;
 
 				canDoubleJump = false;
 			}
