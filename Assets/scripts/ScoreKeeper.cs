@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class is needed as we want to keep the score even though the scene is reset but bot keep the whole GameState.
+/// This class is needed as we want to keep the score even though the scene is reset but not keep the whole GameState.
 /// </summary>
 public class ScoreKeeper : MonoBehaviour
 {
@@ -55,5 +55,10 @@ public class ScoreKeeper : MonoBehaviour
 	public void incrementScore(string playerName)
 	{
 		if (_scores.ContainsKey(playerName)) _scores[playerName]++;
+	}
+
+	public void clearScores()
+	{
+		_scores.Clear();
 	}
 }

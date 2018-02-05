@@ -319,6 +319,7 @@ namespace Game{
 			{
 				if (invincible) return;
 				_gameManager.PlayerKilled(gameObject);
+				Debug.Log(gameObject.name + ": Killed");
 			}
 		}
 

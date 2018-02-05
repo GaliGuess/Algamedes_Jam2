@@ -26,6 +26,10 @@ namespace Game {
 
 		[SerializeField]
 		public int BPM = 140;
+
+		private bool roundEnded;
+		private GameObject _endGameMenu;
+		private GameObject _audioSource;
 		
 		void Awake ()
 		{
@@ -34,6 +38,11 @@ namespace Game {
 			_shotFactory = GetComponent<ShotFactory>();
 			
 			UpdateLayerNames();	// must happen in Awake otherwise platforms are set to Default layer
+			
+			roundEnded = false;
+			_endGameMenu = GameObject.Find(Values.END_GAME_MENU_GAMEOBJ_NAME);
+			_endGameMenu.SetActive(false);
+			_audioSource = GameObject.Find(Values.AUDIO_SOURCE_GAMEOBJ_NAME);
 		}
 
 		private void Start()
@@ -88,28 +97,42 @@ namespace Game {
 
 		public void PlayerKilled(GameObject killedPlayer)
 		{
-			foreach (var player in _gameState.players)
-			{
-				if (player.name != killedPlayer.name)
-				{
-					_gameState.incrementScore(player.name);
-				}
-			}
+			if (roundEnded) return;  // This is to solve case where 2 players died one after the other
+			
+			roundEnded = true;
+			_gameState.incrementScore(killedPlayer.name);
 			_gameView.updateScore();
-			reloadGame();
-		}
 
-
-
-		private void reloadGame()
-		{
-			StartCoroutine(waitThenReloadGame());
+			if (_gameState.reachedMaxScore(killedPlayer.name))
+			{
+				Debug.Log(killedPlayer.name + " Lost");
+				endGame();
+			}
+			else
+			{
+				Debug.Log("reloading level");
+				StartCoroutine(waitThenReloadGame());
+			}
 		}
 
 		IEnumerator waitThenReloadGame()
 		{
 			yield return new WaitForSeconds(secondsToNewRound);
 			SceneManager.LoadScene(gameSceneName);
+		}
+
+		// I moved all the action
+		private void endGame()
+		{
+			StartCoroutine(waitThenEndGame());
+			Destroy(_gameState.scoreKeeper.gameObject); // so the scores don't stay for the next level
+		}
+		
+		IEnumerator waitThenEndGame()
+		{
+			yield return new WaitForSeconds(secondsToNewRound);
+			_endGameMenu.SetActive(true);
+			Destroy(_audioSource); // This is here so the audio will stop only after the menu appeared (because the menu has its own audio)
 		}
 	}
 }

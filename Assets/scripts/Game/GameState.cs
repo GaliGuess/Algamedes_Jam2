@@ -10,6 +10,9 @@ namespace Game{
 		[HideInInspector] public GameObject[] players;
 		public ScoreKeeper scoreKeeper;
 
+		[SerializeField]
+		public int WinningScore = 5; 
+
 		private GameView _gameView;
 
 		private void Awake()
@@ -18,7 +21,7 @@ namespace Game{
 			platforms = GameObject.FindGameObjectsWithTag(Values.PLATFORM_TAG); //TODO: change tag of platform bodies to platform body and assign platform to platform game objects
 			shots = new List<GameObject>();
 			players = GameObject.FindGameObjectsWithTag(Values.PLAYER_TAG);
-
+			
 			_gameView = GetComponent<GameView>();
 		}
 
@@ -26,6 +29,7 @@ namespace Game{
 		{
 			scoreKeeper = GameObject.Find(Values.SCORES_GAMEOBJ_NAME).GetComponent<ScoreKeeper>();
 			if (!scoreKeeper.scoresExist()) initializeScores();
+			
 			_gameView.updateScore();
 		}
 
@@ -37,6 +41,11 @@ namespace Game{
 			}
 		}
 
+		public bool reachedMaxScore(string killedPlayerName)
+		{
+			return scoreKeeper.getScore(killedPlayerName) == WinningScore;
+		}
+
 		public void incrementScore(string playerName)
 		{
 			scoreKeeper.incrementScore(playerName);
@@ -46,6 +55,7 @@ namespace Game{
 		{
 			return scoreKeeper.getScore(playerName);
 		}
+		
 	}
 
 }
