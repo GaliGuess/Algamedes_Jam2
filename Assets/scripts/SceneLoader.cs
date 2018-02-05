@@ -13,6 +13,12 @@ namespace Game {
 			SceneManager.LoadScene(index);
 		}
 
+		public void ReloadCurrentScene()
+		{
+			int currentScene = SceneManager.GetActiveScene().buildIndex;
+			LoadScene(currentScene);
+		}
+
 		public void LoadRandomScene() {
 			int scene_idx = Random.Range(MIN_LEVEL_IDX,MAX_LEVEL_IDX);
 			SceneManager.LoadScene(scene_idx);

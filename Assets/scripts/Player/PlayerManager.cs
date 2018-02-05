@@ -75,6 +75,8 @@ namespace Game{
 		public bool debugMode;
 		private PlayerLog eventLog;
 
+		private bool controlsDisabled = false;
+		
 		void Awake()
 		{
 			_playerState = GetComponent<PlayerState>();
@@ -126,6 +128,7 @@ namespace Game{
 		{
 			updateDirection();
 			
+			if (controlsDisabled) return;
 			// jumping moved here because it was not responsive enough in FixedUpdate (missed controller updates)
 			foreach (var controller in controllers)
 			{
@@ -141,6 +144,8 @@ namespace Game{
 
 		void FixedUpdate()
 		{
+			if (controlsDisabled) return;
+			
 			foreach (var controller in controllers)
 			{
 				if (controller != null)
@@ -185,6 +190,11 @@ namespace Game{
 			}
 		}
 
+
+		public void DisableControls(bool status)
+		{
+			controlsDisabled = status;
+		}
 
 		private void updateDirection()
 		{
@@ -264,6 +274,7 @@ namespace Game{
 			{
 				if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't jump. isGrounded=" + isGrounded + ", canDoubleJump=" + canDoubleJump);
 				_playerView.isJumping = false;
+				_playerView.isDoubleJumping = false;
 
 			}
 		}
@@ -318,6 +329,7 @@ namespace Game{
 			{
 				if (invincible) return;
 				_gameManager.PlayerKilled(gameObject);
+				Debug.Log(gameObject.name + ": Killed");
 			}
 		}
 
