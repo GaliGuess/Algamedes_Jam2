@@ -41,7 +41,8 @@ namespace Game {
 			
 			roundEnded = false;
 			_endGameMenu = GameObject.Find(Values.END_GAME_MENU_GAMEOBJ_NAME);
-			_endGameMenu.SetActive(false);
+			if (_endGameMenu != null) _endGameMenu.SetActive(false);
+			
 			_audioSource = GameObject.Find(Values.AUDIO_SOURCE_GAMEOBJ_NAME);
 		}
 
@@ -103,7 +104,8 @@ namespace Game {
 			_gameState.incrementScore(killedPlayer.name);
 			_gameView.updateScore();
 
-			if (_gameState.reachedMaxScore(killedPlayer.name))
+			// added _endGameMenu null check for testing purposes, so if you don't have the end game menu you can keep playing forever.
+			if (_gameState.reachedMaxScore(killedPlayer.name) && _endGameMenu != null)
 			{
 				Debug.Log(killedPlayer.name + " Lost");
 				endGame();
