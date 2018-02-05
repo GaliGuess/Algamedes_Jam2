@@ -3127,7 +3127,10 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+<<<<<<< HEAD
   m_MaskInteraction: 0
+=======
+>>>>>>> parent of 095bb18... added  background to all levels (except level 3)
 --- !u!1 &1206680374
 GameObject:
   m_ObjectHideFlags: 0
