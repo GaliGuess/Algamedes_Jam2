@@ -50,6 +50,9 @@ namespace Game{
 		[SerializeField, Tooltip("Lower value makes shooting faster")]
 		public int turnsBetweenShots = 5;
 
+		[SerializeField, Tooltip("This *2 is the shells' random angle range.")]
+		public float shellAngleRange = 10f;
+		
 		[SerializeField, Tooltip("How far the player is pushed back when shooting")]
 		public float recoil = 0.12f;
 
@@ -299,6 +302,9 @@ namespace Game{
 			if (EnableSFX) _sfx.PlayShoot();
 			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), _playerState.player_framework);
 			float shell_rotation = (-direction + Vector2.up*1.5f).GetAngle();
+			
+			// adding some randomness to the angle
+			shell_rotation = Random.Range(shell_rotation - shellAngleRange, shell_rotation + shellAngleRange);
 
 			_gameManager.SpawnShell(pos, _rigidbody2D.velocity, shell_rotation, _playerState.player_framework, GetComponent<Collider2D>());
 			// recoil
