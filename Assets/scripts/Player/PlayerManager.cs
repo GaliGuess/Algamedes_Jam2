@@ -137,6 +137,8 @@ namespace Game{
 
 		private void Update()
 		{
+			updateGrounded();
+			
 			updateDirection();
 			
 			if (controlsDisabled) return;
@@ -225,7 +227,7 @@ namespace Game{
 				shootingDirection = aimDirection == Vector2.zero ? lastNonZeroDirection : aimDirection;
 
 				_playerView.vertical_dir = shootingDirection.y;
-				_playerView.isMoving = !Mathf.Approximately(movingDirection.x, 0);
+				_playerView.isMoving = isGrounded && !Mathf.Approximately(movingDirection.x, 0);
 				if (Mathf.Approximately(aimDirection.x, 0)) _playerView.horizontal_dir = 0;
 				else _playerView.horizontal_dir = (int) Mathf.Sign(aimDirection.x);
 			}
@@ -248,8 +250,6 @@ namespace Game{
 		
 		private void tryToJump()
 		{
-			updateGrounded();
-			
 			if (isGrounded)
 			{
 				// This is to avoid chain jumping
