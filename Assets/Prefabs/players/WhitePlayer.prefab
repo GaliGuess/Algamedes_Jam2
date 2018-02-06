@@ -936,7 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5a9aeb4570e4f00b936efcf722abd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnableSFX: 0
+  EnableSFX: 1
   usingKeyboard: 1
   usingPS4Controller: 1
   maxXVelocity: 17
