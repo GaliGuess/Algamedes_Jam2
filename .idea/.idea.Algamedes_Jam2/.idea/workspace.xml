@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93da262b-c29b-4459-8495-dac80ca7fd7e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs" afterPath="$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_directions/idle_0.anim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_directions/idle_0.anim.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_directions/idle_1.anim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_directions/idle_1.anim.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_directions/idle_3.anim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_directions/idle_3.anim.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_directions/idle_4.anim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_directions/idle_4.anim.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_shoot_directions/idle_shoot_0.anim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_shoot_directions/idle_shoot_0.anim.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_shoot_directions/idle_shoot_1.anim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_shoot_directions/idle_shoot_1.anim.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_shoot_directions/idle_shoot_2.anim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_shoot_directions/idle_shoot_2.anim.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_shoot_directions/idle_shoot_3.anim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_shoot_directions/idle_shoot_3.anim.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_shoot_directions/idle_shoot_4.anim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/idle_shoot_directions/idle_shoot_4.anim.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/white_idle.anim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/white_idle.anim.meta" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/white_player_animator_controller.controller" afterPath="$PROJECT_DIR$/Assets/Animations/Player/white/white_player_animator_controller.controller" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Animations/Player/white/white_player_animator_controller.controller.meta" afterPath="$PROJECT_DIR$/Assets/Animations/Player/white/white_player_animator_controller.controller.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/level_1.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/level_1.unity" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -469,7 +491,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197892000" />
+    <option name="totallyTimeSpent" value="198218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
