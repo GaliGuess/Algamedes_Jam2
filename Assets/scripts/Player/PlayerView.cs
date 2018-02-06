@@ -23,6 +23,7 @@ namespace Game {
 		[HideInInspector] public bool isJumping;
 		[HideInInspector] public bool isDoubleJumping;
 		[HideInInspector] public bool isShooting;
+		[HideInInspector] public float vertical_dir;
 		[HideInInspector] public int horizontal_dir;
 		[HideInInspector] public bool facingLeft;
 		[HideInInspector] public bool isLanding;
@@ -35,25 +36,15 @@ namespace Game {
 					   anim_shoot_prefix = "shooting_";
 
 		private int ANIM_DIR_NUMBER = 5;
-//		private enum AnimDirections
-//		{
-//			UP = 4, 
-//			UP_DIAG = 3, 
-//			RIGHT = 2, 
-//			DOWN_DIAG = 1, 
-//			DOWN = 0
-//		}
 		
 		void Awake () {
 			Init();
-
-
 		}
 
 		public void Init() {
 			_spriteRenderer = _animationGameObject.GetComponent<SpriteRenderer>();
 			_animator = _animationGameObject.GetComponent<Animator>();
-//			updateAnimLayerDictionary();
+			updateAnimLayerDictionary();
 			
 			crosshair = transform.Find(Values.PLAYER_CROSSHAIR_GAMEOBJ_NAME);
 			_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();
@@ -71,6 +62,8 @@ namespace Game {
 			_animator.SetBool("isShooting", isShooting);
 			_animator.SetBool("isLanding", isLanding);
 			_animator.SetInteger("movingDir", horizontal_dir);
+			
+			changeAnimationLayer();
 		}
 
 		void FixedUpdate() {
@@ -124,30 +117,28 @@ namespace Game {
 			}
 		}
 		
-		private void changeAnimationLayer(Vector2 aimDirection)
+		private void changeAnimationLayer()
 		{
 			// assembling layer name
-			string newAnimLayerName;
-			if (isShooting) newAnimLayerName = anim_shoot_prefix;
-			else newAnimLayerName = anim_not_shooting_prefix;
-
-			newAnimLayerName = newAnimLayerName + animGetDirectionIndex(aimDirection.y);
-
-			// updating layer visibility
+			var newAnimLayerName = isShooting ? anim_shoot_prefix : anim_not_shooting_prefix;
+			newAnimLayerName = newAnimLayerName + animGetDirectionIndex(vertical_dir);
 			int newLayer = anim_layers[newAnimLayerName];
-			_animator.SetLayerWeight(newLayer, 1);
-			_animator.SetLayerWeight(currentLayer, 0);
 			
-			currentLayer = newLayer;
+			// updating layer visibility
+			if (newLayer != currentLayer)
+			{
+				Debug.Log(gameObject.name + ": newLayer= " + newAnimLayerName + ", " + newLayer);
+				_animator.SetLayerWeight(newLayer, 1);
+				_animator.SetLayerWeight(currentLayer, 0);
+			
+				currentLayer = newLayer;
+			}
 		}
 
 		private int animGetDirectionIndex(float yDir)
 		{
-			if (-1 <= yDir && yDir < -0.6) return 0;
-			if (-0.6 <= yDir && yDir < -0.2) return 1;
-			if (-0.2 <= yDir && yDir < 0.2) return 2;
-			if (0.2 <= yDir && yDir < 0.6) return 3;
-			return 4;
+//			return Mathf.RoundToInt((yDir + 1)/ 2 * (ANIM_DIR_NUMBER - .01f));
+			return 2;
 		}
 	}
 }

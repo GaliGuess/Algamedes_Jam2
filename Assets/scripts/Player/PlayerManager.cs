@@ -62,6 +62,7 @@ namespace Game{
 		[Header("for Testing")]
 		public Vector2 movingDirection; // public only for testing
 		public Vector2 shootingDirection;
+		private Vector2 lastNonZeroDirection;
 
 		public bool isGrounded;
 		private bool canDoubleJump;
@@ -206,13 +207,21 @@ namespace Game{
 			controlsDisabled = status;
 		}
 
+		
+		
 		private void updateDirection()
 		{
 			foreach (var controller in controllers)
 			{
 
 				movingDirection = controller.moving_direction();
+				
+				Vector2 aimDirection = controller.aim_direction();
 				shootingDirection = controller.aim_direction();
+				
+				_playerView.vertical_dir = shootingDirection.y;
+				if (Mathf.Approximately(movingDirection.x, 0)) _playerView.horizontal_dir = 0;
+				else _playerView.horizontal_dir = (int) Mathf.Sign(movingDirection.x);
 			}
 		}
 
@@ -223,14 +232,6 @@ namespace Game{
 			newVelocity.x = Mathf.Lerp(_rigidbody2D.velocity.x, direction.x * VelocityFactor, -Mathf.Pow(Time.deltaTime, 2) + 1);
 			newVelocity.x = Mathf.Clamp(newVelocity.x, -maxXVelocity, maxXVelocity);
 			_rigidbody2D.velocity = newVelocity;
-			if (direction.x > 0) {
-				_playerView.horizontal_dir = 1;
-			} 
-			else if (direction.x < 0 ) {
-				_playerView.horizontal_dir = -1;
-			} else {
-				_playerView.horizontal_dir = 0;
-			}
 		}
 
 		private void updateGrounded()
