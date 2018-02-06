@@ -50,6 +50,7 @@
           </e>
           <e p="Player" t="Include">
             <e p="LandingSensor.cs" t="Include" />
+            <e p="PixelPerfect.cs" t="Include" />
             <e p="PlayerLog.cs" t="Include" />
             <e p="PlayerManager.cs" t="Include" />
             <e p="PlayerSFX.cs" t="Include" />
@@ -60,6 +61,11 @@
           <e p="SceneLoader.cs" t="Include" />
           <e p="ScoreKeeper.cs" t="Include" />
           <e p="SelectOnInput.cs" t="Include" />
+          <e p="Shell" t="Include">
+            <e p="ShellFactory.cs" t="Include" />
+            <e p="ShellManager.cs" t="Include" />
+            <e p="ShellView.cs" t="Include" />
+          </e>
           <e p="Shot" t="Include">
             <e p="ShotFactory.cs" t="Include" />
             <e p="ShotManager.cs" t="Include" />

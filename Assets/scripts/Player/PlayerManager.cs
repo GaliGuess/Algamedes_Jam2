@@ -296,15 +296,11 @@ namespace Game{
 			_timesSinceFired = turnsBetweenShots;
 
 			Vector2 pos = _rigidbody2D.position;
-<<<<<<< HEAD
 			float shot_rotation = direction.GetAngle();
 			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, shot_rotation, _playerState.player_framework);
 			float shell_rotation = (-direction + Vector2.up*1.5f).GetAngle();
-=======
 			if (EnableSFX) _sfx.PlayShoot();
 			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), _playerState.player_framework);
->>>>>>> 088aae0cc43a7a8116864e8ddc7183ba2dc00e7f
-
 
 			_gameManager.SpawnShell(pos, _rigidbody2D.velocity, shell_rotation, _playerState.player_framework, GetComponent<Collider2D>());
 			// recoil
