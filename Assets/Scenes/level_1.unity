@@ -911,6 +911,14 @@ Prefab:
       propertyPath: usingKeyboard
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4267276396950370, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267276396950370, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
   m_IsPrefabParent: 0
