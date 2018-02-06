@@ -57,7 +57,7 @@ namespace Game{
 
 		void OnCollisionEnter2D(Collision2D other) {
 			if (other.gameObject.CompareTag(Values.PLATFORM_BODY_TAG)) {
-				Debug.Log("shell: collision with platform");
+//				Debug.Log("shell: collision with platform");
 			}
 			if (other.gameObject.CompareTag(Values.WALL_TAG))
 			{
