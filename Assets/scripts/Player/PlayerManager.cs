@@ -272,7 +272,7 @@ namespace Game{
 					return;
 				}
 									
-				_rigidbody2D.velocity += new Vector2(0, jumpHeight);
+				_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpHeight);
 				if (EnableSFX) _sfx.PlayDoubleJump();
 				if (debugModeOn()) eventLog.AddEvent("PlayerManager: DoubleJumped");
 				Debug.Log("PlayerManger: Double jumped");
