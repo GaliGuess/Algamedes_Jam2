@@ -9,9 +9,6 @@ public class GameManagerInspector : Editor {
 	SerializedProperty secondsToNewRound;
 	SerializedProperty BPM;
 
-	SerializedProperty countDown;
-	SerializedProperty countDownEveryRound;
-
 
 	private static int beat_num = 0;
 
@@ -20,9 +17,6 @@ public class GameManagerInspector : Editor {
 		gameSceneName = serializedObject.FindProperty("gameSceneName");
 		secondsToNewRound = serializedObject.FindProperty("secondsToNewRound");
 		BPM = serializedObject.FindProperty("BPM");
-
-		countDown = serializedObject.FindProperty("countDown");
-		countDownEveryRound = serializedObject.FindProperty("countDownEveryRound");
 
 	}
 
@@ -33,9 +27,6 @@ public class GameManagerInspector : Editor {
 
 		EditorGUILayout.PropertyField(gameSceneName);
 		EditorGUILayout.PropertyField(secondsToNewRound);
-		
-		EditorGUILayout.Space();
-		EditorGUILayout.LabelField("BPM options", EditorStyles.boldLabel);
 		EditorGUILayout.PropertyField(BPM);
 
 		EditorGUI.BeginChangeCheck();
@@ -44,12 +35,6 @@ public class GameManagerInspector : Editor {
 		if (EditorGUI.EndChangeCheck () ) {
 			myTarget.MockPlatformsAtBeat(beat_num-1);
 		}
-
-		EditorGUILayout.Space();
-		EditorGUILayout.LabelField("Countdown options", EditorStyles.boldLabel);
-		EditorGUILayout.PropertyField(countDown);
-		EditorGUILayout.PropertyField(countDownEveryRound);
-		
 		serializedObject.ApplyModifiedProperties();
 	}
 }
