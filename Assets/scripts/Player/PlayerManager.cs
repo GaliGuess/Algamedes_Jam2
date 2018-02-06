@@ -216,12 +216,18 @@ namespace Game{
 
 				movingDirection = controller.moving_direction();
 				
+				// saving last x direction that is not zero. used for shooting.
 				Vector2 aimDirection = controller.aim_direction();
-				shootingDirection = controller.aim_direction();
-				
+				if (aimDirection != Vector2.zero)
+				{
+					lastNonZeroDirection = aimDirection;
+				}
+				shootingDirection = aimDirection == Vector2.zero ? lastNonZeroDirection : aimDirection;
+
 				_playerView.vertical_dir = shootingDirection.y;
-				if (Mathf.Approximately(movingDirection.x, 0)) _playerView.horizontal_dir = 0;
-				else _playerView.horizontal_dir = (int) Mathf.Sign(movingDirection.x);
+				_playerView.isMoving = !Mathf.Approximately(movingDirection.x, 0);
+				if (Mathf.Approximately(aimDirection.x, 0)) _playerView.horizontal_dir = 0;
+				else _playerView.horizontal_dir = (int) Mathf.Sign(aimDirection.x);
 			}
 		}
 

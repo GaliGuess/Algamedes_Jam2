@@ -38,6 +38,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: isMoving
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -73,7 +79,7 @@ AnimatorController:
       m_Motion: {fileID: 7400000, guid: 5319c07a37d7d44d184c946b9ef9ed9e, type: 2}
     - serializedVersion: 2
       m_State: {fileID: 1102788712217746686}
-      m_Motion: {fileID: 7400000, guid: af50cddc087f746008356c2107f0fb23, type: 2}
+      m_Motion: {fileID: 7400000, guid: 4f760214aaa0a42f7a53a5c46f4fdf43, type: 2}
     - serializedVersion: 2
       m_State: {fileID: 1102951245274568580}
       m_Motion: {fileID: 7400000, guid: 39ed033f23397402eb128c52640bcc8c, type: 2}
@@ -97,8 +103,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 7
-    m_ConditionEvent: movingDir
+  - m_ConditionMode: 1
+    m_ConditionEvent: isMoving
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102788712217746686}
@@ -334,8 +340,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: movingDir
+  - m_ConditionMode: 2
+    m_ConditionEvent: isMoving
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102257903758599374}

@@ -25,6 +25,7 @@ namespace Game {
 		[HideInInspector] public bool isShooting;
 		[HideInInspector] public float vertical_dir;
 		[HideInInspector] public int horizontal_dir;
+		[HideInInspector] public bool isMoving;
 		[HideInInspector] public bool facingLeft;
 		[HideInInspector] public bool isLanding;
 
@@ -61,6 +62,7 @@ namespace Game {
 			_animator.SetBool("isDoubleJumping", isDoubleJumping);
 			_animator.SetBool("isShooting", isShooting);
 			_animator.SetBool("isLanding", isLanding);
+			_animator.SetBool("isMoving", isMoving);
 			_animator.SetInteger("movingDir", horizontal_dir);
 			
 			changeAnimationLayer();

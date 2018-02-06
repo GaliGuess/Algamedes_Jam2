@@ -33,11 +33,11 @@ namespace Controllers
 
         protected virtual void Update()
         {
-            // saving last x direction that is not zero. used for shooting.
-            if (aimDirection != Vector2.zero)
-            {
-                lastNonZeroDirection = aimDirection;
-            }
+//            // saving last x direction that is not zero. used for shooting.
+//            if (aimDirection != Vector2.zero)
+//            {
+//                lastNonZeroDirection = aimDirection;
+//            }
             aimDirection = update_aim_direction();
             movingDirection.x = update_moving_direction();
             movingDirection = moving_direction().normalized;
@@ -52,7 +52,8 @@ namespace Controllers
 
         public Vector2 aim_direction()
         {
-            return aimDirection == Vector2.zero ? lastNonZeroDirection : aimDirection;
+//            return aimDirection == Vector2.zero ? lastNonZeroDirection : aimDirection;
+            return aimDirection;
         }
 
         public void debugModeStatus(bool newStatus)
