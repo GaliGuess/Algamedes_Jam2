@@ -12,6 +12,11 @@ namespace Game{
 
 		private PlayerState _playerState;
 
+		[SerializeField] 
+		public bool EnableSFX = false;
+		
+		private PlayerSFX _sfx;
+		
 		[Header("Controllers")]
 		[SerializeField] public bool usingKeyboard;
 		[SerializeField] public bool usingPS4Controller;
@@ -103,6 +108,8 @@ namespace Game{
 
 			overlap_topLeft = transform.Find(Values.PLAYER_TOP_LEFT_GAMEOBJ_NAME);
 			overlap_bottomRight = transform.Find(Values.PLAYER_BOT_RIGHT_GAMEOBJ_NAME);
+
+			_sfx = GetComponentInChildren<PlayerSFX>();
 		}
 
 
@@ -247,6 +254,7 @@ namespace Game{
 				DisconnectFromPlatfrom();
 				
 				_rigidbody2D.velocity += new Vector2(0, jumpHeight);
+				if (EnableSFX) _sfx.PlayJump();
 				if (debugModeOn()) eventLog.AddEvent("PlayerManager: Jumped.");
 				_playerView.isJumping = true;
 				canDoubleJump = true;
@@ -265,6 +273,7 @@ namespace Game{
 				}
 									
 				_rigidbody2D.velocity += new Vector2(0, jumpHeight);
+				if (EnableSFX) _sfx.PlayDoubleJump();
 				if (debugModeOn()) eventLog.AddEvent("PlayerManager: DoubleJumped");
 				Debug.Log("PlayerManger: Double jumped");
 				_playerView.isDoubleJumping = true;
@@ -287,6 +296,7 @@ namespace Game{
 			_timesSinceFired = turnsBetweenShots;
 
 			Vector2 pos = _rigidbody2D.position;
+			if (EnableSFX) _sfx.PlayShoot();
 			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), _playerState.player_framework);
 
 			// recoil
@@ -310,6 +320,11 @@ namespace Game{
 					ConnectToPlatform(other.gameObject);
 				}
 			}
+
+			if (other.gameObject.CompareTag(Values.SHOT_TAG))
+			{
+				if (EnableSFX) _sfx.PlayImpact();
+			}
 		}
 
 		private void OnCollisionExit2D(Collision2D other)
@@ -330,6 +345,7 @@ namespace Game{
 			if (other.CompareTag(Values.BOUNDRIES_TAG))
 			{
 				if (invincible) return;
+				if (EnableSFX) _sfx.PlayDeath();
 				_gameManager.PlayerKilled(gameObject);
 				Debug.Log(gameObject.name + ": Killed");
 			}

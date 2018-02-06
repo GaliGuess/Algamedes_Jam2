@@ -18,6 +18,7 @@
         </e>
         <e p="scripts" t="Include">
           <e p="anim_test_script.cs" t="Include" />
+          <e p="AnimationManager.cs" t="Include" />
           <e p="ButtonOnSubmit.cs" t="Include" />
           <e p="Controllers" t="Include">
             <e p="Controller.cs" t="Include" />
@@ -51,6 +52,7 @@
             <e p="LandingSensor.cs" t="Include" />
             <e p="PlayerLog.cs" t="Include" />
             <e p="PlayerManager.cs" t="Include" />
+            <e p="PlayerSFX.cs" t="Include" />
             <e p="PlayerState.cs" t="Include" />
             <e p="PlayerView.cs" t="Include" />
           </e>
@@ -76,9 +78,7 @@
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp/bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
