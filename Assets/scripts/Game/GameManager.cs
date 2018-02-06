@@ -70,6 +70,7 @@ namespace Game {
 			{
 				if (countDownEveryRound || _gameState.isGameStart())
 				{
+					Debug.Log("GameManager: Paying CountDown");
 					StartCoroutine(startCountDown());					
 				}
 			}

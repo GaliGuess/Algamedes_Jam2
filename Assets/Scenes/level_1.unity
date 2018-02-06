@@ -2460,7 +2460,7 @@ MonoBehaviour:
   gameSceneName: level_1
   secondsToNewRound: 1.5
   BPM: 250
-  countDown: 0
+  countDown: 1
   countDownEveryRound: 0
 --- !u!1 &1128330409
 GameObject:
