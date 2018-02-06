@@ -160,6 +160,11 @@ namespace Game{
 		}
 
 		void OnCollisionEnter2D(Collision2D other) {
+
+			if (other.gameObject.tag == Values.SHELL_TAG)
+			{
+//				Debug.Log("PlatformView: detected shell");
+			}
 			if (other.gameObject.tag == Values.SHOT_TAG)
 			{
 //				Debug.Log("PlatformManager: detected shot");

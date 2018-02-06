@@ -287,8 +287,12 @@ namespace Game{
 			_timesSinceFired = turnsBetweenShots;
 
 			Vector2 pos = _rigidbody2D.position;
-			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), _playerState.player_framework);
+			float shot_rotation = direction.GetAngle();
+			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, shot_rotation, _playerState.player_framework);
+			float shell_rotation = (-direction + Vector2.up*1.5f).GetAngle();
 
+
+			_gameManager.SpawnShell(pos, _rigidbody2D.velocity, shell_rotation, _playerState.player_framework, GetComponent<Collider2D>());
 			// recoil
 			_rigidbody2D.MovePosition(new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z));
 

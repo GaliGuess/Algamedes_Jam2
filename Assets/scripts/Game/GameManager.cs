@@ -14,6 +14,7 @@ namespace Game {
 		private GameView _gameView;
 		private GameState _gameState;
 		private ShotFactory _shotFactory;
+		private ShellFactory _shellFactory;
 
 		private int white_platforms_layer, black_platforms_layer, grey_platforms_layer,
 					white_player_layer, black_player_layer;
@@ -44,6 +45,7 @@ namespace Game {
 			_gameState = GetComponent<GameState>();
 			_gameView = GetComponent<GameView>();
 			_shotFactory = GetComponent<ShotFactory>();
+			_shellFactory = GetComponent<ShellFactory>();
 			
 			UpdateLayerNames();	// must happen in Awake otherwise platforms are set to Default layer
 			
@@ -81,6 +83,10 @@ namespace Game {
 
 		public void SpawnShot(Vector2 position, Vector2 startVelocity, float rotation, Framework framework) {
 			GameObject shot = _shotFactory.MakeObject(position, startVelocity,rotation,framework);
+		}
+
+		public void SpawnShell(Vector2 position, Vector2 startVelocity, float rotation, Framework framework, Collider2D shooterCollider) {
+			GameObject shell = _shellFactory.MakeObject(position, startVelocity, rotation, framework, shooterCollider);
 		}
 		
 		

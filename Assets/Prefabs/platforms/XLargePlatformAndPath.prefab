@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 50415049192922670}
   m_Layer: 14
   m_Name: PlatformSensor
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 114517230710967126}
   m_Layer: 14
   m_Name: PlatformShotSensor
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1282567971655624}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -32.1, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4140174877276490}
@@ -249,7 +249,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006541252, y: 0.0065407753}
+  m_Offset: {x: 0.034715652, y: 0.0065407753}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -260,7 +260,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.807405, y: 0.78663015}
+  m_Size: {x: 15.729107, y: 0.78663015}
   m_EdgeRadius: 0
 --- !u!68 &68029449030545702
 EdgeCollider2D:
@@ -277,8 +277,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0.55}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -6.3009853, y: -0.103857905}
-  - {x: 6.249443, y: -0.0996739}
+  - {x: -7.7900124, y: -0.103857815}
+  - {x: 7.821192, y: -0.099674046}
 --- !u!68 &68178866096666456
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -289,13 +289,13 @@ EdgeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.48}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -6.231394, y: 0.39624852}
-  - {x: 6.27388, y: 0.40558738}
+  - {x: -8.025, y: 0}
+  - {x: 8.025, y: 0}
 --- !u!95 &95652433140392428
 Animator:
   serializedVersion: 3
@@ -340,7 +340,7 @@ MonoBehaviour:
   beats_per_cycle: 4
   cycle_period: 0
   segment_period: 0
-  init_platform_framework: 2
+  init_platform_framework: 1
   isMovingPlatform: 0
 --- !u!114 &114517230710967126
 MonoBehaviour:
@@ -366,6 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useSensorAsTrigger: 1
+  isLetter: 0
   platform_state: {fileID: 0}
   body: {fileID: 0}
   color: {r: 0.5, g: 0.5, b: 0.5, a: 1}

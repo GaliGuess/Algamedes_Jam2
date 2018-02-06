@@ -15,6 +15,7 @@ namespace Game{
 		public static string PLATFORM_BODY_TAG = "platform_body";
 		public static string PLAYER_TAG = "player";
 		public static string SHOT_TAG = "shot";
+		public static string SHELL_TAG = "shell";
 		public static string BOUNDRIES_TAG = "gameBoundry";
 		public static string WALL_TAG = "wall";
 
@@ -31,6 +32,10 @@ namespace Game{
 		public static string PLAYER_BOT_RIGHT_GAMEOBJ_NAME = "overlap_bottomRight";
 
 		public static string PLAYER_CROSSHAIR_GAMEOBJ_NAME = "crosshair";
+
+		public static int SHELL_LAYER_BLACK = 22;
+		public static int SHELL_LAYER_WHITE = 23;
+
 
 	}
 
