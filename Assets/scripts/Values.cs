@@ -32,6 +32,9 @@ namespace Game{
 
 		public static string PLAYER_CROSSHAIR_GAMEOBJ_NAME = "crosshair";
 
+		public static int SHELL_LAYER_BLACK = 22;
+		public static int SHELL_LAYER_WHITE = 23;
+
 	}
 
 }
