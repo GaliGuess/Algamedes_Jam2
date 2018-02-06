@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93da262b-c29b-4459-8495-dac80ca7fd7e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Graphics/Sprites/Player.meta" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/contentModel.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Graphics/UI assests/01 Title screen/Example.mov.meta" afterPath="$PROJECT_DIR$/Assets/Graphics/UI assests/01 Title screen/Example.mov.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Graphics/UI assests/02 Main menu/Example.mov.meta" afterPath="$PROJECT_DIR$/Assets/Graphics/UI assests/02 Main menu/Example.mov.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs" afterPath="$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/EndGameMenu.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/EndGameMenu.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/level_1.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/level_1.unity" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/Game/GameManager.cs" afterPath="$PROJECT_DIR$/Assets/scripts/Game/GameManager.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PlayerManager.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerManager.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="274" column="89" lean-forward="false" selection-start-line="274" selection-start-column="89" selection-end-line="274" selection-end-column="89" />
+            <state relative-caret-position="112">
+              <caret line="258" column="45" lean-forward="false" selection-start-line="258" selection-start-column="45" selection-end-line="258" selection-end-column="45" />
               <folding>
                 <marker date="1517929947067" expanded="false" signature="6:116" ph="..." />
                 <marker date="1517929947067" expanded="true" signature="133:10442" ph="{...}" />
@@ -196,6 +195,60 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="GameManager.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/scripts/Game/GameManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="189" column="12" lean-forward="true" selection-start-line="189" selection-start-column="12" selection-end-line="189" selection-end-column="12" />
+              <folding>
+                <marker date="1517932104492" expanded="false" signature="6:113" ph="..." />
+                <marker date="1517932104492" expanded="true" signature="147:6311" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="237:6309" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="948:1629" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="1573:1625" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="1653:1833" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="1706:1829" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="1768:1824" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="1883:2314" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="2120:2310" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="2418:2513" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="2646:2762" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="2802:3193" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="3257:3558" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="3354:3401" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="3674:3952" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="3882:3948" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="4005:4579" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="4412:4481" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="4489:4575" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="4615:4720" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="4774:4914" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="4949:5176" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="5210:6125" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="5247:5374" ph="/* AudioSource audioSource = _audioSource.GetComponent&lt;AudioSource&gt;(); // used to also stop bg music ... */" />
+                <marker date="1517932104492" expanded="true" signature="5623:5721" ph="/* yield return new WaitForSeconds(2.5f); // used to also stop bg music ... */" />
+                <marker date="1517932104492" expanded="true" signature="6176:6306" ph="{...}" />
+                <marker date="1517932104492" expanded="true" signature="6226:6302" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountDownSFX.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/scripts/CountDownSFX.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <marker date="1517931158449" expanded="false" signature="6:90" ph="..." />
+                <marker date="1517931158449" expanded="true" signature="133:255" ph="{...}" />
+                <marker date="1517931158449" expanded="true" signature="188:207" ph="{...}" />
+                <marker date="1517931158449" expanded="true" signature="232:253" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -266,6 +319,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Game/GameState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/RisingCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Game/GameView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/CountDownSFX.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/WallManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E4CA8F4E-90C6-4470-94E9-B3A6D6F56DA5/a7/50baa94a/Vector2.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E4CA8F4E-90C6-4470-94E9-B3A6D6F56DA5/56/863ac5a3/Transform.cs" root0="SKIP_INSPECTION" />
@@ -275,7 +329,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/scripts/HumanController.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/ShotFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/RisingCamera.cs" />
@@ -323,9 +376,10 @@
         <option value="$PROJECT_DIR$/Assets/scripts/PlayerSFX.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Values.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Player/PlayerView.cs" />
-        <option value="$PROJECT_DIR$/Assets/scripts/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Editor/GameManagerInspector.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/CountDownSFX.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Game/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -488,7 +542,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185754000" />
+    <option name="totallyTimeSpent" value="187872000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,7 +605,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/scripts/KeyboardController.cs" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C95265F7-4FDF-4905-BFB0-D5A4B652216C/02/c0c1b34c/List`1.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
@@ -815,8 +868,8 @@
     <entry file="file://$PROJECT_DIR$/Assets/scripts/PlayerSFX.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/scripts/Player/PlayerManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="274" column="89" lean-forward="false" selection-start-line="274" selection-start-column="89" selection-end-line="274" selection-end-column="89" />
+        <state relative-caret-position="112">
+          <caret line="258" column="45" lean-forward="false" selection-start-line="258" selection-start-column="45" selection-end-line="258" selection-end-column="45" />
           <folding>
             <marker date="1517929947067" expanded="false" signature="6:116" ph="..." />
             <marker date="1517929947067" expanded="true" signature="133:10442" ph="{...}" />
@@ -887,19 +940,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/scripts/Game/GameManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/Editor/GameManagerInspector.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="37" column="39" lean-forward="false" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/CountDownSFX.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <marker date="1517931158449" expanded="false" signature="6:90" ph="..." />
+            <marker date="1517931158449" expanded="true" signature="133:255" ph="{...}" />
+            <marker date="1517931158449" expanded="true" signature="188:207" ph="{...}" />
+            <marker date="1517931158449" expanded="true" signature="232:253" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/Game/GameManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="189" column="12" lean-forward="true" selection-start-line="189" selection-start-column="12" selection-end-line="189" selection-end-column="12" />
+          <folding>
+            <marker date="1517932104492" expanded="false" signature="6:113" ph="..." />
+            <marker date="1517932104492" expanded="true" signature="147:6311" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="237:6309" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="948:1629" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="1573:1625" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="1653:1833" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="1706:1829" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="1768:1824" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="1883:2314" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="2120:2310" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="2418:2513" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="2646:2762" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="2802:3193" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="3257:3558" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="3354:3401" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="3674:3952" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="3882:3948" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="4005:4579" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="4412:4481" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="4489:4575" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="4615:4720" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="4774:4914" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="4949:5176" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="5210:6125" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="5247:5374" ph="/* AudioSource audioSource = _audioSource.GetComponent&lt;AudioSource&gt;(); // used to also stop bg music ... */" />
+            <marker date="1517932104492" expanded="true" signature="5623:5721" ph="/* yield return new WaitForSeconds(2.5f); // used to also stop bg music ... */" />
+            <marker date="1517932104492" expanded="true" signature="6176:6306" ph="{...}" />
+            <marker date="1517932104492" expanded="true" signature="6226:6302" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

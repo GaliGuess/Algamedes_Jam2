@@ -25,6 +25,7 @@
             <e p="KeyboardController.cs" t="Include" />
             <e p="PS4Controller.cs" t="Include" />
           </e>
+          <e p="CountDownSFX.cs" t="Include" />
           <e p="DontDestroyOnReload.cs" t="Include" />
           <e p="Editor" t="Include">
             <e p="GameManagerInspector.cs" t="Include" />

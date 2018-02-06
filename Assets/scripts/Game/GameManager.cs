@@ -168,20 +168,32 @@ namespace Game {
 		IEnumerator startCountDown()
 		{
 			disablePlayerControls(true);
-			AudioSource audioSource = _audioSource.GetComponent<AudioSource>();
-			audioSource.Stop();
-			
-			yield return new WaitForSeconds(1f);
-			_countDownAnimation.SetActive(true);
-			
-			yield return new WaitForSeconds(2.5f);
-			audioSource.Play();
+//			AudioSource audioSource = _audioSource.GetComponent<AudioSource>(); // used to also stop bg music
+//			audioSource.Stop();
+
+			CountDownSFX _countDownSfx = _countDownAnimation.GetComponent<CountDownSFX>();
 			
 			yield return new WaitForSeconds(0.5f);
+			_countDownAnimation.SetActive(true);
+			
+			yield return new WaitForSeconds(0.3f);
+			_countDownSfx.PlayBeep();
+			
+//			yield return new WaitForSeconds(2.5f); // used to also stop bg music
+//			audioSource.Play();
+			
+			yield return new WaitForSeconds(1f);
+			_countDownSfx.PlayBeep();
+			
+			yield return new WaitForSeconds(1f);
+			_countDownSfx.PlayGo();
+			
+//			yield return new WaitForSeconds(0.5f); // used to also stop bg music
+			
 			Debug.Log("GameManager: Player controls enabled");
 			disablePlayerControls(false);
 			
-			yield return new WaitForSeconds(0.2f);
+			yield return new WaitForSeconds(0.7f);
 			_countDownAnimation.SetActive(false);
 		}
 
