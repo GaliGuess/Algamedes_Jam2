@@ -28,9 +28,11 @@ namespace Game {
 		public int BPM = 140;
 	
 		
-//		[SerializeField]
-		private bool CountDown = true;
-		private bool CountDownEveryRound = false;
+		[SerializeField]
+		public bool countDown = true;
+		
+		[SerializeField]
+		public bool countDownEveryRound = false;
 
 		
 		private bool roundEnded;
@@ -62,9 +64,9 @@ namespace Game {
 
 		private void Start()
 		{
-			if (CountDown && _countDownAnimation != null)
+			if (countDown && _countDownAnimation != null)
 			{
-				if (CountDownEveryRound || _gameState.isGameStart())
+				if (countDownEveryRound || _gameState.isGameStart())
 				{
 					StartCoroutine(startCountDown());					
 				}
