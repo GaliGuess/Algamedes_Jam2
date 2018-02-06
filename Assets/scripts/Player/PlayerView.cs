@@ -28,21 +28,21 @@ namespace Game {
 		[HideInInspector] public bool isLanding;
 
 		Dictionary<string, int> anim_layers = new Dictionary<string, int>();
-
-		private string anim_idle = "idle_", 
-					   anim_idle_shoot = "idle_shoot_", 
-					   anim_run = "run_",
-					   anim_run_shoot = "run_shoot_";
+		
+		private int currentLayer;
+		
+		private string anim_not_shooting_prefix = "not_shooting_",  
+					   anim_shoot_prefix = "shooting_";
 
 		private int ANIM_DIR_NUMBER = 5;
-		private enum AnimDirections
-		{
-			UP = 4, 
-			UP_DIAG = 3, 
-			RIGHT = 2, 
-			DOWN_DIAG = 1, 
-			DOWN = 0
-		}
+//		private enum AnimDirections
+//		{
+//			UP = 4, 
+//			UP_DIAG = 3, 
+//			RIGHT = 2, 
+//			DOWN_DIAG = 1, 
+//			DOWN = 0
+//		}
 		
 		void Awake () {
 			Init();
@@ -50,21 +50,11 @@ namespace Game {
 
 		}
 
-		private void updateAnimLayerDictionary()
-		{
-			for (int i = 0; i < ANIM_DIR_NUMBER; i++)
-			{
-				_animator.GetLayerIndex(anim_idle + i);
-				_animator.GetLayerIndex(anim_idle_shoot + i);
-				_animator.GetLayerIndex(anim_run + i);
-				_animator.GetLayerIndex(anim_run_shoot + i);
-			}
-		}
-
 		public void Init() {
 			_spriteRenderer = _animationGameObject.GetComponent<SpriteRenderer>();
 			_animator = _animationGameObject.GetComponent<Animator>();
-
+//			updateAnimLayerDictionary();
+			
 			crosshair = transform.Find(Values.PLAYER_CROSSHAIR_GAMEOBJ_NAME);
 			_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();
 		}
@@ -81,14 +71,6 @@ namespace Game {
 			_animator.SetBool("isShooting", isShooting);
 			_animator.SetBool("isLanding", isLanding);
 			_animator.SetInteger("movingDir", horizontal_dir);
-		}
-
-		private int currentLayer;
-		
-		private void changeAnimationLayer(Vector2 aimDirection, bool isShooting)
-		{
-			_animator.SetLayerWeight(_animator.GetLayerIndex("Base Layer"), 0);
-			_animator.SetLayerWeight(currentLayer, 0);
 		}
 
 		void FixedUpdate() {
@@ -131,6 +113,41 @@ namespace Game {
 				_crosshair_spriteRenderer.material.color = Color.white;
 				break;
 			}
+		}
+		
+		private void updateAnimLayerDictionary()
+		{
+			for (int i = 0; i < ANIM_DIR_NUMBER; i++)
+			{
+				anim_layers.Add(anim_shoot_prefix + i, _animator.GetLayerIndex(anim_shoot_prefix + i));
+				anim_layers.Add(anim_not_shooting_prefix + i, _animator.GetLayerIndex(anim_not_shooting_prefix + i));
+			}
+		}
+		
+		private void changeAnimationLayer(Vector2 aimDirection)
+		{
+			// assembling layer name
+			string newAnimLayerName;
+			if (isShooting) newAnimLayerName = anim_shoot_prefix;
+			else newAnimLayerName = anim_not_shooting_prefix;
+
+			newAnimLayerName = newAnimLayerName + animGetDirectionIndex(aimDirection.y);
+
+			// updating layer visibility
+			int newLayer = anim_layers[newAnimLayerName];
+			_animator.SetLayerWeight(newLayer, 1);
+			_animator.SetLayerWeight(currentLayer, 0);
+			
+			currentLayer = newLayer;
+		}
+
+		private int animGetDirectionIndex(float yDir)
+		{
+			if (-1 <= yDir && yDir < -0.6) return 0;
+			if (-0.6 <= yDir && yDir < -0.2) return 1;
+			if (-0.2 <= yDir && yDir < 0.2) return 2;
+			if (0.2 <= yDir && yDir < 0.6) return 3;
+			return 4;
 		}
 	}
 }

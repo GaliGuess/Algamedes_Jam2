@@ -52,7 +52,7 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: idle_dir6
+    m_Name: not_shooting2
     m_StateMachine: {fileID: 1107623005622842678}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -736,7 +736,7 @@ AnimatorStateMachine:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: idle_dir6
+  m_Name: not_shooting2
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102257903758599374}
@@ -746,16 +746,16 @@ AnimatorStateMachine:
     m_Position: {x: 648, y: 156, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102951245274568580}
-    m_Position: {x: 240, y: 12, z: 0}
+    m_Position: {x: 312, y: -36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102538151306310182}
     m_Position: {x: 648, y: 12, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102909647615980894}
-    m_Position: {x: 108, y: 84, z: 0}
+    m_Position: {x: 72, y: -180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102804731252153628}
-    m_Position: {x: 240, y: -84, z: 0}
+    m_Position: {x: 540, y: -180, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions:
