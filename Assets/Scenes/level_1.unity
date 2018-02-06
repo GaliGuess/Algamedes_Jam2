@@ -864,11 +864,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114474660210966542, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: usingKeyboard
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
   m_IsPrefabParent: 0
@@ -2419,7 +2414,7 @@ MonoBehaviour:
   gameSceneName: level_1
   secondsToNewRound: 1.5
   BPM: 250
-  countDown: 1
+  countDown: 0
   countDownEveryRound: 0
 --- !u!1 &1128330409
 GameObject:

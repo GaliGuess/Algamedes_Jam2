@@ -27,11 +27,38 @@ namespace Game {
 		[HideInInspector] public bool facingLeft;
 		[HideInInspector] public bool isLanding;
 
+		Dictionary<string, int> anim_layers = new Dictionary<string, int>();
 
+		private string anim_idle = "idle_", 
+					   anim_idle_shoot = "idle_shoot_", 
+					   anim_run = "run_",
+					   anim_run_shoot = "run_shoot_";
+
+		private int ANIM_DIR_NUMBER = 5;
+		private enum AnimDirections
+		{
+			UP = 4, 
+			UP_DIAG = 3, 
+			RIGHT = 2, 
+			DOWN_DIAG = 1, 
+			DOWN = 0
+		}
+		
 		void Awake () {
 			Init();
 
 
+		}
+
+		private void updateAnimLayerDictionary()
+		{
+			for (int i = 0; i < ANIM_DIR_NUMBER; i++)
+			{
+				_animator.GetLayerIndex(anim_idle + i);
+				_animator.GetLayerIndex(anim_idle_shoot + i);
+				_animator.GetLayerIndex(anim_run + i);
+				_animator.GetLayerIndex(anim_run_shoot + i);
+			}
 		}
 
 		public void Init() {
@@ -54,6 +81,14 @@ namespace Game {
 			_animator.SetBool("isShooting", isShooting);
 			_animator.SetBool("isLanding", isLanding);
 			_animator.SetInteger("movingDir", horizontal_dir);
+		}
+
+		private int currentLayer;
+		
+		private void changeAnimationLayer(Vector2 aimDirection, bool isShooting)
+		{
+			_animator.SetLayerWeight(_animator.GetLayerIndex("Base Layer"), 0);
+			_animator.SetLayerWeight(currentLayer, 0);
 		}
 
 		void FixedUpdate() {
