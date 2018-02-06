@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game {
-	public class PlayerView : MonoBehaviour {
-
+	public class PlayerView : MonoBehaviour
+	{
+		[SerializeField] 
+		public GameObject _animationGameObject;
+		
 		private SpriteRenderer _spriteRenderer;
 		private Animator _animator;
 
@@ -17,12 +20,12 @@ namespace Game {
 		[SerializeField, Tooltip("The distance of the crosshair from the player")]
 		public float crosshairDistance = 2.5f;
 
-		public bool isJumping;
-		public bool isDoubleJumping;
-		public bool isShooting;
-		public int horizontal_dir;
-		public bool facingLeft;
-		public bool isLanding;
+		[HideInInspector] public bool isJumping;
+		[HideInInspector] public bool isDoubleJumping;
+		[HideInInspector] public bool isShooting;
+		[HideInInspector] public int horizontal_dir;
+		[HideInInspector] public bool facingLeft;
+		[HideInInspector] public bool isLanding;
 
 
 		void Awake () {
@@ -32,8 +35,8 @@ namespace Game {
 		}
 
 		public void Init() {
-			_spriteRenderer = GetComponent<SpriteRenderer>();
-			_animator = GetComponent<Animator>();
+			_spriteRenderer = _animationGameObject.GetComponent<SpriteRenderer>();
+			_animator = _animationGameObject.GetComponent<Animator>();
 
 			crosshair = transform.Find(Values.PLAYER_CROSSHAIR_GAMEOBJ_NAME);
 			_crosshair_spriteRenderer = crosshair.GetComponent<SpriteRenderer>();
