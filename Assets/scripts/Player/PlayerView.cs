@@ -139,8 +139,10 @@ namespace Game {
 
 		private int animGetDirectionIndex(float yDir)
 		{
-//			return Mathf.RoundToInt((yDir + 1)/ 2 * (ANIM_DIR_NUMBER - .01f));
-			return 2;
+			int val = Mathf.FloorToInt((yDir + 1)/ 2 * (ANIM_DIR_NUMBER - .01f));
+			if (val < 0 || val > 4) Debug.Log(yDir + ", " + val);
+			return val;
+//			return 2;
 		}
 	}
 }

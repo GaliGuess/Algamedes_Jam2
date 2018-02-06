@@ -96,6 +96,222 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: not_shooting_0
+    m_StateMachine: {fileID: 1107474938054326634}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102804731252153628}
+      m_Motion: {fileID: 7400000, guid: e3119999d34fe44a6975d4db75d828ac, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102909647615980894}
+      m_Motion: {fileID: 7400000, guid: 637f6453d3ff648e1b20fa1d78b7119d, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102951245274568580}
+      m_Motion: {fileID: 7400000, guid: 39ed033f23397402eb128c52640bcc8c, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102257903758599374}
+      m_Motion: {fileID: 7400000, guid: 0ac9ca40190e74ab18f4f34e91e0cfe2, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102788712217746686}
+      m_Motion: {fileID: 7400000, guid: 4f760214aaa0a42f7a53a5c46f4fdf43, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: not_shooting_1
+    m_StateMachine: {fileID: 1107071527773578588}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102804731252153628}
+      m_Motion: {fileID: 7400000, guid: e3119999d34fe44a6975d4db75d828ac, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102951245274568580}
+      m_Motion: {fileID: 7400000, guid: 39ed033f23397402eb128c52640bcc8c, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102909647615980894}
+      m_Motion: {fileID: 7400000, guid: 637f6453d3ff648e1b20fa1d78b7119d, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102788712217746686}
+      m_Motion: {fileID: 7400000, guid: 4f760214aaa0a42f7a53a5c46f4fdf43, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102257903758599374}
+      m_Motion: {fileID: 7400000, guid: b275f6820b4f84954974f63d78982220, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: not_shooting_3
+    m_StateMachine: {fileID: 1107220246268842608}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102257903758599374}
+      m_Motion: {fileID: 7400000, guid: 89fa2eca9afd74bc4b3ba0a6ee26419d, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102788712217746686}
+      m_Motion: {fileID: 7400000, guid: 4f760214aaa0a42f7a53a5c46f4fdf43, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102909647615980894}
+      m_Motion: {fileID: 7400000, guid: 637f6453d3ff648e1b20fa1d78b7119d, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102951245274568580}
+      m_Motion: {fileID: 7400000, guid: 39ed033f23397402eb128c52640bcc8c, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102804731252153628}
+      m_Motion: {fileID: 7400000, guid: e3119999d34fe44a6975d4db75d828ac, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: not_shooting_4
+    m_StateMachine: {fileID: 1107265921362691172}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102804731252153628}
+      m_Motion: {fileID: 7400000, guid: e3119999d34fe44a6975d4db75d828ac, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102909647615980894}
+      m_Motion: {fileID: 7400000, guid: 637f6453d3ff648e1b20fa1d78b7119d, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102951245274568580}
+      m_Motion: {fileID: 7400000, guid: 39ed033f23397402eb128c52640bcc8c, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102257903758599374}
+      m_Motion: {fileID: 7400000, guid: ef2df4cb5de0843fcbe5953ea07676c5, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102788712217746686}
+      m_Motion: {fileID: 7400000, guid: 4f760214aaa0a42f7a53a5c46f4fdf43, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: shooting_0
+    m_StateMachine: {fileID: 1107241339019904676}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102804731252153628}
+      m_Motion: {fileID: 7400000, guid: e3119999d34fe44a6975d4db75d828ac, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102909647615980894}
+      m_Motion: {fileID: 7400000, guid: 637f6453d3ff648e1b20fa1d78b7119d, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102951245274568580}
+      m_Motion: {fileID: 7400000, guid: 39ed033f23397402eb128c52640bcc8c, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102257903758599374}
+      m_Motion: {fileID: 7400000, guid: edd953cce7c4a438083016436050eac8, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102788712217746686}
+      m_Motion: {fileID: 7400000, guid: 4f760214aaa0a42f7a53a5c46f4fdf43, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: shooting_1
+    m_StateMachine: {fileID: 1107662887864815058}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102257903758599374}
+      m_Motion: {fileID: 7400000, guid: 54dc82b70b5f94072b570b6fdec49aff, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102788712217746686}
+      m_Motion: {fileID: 7400000, guid: 4f760214aaa0a42f7a53a5c46f4fdf43, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102909647615980894}
+      m_Motion: {fileID: 7400000, guid: 637f6453d3ff648e1b20fa1d78b7119d, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102951245274568580}
+      m_Motion: {fileID: 7400000, guid: 39ed033f23397402eb128c52640bcc8c, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102804731252153628}
+      m_Motion: {fileID: 7400000, guid: e3119999d34fe44a6975d4db75d828ac, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: shooting_3
+    m_StateMachine: {fileID: 1107752382618488776}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102804731252153628}
+      m_Motion: {fileID: 7400000, guid: e3119999d34fe44a6975d4db75d828ac, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102909647615980894}
+      m_Motion: {fileID: 7400000, guid: 637f6453d3ff648e1b20fa1d78b7119d, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102951245274568580}
+      m_Motion: {fileID: 7400000, guid: 39ed033f23397402eb128c52640bcc8c, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102788712217746686}
+      m_Motion: {fileID: 7400000, guid: 4f760214aaa0a42f7a53a5c46f4fdf43, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102257903758599374}
+      m_Motion: {fileID: 7400000, guid: aad4c9ab7b7864245a516b0633a4336d, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: shooting_4
+    m_StateMachine: {fileID: 1107327831806178730}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102257903758599374}
+      m_Motion: {fileID: 7400000, guid: 9ab82c01df15940c590a312f64470695, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102788712217746686}
+      m_Motion: {fileID: 7400000, guid: 4f760214aaa0a42f7a53a5c46f4fdf43, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102909647615980894}
+      m_Motion: {fileID: 7400000, guid: 637f6453d3ff648e1b20fa1d78b7119d, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102951245274568580}
+      m_Motion: {fileID: 7400000, guid: 39ed033f23397402eb128c52640bcc8c, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102804731252153628}
+      m_Motion: {fileID: 7400000, guid: e3119999d34fe44a6975d4db75d828ac, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
 --- !u!1101 &1101019631154444930
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -567,6 +783,24 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1107 &1107071527773578588
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: not_shooting_1
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
 --- !u!1107 &1107187355576194114
 AnimatorStateMachine:
   serializedVersion: 5
@@ -574,6 +808,96 @@ AnimatorStateMachine:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: shooting_2
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
+--- !u!1107 &1107220246268842608
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: not_shooting_3
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
+--- !u!1107 &1107241339019904676
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: shooting_0
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
+--- !u!1107 &1107265921362691172
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: not_shooting_4
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
+--- !u!1107 &1107327831806178730
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: shooting_4
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
+--- !u!1107 &1107474938054326634
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: not_shooting_0
   m_ChildStates: []
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
@@ -637,6 +961,60 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 912, y: 72, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102257903758599374}
+--- !u!1107 &1107662887864815058
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: shooting_1
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
+--- !u!1107 &1107752382618488776
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: shooting_3
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
+--- !u!1107 &1107879044253034602
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: New Layer
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
 --- !u!1109 &1109138239479332702
 AnimatorTransition:
   m_ObjectHideFlags: 1
