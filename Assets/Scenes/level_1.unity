@@ -306,7 +306,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1311199491220044, guid: f1a3dd3278a8848a0a2f99f71f2e0329, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1a3dd3278a8848a0a2f99f71f2e0329, type: 2}
@@ -909,6 +909,11 @@ Prefab:
     - target: {fileID: 4475441237292758, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474660210966542, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
+        type: 2}
+      propertyPath: usingKeyboard
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
@@ -2460,7 +2465,7 @@ MonoBehaviour:
   gameSceneName: level_1
   secondsToNewRound: 1.5
   BPM: 250
-  countDown: 0
+  countDown: 1
   countDownEveryRound: 0
 --- !u!1 &1128330409
 GameObject:
@@ -3484,6 +3489,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4475441237292758, guid: 66aec4417a3984f31a505a4cd9430c2c, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
+        type: 2}
+      propertyPath: JoystickNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114474660210966542, guid: 66aec4417a3984f31a505a4cd9430c2c,
+        type: 2}
+      propertyPath: usingKeyboard
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

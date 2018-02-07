@@ -137,11 +137,12 @@ namespace Game{
 
 		private void Update()
 		{
+			if (controlsDisabled) return;
+			
 			updateGrounded();
 			
 			updateDirection();
 			
-			if (controlsDisabled) return;
 			// jumping moved here because it was not responsive enough in FixedUpdate (missed controller updates)
 			foreach (var controller in controllers)
 			{
