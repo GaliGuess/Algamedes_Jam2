@@ -52,6 +52,7 @@
           </e>
           <e p="Player" t="Include">
             <e p="LandingSensor.cs" t="Include" />
+            <e p="PixelPerfect.cs" t="Include" />
             <e p="PlayerLog.cs" t="Include" />
             <e p="PlayerManager.cs" t="Include" />
             <e p="PlayerSFX.cs" t="Include" />
