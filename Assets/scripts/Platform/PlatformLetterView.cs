@@ -13,6 +13,8 @@ namespace Game{
 
 		public Rigidbody2D body;
 
+		public PlatformSFX sfx;
+		
 		private SpriteRenderer sprite_renderer;
 
 		private Animator animator;
@@ -112,6 +114,7 @@ namespace Game{
 				AddShotSensor();
 			}
 
+			if (sfx == null) AddSFX();
 
 			PlatformSensor carrier_sensor = GetComponentInChildren<PlatformSensor>();
 			carrier_sensor.Init();
@@ -139,6 +142,14 @@ namespace Game{
 			carrier_sensor_instance.GetComponent<PlatformSensor>().Init();
 			EdgeCollider2D collider = carrier_sensor_instance.GetComponent<EdgeCollider2D>();
 			// TODO: fix size according to sprite image to support different sized images
+		}
+		
+		private void AddSFX() {
+//			Debug.Log("platform body: create sfx object");
+			GameObject sfx_instance = Instantiate(Resources.Load("PlatformSFX"), transform.position, transform.rotation) as GameObject;
+			sfx_instance.transform.parent = transform;
+			sfx_instance.name = "PlatformSFX";
+			sfx = sfx_instance.GetComponent<PlatformSFX>();
 		}
 			
 		public void UpdateHit(Framework framework) {
