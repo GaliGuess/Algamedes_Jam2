@@ -218,13 +218,14 @@ namespace Game{
 			}
 		}
 
-		private bool firstChange = true;
+		// this is used right below
+		private bool sfxFirstChange = true;
 		
 		public void SetColor(Framework platform_framework) {
 
 			// I know it's ugly code but it solves playing the sound when platforms change color at start
-			if (!firstChange) sfx.PlayChangeColor();
-			else firstChange = false;
+			if (!sfxFirstChange) sfx.PlayChangeColor();
+			else sfxFirstChange = false;
 			
 			switch (platform_framework) {
 			case Framework.BLACK :
