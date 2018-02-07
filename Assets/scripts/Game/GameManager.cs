@@ -130,11 +130,11 @@ namespace Game {
 			if (roundEnded) return;  // This is to solve case where 2 players died one after the other
 			
 			roundEnded = true;
-			_gameState.incrementScore(killedPlayer.name);
+			_gameState.decreaseScore(killedPlayer.name);
 			_gameView.updateScore();
 
 			// added _endGameMenu null check for testing purposes, so if you don't have the end game menu you can keep playing forever.
-			if (_gameState.reachedMaxScore(killedPlayer.name) && _endGameMenu != null)
+			if (_gameState.hasNoLives(killedPlayer.name) && _endGameMenu != null)
 			{
 				Debug.Log(killedPlayer.name + " Lost");
 				endGame();
