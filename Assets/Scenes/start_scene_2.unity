@@ -6263,10 +6263,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1563282678}
+  - component: {fileID: 1563282684}
   - component: {fileID: 1563282683}
   - component: {fileID: 1563282682}
   - component: {fileID: 1563282681}
-  - component: {fileID: 1563282684}
   - component: {fileID: 1563282680}
   - component: {fileID: 1563282679}
   m_Layer: 0
@@ -6429,7 +6429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee2fbf28beb43a9addaa3a1c29fbc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToDelay: 4
+  secondsToDelay: 5
 --- !u!1 &1574804735
 GameObject:
   m_ObjectHideFlags: 0
