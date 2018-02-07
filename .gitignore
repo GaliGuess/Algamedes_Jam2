@@ -64,3 +64,8 @@ GoogleAarExplodeCache.xml
 # File merge
 *.orig
 *.orig.meta
+*.anim
+*.meta
+*.png
+*.meta
+*.meta

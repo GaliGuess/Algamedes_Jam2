@@ -137,9 +137,12 @@ namespace Game{
 
 		private void Update()
 		{
+			if (controlsDisabled) return;
+			
+			updateGrounded();
+			
 			updateDirection();
 			
-			if (controlsDisabled) return;
 			// jumping moved here because it was not responsive enough in FixedUpdate (missed controller updates)
 			foreach (var controller in controllers)
 			{
@@ -225,7 +228,7 @@ namespace Game{
 				shootingDirection = aimDirection == Vector2.zero ? lastNonZeroDirection : aimDirection;
 
 				_playerView.vertical_dir = shootingDirection.y;
-				_playerView.isMoving = !Mathf.Approximately(movingDirection.x, 0);
+				_playerView.isMoving = isGrounded && !Mathf.Approximately(movingDirection.x, 0);
 				if (Mathf.Approximately(aimDirection.x, 0)) _playerView.horizontal_dir = 0;
 				else _playerView.horizontal_dir = (int) Mathf.Sign(aimDirection.x);
 			}
@@ -248,8 +251,6 @@ namespace Game{
 		
 		private void tryToJump()
 		{
-			updateGrounded();
-			
 			if (isGrounded)
 			{
 				// This is to avoid chain jumping
@@ -307,15 +308,29 @@ namespace Game{
 
 			Vector2 pos = _rigidbody2D.position;
 			if (EnableSFX) _sfx.PlayShoot();
-			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), _playerState.player_framework);
-			float shell_rotation = (-direction + Vector2.up*1.5f).GetAngle();
+			float shooting_angle = direction.GetAngle();
+			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, shooting_angle, _playerState.player_framework);
+
+//			float shell_rotation = (-direction + Vector2.up*1.5f).GetAngle();
+			float shell_rotation_angle = (shooting_angle >= 90 || shooting_angle < -90) ? -90.0f : 90.0f;
+			Vector2 y_shell_dir = Quaternion.AngleAxis(shell_rotation_angle, Vector3.forward)*direction;
+			Debug.Log("y dir: " + y_shell_dir.ToString() + ", shooting angle: " + shooting_angle.ToString() + ", shooting dir: " +  direction.ToString() );
+			float shell_rotation = (-direction + y_shell_dir*1.5f).GetAngle();
 			
 			// adding some randomness to the angle
 			shell_rotation = Random.Range(shell_rotation - shellAngleRange, shell_rotation + shellAngleRange);
 
 			_gameManager.SpawnShell(pos, _rigidbody2D.velocity, shell_rotation, _playerState.player_framework, GetComponent<Collider2D>());
+			
 			// recoil
-			_rigidbody2D.MovePosition(new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z));
+			if (!isGrounded)
+			{
+				_rigidbody2D.MovePosition(new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z));				
+			}
+			else
+			{
+				_rigidbody2D.MovePosition(new Vector3(pos.x - direction.x * recoil, pos.y, transform.position.z));
+			}
 
 		}
 

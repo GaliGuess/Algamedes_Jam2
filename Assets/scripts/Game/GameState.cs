@@ -11,7 +11,7 @@ namespace Game{
 		public ScoreKeeper scoreKeeper;
 
 		[SerializeField]
-		public int WinningScore = 5; 
+		public int startLives = 5; 
 
 		private GameView _gameView;
 
@@ -37,18 +37,18 @@ namespace Game{
 		{
 			foreach (var player in players)
 			{	
-				scoreKeeper.setScore(player.name, 0);
+				scoreKeeper.setScore(player.name, startLives);
 			}
 		}
 
-		public bool reachedMaxScore(string killedPlayerName)
+		public bool hasNoLives(string killedPlayerName)
 		{
-			return scoreKeeper.getScore(killedPlayerName) == WinningScore;
+			return scoreKeeper.getScore(killedPlayerName) == 0;
 		}
 
-		public void incrementScore(string playerName)
+		public void decreaseScore(string playerName)
 		{
-			scoreKeeper.incrementScore(playerName);
+			scoreKeeper.decreaseScore(playerName);
 		}
 
 		public int getScore(string playerName)
@@ -60,7 +60,7 @@ namespace Game{
 		{
 			foreach (var player in players)
 			{	
-				if (scoreKeeper.getScore(player.name) != 0) return false;
+				if (scoreKeeper.getScore(player.name) != startLives) return false;
 			}
 			return true;
 		}

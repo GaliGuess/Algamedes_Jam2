@@ -9,7 +9,7 @@ namespace Game{
 		
 		private GameState _gameState;
 		public string[] playerNames;
-		public Text[] scoreTextObjects;
+		public GameObject[] lives_objects;
 
 		private void Awake()
 		{
@@ -20,10 +20,16 @@ namespace Game{
 		{
 			for (int i = 0; i < playerNames.Length; i++)
 			{
-				if (scoreTextObjects[i] != null) {
-					scoreTextObjects[i].text = _gameState.getScore(playerNames[i]).ToString();
-				}
+				if (lives_objects[i] != null)
+				{
+					int currentScore = _gameState.getScore(playerNames[i]);
+					LivesVisualizer livesVisualizer = lives_objects[i].GetComponent<LivesVisualizer>();
 
+					if (livesVisualizer.getCurrentLives() != currentScore)
+					{
+						livesVisualizer.setLives(currentScore);
+					}
+				}
 			}
 		}
 	}

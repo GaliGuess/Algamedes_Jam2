@@ -56,6 +56,11 @@ public class ScoreKeeper : MonoBehaviour
 	{
 		if (_scores.ContainsKey(playerName)) _scores[playerName]++;
 	}
+	
+	public void decreaseScore(string playerName)
+	{
+		if (_scores.ContainsKey(playerName)) _scores[playerName]--;
+	}
 
 	public void clearScores()
 	{

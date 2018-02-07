@@ -35,6 +35,7 @@
             <e p="GameManager.cs" t="Include" />
             <e p="GameState.cs" t="Include" />
             <e p="GameView.cs" t="Include" />
+            <e p="LivesVisualizer.cs" t="Include" />
           </e>
           <e p="Movement" t="Include">
             <e p="movement_test.cs" t="Include" />
@@ -51,6 +52,7 @@
           </e>
           <e p="Player" t="Include">
             <e p="LandingSensor.cs" t="Include" />
+            <e p="PixelPerfect.cs" t="Include" />
             <e p="PlayerLog.cs" t="Include" />
             <e p="PlayerManager.cs" t="Include" />
             <e p="PlayerSFX.cs" t="Include" />

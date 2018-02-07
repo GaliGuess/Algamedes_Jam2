@@ -129,7 +129,7 @@ namespace Game {
 			// updating layer visibility
 			if (newLayer != currentLayer)
 			{
-				Debug.Log(gameObject.name + ": newLayer= " + newAnimLayerName + ", " + newLayer);
+//				Debug.Log(gameObject.name + ": newLayer= " + newAnimLayerName + ", " + newLayer);
 				_animator.SetLayerWeight(newLayer, 1);
 				_animator.SetLayerWeight(currentLayer, 0);
 			
@@ -142,7 +142,6 @@ namespace Game {
 			int val = Mathf.FloorToInt((yDir + 1)/ 2 * (ANIM_DIR_NUMBER - .01f));
 			if (val < 0 || val > 4) Debug.Log(yDir + ", " + val);
 			return val;
-//			return 2;
 		}
 	}
 }
