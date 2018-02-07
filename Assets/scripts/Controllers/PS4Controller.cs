@@ -10,6 +10,7 @@ namespace Controllers
 	{
 		[SerializeField]
 		public int JoystickNumber = 1;  // for 2 joystick support
+		public bool PS3Controller;
 
 		[SerializeField, Tooltip("Allows for jumping with up DPad + Left Analog Stick\nin Addition to other jump controls.")] 
 		public bool JumpUsingVerticalMovement = false;
@@ -112,6 +113,7 @@ namespace Controllers
 				{
 					isJumping = isJumping || keyPress;
 				}
+				if (keyPress) Debug.Log(key);
 			}
 			if (JumpUsingVerticalMovement)
 			{
@@ -125,6 +127,7 @@ namespace Controllers
 					{
 						isJumping = isJumping || Input.GetAxis(key) < -ANALOG_JUMP_THRESHOLD;
 					}
+//					if (keyPress) Debug.Log(key);
 				}
 			}
 			
@@ -134,6 +137,7 @@ namespace Controllers
 			{
 				var keyPress = AutoFire ? Input.GetButton(key) : Input.GetButtonDown(key);
 				isShooting = isShooting || keyPress;
+				if (keyPress) Debug.Log(key);
 			}
 
 			base.Update();
@@ -168,6 +172,11 @@ namespace Controllers
 		// Will be used for assigning each player his own controller
 		private void addJoystickNumber()
 		{
+			if (PS3Controller)
+			{
+				updateToPS3Controls();
+			}
+			
 			String toAdd = "J" + JoystickNumber + "_";
 
 			for (int i = 0; i < HorizontalMovementControls.Length; i++)
@@ -199,6 +208,30 @@ namespace Controllers
 			{
 				ShootControls[i] = toAdd + ShootControls[i];
 			}
+		}
+
+		private void updateToPS3Controls()
+		{
+			string from = "PS4";
+			string to = "PS3";
+
+			replaceInStrings(HorizontalMovementControls, from, to);
+			replaceInStrings(VerticalMovementControls, from, to);
+			
+			replaceInStrings(HorizontalAimControls, from, to);
+			replaceInStrings(VerticalAimControls, from, to);
+			
+			replaceInStrings(JumpControls, from, to);
+			replaceInStrings(ShootControls, from, to);
+		}
+
+		private string[] replaceInStrings(string[] strings, string from, string to)
+		{
+			for (int i = 0; i < strings.Length; i++)
+			{
+				strings[i] = strings[i].Replace(from, to);
+			}
+			return strings;
 		}
 	}
 }

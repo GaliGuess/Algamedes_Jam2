@@ -314,7 +314,7 @@ namespace Game{
 //			float shell_rotation = (-direction + Vector2.up*1.5f).GetAngle();
 			float shell_rotation_angle = (shooting_angle >= 90 || shooting_angle < -90) ? -90.0f : 90.0f;
 			Vector2 y_shell_dir = Quaternion.AngleAxis(shell_rotation_angle, Vector3.forward)*direction;
-			Debug.Log("y dir: " + y_shell_dir.ToString() + ", shooting angle: " + shooting_angle.ToString() + ", shooting dir: " +  direction.ToString() );
+//			Debug.Log("y dir: " + y_shell_dir.ToString() + ", shooting angle: " + shooting_angle.ToString() + ", shooting dir: " +  direction.ToString() );
 			float shell_rotation = (-direction + y_shell_dir*1.5f).GetAngle();
 			
 			// adding some randomness to the angle

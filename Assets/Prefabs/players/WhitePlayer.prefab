@@ -993,7 +993,7 @@ MonoBehaviour:
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   lastNonZeroDirection: {x: 0, y: 0}
-  JoystickNumber: 2
+  JoystickNumber: 1
   JumpUsingVerticalMovement: 0
   AimWithMovement: 1
   AutoFire: 1
