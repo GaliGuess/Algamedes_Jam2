@@ -315,8 +315,16 @@ namespace Game{
 			shell_rotation = Random.Range(shell_rotation - shellAngleRange, shell_rotation + shellAngleRange);
 
 			_gameManager.SpawnShell(pos, _rigidbody2D.velocity, shell_rotation, _playerState.player_framework, GetComponent<Collider2D>());
+			
 			// recoil
-			_rigidbody2D.MovePosition(new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z));
+			if (!isGrounded)
+			{
+				_rigidbody2D.MovePosition(new Vector3(pos.x - direction.x * recoil, pos.y - direction.y * recoil, transform.position.z));				
+			}
+			else
+			{
+				_rigidbody2D.MovePosition(new Vector3(pos.x - direction.x * recoil, pos.y, transform.position.z));
+			}
 
 		}
 
