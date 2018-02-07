@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game {
 	public class LandingSensor : MonoBehaviour {
@@ -8,6 +9,7 @@ namespace Game {
 		private PlayerView player_view;
 		private PlayerManager player_manager;
 
+		public GameObject player;
 		private Rigidbody2D body;
 
 		public bool colliding;
@@ -15,7 +17,12 @@ namespace Game {
 		void Awake() {
 			player_view = GetComponentInParent<PlayerView>();
 			player_manager = GetComponentInParent<PlayerManager>();
-			body = GetComponentInParent<Rigidbody2D>();
+			
+			// adding rigid body from a manulally inputed gameobject as otherwise it gets the landing sensor's rigidbody
+			// Adding a rigidbody to the landingSensor solved the gettingDown form platform bug.
+//			body = GetComponentInParent<Rigidbody2D>();
+			body = player.GetComponent<Rigidbody2D>();
+	
 		}
 
 		// Use this for initialization
@@ -24,10 +31,13 @@ namespace Game {
 		}
 
 		// Update is called once per frame
-		void Update () {
+		void Update ()
+		{
 			if (body.velocity.y <= -1 && colliding) {
+				Debug.Log("LandingSensor: isLanding = true");
 				player_view.isLanding = true;
 			} else if (player_manager.isGrounded) {
+				Debug.Log("LandingSensor: isLanding = false");
 				player_view.isLanding = false;
 			}
 		}

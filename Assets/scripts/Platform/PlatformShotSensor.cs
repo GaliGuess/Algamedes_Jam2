@@ -43,6 +43,7 @@ namespace Game{
 
 		void OnTriggerExit2D(Collider2D ob) {
 			if (ob.CompareTag(Values.PLAYER_TAG)) {
+				Debug.Log("PlatformShotSensor: reenabling collider");
 				var edgeCollider = GetComponentInParent<EdgeCollider2D>();
 				if (edgeCollider != null) edgeCollider.enabled = true;
 			}
