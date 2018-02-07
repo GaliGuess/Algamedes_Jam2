@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93da262b-c29b-4459-8495-dac80ca7fd7e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/contentModel.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Algamedes_Jam2/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/level_1.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/level_1.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/Game/GameManager.cs" afterPath="$PROJECT_DIR$/Assets/scripts/Game/GameManager.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/Game/GameState.cs" afterPath="$PROJECT_DIR$/Assets/scripts/Game/GameState.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/Game/GameView.cs" afterPath="$PROJECT_DIR$/Assets/scripts/Game/GameView.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/scripts/ScoreKeeper.cs" afterPath="$PROJECT_DIR$/Assets/scripts/ScoreKeeper.cs" />
-    </list>
+    <list default="true" id="93da262b-c29b-4459-8495-dac80ca7fd7e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,8 +64,8 @@
       <file leaf-file-name="GameView.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/scripts/Game/GameView.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="29" column="63" lean-forward="false" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+            <state relative-caret-position="285">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <marker date="1517965318401" expanded="false" signature="6:100" ph="..." />
                 <marker date="1517965318401" expanded="true" signature="116:754" ph="{...}" />
@@ -782,7 +774,6 @@
         <state relative-caret-position="407">
           <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
           <folding>
-            <marker date="1517949086922" expanded="true" signature="41:2317" ph="{...}" />
             <marker date="1517949086922" expanded="true" signature="48:313" ph="/* IMPORTANT: notice this class has Start &amp; Update functions. ... */" />
             <marker date="1517949086922" expanded="true" signature="371:2315" ph="{...}" />
             <marker date="1517949086922" expanded="true" signature="879:1040" ph="{...}" />
@@ -840,14 +831,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/LivesVisualizer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/LivesVisualizer.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/scripts/ScoreKeeper.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
@@ -913,7 +897,6 @@
           <caret line="29" column="51" lean-forward="false" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
           <folding>
             <marker date="1517965553916" expanded="true" signature="6:78" ph="..." />
-            <marker date="1517965553916" expanded="true" signature="94:1175" ph="{...}" />
             <marker date="1517965553916" expanded="true" signature="142:1173" ph="{...}" />
             <marker date="1517965553916" expanded="true" signature="404:745" ph="{...}" />
             <marker date="1517965553916" expanded="true" signature="489:673" ph="{...}" />
@@ -949,8 +932,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/scripts/Game/GameView.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="29" column="63" lean-forward="false" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+        <state relative-caret-position="285">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <marker date="1517965318401" expanded="false" signature="6:100" ph="..." />
             <marker date="1517965318401" expanded="true" signature="116:754" ph="{...}" />
