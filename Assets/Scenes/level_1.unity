@@ -876,14 +876,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 114474660210966542, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
         type: 2}
       propertyPath: usingKeyboard
       value: 0
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of 6d1bba9d... Finished White Player Animations
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
   m_IsPrefabParent: 0
@@ -3194,7 +3191,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
         type: 2}
       propertyPath: JoystickNumber
@@ -3210,8 +3206,6 @@ Prefab:
       propertyPath: usingPS4Controller
       value: 1
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of 6d1bba9d... Finished White Player Animations
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66aec4417a3984f31a505a4cd9430c2c, type: 2}
   m_IsPrefabParent: 0
