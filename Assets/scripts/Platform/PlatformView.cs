@@ -82,7 +82,7 @@ namespace Game{
 		void Update () {
 			animator.SetInteger("color", (int)platform_state.platform_framework);
 			if (Random.Range(0.0f, 1.0f) > 0.99f) {
-				animator.SetBool("glitch", true);
+//				animator.SetBool("glitch", true);
 			}
 
 		}

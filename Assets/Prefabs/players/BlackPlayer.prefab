@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 4452291189902820}
   - component: {fileID: 61121769569174106}
   - component: {fileID: 114447051140105820}
+  - component: {fileID: 50829929140841430}
   m_Layer: 17
   m_Name: LandingSensor
   m_TagString: Untagged
@@ -396,6 +397,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!50 &50829929140841430
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291081427228662}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61121769569174106
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -908,6 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fe1dbb9b5e24a20a8714d575348f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1270938468579276}
   colliding: 0
 --- !u!114 &114474660210966542
 MonoBehaviour:
@@ -921,7 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnableSFX: 1
-  usingKeyboard: 0
+  usingKeyboard: 1
   usingPS4Controller: 1
   maxXVelocity: 17
   VelocityFactor: 40

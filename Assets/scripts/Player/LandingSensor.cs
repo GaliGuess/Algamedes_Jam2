@@ -8,6 +8,7 @@ namespace Game {
 		private PlayerView player_view;
 		private PlayerManager player_manager;
 
+		public GameObject player;
 		private Rigidbody2D body;
 
 		public bool colliding;
@@ -15,7 +16,7 @@ namespace Game {
 		void Awake() {
 			player_view = GetComponentInParent<PlayerView>();
 			player_manager = GetComponentInParent<PlayerManager>();
-			body = GetComponentInParent<Rigidbody2D>();
+			body = player.GetComponentInParent<Rigidbody2D>();
 		}
 
 		// Use this for initialization
