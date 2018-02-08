@@ -308,8 +308,14 @@ namespace Game{
 
 			Vector2 pos = _rigidbody2D.position;
 			if (EnableSFX) _sfx.PlayShoot();
-			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, direction.GetAngle(), _playerState.player_framework);
-			float shell_rotation = (-direction + Vector2.up*1.5f).GetAngle();
+			float shooting_angle = direction.GetAngle();
+			_gameManager.SpawnShot(pos, _rigidbody2D.velocity, shooting_angle, _playerState.player_framework);
+
+//			float shell_rotation = (-direction + Vector2.up*1.5f).GetAngle();
+			float shell_rotation_angle = (shooting_angle >= 90 || shooting_angle < -90) ? -90.0f : 90.0f;
+			Vector2 y_shell_dir = Quaternion.AngleAxis(shell_rotation_angle, Vector3.forward)*direction;
+			Debug.Log("y dir: " + y_shell_dir.ToString() + ", shooting angle: " + shooting_angle.ToString() + ", shooting dir: " +  direction.ToString() );
+			float shell_rotation = (-direction + y_shell_dir*1.5f).GetAngle();
 			
 			// adding some randomness to the angle
 			shell_rotation = Random.Range(shell_rotation - shellAngleRange, shell_rotation + shellAngleRange);

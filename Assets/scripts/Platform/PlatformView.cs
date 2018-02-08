@@ -81,6 +81,10 @@ namespace Game{
 		// Update is called once per frame
 		void Update () {
 			animator.SetInteger("color", (int)platform_state.platform_framework);
+			if (Random.Range(0.0f, 1.0f) > 0.99f) {
+				animator.SetBool("glitch", true);
+			}
+
 		}
 
 		void LateUpdate() {

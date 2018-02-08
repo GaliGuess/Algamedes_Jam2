@@ -60,7 +60,3 @@ xcuserdata/
 *.apk
 *.bak
 GoogleAarExplodeCache.xml
-
-# File merge
-*.orig
-*.orig.meta

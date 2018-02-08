@@ -40,6 +40,7 @@ namespace Game {
 		private GameObject _endGameMenu;
 		private GameObject _audioSource;
 		private GameObject _countDownAnimation;
+		private GameObject _pause_menu;
 		
 		
 		void Awake ()
@@ -48,6 +49,15 @@ namespace Game {
 			_gameView = GetComponent<GameView>();
 			_shotFactory = GetComponent<ShotFactory>();
 			_shellFactory = GetComponent<ShellFactory>();
+
+			Transform tmp = transform.Find("PauseMenu");
+			if (tmp != null) {
+				_pause_menu = tmp.gameObject;
+				Debug.Log("GameManager: pause menu found");
+				_pause_menu.SetActive(false);
+			}
+
+
 
 			UpdateLayerNames();	// must happen in Awake otherwise platforms are set to Default layer
 			
@@ -137,7 +147,14 @@ namespace Game {
 			if (_gameState.hasNoLives(killedPlayer.name) && _endGameMenu != null)
 			{
 				Debug.Log(killedPlayer.name + " Lost");
-				endGame();
+				int winPlayerId = 0;
+				if (killedPlayer.name == "BlackPlayer") {
+					winPlayerId = 2; // white player wins
+				}
+				else if (killedPlayer.name == "WhitePlayer") {
+					winPlayerId = 1; // black player wins
+				}
+				endGame(winPlayerId);
 			}
 			else
 			{
@@ -153,16 +170,19 @@ namespace Game {
 		}
 
 		// I moved all the action
-		private void endGame()
+		private void endGame(int winPlayerId)
 		{
-			StartCoroutine(waitThenEndGame());
+			IEnumerator couroutine = waitThenEndGame(winPlayerId);
+			StartCoroutine(couroutine);
 			Destroy(_gameState.scoreKeeper.gameObject); // so the scores don't stay for the next level
 		}
 		
-		IEnumerator waitThenEndGame()
+		IEnumerator waitThenEndGame(int winPlayerId)
 		{
 			yield return new WaitForSeconds(secondsToNewRound);
 			_endGameMenu.SetActive(true);
+			EndMenuManager menuManager = _endGameMenu.GetComponent<EndMenuManager>();
+			menuManager.setAnimation(winPlayerId);
 			Destroy(_audioSource); // This is here so the audio will stop only after the menu appeared (because the menu has its own audio)
 		}
 		
@@ -204,6 +224,27 @@ namespace Game {
 			{
 				player.GetComponent<PlayerManager>().DisableControls(status);
 			}
+		}
+
+		public void TogglePauseMenu()
+		{
+			Debug.Log("GAMEMANAGER:: TogglePauseMenu");
+			if (_pause_menu == null) {
+				return;
+			}
+			// not the optimal way but for the sake of readability
+			if (_pause_menu.activeSelf)
+			{
+				_pause_menu.SetActive(false);
+				Time.timeScale = 1.0f;
+			}
+			else
+			{
+				_pause_menu.SetActive(true);
+				Time.timeScale = 0f;
+			}
+
+			Debug.Log("GAMEMANAGER:: TimeScale: " + Time.timeScale);
 		}
 	}
 }

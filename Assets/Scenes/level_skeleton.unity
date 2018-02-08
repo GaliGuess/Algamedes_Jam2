@@ -1748,9 +1748,7 @@ MonoBehaviour:
   playerNames:
   - Player_B1
   - Player_W1
-  scoreTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
+  lives_objects: []
 --- !u!114 &1484679999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1766,6 +1764,7 @@ MonoBehaviour:
   platforms: []
   players: []
   scoreKeeper: {fileID: 0}
+  startLives: 5
 --- !u!114 &1484680000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1780,6 +1779,8 @@ MonoBehaviour:
   gameSceneName: level_skeleton
   secondsToNewRound: 1.5
   BPM: 250
+  countDown: 1
+  countDownEveryRound: 0
 --- !u!4 &1484680001
 Transform:
   m_ObjectHideFlags: 0
