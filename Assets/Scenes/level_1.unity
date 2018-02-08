@@ -1072,7 +1072,7 @@ Prefab:
     - target: {fileID: 114878598070120772, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
         type: 2}
       propertyPath: PS3Controller
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
@@ -3004,7 +3004,7 @@ Prefab:
     - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
         type: 2}
       propertyPath: PS3Controller
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66aec4417a3984f31a505a4cd9430c2c, type: 2}
