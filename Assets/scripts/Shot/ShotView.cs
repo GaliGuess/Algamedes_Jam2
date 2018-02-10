@@ -46,7 +46,7 @@ namespace Game{
 
 		void OnTriggerEnter2D(Collider2D ob) {
 			if (ob.CompareTag(Values.PLATFORM_TAG)) {
-				Debug.Log("ShotManager: detected platform");
+//				Debug.Log("ShotManager: detected platform");
 				PlatformShotSensor shot_sensor = ob.gameObject.GetComponent<PlatformShotSensor>();
 				if (shot_sensor) {
 					Framework framework = shot_sensor.platform_framework;

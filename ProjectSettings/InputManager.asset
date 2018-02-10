@@ -7,12 +7,12 @@ InputManager:
   m_Axes:
   - serializedVersion: 3
     m_Name: B1_Horizontal
-    descriptiveName: 
-    descriptiveNegativeName: 
+    descriptiveName:
+    descriptiveNegativeName:
     negativeButton: a
     positiveButton: d
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -23,12 +23,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: B1_Vertical
-    descriptiveName: 
-    descriptiveNegativeName: 
+    descriptiveName:
+    descriptiveNegativeName:
     negativeButton: s
     positiveButton: w
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -39,12 +39,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: B1_Fire
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: left shift
     altNegativeButton: g
-    altPositiveButton: 
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -55,11 +55,11 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: B1_Jump
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: left ctrl
-    altNegativeButton: 
+    altNegativeButton:
     altPositiveButton: h
     gravity: 1000
     dead: 0.001
@@ -71,12 +71,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: W1_Horizontal
-    descriptiveName: 
-    descriptiveNegativeName: 
+    descriptiveName:
+    descriptiveNegativeName:
     negativeButton: left
     positiveButton: right
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -87,12 +87,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: W1_Vertical
-    descriptiveName: 
-    descriptiveNegativeName: 
+    descriptiveName:
+    descriptiveNegativeName:
     negativeButton: down
     positiveButton: up
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -103,11 +103,11 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: W1_Fire
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: l
-    altNegativeButton: 
+    altNegativeButton:
     altPositiveButton: m
     gravity: 1000
     dead: 0.001
@@ -119,11 +119,11 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: W1_Jump
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: k
-    altNegativeButton: 
+    altNegativeButton:
     altPositiveButton: n
     gravity: 1000
     dead: 0.001
@@ -136,11 +136,11 @@ InputManager:
   - serializedVersion: 3
     m_Name: Horizontal
     descriptiveName: keyboard
-    descriptiveNegativeName: 
+    descriptiveNegativeName:
     negativeButton: left
     positiveButton: right
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 0
     dead: 0.19
     sensitivity: 1
@@ -152,11 +152,11 @@ InputManager:
   - serializedVersion: 3
     m_Name: Horizontal
     descriptiveName: ps4_dpad
-    descriptiveNegativeName: 
+    descriptiveNegativeName:
     negativeButton: left
     positiveButton: right
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 0
     dead: 0.19
     sensitivity: 1
@@ -168,11 +168,11 @@ InputManager:
   - serializedVersion: 3
     m_Name: Vertical
     descriptiveName: keyboard
-    descriptiveNegativeName: 
+    descriptiveNegativeName:
     negativeButton: down
     positiveButton: up
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 0
     dead: 0.19
     sensitivity: 1
@@ -184,11 +184,11 @@ InputManager:
   - serializedVersion: 3
     m_Name: Vertical
     descriptiveName: ps4 dpad
-    descriptiveNegativeName: 
+    descriptiveNegativeName:
     negativeButton: down
     positiveButton: up
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 0
     dead: 0.19
     sensitivity: 1
@@ -199,11 +199,11 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Submit
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: return
-    altNegativeButton: 
+    altNegativeButton:
     altPositiveButton: joystick button 12
     gravity: 1000
     dead: 0.001
@@ -215,11 +215,11 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Submit
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: enter
-    altNegativeButton: 
+    altNegativeButton:
     altPositiveButton: space
     gravity: 1000
     dead: 0.001
@@ -231,12 +231,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: J1_PS4_LeftStick_Horizontal
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 3
     dead: 0.1
     sensitivity: 1
@@ -247,12 +247,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_LeftStick_Vertical
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 3
     dead: 0.1
     sensitivity: 1
@@ -263,12 +263,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_DPad_Horizontal
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 0
     dead: 0
     sensitivity: 1
@@ -279,12 +279,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_DPad_Vertical
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 0
     dead: 0
     sensitivity: 1
@@ -295,12 +295,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_RightStick_Horizontal
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 3
     dead: 0.1
     sensitivity: 1
@@ -311,12 +311,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_RightStick_Vertical
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 3
     dead: 0.1
     sensitivity: 1
@@ -327,12 +327,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_X
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 1
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -343,12 +343,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_Square
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 0
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -359,12 +359,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_Triangle
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 3
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -375,12 +375,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_O
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 2
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -391,12 +391,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_R1
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 5
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -407,12 +407,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_R2
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 7
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -423,12 +423,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_L1
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 4
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -439,12 +439,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_L2
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 6
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -455,12 +455,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_Options
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 9
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -471,12 +471,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_Share
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 8
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -487,12 +487,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_PSN
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 12
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -503,12 +503,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_R3
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 11
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -519,12 +519,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_PS4_L3
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 1 button 10
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -535,12 +535,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J2_PS4_LeftStick_Horizontal
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 3
     dead: 0.1
     sensitivity: 1
@@ -551,12 +551,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_LeftStick_Vertical
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 3
     dead: 0.1
     sensitivity: 1
@@ -567,12 +567,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_DPad_Horizontal
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 0
     dead: 0
     sensitivity: 1
@@ -583,12 +583,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_DPad_Vertical
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 0
     dead: 0
     sensitivity: 1
@@ -599,12 +599,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_RightStick_Horizontal
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 3
     dead: 0.1
     sensitivity: 1
@@ -615,12 +615,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_RightStick_Vertical
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 3
     dead: 0.1
     sensitivity: 1
@@ -631,12 +631,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_X
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 1
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -647,12 +647,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_Square
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 0
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -663,12 +663,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_Triangle
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 3
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -679,12 +679,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_O
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 2
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -695,12 +695,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_R1
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 5
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -711,12 +711,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_R2
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 7
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -727,12 +727,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_L1
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 4
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -743,12 +743,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_L2
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 6
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -759,12 +759,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_Options
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 9
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -775,12 +775,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_Share
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 8
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -791,12 +791,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_PSN
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 12
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -807,12 +807,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_R3
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 11
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -823,12 +823,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_L3
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick 2 button 10
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -838,12 +838,588 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
+    m_Name: J1_PS3_LeftStick_Horizontal
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 3
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_LeftStick_Vertical
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 3
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 1
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_DPad_Horizontal
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton: joystick 1 button 7
+    positiveButton: joystick 1 button 5
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 5
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_DPad_Vertical
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton: joystick 1 button 4
+    positiveButton: joystick 1 button 6
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 6
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_RightStick_Horizontal
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 3
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 2
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_RightStick_Vertical
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 3
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 3
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_X
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 14
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_Square
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 15
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_Triangle
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 12
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_O
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 13
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_R1
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 11
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_R2
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 9
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_L1
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 10
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_L2
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 8
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_Select
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 0
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_Start
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 3
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_R3
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 1 button 2
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1_PS3_L3
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J2_PS3_LeftStick_Horizontal
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 3
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_LeftStick_Vertical
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 3
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 1
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_DPad_Horizontal
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton: joystick 2 button 7
+    positiveButton: joystick 2 button 5
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 5
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_DPad_Vertical
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton: joystick 2 button 4
+    positiveButton: joystick 2 button 6
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 6
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_RightStick_Horizontal
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 3
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 2
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_RightStick_Vertical
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 3
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 3
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_X
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 14
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_Square
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 15
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_Triangle
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 12
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_O
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 13
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_R1
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 11
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_R2
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 9
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_L1
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 10
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_L2
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 8
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_Select
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 0
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_Start
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 3
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_R3
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton: joystick 2 button 2
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
+    m_Name: J2_PS3_L3
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    JoyNum: 2
+  - serializedVersion: 3
     m_Name: Cancel
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: joystick button 5
-    altNegativeButton: 
+    altNegativeButton:
     altPositiveButton: joystick button 7
     gravity: 1000
     dead: 0.001

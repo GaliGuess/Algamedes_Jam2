@@ -874,6 +874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fe1dbb9b5e24a20a8714d575348f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1270938468579276}
   colliding: 0
 --- !u!114 &114117146519706200
 MonoBehaviour:
@@ -937,7 +938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnableSFX: 1
-  usingKeyboard: 0
+  usingKeyboard: 1
   usingPS4Controller: 1
   maxXVelocity: 17
   VelocityFactor: 40
@@ -992,7 +993,7 @@ MonoBehaviour:
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   lastNonZeroDirection: {x: 0, y: 0}
-  JoystickNumber: 2
+  JoystickNumber: 1
   JumpUsingVerticalMovement: 0
   AimWithMovement: 1
   AutoFire: 1
