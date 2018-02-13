@@ -1,4 +1,8 @@
-﻿using System;
+﻿/**
+ * Ugliest code ever, if it means anything - we all suffered from it
+ */
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,7 +43,7 @@ namespace Controllers
 		private bool isJumping, isShooting;
 		public bool isGettingDown;
 		private float _moving_direction;
-		private Vector2 _aim_direction, lastNonZeroMoveDirection;
+		private Vector2 _aim_direction, lastNonZeroFacingDirection;
 
 		private Rigidbody2D _rigidbody2d;
 
@@ -51,7 +55,7 @@ namespace Controllers
 			checkOS();
 
 			_rigidbody2d = GetComponent<Rigidbody2D>();
-			lastNonZeroMoveDirection = getDefaultPlayerDirection();
+			lastNonZeroFacingDirection = getDefaultPlayerDirection();
 		}
 
 		protected override void Update()
@@ -72,10 +76,10 @@ namespace Controllers
 				_aim_direction = tempAimDirection.normalized;
 				aimChanged = true;
 				
-				// updating 
+				// This direction will be used to default to if the player doesn't touch anything
 				if (!Mathf.Approximately(_aim_direction.x, 0))
 				{
-					lastNonZeroMoveDirection = new Vector2(Mathf.Sign(_aim_direction.x), 0);
+					lastNonZeroFacingDirection = new Vector2(Mathf.Sign(_aim_direction.x), 0);
 				}
 			}
 			
@@ -89,9 +93,10 @@ namespace Controllers
 					_moving_direction = Mathf.Sign(tempMoveDirection);
 					moveDirectionChanged = true;
 
+					// This direction will be used to default to if the player doesn't touch anything
 					if (!Mathf.Approximately(_moving_direction, 0))
 					{
-						lastNonZeroMoveDirection = new Vector2(Mathf.Sign(_moving_direction), 0);
+						lastNonZeroFacingDirection = new Vector2(Mathf.Sign(_moving_direction), 0);
 					}
 				}
 			}
@@ -109,7 +114,7 @@ namespace Controllers
 			}
 			tempMoveDir.x = _moving_direction;
 		
-			// updating aim with movement input if needed
+			// updating aim with movement input if it was not updated yet
 			if (AimWithMovement && tempAimDirection == Vector2.zero)
 			{
 				
@@ -123,7 +128,7 @@ namespace Controllers
 			if (defaultAimToMove && !aimChanged)
 			{
 //				if (JoystickNumber == 1) Debug.Log("No Aim");
-				_aim_direction = lastNonZeroMoveDirection;
+				_aim_direction = lastNonZeroFacingDirection;
 			}
 			
 			// updated only with input from move direction
