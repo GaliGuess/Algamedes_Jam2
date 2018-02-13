@@ -71,6 +71,12 @@ namespace Controllers
 			{
 				_aim_direction = tempAimDirection.normalized;
 				aimChanged = true;
+				
+				// updating 
+				if (!Mathf.Approximately(_aim_direction.x, 0))
+				{
+					lastNonZeroMoveDirection = new Vector2(Mathf.Sign(_aim_direction.x), 0);
+				}
 			}
 			
 			// Updating moving direction
