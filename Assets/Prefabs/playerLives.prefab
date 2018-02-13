@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4154098839213998}
   - component: {fileID: 212834553165140706}
+  - component: {fileID: 95388232216979320}
   m_Layer: 0
   m_Name: blackLife
   m_TagString: Untagged
@@ -83,6 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4396755998660644}
   - component: {fileID: 212678277818545494}
+  - component: {fileID: 95358266638443536}
   m_Layer: 0
   m_Name: whiteLife
   m_TagString: Untagged
@@ -159,6 +161,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95358266638443536
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1490435613549784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8712fd0d7f484ae8af45e5569dbc0ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95388232216979320
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412732290344138}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2498389d509bc4339b0804f9f8d9ef78, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114260364694680594
 MonoBehaviour:
   m_ObjectHideFlags: 1

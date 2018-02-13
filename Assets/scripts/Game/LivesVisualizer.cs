@@ -44,9 +44,15 @@ namespace Game
 		{
 			if (currentLives > 0)
 			{
-				allLives[currentLives - 1].SetActive(false);
+				allLives[currentLives - 1].GetComponent<Animator>().SetTrigger("removeLife");
+//				Invoke("deactivateObject", 2);
 			}
 			currentLives--;
+		}
+
+		private void deactivateObject()
+		{
+			allLives[currentLives - 1].SetActive(false);
 		}
 
 		public void setLives(int numOfLives)
@@ -58,5 +64,6 @@ namespace Game
 			}
 			currentLives = numOfLives;
 		}
+
 	}
 }

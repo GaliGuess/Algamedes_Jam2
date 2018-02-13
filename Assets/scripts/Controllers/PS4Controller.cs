@@ -37,7 +37,7 @@ namespace Controllers
 		private float ANALOG_JUMP_THRESHOLD = 0.6f;
 
 		private bool isJumping, isShooting;
-		private bool isGettingDown;
+		public bool isGettingDown;
 		private float _moving_direction;
 		private Vector2 _aim_direction, lastNonZeroMoveDirection;
 
