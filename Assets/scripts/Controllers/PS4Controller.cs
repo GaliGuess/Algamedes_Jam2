@@ -16,6 +16,7 @@ namespace Controllers
 		public bool JumpUsingVerticalMovement = false;
 
 		public bool AimWithMovement;
+		public bool defaultAimToMove;
 		
 		public bool AutoFire = false;
 		public bool AutoJumping = false;
@@ -29,24 +30,34 @@ namespace Controllers
 		public String[] JumpControls = {"PS4_X", "PS4_L1", "PS4_L2", "PS4_L3"},
 						ShootControls = {"PS4_Square", "PS4_R1", "PS4_R2", "PS4_R3"};
 
+		private String WindowsAddon = "_windows";
+		
 		private float ANALOG_MOVE_THRESHOLD = 0.3f;
 		private float ANALOG_AIM_THRESHOLD = 0.3f;
 		private float ANALOG_JUMP_THRESHOLD = 0.6f;
 
 		private bool isJumping, isShooting;
-		public bool isGettingDown;
+		private bool isGettingDown;
 		private float _moving_direction;
-		private Vector2 _aim_direction;
+		private Vector2 _aim_direction, lastNonZeroMoveDirection;
+
+		private Rigidbody2D _rigidbody2d;
 
 		// Will be used when implementing 2nd controller
 		private void Awake()
 		{
 			addJoystickNumber();
+			
+			checkOS();
+
+			_rigidbody2d = GetComponent<Rigidbody2D>();
+			lastNonZeroMoveDirection = getDefaultPlayerDirection();
 		}
 
 		protected override void Update()
 		{	
 			// Updating Aiming direction
+			bool aimChanged = false;
 			Vector2 tempAimDirection = _aim_direction;
 			foreach (var key in HorizontalAimControls)
 			{
@@ -59,6 +70,7 @@ namespace Controllers
 			if (tempAimDirection.magnitude > ANALOG_AIM_THRESHOLD)
 			{
 				_aim_direction = tempAimDirection.normalized;
+				aimChanged = true;
 			}
 			
 			// Updating moving direction
@@ -70,6 +82,11 @@ namespace Controllers
 				{
 					_moving_direction = Mathf.Sign(tempMoveDirection);
 					moveDirectionChanged = true;
+
+					if (!Mathf.Approximately(_moving_direction, 0))
+					{
+						lastNonZeroMoveDirection = new Vector2(Mathf.Sign(_moving_direction), 0);
+					}
 				}
 			}
 			if (!moveDirectionChanged) _moving_direction = 0f;
@@ -93,7 +110,14 @@ namespace Controllers
 				if (tempMoveDir.magnitude > ANALOG_AIM_THRESHOLD)
 				{
 					_aim_direction = tempMoveDir.normalized;
+					aimChanged = true;
 				}
+			}
+
+			if (defaultAimToMove && !aimChanged)
+			{
+//				if (JoystickNumber == 1) Debug.Log("No Aim");
+				_aim_direction = lastNonZeroMoveDirection;
 			}
 			
 			// updated only with input from move direction
@@ -113,7 +137,7 @@ namespace Controllers
 				{
 					isJumping = isJumping || keyPress;
 				}
-				if (keyPress) Debug.Log(key);
+//				if (keyPress) Debug.Log(key);
 			}
 			if (JumpUsingVerticalMovement)
 			{
@@ -137,7 +161,7 @@ namespace Controllers
 			{
 				var keyPress = AutoFire ? Input.GetButton(key) : Input.GetButtonDown(key);
 				isShooting = isShooting || keyPress;
-				if (keyPress) Debug.Log(key);
+//				if (keyPress) Debug.Log(key);
 			}
 
 			base.Update();
@@ -210,6 +234,24 @@ namespace Controllers
 			}
 		}
 
+		private void checkOS()
+		{
+			if (SystemInfo.operatingSystem.Contains("Windows"))
+			{
+				for (int i = 0; i < VerticalAimControls.Length; i++)
+				{
+					if (VerticalAimControls[i] == "PS4_RightStick_Vertical")
+						VerticalAimControls[i] = VerticalAimControls + WindowsAddon;
+				}
+				
+				for (int i = 0; i < VerticalMovementControls.Length; i++)
+				{
+					if (VerticalMovementControls[i] == "PS4_DPad_Vertical")
+						VerticalMovementControls[i] = VerticalMovementControls + WindowsAddon;
+				}
+			}
+		}
+		
 		private void updateToPS3Controls()
 		{
 			string from = "PS4";
@@ -233,5 +275,12 @@ namespace Controllers
 			}
 			return strings;
 		}
+		
+		
+		private Vector2 getDefaultPlayerDirection()
+		{
+			return _rigidbody2d.position.x < 0 ? Vector2.right : Vector2.left;
+		}
+		
 	}
 }

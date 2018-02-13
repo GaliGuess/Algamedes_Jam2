@@ -225,7 +225,7 @@ namespace Game{
 				{
 					lastNonZeroDirection = aimDirection;
 				}
-				shootingDirection = aimDirection == Vector2.zero ? lastNonZeroDirection : aimDirection;
+				shootingDirection = aimDirection == Vector2.zero ? movingDirection : aimDirection;
 
 				_playerView.vertical_dir = shootingDirection.y;
 				_playerView.isMoving = isGrounded && !Mathf.Approximately(movingDirection.x, 0);

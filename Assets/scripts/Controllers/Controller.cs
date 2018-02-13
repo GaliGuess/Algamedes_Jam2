@@ -9,7 +9,9 @@ namespace Controllers
     
     public abstract class Controller : MonoBehaviour
     {
-        public Vector2 movingDirection, aimDirection, lastNonZeroDirection;
+        public Vector2 movingDirection, aimDirection;
+        
+        private Vector2 lastNonZeroDirection;
         [HideInInspector] private bool debugMode;
         private PlayerLog eventLog;
 
@@ -27,7 +29,7 @@ namespace Controllers
         
         protected virtual void Start()
         {
-            lastNonZeroDirection = GetComponent<Rigidbody2D>().position.x < 0 ? Vector2.right : Vector2.left;
+//            lastNonZeroDirection = GetComponent<Rigidbody2D>().position.x < 0 ? Vector2.right : Vector2.left;
             debugMode = false;
         }
 
@@ -38,6 +40,7 @@ namespace Controllers
 //            {
 //                lastNonZeroDirection = aimDirection;
 //            }
+            
             aimDirection = update_aim_direction();
             movingDirection.x = update_moving_direction();
             movingDirection = moving_direction().normalized;

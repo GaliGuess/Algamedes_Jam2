@@ -897,7 +897,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
-  lastNonZeroDirection: {x: 1, y: 0}
   HorizontalAxis: B1_Horizontal
   VerticalAxis: B1_Vertical
   JumpAxis: B1_Jump
@@ -1013,10 +1012,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
-  lastNonZeroDirection: {x: 0, y: 0}
   JoystickNumber: 2
+  PS3Controller: 0
   JumpUsingVerticalMovement: 0
   AimWithMovement: 1
+  defaultAimToMove: 1
   AutoFire: 1
   AutoJumping: 0
   HorizontalMovementControls:
@@ -1039,7 +1039,6 @@ MonoBehaviour:
   - PS4_R1
   - PS4_R2
   - PS4_R3
-  isGettingDown: 0
 --- !u!212 &212175547322171242
 SpriteRenderer:
   m_ObjectHideFlags: 1
