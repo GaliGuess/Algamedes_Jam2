@@ -210,29 +210,38 @@ namespace Game{
 			controlsDisabled = status;
 		}
 
-		
-		
+
 		private void updateDirection()
 		{
+			bool movingDirChanged = false;
+			bool aimDirChanged = false;
+			Vector2 tempAimDir = Vector2.zero;
+			
 			foreach (var controller in controllers)
 			{
-
-				movingDirection = controller.moving_direction();
-				
-				// saving last x direction that is not zero. used for shooting.
-				Vector2 aimDirection = controller.aim_direction();
-				if (aimDirection != Vector2.zero)
+				Vector2 tempMovingDir = controller.moving_direction();
+				if (tempMovingDir != Vector2.zero)
 				{
-					lastNonZeroDirection = aimDirection;
+					movingDirection = tempMovingDir;
+					movingDirChanged = true;
 				}
-				shootingDirection = aimDirection == Vector2.zero ? movingDirection : aimDirection;
-
-				_playerView.vertical_dir = shootingDirection.y;
-				_playerView.isMoving = isGrounded && !Mathf.Approximately(movingDirection.x, 0);
-				if (Mathf.Approximately(aimDirection.x, 0)) _playerView.horizontal_dir = 0;
-				else _playerView.horizontal_dir = (int) Mathf.Sign(aimDirection.x);
+				
+				tempAimDir = controller.aim_direction();
+				if (tempAimDir != Vector2.zero)
+				{
+					shootingDirection = tempAimDir;
+					aimDirChanged = true;
+				}
 			}
+			if (!movingDirChanged) movingDirection = Vector2.zero;
+			
+			if (!aimDirChanged) shootingDirection = movingDirection;
+			
+			_playerView.isMoving = isGrounded && !Mathf.Approximately(movingDirection.x, 0);
+			if (Mathf.Approximately(shootingDirection.x, 0)) _playerView.horizontal_dir = 0;
+			else _playerView.horizontal_dir = (int) Mathf.Sign(shootingDirection.x);
 		}
+		
 
 		private void move(Vector2 direction)
 		{
