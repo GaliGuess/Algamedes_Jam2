@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine.EventSystems;  
 using UnityEngine.UI;
  
-public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
+public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler, IPointerClickHandler, ISubmitHandler {
  
 	private Image _image;
-	private Shader _shader;
+	private ButtonSFX _sfx;
 	
 	private Color currentColor;
 
@@ -15,16 +15,19 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 	
 	private void Awake()
 	{
+		_sfx = GetComponent<ButtonSFX>();
+		
 		_image = GetComponent<Image>();
-//		Debug.Log(_image.name);
-//		_image.material.shader = Shader.Find("GUI/Text Shader");
-//		currentColor = _image.material.color;
 		currentColor = _image.color;
 
 	}
 
+	
+	// mouse control 
+	
 	public void OnPointerEnter(PointerEventData eventData)
 	{
+		_sfx.PlaySelect();
 		Invert();
 	}
  
@@ -33,15 +36,38 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 		Invert();
 	}
 	
+	public void OnPointerClick(PointerEventData eventData)
+	{
+		_sfx.PlaySubmit();
+	}
+
 	
+	// joystick control 
+	
+	public void OnSelect(BaseEventData eventData)
+	{
+		_sfx.PlaySelect();
+		Invert();
+	}
+	
+	public void OnDeselect(BaseEventData eventData)
+	{
+		Invert();
+	}
+
+	void ISubmitHandler.OnSubmit(BaseEventData eventData)
+	{
+		_sfx.PlaySubmit();
+	}
+	
+
 	void Invert() {
 		
 		currentColor = new Color(1 - currentColor.r,
 							     1 - currentColor.g, 
 							     1 - currentColor.b, 
-								 1);
+								 currentColor.a);
 		
 		_image.color = currentColor;
-//		_image.material.color = currentColor;
 	}
 }
