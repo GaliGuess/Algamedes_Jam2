@@ -10,12 +10,30 @@ namespace Game{
 		private GameState _gameState;
 		public string[] playerNames;
 		public GameObject[] lives_objects;
+		private LivesVisualizer[] _livesVisualizers;
 
 		private void Awake()
 		{
 			_gameState = GetComponent<GameState>();
+			
+			_livesVisualizers = new LivesVisualizer[lives_objects.Length];
+			for (int i = 0; i < lives_objects.Length; i++)
+			{
+				_livesVisualizers[i] = lives_objects[i].GetComponent<LivesVisualizer>();
+			}
 		}
 
+		public void decreaseScore(string killedPlayer)
+		{
+			for (int i = 0; i < playerNames.Length; i++)
+			{
+				if (killedPlayer == playerNames[i])
+				{
+					_livesVisualizers[i].decreaseLife();
+				}
+			}
+		}
+		
 		public void updateScore()
 		{
 			for (int i = 0; i < playerNames.Length; i++)
@@ -23,11 +41,11 @@ namespace Game{
 				if (lives_objects[i] != null)
 				{
 					int currentScore = _gameState.getScore(playerNames[i]);
-					LivesVisualizer livesVisualizer = lives_objects[i].GetComponent<LivesVisualizer>();
+//					LivesVisualizer livesVisualizer = lives_objects[i].GetComponent<LivesVisualizer>();
 
-					if (livesVisualizer.getCurrentLives() != currentScore)
+					if (_livesVisualizers[i].getCurrentLives() != currentScore)
 					{
-						livesVisualizer.setLives(currentScore);
+						_livesVisualizers[i].setLives(currentScore);
 					}
 				}
 			}

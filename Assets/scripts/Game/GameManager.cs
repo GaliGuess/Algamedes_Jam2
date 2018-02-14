@@ -141,7 +141,8 @@ namespace Game {
 			
 			roundEnded = true;
 			_gameState.decreaseScore(killedPlayer.name);
-			_gameView.updateScore();
+			_gameView.decreaseScore(killedPlayer.name);
+//			_gameView.updateScore();
 
 			// added _endGameMenu null check for testing purposes, so if you don't have the end game menu you can keep playing forever.
 			if (_gameState.hasNoLives(killedPlayer.name) && _endGameMenu != null)
