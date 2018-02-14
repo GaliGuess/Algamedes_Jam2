@@ -5762,10 +5762,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1863824867370240, guid: 46ce15fdcfef4476b888cb95455c01f2, type: 2}
-      propertyPath: m_Name
-      value: EndGameMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 223765571591700860, guid: 46ce15fdcfef4476b888cb95455c01f2,
         type: 2}
       propertyPath: m_Camera
