@@ -34,7 +34,7 @@ namespace Controllers
 		public String[] JumpControls = {"PS4_X", "PS4_L1", "PS4_L2", "PS4_L3"},
 						ShootControls = {"PS4_Square", "PS4_R1", "PS4_R2", "PS4_R3"};
 
-		private String WindowsAddon = "_windows";
+		private String WindowsAddon = "_Windows";
 		
 		private float ANALOG_MOVE_THRESHOLD = 0.3f;
 		private float ANALOG_AIM_THRESHOLD = 0.3f;
