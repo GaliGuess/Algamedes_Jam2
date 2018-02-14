@@ -12,16 +12,13 @@ namespace Game{
 
 		private PlayerState _playerState;
 
+		private Controller[] controllers;
+		
 		[SerializeField] 
 		public bool EnableSFX = false;
 		
 		private PlayerSFX _sfx;
 		
-		[Header("Controllers")]
-		[SerializeField] public bool usingKeyboard;
-		[SerializeField] public bool usingPS4Controller;
-		private List<Controller> controllers;
-
 
 		[Header("Physics")]
 		[SerializeField, Tooltip("The player's speed")]
@@ -94,21 +91,7 @@ namespace Game{
 			_gameManager = GetComponentInParent<GameManager>();
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 
-			overlap_topLeft = transform.Find("overlap_topLeft");
-			overlap_bottomRight = transform.Find("overlap_bottomRight");
-
-
-			controllers = new List<Controller>();
-			if (usingPS4Controller)
-			{
-				Controller cont = GetComponent<PS4Controller>();
-				if (cont != null) controllers.Add(cont);
-			}
-			if (usingKeyboard)
-			{
-				Controller cont = GetComponent<KeyboardController>();
-				if (cont != null) controllers.Add(cont);
-			}
+			controllers = GetComponents<Controller>();
 
 			overlap_topLeft = transform.Find(Values.PLAYER_TOP_LEFT_GAMEOBJ_NAME);
 			overlap_bottomRight = transform.Find(Values.PLAYER_BOT_RIGHT_GAMEOBJ_NAME);
