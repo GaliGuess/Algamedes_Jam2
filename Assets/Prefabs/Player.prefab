@@ -171,7 +171,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.362, y: 0.59}
     oldSize: {x: 2.7, y: 4.4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -211,8 +211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
-  lastNonZeroDirection: {x: 0, y: 0}
-  debugMode: 0
   HorizontalAxis: B1_Horizontal
   VerticalAxis: B1_Vertical
   JumpAxis: B1_Jump
@@ -244,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5a9aeb4570e4f00b936efcf722abd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnableSFX: 0
   usingKeyboard: 0
   usingPS4Controller: 1
   maxXVelocity: 17
@@ -251,15 +250,15 @@ MonoBehaviour:
   turnRate: 1.5
   bonusFriction: 1.05
   jumpHeight: 55
+  minimalDoubleJumpVelocity: 17
   RegularGravityScale: 4
   FallingGravityScale: 2
   turnsBetweenShots: 8
+  shellAngleRange: 10
   recoil: 0.1
-  doubleJumpEnabled: 1
   movingDirection: {x: 0, y: 0}
   shootingDirection: {x: 0, y: 0}
   isGrounded: 0
-  canDoubleJump: 0
   invincible: 0
   currentVelocity: {x: 0, y: 0}
   debugMode: 0
@@ -274,11 +273,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3143dacb7a18e4bc38e643cd6d0cbca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationGameObject: {fileID: 0}
   showCrosshair: 1
   crosshairDistance: 2.5
   isJumping: 0
+  isDoubleJumping: 0
   isShooting: 0
+  vertical_dir: 0
   horizontal_dir: 0
+  isMoving: 0
   facingLeft: 0
   isLanding: 0
 --- !u!114 &114878598070120772
@@ -294,11 +297,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
-  lastNonZeroDirection: {x: 0, y: 0}
-  debugMode: 0
   JoystickNumber: 1
+  PS3Controller: 0
   JumpUsingVerticalMovement: 0
   AimWithMovement: 1
+  defaultAimToMove: 0
   AutoFire: 1
   AutoJumping: 1
   HorizontalMovementControls:

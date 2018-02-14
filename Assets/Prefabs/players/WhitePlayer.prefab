@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnableSFX: 1
-  usingKeyboard: 1
+  usingKeyboard: 0
   usingPS4Controller: 1
   maxXVelocity: 17
   VelocityFactor: 40
