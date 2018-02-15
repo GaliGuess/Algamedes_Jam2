@@ -14,7 +14,6 @@ namespace Controllers
 	{
 		[SerializeField]
 		public int JoystickNumber = 1;  // for 2 joystick support
-		public bool PS3Controller;
 
 		[SerializeField, Tooltip("Allows for jumping with up DPad + Left Analog Stick\nin Addition to other jump controls.")] 
 		public bool JumpUsingVerticalMovement = false;
@@ -50,6 +49,8 @@ namespace Controllers
 		// Will be used when implementing 2nd controller
 		private void Awake()
 		{
+			checkControllerType();
+			
 			addJoystickNumber();
 			
 			checkOS();
@@ -203,14 +204,30 @@ namespace Controllers
 			return isGettingDown;
 		}
 
+		
+		private void checkControllerType()
+		{
+			String[] joystickNames = Input.GetJoystickNames();
+			if (joystickNames.Length >= JoystickNumber)
+			{
+				string name = joystickNames[JoystickNumber - 1];
+				Debug.Log(gameObject.name + " controller name: " + name);
 
+				if (name.Contains("PLAYSTATION(R)3"))
+				{
+					updateToPS3Controls();
+				}
+			}
+			else
+			{
+				Debug.Log(gameObject.name + " ps controller not found.");
+			}
+		}
+		
+		
 		// Will be used for assigning each player his own controller
 		private void addJoystickNumber()
 		{
-			if (PS3Controller)
-			{
-				updateToPS3Controls();
-			}
 			
 			String toAdd = "J" + JoystickNumber + "_";
 
@@ -247,25 +264,27 @@ namespace Controllers
 
 		private void checkOS()
 		{
-			Debug.Log("System: " + SystemInfo.operatingSystem);
-			if (SystemInfo.operatingSystem.Contains("Windows"))
+			string name = SystemInfo.operatingSystem;
+			Debug.Log("System: " + name);
+			
+			if (name.Contains("Windows"))
 			{
 				for (int i = 0; i < VerticalAimControls.Length; i++)
 				{
-					if (VerticalAimControls[i] == "PS4_RightStick_Vertical")
-						VerticalAimControls[i] = VerticalAimControls + WindowsAddon;
+					if (VerticalAimControls[i].Contains("PS4_RightStick_Vertical"))
+						VerticalAimControls[i] = VerticalAimControls[i] + WindowsAddon;
 				}
 				
 				for (int i = 0; i < VerticalMovementControls.Length; i++)
 				{
-					if (VerticalMovementControls[i] == "PS4_DPad_Vertical")
-						VerticalMovementControls[i] = VerticalMovementControls + WindowsAddon;
+					if (VerticalMovementControls[i].Contains("PS4_DPad_Vertical"))
+						VerticalMovementControls[i] = VerticalMovementControls[i] + WindowsAddon;
 				}
 			}
 		}
 		
 		private void updateToPS3Controls()
-		{
+		{			
 			string from = "PS4";
 			string to = "PS3";
 

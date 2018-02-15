@@ -1011,7 +1011,6 @@ MonoBehaviour:
   movingDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   JoystickNumber: 1
-  PS3Controller: 0
   JumpUsingVerticalMovement: 0
   AimWithMovement: 1
   defaultAimToMove: 1
