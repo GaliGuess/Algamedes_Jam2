@@ -247,6 +247,7 @@ namespace Controllers
 
 		private void checkOS()
 		{
+			Debug.Log("System: " + SystemInfo.operatingSystem);
 			if (SystemInfo.operatingSystem.Contains("Windows"))
 			{
 				for (int i = 0; i < VerticalAimControls.Length; i++)
