@@ -58,6 +58,12 @@ namespace Game {
 		}
 
 		void Update() {
+			if (isLanding)
+			{
+				isJumping = false;
+				isDoubleJumping = false;
+			}
+			
 			_animator.SetBool("isJumping", isJumping);
 			_animator.SetBool("isDoubleJumping", isDoubleJumping);
 			_animator.SetBool("isShooting", isShooting);

@@ -123,6 +123,11 @@ namespace Game{
 			if (controlsDisabled) return;
 			
 			updateGrounded();
+			if (isGrounded)
+			{
+				_playerView.isJumping = false;
+				_playerView.isDoubleJumping = false;
+			}
 			
 			updateDirection();
 			
@@ -133,8 +138,8 @@ namespace Game{
 					tryToJump();
 				} 
 				else  {
-					_playerView.isJumping = false;
-					_playerView.isDoubleJumping = false;
+//					_playerView.isJumping = false;
+//					_playerView.isDoubleJumping = false;
 				}	
 			}
 		}
@@ -219,7 +224,9 @@ namespace Game{
 			if (!movingDirChanged) movingDirection = Vector2.zero;
 			
 			if (!aimDirChanged) shootingDirection = movingDirection;
-			
+
+			// updating animation parameters
+			_playerView.vertical_dir = shootingDirection.y;
 			_playerView.isMoving = isGrounded && !Mathf.Approximately(movingDirection.x, 0);
 			if (Mathf.Approximately(shootingDirection.x, 0)) _playerView.horizontal_dir = 0;
 			else _playerView.horizontal_dir = (int) Mathf.Sign(shootingDirection.x);
@@ -249,8 +256,6 @@ namespace Game{
 				if (_rigidbody2D.velocity.y > Jump_Y_Threshold)
 				{
 					if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't jump. y speed: " + _rigidbody2D.velocity.y);
-					_playerView.isJumping = false;
-					_playerView.isDoubleJumping = false;
 					return;
 				}
 				
@@ -270,15 +275,12 @@ namespace Game{
 				if (_rigidbody2D.velocity.y > minimalDoubleJumpVelocity)
 				{
 					if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't doubleJump. y speed: " + _rigidbody2D.velocity.y);
-					_playerView.isJumping = false;
-					_playerView.isDoubleJumping = false;
 					return;
 				}
 									
 				_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpHeight);
 				if (EnableSFX) _sfx.PlayDoubleJump();
 				if (debugModeOn()) eventLog.AddEvent("PlayerManager: DoubleJumped");
-				Debug.Log("PlayerManger: Double jumped");
 				_playerView.isDoubleJumping = true;
 
 				canDoubleJump = false;
@@ -287,9 +289,6 @@ namespace Game{
 			else
 			{
 				if (debugModeOn()) eventLog.AddEvent("PlayerManager: Didn't jump. isGrounded=" + isGrounded + ", canDoubleJump=" + canDoubleJump);
-				_playerView.isJumping = false;
-				_playerView.isDoubleJumping = false;
-
 			}
 		}
 
