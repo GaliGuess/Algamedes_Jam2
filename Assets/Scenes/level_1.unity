@@ -2231,32 +2231,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4960626483962104, guid: e84049cc476274697b7352401e9c0e67,
     type: 2}
   m_PrefabInternal: {fileID: 1907037436}
---- !u!1 &1282746878 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1270938468579276, guid: 66aec4417a3984f31a505a4cd9430c2c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1451121014}
---- !u!114 &1282746879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1282746878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48bb01c8f145a4c3b92710efd5934f29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingDirection: {x: 0, y: 0}
-  aimDirection: {x: 0, y: 0}
-  HorizontalAxis: W1_Horizontal
-  VerticalAxis: W1_Vertical
-  JumpAxis: Mouse_Jump
-  ShootAxis: Mouse_Fire
-  _moving_direction: {x: 0, y: 0}
-  _aim_direction: {x: 0, y: 0}
-  autoFire: 0
-  autoJump: 0
 --- !u!4 &1306350071 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4099202084091484, guid: ce1a94b494fb64abea93e8b55c3f4ded,
@@ -2818,12 +2792,12 @@ Prefab:
     - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114117146519706200, guid: 66aec4417a3984f31a505a4cd9430c2c,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66aec4417a3984f31a505a4cd9430c2c, type: 2}
