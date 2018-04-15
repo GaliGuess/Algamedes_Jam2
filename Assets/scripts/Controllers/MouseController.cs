@@ -13,8 +13,8 @@ namespace Controllers
 		JumpAxis = "Mouse_Jump",
 		ShootAxis = "Mouse_Fire";
 
-		public Vector2 _moving_direction;
-		public Vector2 _aim_direction, lastNonZeroFacingDirection;
+		public Vector2 _self_moving_direction;
+		public Vector2 _self_aim_direction, lastNonZeroFacingDirection;
 		private bool isJumping, isShooting, isGettingDown;
 		public bool autoFire, autoJump;
 
@@ -30,11 +30,12 @@ namespace Controllers
 
 		protected override void Update()
 		{
-			_moving_direction.x = Input.GetAxis(HorizontalAxis);
-			_moving_direction.y = Input.GetAxis(VerticalAxis);
+			_self_moving_direction.x = Input.GetAxis(HorizontalAxis);
+			_self_moving_direction.y = Input.GetAxis(VerticalAxis);
+//			Debug.Log(_self_moving_direction);
 			isShooting = autoFire ? Input.GetButton(ShootAxis) : Input.GetButtonDown(ShootAxis);
 
-			if (_moving_direction.y < 0)
+			if (_self_moving_direction.y < 0)
 			{
 				isGettingDown = autoJump ? Input.GetButton(JumpAxis) : Input.GetButtonDown(JumpAxis);
 			}
@@ -50,30 +51,27 @@ namespace Controllers
 		protected override float update_moving_direction()
 		{
 			// This direction will be used to default to if the player doesn't touch anything
-			if (_moving_direction.x != 0 || _moving_direction.y != 0 )
+			if (_self_moving_direction.x != 0)
 			{
-				lastNonZeroFacingDirection = new Vector2(Mathf.Sign(_moving_direction.x), 0);
+				lastNonZeroFacingDirection = new Vector2(Mathf.Sign(_self_moving_direction.x), 0);
 			}
-			return _moving_direction.x;
+			return _self_moving_direction.x;
 		}
 
 		protected override Vector2 update_aim_direction()
 		{
 			Vector3 mouseViewportPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 			Vector2 relativeMousePos = (Vector2)mouseViewportPos - new Vector2(0.5f, 0.5f);
-			Debug.Log(Input.GetAxis("Mouse X") + ", " + Input.GetAxis("Mouse Y"));
 			float mouse_delta = Mathf.Max(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-			bool is_moving = (movingDirection.x != 0 || movingDirection.y != 0);
-			if (is_moving) {
-				return _moving_direction.normalized;
+			if (_self_moving_direction.x != 0 || _self_moving_direction.y != 0) {
+				Debug.Log(_self_moving_direction);
+				return _self_moving_direction.normalized;
 			}
 			else if (mouse_delta > MOUSE_DELTA_THRESH) {
 				lastNonZeroFacingDirection = relativeMousePos;
 				return relativeMousePos.normalized;
 			}
 			return lastNonZeroFacingDirection.normalized;
-//			return is_moving ? _moving_direction.normalized : relativeMousePos.normalized;
-//			return mouse_delta > MOUSE_DELTA_THRESH ? relativeMousePos.normalized : _moving_direction.normalized;
 		}
 
 		public override bool jump()
