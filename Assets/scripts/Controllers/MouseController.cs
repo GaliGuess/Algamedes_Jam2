@@ -51,7 +51,7 @@ namespace Controllers
 		{
 			Vector3 mouseViewportPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 			Vector2 relativeMousePos = (Vector2)mouseViewportPos - new Vector2(0.5f, 0.5f);
-			return relativeMousePos;
+			return relativeMousePos.normalized;
 		}
 
 		public override bool jump()
