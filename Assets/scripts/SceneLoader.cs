@@ -10,6 +10,9 @@ namespace Game {
 		private static int MAX_LEVEL_IDX = 5;
 
 		public void LoadScene(int index) {
+			if (index == 1) {
+				Cursor.visible = true;
+			}
 			SceneManager.LoadScene(index);
 		}
 

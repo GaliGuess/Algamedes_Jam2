@@ -14,13 +14,18 @@ namespace Controllers
 		ShootAxis = "Mouse_Fire";
 
 		public Vector2 _moving_direction;
-		public Vector2 _aim_direction;
+		public Vector2 _aim_direction, lastNonZeroFacingDirection;
 		private bool isJumping, isShooting, isGettingDown;
 		public bool autoFire, autoJump;
 
+		private Rigidbody2D _rigidbody2d;
+
+		private float MOUSE_DELTA_THRESH = 0.001f;
+
 		private void Awake()
 		{
-			Cursor.visible = false;
+			_rigidbody2d = GetComponent<Rigidbody2D>();
+			lastNonZeroFacingDirection = getDefaultPlayerDirection();
 		}
 
 		protected override void Update()
@@ -44,6 +49,11 @@ namespace Controllers
 
 		protected override float update_moving_direction()
 		{
+			// This direction will be used to default to if the player doesn't touch anything
+			if (_moving_direction.x != 0 || _moving_direction.y != 0 )
+			{
+				lastNonZeroFacingDirection = new Vector2(Mathf.Sign(_moving_direction.x), 0);
+			}
 			return _moving_direction.x;
 		}
 
@@ -51,7 +61,19 @@ namespace Controllers
 		{
 			Vector3 mouseViewportPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 			Vector2 relativeMousePos = (Vector2)mouseViewportPos - new Vector2(0.5f, 0.5f);
-			return relativeMousePos.normalized;
+			Debug.Log(Input.GetAxis("Mouse X") + ", " + Input.GetAxis("Mouse Y"));
+			float mouse_delta = Mathf.Max(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+			bool is_moving = (movingDirection.x != 0 || movingDirection.y != 0);
+			if (is_moving) {
+				return _moving_direction.normalized;
+			}
+			else if (mouse_delta > MOUSE_DELTA_THRESH) {
+				lastNonZeroFacingDirection = relativeMousePos;
+				return relativeMousePos.normalized;
+			}
+			return lastNonZeroFacingDirection.normalized;
+//			return is_moving ? _moving_direction.normalized : relativeMousePos.normalized;
+//			return mouse_delta > MOUSE_DELTA_THRESH ? relativeMousePos.normalized : _moving_direction.normalized;
 		}
 
 		public override bool jump()
@@ -67,6 +89,11 @@ namespace Controllers
 		public override bool getDown()
 		{
 			return isGettingDown;
+		}
+
+		private Vector2 getDefaultPlayerDirection()
+		{
+			return _rigidbody2d.position.x < 0 ? Vector2.right : Vector2.left;
 		}
 	}
 }

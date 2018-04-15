@@ -76,6 +76,7 @@ namespace Game {
 
 		private void Start()
 		{
+			Cursor.visible = false;
 			if (countDown && _countDownAnimation != null)
 			{
 				if (countDownEveryRound || _gameState.isGameStart())
@@ -182,6 +183,7 @@ namespace Game {
 		{
 			yield return new WaitForSeconds(secondsToNewRound);
 			_endGameMenu.SetActive(true);
+			Cursor.visible = true;
 			EndMenuManager menuManager = _endGameMenu.GetComponent<EndMenuManager>();
 			menuManager.setAnimation(winPlayerId);
 			Destroy(_audioSource); // This is here so the audio will stop only after the menu appeared (because the menu has its own audio)
@@ -237,11 +239,13 @@ namespace Game {
 			if (_pause_menu.activeSelf)
 			{
 				_pause_menu.SetActive(false);
+				Cursor.visible = false;
 				Time.timeScale = 1.0f;
 			}
 			else
 			{
 				_pause_menu.SetActive(true);
+				Cursor.visible = true;
 				Time.timeScale = 0f;
 			}
 
