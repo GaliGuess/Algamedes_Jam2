@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 
 namespace Controllers
 {
@@ -43,17 +43,17 @@ namespace Controllers
             
             aimDirection = update_aim_direction();
             movingDirection.x = update_moving_direction();
-            movingDirection = moving_direction().normalized;
+            movingDirection = _moving_direction().normalized;
 
             if (debugMode && eventLog != null) debug_events();
         }
 
-        public Vector2 moving_direction()
+        public Vector2 _moving_direction()
         {
             return movingDirection;
         }
 
-        public Vector2 aim_direction()
+        public Vector2 _aim_direction()
         {
 //            return aimDirection == Vector2.zero ? lastNonZeroDirection : aimDirection;
             return aimDirection;

@@ -169,7 +169,7 @@ namespace Game{
 
 					if (_timesSinceFired > 0) _timesSinceFired--;
 
-					_playerView.changeCrosshairDirection(shootingDirection);
+					_playerView.changeCrosshairDirection(shootingDirection.normalized);
 					if (controller.shoot())
 					{
 						shoot(shootingDirection);
@@ -207,14 +207,14 @@ namespace Game{
 			
 			foreach (var controller in controllers)
 			{
-				Vector2 tempMovingDir = controller.moving_direction();
+				Vector2 tempMovingDir = controller._moving_direction();
 				if (tempMovingDir != Vector2.zero)
 				{
 					movingDirection = tempMovingDir;
 					movingDirChanged = true;
 				}
 				
-				tempAimDir = controller.aim_direction();
+				tempAimDir = controller._aim_direction();
 				if (tempAimDir != Vector2.zero)
 				{
 					shootingDirection = tempAimDir;
