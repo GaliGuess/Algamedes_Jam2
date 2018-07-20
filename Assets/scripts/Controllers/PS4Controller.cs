@@ -24,14 +24,14 @@ namespace Controllers
 		public bool AutoFire = false;
 		public bool AutoJumping = false;
 		
-		public String[] HorizontalMovementControls = {"PS4_LeftStick_Horizontal", "PS4_DPad_Horizontal"},
-						VerticalMovementControls = {"PS4_LeftStick_Vertical", "PS4_DPad_Vertical"};
+		public String[] HorizontalMovementControls = {"PS4_LeftStick_Horizontal"},
+						VerticalMovementControls = {"PS4_LeftStick_Vertical"};
 
 		public String[] HorizontalAimControls = {"PS4_RightStick_Horizontal"},
 						VerticalAimControls = {"PS4_RightStick_Vertical"};
 
-		public String[] JumpControls = {"PS4_X", "PS4_L1", "PS4_L2", "PS4_L3"},
-						ShootControls = {"PS4_Square", "PS4_R1", "PS4_R2", "PS4_R3"};
+		public String[] JumpControls = {"PS4_X", "PS4_O", "PS4_L1"},
+						ShootControls = {"PS4_Square", "PS4_Triangle", "PS4_R1"};
 
 		private String WindowsAddon = "_Windows";
 		
@@ -48,8 +48,13 @@ namespace Controllers
 
 		// Will be used when implementing 2nd controller
 		private void Awake()
+
 		{
-			checkControllerType();
+
+			foreach (var key in HorizontalMovementControls) {
+				Debug.Log(key);
+			}
+//			checkControllerType();
 			
 			addJoystickNumber();
 			
@@ -67,10 +72,17 @@ namespace Controllers
 			foreach (var key in HorizontalAimControls)
 			{
 				tempAimDirection.x = Input.GetAxis(key);
+				if (Mathf.Abs(Input.GetAxis(key) ) > 0.01f) {
+					Debug.Log("AIM Hor " + key);
+				}
 			}
 			foreach (var key in VerticalAimControls)
 			{
 				tempAimDirection.y = Input.GetAxis(key);
+
+				if (Mathf.Abs(Input.GetAxis(key) ) > 0.01f) {
+					Debug.Log("AIM Ver " + key);
+				}
 			}
 			if (tempAimDirection.magnitude > ANALOG_AIM_THRESHOLD)
 			{
@@ -88,7 +100,11 @@ namespace Controllers
 			bool moveDirectionChanged = false;
 			foreach (var key in HorizontalMovementControls)
 			{
-				float tempMoveDirection = Input.GetAxis(key);
+//				Debug.Log(key);
+				float tempMoveDirection = Input.GetAxisRaw(key);
+				if (Mathf.Abs(tempMoveDirection) > ANALOG_MOVE_THRESHOLD) {
+					Debug.Log("MOVE Hor " + key + ", " + tempMoveDirection);
+				}
 				if (Mathf.Abs(tempMoveDirection) > ANALOG_MOVE_THRESHOLD)
 				{
 					_moving_direction = Mathf.Sign(tempMoveDirection);
@@ -106,7 +122,11 @@ namespace Controllers
 			Vector2 tempMoveDir = Vector2.zero;
 			foreach (var key in VerticalMovementControls)
 			{
-				float tempYDirection = -Input.GetAxis(key);
+				float tempYDirection = -Input.GetAxisRaw(key);
+
+				if (Mathf.Abs(tempYDirection) > ANALOG_MOVE_THRESHOLD) {
+					Debug.Log("MOVE Ver " + key + ", " + tempYDirection);
+				}
 
 				if (Mathf.Abs(tempYDirection) > ANALOG_MOVE_THRESHOLD)
 				{
@@ -149,7 +169,7 @@ namespace Controllers
 				{
 					isJumping = isJumping || keyPress;
 				}
-//				if (keyPress) Debug.Log(key);
+				if (keyPress) Debug.Log("JUMP " + key);
 			}
 			if (JumpUsingVerticalMovement)
 			{
@@ -173,7 +193,7 @@ namespace Controllers
 			{
 				var keyPress = AutoFire ? Input.GetButton(key) : Input.GetButtonDown(key);
 				isShooting = isShooting || keyPress;
-//				if (keyPress) Debug.Log(key);
+				if (keyPress) Debug.Log("SHOOT " + key);
 			}
 
 			base.Update();

@@ -1018,24 +1018,20 @@ MonoBehaviour:
   AutoJumping: 0
   HorizontalMovementControls:
   - PS4_LeftStick_Horizontal
-  - PS4_DPad_Horizontal
   VerticalMovementControls:
   - PS4_LeftStick_Vertical
-  - PS4_DPad_Vertical
   HorizontalAimControls:
   - PS4_RightStick_Horizontal
   VerticalAimControls:
   - PS4_RightStick_Vertical
   JumpControls:
   - PS4_X
+  - PS4_O
   - PS4_L1
-  - PS4_L2
-  - PS4_L3
   ShootControls:
   - PS4_Square
+  - PS4_Triangle
   - PS4_R1
-  - PS4_R2
-  - PS4_R3
   isGettingDown: 0
 --- !u!212 &212332413836189126
 SpriteRenderer:
@@ -1046,7 +1042,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1062,7 +1057,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -1080,7 +1074,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
 --- !u!212 &212472621495823110
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1090,7 +1083,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1106,7 +1098,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -1124,4 +1115,3 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
