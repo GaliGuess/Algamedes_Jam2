@@ -915,8 +915,9 @@ MonoBehaviour:
   VerticalAxis: W1_Vertical
   JumpAxis: Mouse_Jump
   ShootAxis: Mouse_Fire
-  _moving_direction: {x: 0, y: 0}
-  _aim_direction: {x: 0, y: 0}
+  _self_moving_direction: {x: 0, y: 0}
+  _self_aim_direction: {x: 0, y: 0}
+  lastNonZeroFacingDirection: {x: 0, y: 0}
   autoFire: 0
   autoJump: 0
 --- !u!114 &114117146519706200

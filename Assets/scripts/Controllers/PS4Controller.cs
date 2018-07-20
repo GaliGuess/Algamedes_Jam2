@@ -49,7 +49,7 @@ namespace Controllers
 		// Will be used when implementing 2nd controller
 		private void Awake()
 		{
-			checkControllerType();
+//			checkControllerType();
 			
 			addJoystickNumber();
 			

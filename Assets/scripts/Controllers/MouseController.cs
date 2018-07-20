@@ -63,6 +63,7 @@ namespace Controllers
 			Vector3 mouseViewportPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 			Vector2 relativeMousePos = (Vector2)mouseViewportPos - new Vector2(0.5f, 0.5f);
 			float mouse_delta = Mathf.Max(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+			Debug.Log(Input.GetAxis("Mouse X") + ", " + Input.GetAxis("Mouse Y"));
 			if (_self_moving_direction.x != 0 || _self_moving_direction.y != 0) {
 				Debug.Log(_self_moving_direction);
 				return _self_moving_direction.normalized;
