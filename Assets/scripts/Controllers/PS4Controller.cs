@@ -24,20 +24,21 @@ namespace Controllers
 		public bool AutoFire = false;
 		public bool AutoJumping = false;
 		
-		public String[] HorizontalMovementControls = {"PS4_LeftStick_Horizontal"},
-						VerticalMovementControls = {"PS4_LeftStick_Vertical"};
+		public String[] HorizontalMovementControls = {"PS4_LeftStick_Horizontal", "PS4_DPad_Horizontal"},
+						VerticalMovementControls = {"PS4_LeftStick_Vertical", "PS4_DPad_Vertical"};
 
 		public String[] HorizontalAimControls = {"PS4_RightStick_Horizontal"},
 						VerticalAimControls = {"PS4_RightStick_Vertical"};
 
-		public String[] JumpControls = {"PS4_X", "PS4_O", "PS4_L1"},
-						ShootControls = {"PS4_Square", "PS4_Triangle", "PS4_R1"};
+		public String[] JumpControls = {"PS4_X", "PS4_O", "PS4_L1",  "PS4_L2"},
+						ShootControls = {"PS4_Square", "PS4_Triangle", "PS4_R1", "PS4_R2"};
 
 		private String WindowsAddon = "_Windows";
 		
 		private float ANALOG_MOVE_THRESHOLD = 0.3f;
 		private float ANALOG_AIM_THRESHOLD = 0.3f;
 		private float ANALOG_JUMP_THRESHOLD = 0.6f;
+		private float ANALOG_FIRE_THRESHOLD = 0.6f;
 
 		private bool isJumping, isShooting;
 		public bool isGettingDown;
@@ -160,7 +161,9 @@ namespace Controllers
 			isGettingDown = false;
 			foreach (var key in JumpControls)
 			{
-				var keyPress = AutoJumping ? Input.GetButton(key) : Input.GetButtonDown(key);
+				//TODO: check if this works
+				var keyPress = AutoJumping ? (Input.GetButton(key) || Mathf.Abs(Input.GetAxis(key)) > ANALOG_JUMP_THRESHOLD)
+										: Input.GetButtonDown(key);
 				if (downPressed)
 				{
 					isGettingDown = isGettingDown || keyPress;
@@ -191,7 +194,9 @@ namespace Controllers
 			isShooting = false;
 			foreach (var key in ShootControls)
 			{
-				var keyPress = AutoFire ? Input.GetButton(key) : Input.GetButtonDown(key);
+				//TODO: check if this works
+				var keyPress = AutoFire ? (Input.GetButton(key) || Mathf.Abs(Input.GetAxis(key)) > ANALOG_FIRE_THRESHOLD) 
+										: Input.GetButtonDown(key);
 				isShooting = isShooting || keyPress;
 				if (keyPress) Debug.Log("SHOOT " + key);
 			}

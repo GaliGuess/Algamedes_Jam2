@@ -297,8 +297,8 @@ InputManager:
     m_Name: J1_PS4_DPad_Vertical
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: joystick 1 button 6
-    positiveButton: joystick 1 button 5
+    negativeButton: joystick 1 button 5
+    positiveButton: joystick 1 button 6
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
@@ -617,8 +617,8 @@ InputManager:
     m_Name: J2_PS4_DPad_Horizontal
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: joystick 1 button 7
-    positiveButton: joystick 1 button 8
+    negativeButton: joystick 2 button 7
+    positiveButton: joystick 2 button 8
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
@@ -626,15 +626,15 @@ InputManager:
     sensitivity: 1
     snap: 0
     invert: 0
-    type: 2
+    type: 0
     axis: 6
     joyNum: 2
   - serializedVersion: 3
     m_Name: J2_PS4_DPad_Vertical
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: joystick 1 button 5
-    positiveButton: joystick 1 button 6
+    negativeButton: joystick 2 button 6
+    positiveButton: joystick 2 button 5
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
@@ -642,7 +642,7 @@ InputManager:
     sensitivity: 1
     snap: 0
     invert: 0
-    type: 2
+    type: 0
     axis: 7
     joyNum: 2
   - serializedVersion: 3

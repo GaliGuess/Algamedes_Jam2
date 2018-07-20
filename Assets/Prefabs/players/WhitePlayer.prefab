@@ -1018,8 +1018,10 @@ MonoBehaviour:
   AutoJumping: 0
   HorizontalMovementControls:
   - PS4_LeftStick_Horizontal
+  - PS4_DPad_Horizontal
   VerticalMovementControls:
   - PS4_LeftStick_Vertical
+  - PS4_DPad_Vertical
   HorizontalAimControls:
   - PS4_RightStick_Horizontal
   VerticalAimControls:
@@ -1028,10 +1030,12 @@ MonoBehaviour:
   - PS4_X
   - PS4_O
   - PS4_L1
+  - PS4_L2
   ShootControls:
   - PS4_Square
   - PS4_Triangle
   - PS4_R1
+  - PS4_R2
   isGettingDown: 0
 --- !u!212 &212332413836189126
 SpriteRenderer:
