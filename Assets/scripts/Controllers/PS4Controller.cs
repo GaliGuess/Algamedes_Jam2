@@ -33,6 +33,8 @@ namespace Controllers
 		public String[] JumpControls = {"PS4_X", "PS4_O", "PS4_L1",  "PS4_L2"},
 						ShootControls = {"PS4_Square", "PS4_Triangle", "PS4_R1", "PS4_R2"};
 
+		private bool shoot_trigger_down, jump_drigger_down;
+
 		private String WindowsAddon = "_Windows";
 		
 		private float ANALOG_MOVE_THRESHOLD = 0.3f;
@@ -67,6 +69,8 @@ namespace Controllers
 
 		protected override void Update()
 		{	
+
+
 			// Updating Aiming direction
 			bool aimChanged = false;
 			Vector2 tempAimDirection = _aim_direction;
@@ -161,9 +165,7 @@ namespace Controllers
 			isGettingDown = false;
 			foreach (var key in JumpControls)
 			{
-				//TODO: check if this works
-				var keyPress = AutoJumping ? (Input.GetButton(key) || Mathf.Abs(Input.GetAxis(key)) > ANALOG_JUMP_THRESHOLD)
-										: Input.GetButtonDown(key);
+				var keyPress = AutoJumping ? (Input.GetButton(key) || Input.GetAxisRaw(key) == 1) : (Input.GetButtonDown(key) || Input.GetAxisRaw(key) == 1);
 				if (downPressed)
 				{
 					isGettingDown = isGettingDown || keyPress;
@@ -194,9 +196,18 @@ namespace Controllers
 			isShooting = false;
 			foreach (var key in ShootControls)
 			{
-				//TODO: check if this works
-				var keyPress = AutoFire ? (Input.GetButton(key) || Mathf.Abs(Input.GetAxis(key)) > ANALOG_FIRE_THRESHOLD) 
-										: Input.GetButtonDown(key);
+				//This is in case autofire is disabled
+//				if (Input.GetAxisRaw(key) != 0 && !shoot_trigger_down) 
+//				{
+//					Debug.Log("Fire trigger down! " + Input.GetAxisRaw(key));
+//					shoot_trigger_down = true;
+//				}
+//				if( Input.GetAxisRaw(key) == 0)
+//				{
+//					shoot_trigger_down = false;
+//				}
+				var keyPress = AutoFire ? (Input.GetButton(key) || Input.GetAxisRaw(key) == 1) : Input.GetButtonDown(key);
+
 				isShooting = isShooting || keyPress;
 				if (keyPress) Debug.Log("SHOOT " + key);
 			}

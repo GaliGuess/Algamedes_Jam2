@@ -731,26 +731,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 914314850}
     m_Modifications:
-    - target: {fileID: 114878598070120772, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: JumpControls.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: ShootControls.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: VerticalMovementControls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: HorizontalMovementControls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4475441237292758, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
       propertyPath: m_LocalPosition.x
       value: -20
@@ -787,26 +767,6 @@ Prefab:
         type: 2}
       propertyPath: usingKeyboard
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: HorizontalMovementControls.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: VerticalMovementControls.Array.data[1]
-      value: PS4_DPad_Vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: JumpControls.Array.data[4]
-      value: PS4_O
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7,
-        type: 2}
-      propertyPath: ShootControls.Array.data[4]
-      value: PS4_Triangle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c1fbaecebccc41218c7e2b2c97f2fa7, type: 2}
@@ -1812,7 +1772,13 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 397361563}
-    m_RemovedComponents: []
+    - target: {fileID: 114222770359056192, guid: 46ce15fdcfef4476b888cb95455c01f2,
+        type: 2}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1574804737}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 46ce15fdcfef4476b888cb95455c01f2, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1088979586
@@ -2797,26 +2763,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 914314850}
     m_Modifications:
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: JumpControls.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: ShootControls.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: VerticalMovementControls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: HorizontalMovementControls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4475441237292758, guid: 66aec4417a3984f31a505a4cd9430c2c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 40
@@ -2848,61 +2794,6 @@ Prefab:
     - target: {fileID: 4475441237292758, guid: 66aec4417a3984f31a505a4cd9430c2c, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: AimWithMovement
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: defaultAimToMove
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: AutoFire
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: JumpControls.Array.data[1]
-      value: PS4_O
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: JumpControls.Array.data[2]
-      value: PS4_L1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: JumpControls.Array.data[3]
-      value: PS4_L2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: JumpControls.Array.data[4]
-      value: PS4_L3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: ShootControls.Array.data[1]
-      value: PS4_Triangle
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: ShootControls.Array.data[2]
-      value: PS4_R1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: ShootControls.Array.data[3]
-      value: PS4_R2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114878598070120772, guid: 66aec4417a3984f31a505a4cd9430c2c,
-        type: 2}
-      propertyPath: ShootControls.Array.data[4]
-      value: PS4_R3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66aec4417a3984f31a505a4cd9430c2c, type: 2}
