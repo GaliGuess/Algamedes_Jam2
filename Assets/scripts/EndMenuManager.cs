@@ -16,15 +16,18 @@ public class EndMenuManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-//		Button firstButton = transform.Find("Panel/Replay button").gameObject.GetComponent<Button>();
-//		firstButton.Select();
-		//TODO: can't get first button to be selected
-
+		SetButton();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void SetButton() {
+		Button firstButton = transform.Find("Panel/Replay button").gameObject.GetComponent<Button>();
+		firstButton.Select();
+		Debug.Log("EndMenuManager -> SetButton - First button selected: " +firstButton);
 	}
 
 	public void setAnimation(int playerId) {
