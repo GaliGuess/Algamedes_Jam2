@@ -33,6 +33,7 @@ public class EndMenuManager : MonoBehaviour {
 	}
 
 	public void setAnimation(int playerId) {
+		Debug.Log("EndGameMenu: setAnimation - player id " + playerId);
 		titleAnimator.SetInteger("winId", playerId);
 	}
 

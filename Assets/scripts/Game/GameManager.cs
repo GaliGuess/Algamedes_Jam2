@@ -90,8 +90,6 @@ namespace Game {
 
 		}
 
-
-
 		public void Init() 
 		{
 			_gameState.initializeScores();
@@ -166,6 +164,7 @@ namespace Game {
 				else if (killedPlayer.name == "WhitePlayer") {
 					winPlayerId = 1; // black player wins
 				}
+
 				endGame(winPlayerId);
 			}
 			else
@@ -275,8 +274,11 @@ namespace Game {
 			
 
 		public void UnPause() {
-			audioSourceComponent.UnPause();
-			Debug.Log("GameManager UnPause: Audio source is playing? " + audioSourceComponent.isPlaying );	
+			if (audioSourceComponent != null) {
+				audioSourceComponent.UnPause();
+				Debug.Log("GameManager UnPause: Audio source is playing? " + audioSourceComponent.isPlaying );	
+			}
+
 		}
 	}
 }
