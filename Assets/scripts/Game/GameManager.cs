@@ -90,6 +90,14 @@ namespace Game {
 			}
 		}
 
+
+
+		public void InitLevel() {
+			Debug.Log("Game Manager: init level");
+			UnPause();
+			InitScores();
+		}
+
 		public void MockPlatformsAtBeat(int beat_num) {
 			GameObject[] platforms = GameObject.FindGameObjectsWithTag(Values.PLATFORM_TAG); //TODO: change tags of platformBody from "platform" to "platformBody" and add tag "platform" to platform
 			foreach (GameObject platform in platforms) {
@@ -144,8 +152,7 @@ namespace Game {
 			if (roundEnded) return;  // This is to solve case where 2 players died one after the other
 			
 			roundEnded = true;
-			_gameState.decreaseScore(killedPlayer.name);
-			_gameView.decreaseScore(killedPlayer.name);
+			UpdateScore(killedPlayer.name);
 //			_gameView.updateScore();
 
 			// added _endGameMenu null check for testing purposes, so if you don't have the end game menu you can keep playing forever.
@@ -166,6 +173,16 @@ namespace Game {
 				Debug.Log("reloading level");
 				StartCoroutine(waitThenReloadGame());
 			}
+		}
+
+		private void InitScores() {
+			_gameState.initializeScores();
+			_gameView.initializeScores();
+		}
+
+		private void UpdateScore(string killedPlayerName) {
+			_gameState.decreaseScore(killedPlayerName);
+			_gameView.decreaseScore(killedPlayerName);
 		}
 
 		IEnumerator waitThenReloadGame()

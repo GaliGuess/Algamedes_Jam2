@@ -55,7 +55,7 @@ namespace Controllers
 		{
 
 			foreach (var key in HorizontalMovementControls) {
-				Debug.Log(key);
+//				Debug.Log(key);
 			}
 //			checkControllerType();
 			
@@ -77,17 +77,17 @@ namespace Controllers
 			foreach (var key in HorizontalAimControls)
 			{
 				tempAimDirection.x = Input.GetAxis(key);
-				if (Mathf.Abs(Input.GetAxis(key) ) > 0.01f) {
-					Debug.Log("AIM Hor " + key);
-				}
+//				if (Mathf.Abs(Input.GetAxis(key) ) > 0.01f) {
+//					Debug.Log("AIM Hor " + key);
+//				}
 			}
 			foreach (var key in VerticalAimControls)
 			{
 				tempAimDirection.y = Input.GetAxis(key);
 
-				if (Mathf.Abs(Input.GetAxis(key) ) > 0.01f) {
-					Debug.Log("AIM Ver " + key);
-				}
+//				if (Mathf.Abs(Input.GetAxis(key) ) > 0.01f) {
+//					Debug.Log("AIM Ver " + key);
+//				}
 			}
 			if (tempAimDirection.magnitude > ANALOG_AIM_THRESHOLD)
 			{
@@ -107,9 +107,9 @@ namespace Controllers
 			{
 //				Debug.Log(key);
 				float tempMoveDirection = Input.GetAxisRaw(key);
-				if (Mathf.Abs(tempMoveDirection) > ANALOG_MOVE_THRESHOLD) {
-					Debug.Log("MOVE Hor " + key + ", " + tempMoveDirection);
-				}
+//				if (Mathf.Abs(tempMoveDirection) > ANALOG_MOVE_THRESHOLD) {
+//					Debug.Log("MOVE Hor " + key + ", " + tempMoveDirection);
+//				}
 				if (Mathf.Abs(tempMoveDirection) > ANALOG_MOVE_THRESHOLD)
 				{
 					_moving_direction = Mathf.Sign(tempMoveDirection);
@@ -129,9 +129,9 @@ namespace Controllers
 			{
 				float tempYDirection = -Input.GetAxisRaw(key);
 
-				if (Mathf.Abs(tempYDirection) > ANALOG_MOVE_THRESHOLD) {
-					Debug.Log("MOVE Ver " + key + ", " + tempYDirection);
-				}
+//				if (Mathf.Abs(tempYDirection) > ANALOG_MOVE_THRESHOLD) {
+//					Debug.Log("MOVE Ver " + key + ", " + tempYDirection);
+//				}
 
 				if (Mathf.Abs(tempYDirection) > ANALOG_MOVE_THRESHOLD)
 				{
@@ -174,7 +174,7 @@ namespace Controllers
 				{
 					isJumping = isJumping || keyPress;
 				}
-				if (keyPress) Debug.Log("JUMP " + key);
+//				if (keyPress) Debug.Log("JUMP " + key);
 			}
 			if (JumpUsingVerticalMovement)
 			{
@@ -209,7 +209,7 @@ namespace Controllers
 				var keyPress = AutoFire ? (Input.GetButton(key) || Input.GetAxisRaw(key) == 1) : Input.GetButtonDown(key);
 
 				isShooting = isShooting || keyPress;
-				if (keyPress) Debug.Log("SHOOT " + key);
+//				if (keyPress) Debug.Log("SHOOT " + key);
 			}
 
 			base.Update();

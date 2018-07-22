@@ -16,11 +16,7 @@ namespace Game{
 		{
 			_gameState = GetComponent<GameState>();
 			
-			_livesVisualizers = new LivesVisualizer[lives_objects.Length];
-			for (int i = 0; i < lives_objects.Length; i++)
-			{
-				_livesVisualizers[i] = lives_objects[i].GetComponent<LivesVisualizer>();
-			}
+			initializeScores();
 		}
 
 		public void decreaseScore(string killedPlayer)
@@ -31,6 +27,14 @@ namespace Game{
 				{
 					_livesVisualizers[i].decreaseLife();
 				}
+			}
+		}
+
+		public void initializeScores() {
+			_livesVisualizers = new LivesVisualizer[lives_objects.Length];
+			for (int i = 0; i < lives_objects.Length; i++)
+			{
+				_livesVisualizers[i] = lives_objects[i].GetComponent<LivesVisualizer>();
 			}
 		}
 		

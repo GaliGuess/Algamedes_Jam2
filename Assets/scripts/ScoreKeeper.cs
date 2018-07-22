@@ -28,8 +28,13 @@ public class ScoreKeeper : MonoBehaviour
 		}
 		
 		DontDestroyOnLoad(gameObject);
-		_scores = new Dictionary<string, int>();
+
+		if (_scores == null) {
+			_scores = new Dictionary<string, int>();
+			Debug.Log("ScoreKeeper -> Awake: " + _scores);
+		}
 	}
+
 
 	public bool scoresExist()
 	{
@@ -38,6 +43,11 @@ public class ScoreKeeper : MonoBehaviour
 
 	public void setScore(string playerName, int score)
 	{
+		if (_scores == null) {
+			_scores = new Dictionary<string, int>();
+			Debug.Log("ScoreKeeper -> SetScore: " + _scores);
+		}
+		Debug.Log("player name: " + playerName + ", score:" + score);
 		if (_scores.ContainsKey(playerName))
 		{
 			_scores[playerName] = score;
