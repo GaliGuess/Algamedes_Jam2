@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 //using System;
 
@@ -18,6 +19,9 @@ namespace Game {
 
 		private int white_platforms_layer, black_platforms_layer, grey_platforms_layer,
 					white_player_layer, black_player_layer;
+
+		[SerializeField]
+		public GameObject endGameMenu;
 
 		[SerializeField]
 		public string gameSceneName;
@@ -245,19 +249,35 @@ namespace Game {
 //				Time.timeScale = 0f;
 //			}
 
-			if (_endGameMenu == null) {
-				return;
-			}
-
 			if (_endGameMenu.activeSelf) {
-				_endGameMenu.SetActive(false);
+				UnPause();
 
 			}
 			else {
-				_endGameMenu.SetActive(true);
+				Pause();
 			}
 
 //			Debug.Log("GAMEMANAGER:: TimeScale: " + Time.timeScale);
+		}
+
+		private void UnPause() {
+			EventSystem.current.SetSelectedGameObject(gameObject);
+			if (_endGameMenu != null) {
+				_endGameMenu.SetActive(false);
+			}
+		}
+
+		private void Pause() {
+			Debug.Log(endGameMenu);
+			GameObject button = endGameMenu.transform.Find("Panel/Replay button").gameObject;
+			Debug.Log(button);
+//			EventSystem.current.SetSelectedGameObject(null); // can't get first button to be selected
+			EventSystem.current.SetSelectedGameObject(button);
+
+			if (_endGameMenu != null) {
+				_endGameMenu.SetActive(true);
+			}
+
 		}
 	}
 }

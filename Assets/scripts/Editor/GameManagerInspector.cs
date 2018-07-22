@@ -9,9 +9,10 @@ public class GameManagerInspector : Editor {
 	SerializedProperty secondsToNewRound;
 	SerializedProperty BPM;
 
+	SerializedProperty endGameMenu;
+
 	SerializedProperty countDown;
 	SerializedProperty countDownEveryRound;
-
 
 	private static int beat_num = 0;
 
@@ -21,8 +22,12 @@ public class GameManagerInspector : Editor {
 		secondsToNewRound = serializedObject.FindProperty("secondsToNewRound");
 		BPM = serializedObject.FindProperty("BPM");
 
+		endGameMenu = serializedObject.FindProperty("endGameMenu");
+
 		countDown = serializedObject.FindProperty("countDown");
 		countDownEveryRound = serializedObject.FindProperty("countDownEveryRound");
+
+
 
 	}
 
@@ -33,6 +38,8 @@ public class GameManagerInspector : Editor {
 
 		EditorGUILayout.PropertyField(gameSceneName);
 		EditorGUILayout.PropertyField(secondsToNewRound);
+
+		EditorGUILayout.PropertyField(endGameMenu);
 		
 		EditorGUILayout.Space();
 		EditorGUILayout.LabelField("BPM options", EditorStyles.boldLabel);
