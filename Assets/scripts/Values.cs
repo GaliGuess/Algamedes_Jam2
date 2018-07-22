@@ -23,6 +23,7 @@ namespace Game{
 		public static string SCORES_GAMEOBJ_NAME = "scores";
 		public static string AUDIO_SOURCE_GAMEOBJ_NAME = "Audio Source";
 		public static string COUNTDOWN_ANIM_GAMEOBJ_NAME = "CountDownAnimation";
+		public static string REPLAY_BUTTON_PATH = "Panel/Replay button";
 		
 		public static string PLATFORM_BODY_GAMEOBJ_NAME = "PlatformBody";
 		public static string PLATFORM_PATH_GAMEOBJ_NAME = "PlatformPath";

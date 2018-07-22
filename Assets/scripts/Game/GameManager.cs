@@ -261,6 +261,8 @@ namespace Game {
 		}
 
 		private void UnPause() {
+			Time.timeScale = 1f;
+			_audioSource.GetComponent<AudioSource>().UnPause();
 			EventSystem.current.SetSelectedGameObject(gameObject);
 			if (_endGameMenu != null) {
 				_endGameMenu.SetActive(false);
@@ -268,8 +270,10 @@ namespace Game {
 		}
 
 		private void Pause() {
+			Time.timeScale = 0f;
+			_audioSource.GetComponent<AudioSource>().Pause();
 			Debug.Log(endGameMenu);
-			GameObject button = endGameMenu.transform.Find("Panel/Replay button").gameObject;
+			GameObject button = endGameMenu.transform.Find(Values.REPLAY_BUTTON_PATH).gameObject;
 			Debug.Log(button);
 //			EventSystem.current.SetSelectedGameObject(null); // can't get first button to be selected
 			EventSystem.current.SetSelectedGameObject(button);
