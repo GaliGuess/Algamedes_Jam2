@@ -41,6 +41,8 @@ namespace Game {
 		private GameObject _audioSource;
 		private GameObject _countDownAnimation;
 		private GameObject _pause_menu;
+
+		private AudioSource audioSourceComponent;
 		
 		
 		void Awake ()
@@ -66,6 +68,7 @@ namespace Game {
 			if (_endGameMenu != null) _endGameMenu.SetActive(false);
 			
 			_audioSource = GameObject.Find(Values.AUDIO_SOURCE_GAMEOBJ_NAME);
+			audioSourceComponent = _audioSource.GetComponent<AudioSource>();
 			
 			_countDownAnimation = GameObject.Find(Values.COUNTDOWN_ANIM_GAMEOBJ_NAME);
 			if (_countDownAnimation != null)
@@ -84,6 +87,14 @@ namespace Game {
 					StartCoroutine(startCountDown());					
 				}
 			}
+
+		}
+
+
+
+		public void Init() 
+		{
+			_gameState.initializeScores();
 		}
 
 		public void MockPlatformsAtBeat(int beat_num) {
@@ -250,14 +261,22 @@ namespace Game {
 			}
 
 			if (_endGameMenu.activeSelf) {
+				UnPause();
 				_endGameMenu.SetActive(false);
 
 			}
 			else {
+				audioSourceComponent.Pause();
 				_endGameMenu.SetActive(true);
 			}
 
 //			Debug.Log("GAMEMANAGER:: TimeScale: " + Time.timeScale);
+		}
+			
+
+		public void UnPause() {
+			audioSourceComponent.UnPause();
+			Debug.Log("GameManager UnPause: Audio source is playing? " + audioSourceComponent.isPlaying );	
 		}
 	}
 }

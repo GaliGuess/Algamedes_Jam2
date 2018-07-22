@@ -8,6 +8,7 @@ namespace Game {
 
 		public EventSystem eventSystem;
 		public GameObject selectedObject;
+		public GameObject game;
 
 		private bool buttonSelected;
 
@@ -23,12 +24,18 @@ namespace Game {
 			if ((Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal")) != 0 && buttonSelected == false) {
 				Debug.Log("select button!");
 				eventSystem.SetSelectedGameObject(selectedObject);
+				Debug.Log(selectedObject);
 				buttonSelected = true;
 			}
+
 		}
 
 		private void OnDisable() {
 			buttonSelected = false;
+			if (game != null) {
+				eventSystem.SetSelectedGameObject(game);
+				game.GetComponent<GameManager>().UnPause();
+			}
 		}
 	}
 }

@@ -15,10 +15,21 @@ public class EndMenuManager : MonoBehaviour {
 	void Start () {
 		
 	}
+
+	void OnEnable() {
+		Time.timeScale = 0.0f;
+	}
+
+	void OnDisable() {
+		Time.timeScale = 1.0f;
+	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetButtonDown("Cancel")) {
+			Debug.Log("EndMenuManager: cancel button!");
+			gameObject.SetActive(false);
+		}
 	}
 
 	public void setAnimation(int playerId) {

@@ -15,6 +15,10 @@ namespace Game {
 
 		public void ReloadCurrentScene()
 		{
+//			if (Time.timeScale == 0.0f) {
+//				Time.timeScale = 1.0f;
+//			}
+
 			int currentScene = SceneManager.GetActiveScene().buildIndex;
 			LoadScene(currentScene);
 		}

@@ -33,6 +33,10 @@ namespace Game{
 			_gameView.updateScore();
 		}
 
+		void OnEnable() {
+			
+		}
+
 		public void initializeScores()
 		{
 			foreach (var player in players)
