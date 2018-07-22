@@ -230,22 +230,34 @@ namespace Game {
 		public void TogglePauseMenu()
 		{
 			Debug.Log("GAMEMANAGER:: TogglePauseMenu");
-			if (_pause_menu == null) {
+//			if (_pause_menu == null) {
+//				return;
+//			}
+//			// not the optimal way but for the sake of readability
+//			if (_pause_menu.activeSelf)
+//			{
+//				_pause_menu.SetActive(false);
+//				Time.timeScale = 1.0f;
+//			}
+//			else
+//			{
+//				_pause_menu.SetActive(true);
+//				Time.timeScale = 0f;
+//			}
+
+			if (_endGameMenu == null) {
 				return;
 			}
-			// not the optimal way but for the sake of readability
-			if (_pause_menu.activeSelf)
-			{
-				_pause_menu.SetActive(false);
-				Time.timeScale = 1.0f;
+
+			if (_endGameMenu.activeSelf) {
+				_endGameMenu.SetActive(false);
+
 			}
-			else
-			{
-				_pause_menu.SetActive(true);
-				Time.timeScale = 0f;
+			else {
+				_endGameMenu.SetActive(true);
 			}
 
-			Debug.Log("GAMEMANAGER:: TimeScale: " + Time.timeScale);
+//			Debug.Log("GAMEMANAGER:: TimeScale: " + Time.timeScale);
 		}
 	}
 }
