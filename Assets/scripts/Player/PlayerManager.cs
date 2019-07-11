@@ -121,6 +121,14 @@ namespace Game{
 		private void Update()
 		{
 			if (controlsDisabled) return;
+
+			foreach (var controller in controllers)
+			{
+				if (controller.pauseMenu())
+				{
+					_gameManager.TogglePauseMenu();
+				}
+			}
 			
 			updateGrounded();
 			if (isGrounded)

@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Controllers;
+using Game;
 
 namespace Controllers
 {
@@ -33,13 +34,29 @@ namespace Controllers
 		public String[] JumpControls = {"PS4_X", "PS4_L1", "PS4_L2", "PS4_L3"},
 						ShootControls = {"PS4_Square", "PS4_R1", "PS4_R2", "PS4_R3"};
 
+		private String PauseButton = "PS4_Options";
+		
+		// Xbox & PS4 Analog stick mappings are the same
+		// Xbox Dpad is acting weird and once any direction is pressed it always reverts to -1 value, so I removed it.
+		private String[] XboxHorizontalMovementControls = {"PS4_LeftStick_Horizontal"},
+						 XboxVerticalMovementControls = {"PS4_LeftStick_Vertical"};
+
+		private String[] XboxHorizontalAimControls = {"PS4_RightStick_Horizontal"},
+						 XboxVerticalAimControls = {"PS4_RightStick_Vertical"};
+
+		// Xbox triggers (LT, RT) are also weird and I couldn't find them
+		private String[] XboxJumpControls = {"XBOX_A", "XBOX_LB", "XBOX_L3"},
+						 XboxShootControls = {"XBOX_X", "XBOX_RB", "XBOX_R3"};
+
+		private String XboxPauseButton = "XBOX_Start";
+		
 		private String WindowsAddon = "_Windows";
 		
 		private float ANALOG_MOVE_THRESHOLD = 0.3f;
 		private float ANALOG_AIM_THRESHOLD = 0.3f;
 		private float ANALOG_JUMP_THRESHOLD = 0.6f;
 
-		private bool isJumping, isShooting;
+		private bool isJumping, isShooting, isPaused;
 		public bool isGettingDown;
 		private float _moving_direction;
 		private Vector2 _aim_direction, lastNonZeroFacingDirection;
@@ -48,7 +65,7 @@ namespace Controllers
 
 		// Will be used when implementing 2nd controller
 		private void Awake()
-		{
+		{			
 			checkControllerType();
 			
 			addJoystickNumber();
@@ -60,7 +77,9 @@ namespace Controllers
 		}
 
 		protected override void Update()
-		{	
+		{
+			isPaused = Input.GetButtonDown(PauseButton);
+			
 			// Updating Aiming direction
 			bool aimChanged = false;
 			Vector2 tempAimDirection = _aim_direction;
@@ -203,6 +222,11 @@ namespace Controllers
 		{
 			return isGettingDown;
 		}
+		
+		public override bool pauseMenu()
+		{
+			return !inStartScene && isPaused;
+		}
 
 		
 		private void checkControllerType()
@@ -215,7 +239,13 @@ namespace Controllers
 
 				if (name.Contains("PLAYSTATION(R)3"))
 				{
+					Debug.Log(gameObject.name + " PS3 controller found.");
 					updateToPS3Controls();
+				}
+				else if (name.Contains("Xbox"))
+				{
+					Debug.Log(gameObject.name + " Xbox controller found.");
+					updateToXboxControls();
 				}
 			}
 			else
@@ -228,7 +258,6 @@ namespace Controllers
 		// Will be used for assigning each player his own controller
 		private void addJoystickNumber()
 		{
-			
 			String toAdd = "J" + JoystickNumber + "_";
 
 			for (int i = 0; i < HorizontalMovementControls.Length; i++)
@@ -260,6 +289,8 @@ namespace Controllers
 			{
 				ShootControls[i] = toAdd + ShootControls[i];
 			}
+
+			PauseButton = toAdd + PauseButton;
 		}
 
 		private void checkOS()
@@ -296,6 +327,20 @@ namespace Controllers
 			
 			replaceInStrings(JumpControls, from, to);
 			replaceInStrings(ShootControls, from, to);
+		}
+		
+		private void updateToXboxControls()
+		{
+			HorizontalMovementControls = XboxHorizontalMovementControls;
+			VerticalMovementControls = XboxVerticalMovementControls;
+
+			HorizontalAimControls = XboxHorizontalAimControls;
+			VerticalAimControls = XboxVerticalAimControls;
+
+			JumpControls = XboxJumpControls;
+			ShootControls = XboxShootControls;
+
+			PauseButton = XboxPauseButton;
 		}
 
 		private string[] replaceInStrings(string[] strings, string from, string to)

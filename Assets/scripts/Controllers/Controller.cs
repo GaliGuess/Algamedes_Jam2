@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Controllers
 {
@@ -9,6 +10,10 @@ namespace Controllers
     
     public abstract class Controller : MonoBehaviour
     {
+        public string sceneName;
+        public string StartScene = "start_scene_2";  // for bezalel demo 27.05.18
+        public bool inStartScene = false;
+        
         public Vector2 movingDirection, aimDirection;
         
         private Vector2 lastNonZeroDirection;
@@ -26,11 +31,16 @@ namespace Controllers
 
         public abstract bool getDown();
         
+        public abstract bool pauseMenu();
+        
         
         protected virtual void Start()
         {
 //            lastNonZeroDirection = GetComponent<Rigidbody2D>().position.x < 0 ? Vector2.right : Vector2.left;
             debugMode = false;
+            
+            string sceneName = SceneManager.GetActiveScene().name;  // for bezalel demo 27.05.18
+            if (sceneName == StartScene) inStartScene = true;
         }
 
         protected virtual void Update()

@@ -50,9 +50,9 @@ namespace Game {
 			_shotFactory = GetComponent<ShotFactory>();
 			_shellFactory = GetComponent<ShellFactory>();
 
-			Transform tmp = transform.Find("PauseMenu");
+			GameObject tmp = GameObject.Find("PauseMenu");
 			if (tmp != null) {
-				_pause_menu = tmp.gameObject;
+				_pause_menu = tmp;
 				Debug.Log("GameManager: pause menu found");
 				_pause_menu.SetActive(false);
 			}
@@ -233,19 +233,33 @@ namespace Game {
 			if (_pause_menu == null) {
 				return;
 			}
+			
+			AudioSource audioSource = _audioSource.GetComponent<AudioSource>(); // used to also stop bg music
+			
 			// not the optimal way but for the sake of readability
 			if (_pause_menu.activeSelf)
 			{
+				audioSource.Play();
 				_pause_menu.SetActive(false);
 				Time.timeScale = 1.0f;
+				
 			}
 			else
 			{
+				audioSource.Pause();
 				_pause_menu.SetActive(true);
 				Time.timeScale = 0f;
+				
 			}
 
 			Debug.Log("GAMEMANAGER:: TimeScale: " + Time.timeScale);
+		}
+
+		public void RestartMusic()
+		{
+			AudioSource audioSource = _audioSource.GetComponent<AudioSource>();
+			audioSource.Stop();
+			audioSource.Play();
 		}
 	}
 }

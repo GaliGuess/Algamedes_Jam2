@@ -3709,9 +3709,9 @@ GameObject:
   - component: {fileID: 1088979591}
   - component: {fileID: 1088979590}
   - component: {fileID: 1088979589}
+  - component: {fileID: 1088979594}
   - component: {fileID: 1088979588}
   - component: {fileID: 1088979593}
-  - component: {fileID: 1088979594}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -3815,39 +3815,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1088979586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8349a27900cce448c906fb2966349592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 15
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1088979588}
-          m_MethodName: LoadScene
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1932188616}
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
+  audioSource: {fileID: 1932188616}
+  sceneToLoad: 1
+  triggerButtons: 0d0000004301000020000000
 --- !u!114 &1088979594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6497,7 +6470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 1088979586}
-  m_sendNavigationEvents: 1
+  m_sendNavigationEvents: 0
   m_DragThreshold: 5
 --- !u!4 &1574804738
 Transform:

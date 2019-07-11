@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Controllers;
+using Game;
 
 namespace Controllers
 {
@@ -12,16 +13,24 @@ namespace Controllers
             VerticalAxis = "B1_Vertical",
             JumpAxis = "B1_Jump",
             ShootAxis = "B1_Fire";
+            
+        private KeyCode PauseButton = KeyCode.Escape;
 
         public Vector2 direction;
-        private bool isJumping, isShooting, isGettingDown;
+        private bool isJumping, isShooting, isGettingDown, isPaused;
         public bool autoFire, autoJump;
 
         protected override void Update()
         {
+            isPaused = !inStartScene && Input.GetKeyDown(PauseButton);
+            
             direction.x = Input.GetAxis(HorizontalAxis);
             direction.y = Input.GetAxis(VerticalAxis);
             isShooting = autoFire ? Input.GetButton(ShootAxis) : Input.GetButtonDown(ShootAxis);
+            if (isShooting)
+            {
+                Debug.Log(gameObject.name + ": shot");
+            }
 
             if (direction.y < 0)
             {
@@ -58,6 +67,11 @@ namespace Controllers
         public override bool getDown()
         {
             return isGettingDown;
+        }
+        
+        public override bool pauseMenu()
+        {
+            return isPaused;
         }
     }
 }
